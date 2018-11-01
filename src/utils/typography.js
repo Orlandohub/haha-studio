@@ -1,18 +1,19 @@
-import Typography from 'typography'
+/*import Typography from 'typography'
 import oceanBeachTheme from 'typography-theme-ocean-beach'
 
 const typography = new Typography(oceanBeachTheme)
 
-export default typography
+export default typography*/
 
 
-/*import Typography from 'typography'
+import Typography from "typography"
 
 const typography = new Typography({
-  baseFontSize: '25px',
-  baseLineHeight: 1.666,
-  headerFontFamily: ['Avenir Next', 'Helvetica Neue', 'Segoe UI', 'Helvetica', 'Arial', 'sans-serif'],
-  bodyFontFamily: ['Georgia', 'serif'],
-  // See below for the full list of options.
-})
-export default typography*/
+    baseFontSize: "19px",
+    lineHeight: "1.50",
+    rhytm: "1.00",
+    headerFontFamily: ["Playfair Display"],
+    bodyFontFamily: ["Roboto Slab"],
+});
+
+export default typography
