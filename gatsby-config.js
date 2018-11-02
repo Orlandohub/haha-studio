@@ -3,7 +3,7 @@ module.exports = {
     title: 'HAHA Studio',
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+        'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -13,6 +13,17 @@ module.exports = {
         background_color: '#FFFFFF',
         theme_color: '#FFFFFF',
         display: 'minimal-ui',
+      },
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
       },
     },
     'gatsby-plugin-offline',
