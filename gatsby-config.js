@@ -3,14 +3,7 @@ module.exports = {
     title: 'HAHA Studio',
   },
   plugins: [
-    /*{
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `src`,
-        path: `${__dirname}/src/`,
-      },
-    },*/
-    'gatsby-plugin-react-helmet',
+        'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -31,7 +24,6 @@ module.exports = {
     {
       resolve: `gatsby-plugin-emotion`,
       options: {
-        // Accepts all options defined by `babel-plugin-emotion` plugin.
       },
     },
     'gatsby-plugin-offline',
