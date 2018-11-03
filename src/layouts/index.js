@@ -6,11 +6,12 @@ import './index.css'
 import { StaticQuery, graphql } from 'gatsby'
 import { css } from 'react-emotion'
 
+
 const layoutStyleContainer = css ({
   margin: '0 auto',
             maxWidth: 960,
             padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 30
+            paddingTop: 30            
 })
 
 const Layout = ({ children }) => (
