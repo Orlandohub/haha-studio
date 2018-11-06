@@ -6,11 +6,15 @@
 	     url('../fonts/ginto-normal-regular.svg') format('svg');
 }
 html {
+  height: 100%;
+  width: 100%;
   font-family:'ginto-normal-regular', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 body {
+  height: 100%;
+  width: 100%;
   font-family: ginto-normal-regular, georgia, serif;
   font-weight: normal;
   word-wrap: break-word;

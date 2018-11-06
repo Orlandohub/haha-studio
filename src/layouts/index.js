@@ -5,6 +5,7 @@ import Header from '../components/header'
 import './index.css'
 import { StaticQuery, graphql } from 'gatsby'
 import { css } from 'react-emotion'
+import Hero from '../components/hero'
 
 
 const layoutStyleContainer = css ({
@@ -36,6 +37,7 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
+        <Hero />
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           className = {layoutStyleContainer}
