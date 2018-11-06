@@ -5,6 +5,8 @@ import Menu from '../components/Menu'
 import './index.css'
 import { StaticQuery, graphql } from 'gatsby'
 
+console.log('Menu', Menu);
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -28,7 +30,7 @@ const Layout = ({ children }) => (
           <html lang="en" />
           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
         </Helmet>
-        <Menu siteTitle={data.site.siteMetadata.title} />
+        <Menu />
         <div>
           {children}
         </div>

@@ -1,20 +1,32 @@
 
 
 export const styles = {
-  sexyBlueHeaderWrapper: {
-    backgroundColor: 'skyblue'
+  subMenuCol: {
+    float: 'left',
+    display: 'block',
+    position: 'relative',
+    listStyle: 'none',
+    margin: 0,
   },
-  yesHeaderTitle: {
-    margin: '0 auto',
-    maxWidth: 960,
-    padding: '1.45rem 1.0875rem',
+  subMenuLink: {
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
+    width: 150,
+    cursor: 'pointer',
   },
-  headerTextMargin: {
-    margin: '0',
+  brand: {
+    width: '25%',
   },
-  headerLinkStyle: {
-    color: 'white',
-    textDecoration: 'none',
-    textShadow : 'none',
-  }
+  menuContainer: {
+    backgroundColor: 'transparent!important',
+    borderWidth: '0!important',
+    marginBottom: '0!important',
+    height: 230,
+  },
+  subMenuContainer: {
+    backgroundColor: 'transparent',
+    borderWidth: 0,
+  },
 }
