@@ -2,10 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
-import './index.css'
+import './layout.css'
 import { StaticQuery, graphql } from 'gatsby'
-
-console.log('Menu', Menu);
 
 const Layout = ({ children }) => (
   <StaticQuery
