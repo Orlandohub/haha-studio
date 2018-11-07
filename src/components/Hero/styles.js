@@ -23,7 +23,7 @@ transform: translate3d(0,-4px,0);
 /*######### END #######*/
 
 
-export const hero_styles = {
+export const styles = {
    
     HeroImageWrapper: {
     backgroundImage: `url(${hero_image})`,

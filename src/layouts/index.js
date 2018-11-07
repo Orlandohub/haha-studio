@@ -35,6 +35,7 @@ const Layout = ({ children }) => (
             crossorigin="anonymous"
           />
         </Helmet>
+        <Menu />
         <div>{children}</div>
       </>
     )}

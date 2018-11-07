@@ -1,7 +1,7 @@
 import React from 'react'
 import { css } from 'react-emotion'
 import arrow from '../../images/arrow.png'
-import { hero_styles } from './hero_styles'
+import { styles } from './styles'
 
 class Hero extends React.Component {
   constructor() {
@@ -17,14 +17,14 @@ class Hero extends React.Component {
   }
   render() {
     let hero_class = this.state.show
-      ? css(hero_styles.HeroImageWrapper)
-      : css(hero_styles.HideHero)
+      ? css(styles.HeroImageWrapper)
+      : css(styles.HideHero)
     let arrowClass = this.state.show
-      ? css(hero_styles.Img)
-      : css(hero_styles.HideArrow)
+      ? css(styles.Img)
+      : css(styles.HideArrow)
     let arrowContainer = this.state.show
-      ? css(hero_styles.ArrowContainer)
-      : css(hero_styles.HideArrow)
+      ? css(styles.ArrowContainer)
+      : css(styles.HideArrow)
 
     return (
       <div className={hero_class}>
