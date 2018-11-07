@@ -5,7 +5,6 @@ import Menu from '../components/Menu'
 import './index.css'
 import { StaticQuery, graphql } from 'gatsby'
 
-console.log('Menu', Menu)
 
 const Layout = ({ children }) => (
   <StaticQuery

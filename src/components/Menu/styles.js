@@ -9,12 +9,14 @@ export const styles = {
     margin: 0,
   },
   subMenuLink: {
+    cursor: 'pointer',
+  },
+  subMenuItem: {
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 10,
     paddingRight: 10,
     width: 150,
-    cursor: 'pointer',
   },
   brand: {
     width: '25%',
@@ -23,10 +25,6 @@ export const styles = {
     backgroundColor: 'transparent!important',
     borderWidth: '0!important',
     marginBottom: '0!important',
-    height: 230,
-  },
-  subMenuContainer: {
-    backgroundColor: 'transparent',
-    borderWidth: 0,
+    height: 150,
   },
 }

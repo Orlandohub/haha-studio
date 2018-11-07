@@ -2,6 +2,8 @@ import React from 'react'
 import { css } from 'react-emotion'
 import arrow from '../../images/arrow.png'
 import { styles } from './styles'
+import { Subscribe } from "unstated";
+import CurrentPageContainer from '../../state/CurrentPageContainer'
 
 class Hero extends React.Component {
   constructor() {
@@ -16,27 +18,36 @@ class Hero extends React.Component {
     this.setState({ show: !this.state.show })
   }
   render() {
-    let hero_class = this.state.show
-      ? css(styles.HeroImageWrapper)
-      : css(styles.HideHero)
-    let arrowClass = this.state.show
-      ? css(styles.Img)
-      : css(styles.HideArrow)
-    let arrowContainer = this.state.show
-      ? css(styles.ArrowContainer)
-      : css(styles.HideArrow)
-
     return (
-      <div className={hero_class}>
-        <div className={arrowContainer}>
-          <img
-            className={arrowClass}
-            src={arrow}
-            alt="arrow"
-            onClick={this.slideUp.bind(this)}
-          />
-        </div>
-      </div>
+      <Subscribe to={[CurrentPageContainer]}>
+        {currentPage => (
+          <div>
+          {
+            currentPage.state.showHero ?
+              <div className={css(styles.HeroImageWrapper)}>
+                <div className={css(styles.ArrowContainer)}>
+                  <img
+                    className={css(styles.Img)}
+                    src={arrow}
+                    alt="arrow"
+                    onClick={() => currentPage.toggleHero()}
+                  />
+                </div>
+              </div>
+            :
+              <div className={css(styles.HideHero)}>
+                <div className={css(styles.HideArrow)}>
+                  <img
+                    className={css(styles.HideArrow)}
+                    src={arrow}
+                    alt="arrow"
+                  />
+                </div>
+              </div>
+          }
+          </div>
+        )}
+      </Subscribe>
     )
   }
 }

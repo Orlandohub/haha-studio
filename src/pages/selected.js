@@ -2,14 +2,15 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Layout from '../layouts'
 
-const SecondPage = () => (
+
+const Selected = () => (
   <div>
     <Layout>
-      <h1>Hi from the second page</h1>
-      <p>Welcome to page 2</p>
+      <h1>Hi from the Selected page</h1>
+      <p>Welcome to Selected</p>
       <Link to="/">Go back to the homepage</Link>
     </Layout>
   </div>
 )
 
-export default SecondPage
+export default Selected

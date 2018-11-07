@@ -1,6 +1,5 @@
 import React from 'react'
-// import Link from 'gatsby-link'
-import Layout from '../layouts/index'
+import Layout from '../layouts'
 import Hero from '../components/Hero'
 import { Grid, Row, Col } from 'react-bootstrap'
 
