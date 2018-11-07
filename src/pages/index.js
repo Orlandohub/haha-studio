@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-// import Link from 'gatsby-link'
-import Layout from '../components/layout'
+import Layout from '../layout/layout'
 
 import {
   Grid,
@@ -11,7 +10,6 @@ import {
 
 class IndexPage extends Component {
   render() {
-    console.log('this.props', this.props);
     return (
       <Layout >      
         <Grid>

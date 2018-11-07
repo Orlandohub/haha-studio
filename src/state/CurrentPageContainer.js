@@ -7,7 +7,6 @@ class CurrentPageContainer extends Container {
   }
 
   setActiveSubMenu(subMenu) {
-    console.log('subMenu', subMenu);
     this.setState({
       activeSubMenu: subMenu,
     })

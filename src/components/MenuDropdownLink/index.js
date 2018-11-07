@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { navigate } from "gatsby"
 import PropTypes from 'prop-types'
-import { css, cx } from 'emotion'
+import { css } from 'emotion'
 
 import { styles } from './styles'
 
@@ -16,10 +16,8 @@ class MenuDropdownLink extends Component {
 
   handleClick(link) {
     const { setActiveSubMenu } = this.props
-
-    console.log('setActiveSubMenu', setActiveSubMenu);
     setActiveSubMenu()
-    navigate(`/page-2`)
+    navigate(`/${link}`)
   }
 
   render() {
