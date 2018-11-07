@@ -4,8 +4,7 @@ import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
 import './index.css'
 import { StaticQuery, graphql } from 'gatsby'
-import { css } from 'react-emotion'
-import Hero from '../components/hero'
+import Hero from '../components/Hero/hero'
 
 console.log('Menu', Menu);
 
