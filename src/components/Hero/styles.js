@@ -73,6 +73,4 @@ export const hero_styles = {
     HideArrow: {
         display:'none',
     },
-    }
-
-    
+    }   

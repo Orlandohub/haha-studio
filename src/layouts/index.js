@@ -4,9 +4,8 @@ import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
 import './index.css'
 import { StaticQuery, graphql } from 'gatsby'
-import Hero from '../components/Hero/hero'
 
-console.log('Menu', Menu);
+console.log('Menu', Menu)
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -29,13 +28,14 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+          <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous"
+          />
         </Helmet>
-        <Hero />
-        <Menu />
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </>
     )}
   />
@@ -46,4 +46,3 @@ Layout.propTypes = {
 }
 
 export default Layout
-
