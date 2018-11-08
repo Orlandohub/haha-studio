@@ -11,13 +11,13 @@ class MenuDropdownLink extends Component {
 
     return (
       <li
-        className={css(styles.subMenuDropdownLink)}
+        className={css(styles.subMenuDropdownItem)}
       >
         {
           activeSubMenu ?
-            <Link to={`/${link}`}><b>{alias || link}</b></Link>
+            <Link className={css(styles.subMenuDropdownLinkActive)} to={`/${link}`}>{alias || link}</Link>
             :
-            <Link to={`/${link}`}>{alias || link}</Link>
+            <Link className={css(styles.subMenuDropdownLink)} to={`/${link}`}>{alias || link}</Link>
         }
       </li>
     )

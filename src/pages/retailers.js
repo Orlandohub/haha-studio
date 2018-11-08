@@ -1,18 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import Hero from '../components/Hero'
 import { Grid, Row, Col } from 'react-bootstrap'
 
-const IndexPage = ({ location }) => (
+const Retailers = ({ location }) => (
   <React.Fragment>
-    <Hero />
     <Layout location={location}>
       <Grid>
         <Row>
-          ;
           <Col xs={12}>
-            <h2>Selected</h2>
+            <h2>Retailers</h2>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
               nobis, molestias labore reprehenderit laborum ad necessitatibus
@@ -26,8 +23,8 @@ const IndexPage = ({ location }) => (
   </React.Fragment>
 )
 
-IndexPage.proptypes = {
+Retailers.proptypes = {
   location: PropTypes.object.isRequired,
 }
 
-export default IndexPage
+export default Retailers

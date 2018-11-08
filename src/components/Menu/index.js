@@ -1,28 +1,27 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
-import { Navbar, NavItem, Nav } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
+import Link from 'gatsby-link'
 import { navigate } from 'gatsby'
 import { styles } from './styles'
 import MenuDropdownLink from '../MenuDropdownLink'
+import logo from '../../images/logo_large.png'
 
 const Menu = ({ location }) => (
   <Navbar className={css(styles.menuContainer)}>
     <Navbar.Header className={css(styles.brand)}>
-      <Navbar.Brand>
-        <a href="#home">HAHA Studio</a>
+      <Navbar.Brand className={css(styles.logoWrap)}>
+        <Link to="/">
+          <img className={css(styles.logoImage)} src={logo} alt="HAHA Studio" />
+        </Link>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav>
       {/* ############# PROJECT SECTION ############# */}
       <ul className={css(styles.subMenuCol)}>
-        <li
-          onClick={() => navigate('/')}
-          className={css(styles.subMenuItem)}
-        >
-          <span className={css(styles.subMenuLink)}>
-            <b>projects</b>
-          </span>
+        <li onClick={() => navigate('/')} className={css(styles.subMenuItem)}>
+          <span className={css(styles.subMenuLink)}>projects</span>
         </li>
         {location.pathname === '/' || location.pathname === '/archived' ? (
           <React.Fragment>
@@ -44,26 +43,26 @@ const Menu = ({ location }) => (
           onClick={() => navigate('/about')}
           className={css(styles.subMenuItem)}
         >
-          <span className={css(styles.subMenuLink)}>
-            <b>studio</b>
-          </span>
+          <span className={css(styles.subMenuLink)}>studio</span>
         </li>
-        {location.pathname === '/about' || location.pathname === '/exploration' || location.pathname === '/texts' ? (
-          <React.Fragment>
-            <MenuDropdownLink
-              link="about"
-              activeSubMenu={location.pathname === '/about'}
-            />
-            <MenuDropdownLink
-              link="exploration"
-              activeSubMenu={location.pathname === '/exploration'}
-            />
-            <MenuDropdownLink
-              link="texts"
-              activeSubMenu={location.pathname === '/texts'}
-            />
-          </React.Fragment>
-        ) : null}
+        {location.pathname === '/about' ||
+        location.pathname === '/exploration' ||
+        location.pathname === '/texts' ? (
+            <React.Fragment>
+              <MenuDropdownLink
+                link="about"
+                activeSubMenu={location.pathname === '/about'}
+              />
+              <MenuDropdownLink
+                link="exploration"
+                activeSubMenu={location.pathname === '/exploration'}
+              />
+              <MenuDropdownLink
+                link="texts"
+                activeSubMenu={location.pathname === '/texts'}
+              />
+            </React.Fragment>
+          ) : null}
       </ul>
       {/* ############# CONTACT SECTION ############# */}
       <ul className={css(styles.subMenuCol)}>
@@ -71,37 +70,44 @@ const Menu = ({ location }) => (
           onClick={() => navigate('/find-us')}
           className={css(styles.subMenuItem)}
         >
-          <span className={css(styles.subMenuLink)}>
-            <b>contact</b>
-          </span>
+          <span className={css(styles.subMenuLink)}>contact</span>
         </li>
-        {location.pathname === '/find-us' || location.pathname === '/contact' || location.pathname === '/retailers' ? (
-          <React.Fragment>
-            <MenuDropdownLink
-              link="find us"
-              activeSubMenu={location.pathname === '/find-us'}
-            />
-            <MenuDropdownLink
-              link="press"
-              activeSubMenu={location.pathname === '/press'}
-            />
-            <MenuDropdownLink
-              link="retailers"
-              activeSubMenu={location.pathname === '/retailers'}
-            />
-          </React.Fragment>
-        ) : null}
+        {location.pathname === '/find-us' ||
+        location.pathname === '/press' ||
+        location.pathname === '/retailers' ? (
+            <React.Fragment>
+              <MenuDropdownLink
+                link="find-us"
+                activeSubMenu={location.pathname === '/find-us'}
+              />
+              <MenuDropdownLink
+                link="press"
+                activeSubMenu={location.pathname === '/press'}
+              />
+              <MenuDropdownLink
+                link="retailers"
+                activeSubMenu={location.pathname === '/retailers'}
+              />
+            </React.Fragment>
+          ) : null}
       </ul>
     </Nav>
     <Nav pullRight>
-      <NavItem eventKey={1} href="#">
-        <b>shop</b>
-      </NavItem>
+      <ul className={css(styles.subMenuCol)}>
+        <li className={css(styles.subMenuItem)}>
+          <span
+            onClick={() => navigate('/shop')}
+            className={css(styles.subMenuLink)}
+          >
+            shop
+          </span>
+        </li>
+      </ul>
     </Nav>
   </Navbar>
 )
 Menu.propTypes = {
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 }
 
 export default Menu

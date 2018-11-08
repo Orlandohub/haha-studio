@@ -1,20 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import Layout from '../layouts'
+import { Grid, Row, Col } from 'react-bootstrap'
 
 const About = ({ location }) => (
-  <div>
+  <React.Fragment>
     <Layout location={location}>
-      <h1>Hi from the About page</h1>
-      <p>Welcome to About</p>
-      <Link to="/">Go back to the homepage</Link>
+      <Grid>
+        <Row>
+          <Col xs={12}>
+            <h2>About</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
+              nobis, molestias labore reprehenderit laborum ad necessitatibus
+              rem quam voluptatem temporibus amet similique tempore ullam cum
+              nulla et voluptatum! Eius, ab!
+            </p>
+          </Col>
+        </Row>
+      </Grid>
     </Layout>
-  </div>
+  </React.Fragment>
 )
 
 About.proptypes = {
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 }
 
 export default About
