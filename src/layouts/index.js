@@ -5,8 +5,7 @@ import Menu from '../components/Menu'
 import './index.css'
 import { StaticQuery, graphql } from 'gatsby'
 
-
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -34,7 +33,7 @@ const Layout = ({ children }) => (
             crossorigin="anonymous"
           />
         </Helmet>
-        <Menu />
+        <Menu location={location} />
         <div>{children}</div>
       </>
     )}
@@ -42,7 +41,7 @@ const Layout = ({ children }) => (
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

@@ -1,129 +1,107 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import { Navbar, NavItem, Nav } from 'react-bootstrap'
-import { Subscribe } from 'unstated'
-import Link from 'gatsby-link'
+import { navigate } from 'gatsby'
 import { styles } from './styles'
 import MenuDropdownLink from '../MenuDropdownLink'
-import CurrentPageContainer from '../../state/CurrentPageContainer'
 
-const Menu = () => (
-  <Subscribe to={[CurrentPageContainer]}>
-    {currentPage => (
-      <Navbar className={css(styles.menuContainer)}>
-        <Navbar.Header className={css(styles.brand)}>
-          <Navbar.Brand>
-            <a href="#home">HAHA Studio</a>
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Nav>
-          {/* ############# PROJECT SECTION ############# */}
-          <ul className={css(styles.subMenuCol)}>
-            <li
-              onClick={() => currentPage.setActiveMenu('projects')}
-              className={css(styles.subMenuItem)}
-            >
-              <span className={css(styles.subMenuLink)}>
-                <b>projects</b>
-              </span>
-            </li>
-            {currentPage.state.activeMenu === 'projects' ? (
-              <React.Fragment>
-                <li>
-                  <Link to="/">Go back to the homepage</Link>
-                </li>
-                <MenuDropdownLink
-                  link="selected"
-                  activeSubMenu={currentPage.state.activeSubMenu}
-                  setActiveSubMenu={() =>
-                    currentPage.setActiveSubMenu('selected')
-                  }
-                />
-                <MenuDropdownLink
-                  link="page-2"
-                  activeSubMenu={currentPage.state.activeSubMenu}
-                  setActiveSubMenu={() =>
-                    currentPage.setActiveSubMenu('page-2')
-                  }
-                />
-              </React.Fragment>
-            ) : null}
-          </ul>
-          {/* ############# STUDIO SECTION ############# */}
-          <ul className={css(styles.subMenuCol)}>
-            <li
-              onClick={() => currentPage.setActiveMenu('studio')}
-              className={css(styles.subMenuItem)}
-            >
-              <span className={css(styles.subMenuLink)}>
-                <b>studio</b>
-              </span>
-            </li>
-            {currentPage.state.activeMenu === 'studio' ? (
-              <React.Fragment>
-                <MenuDropdownLink
-                  link="about"
-                  activeSubMenu={currentPage.state.activeSubMenu}
-                  setActiveSubMenu={() => currentPage.setActiveSubMenu('about')}
-                />
-                <MenuDropdownLink
-                  link="exploration"
-                  activeSubMenu={currentPage.state.activeSubMenu}
-                  setActiveSubMenu={() =>
-                    currentPage.setActiveSubMenu('exploration')
-                  }
-                />
-                <MenuDropdownLink
-                  link="texts"
-                  activeSubMenu={currentPage.state.activeSubMenu}
-                  setActiveSubMenu={() => currentPage.setActiveSubMenu('texts')}
-                />
-              </React.Fragment>
-            ) : null}
-          </ul>
-          {/* ############# CONTACT SECTION ############# */}
-          <ul className={css(styles.subMenuCol)}>
-            <li
-              onClick={() => currentPage.setActiveMenu('contact')}
-              className={css(styles.subMenuItem)}
-            >
-              <span className={css(styles.subMenuLink)}>
-                <b>contact</b>
-              </span>
-            </li>
-            {currentPage.state.activeMenu === 'contact' ? (
-              <React.Fragment>
-                <MenuDropdownLink
-                  link="find us"
-                  activeSubMenu={currentPage.state.activeSubMenu}
-                  setActiveSubMenu={() =>
-                    currentPage.setActiveSubMenu('find us')
-                  }
-                />
-                <MenuDropdownLink
-                  link="press"
-                  activeSubMenu={currentPage.state.activeSubMenu}
-                  setActiveSubMenu={() => currentPage.setActiveSubMenu('press')}
-                />
-                <MenuDropdownLink
-                  link="retailers"
-                  activeSubMenu={currentPage.state.activeSubMenu}
-                  setActiveSubMenu={() =>
-                    currentPage.setActiveSubMenu('retailers')
-                  }
-                />
-              </React.Fragment>
-            ) : null}
-          </ul>
-        </Nav>
-        <Nav pullRight>
-          <NavItem eventKey={1} href="#">
-            <b>shop</b>
-          </NavItem>
-        </Nav>
-      </Navbar>
-    )}
-  </Subscribe>
+const Menu = ({ location }) => (
+  <Navbar className={css(styles.menuContainer)}>
+    <Navbar.Header className={css(styles.brand)}>
+      <Navbar.Brand>
+        <a href="#home">HAHA Studio</a>
+      </Navbar.Brand>
+    </Navbar.Header>
+    <Nav>
+      {/* ############# PROJECT SECTION ############# */}
+      <ul className={css(styles.subMenuCol)}>
+        <li
+          onClick={() => navigate('/')}
+          className={css(styles.subMenuItem)}
+        >
+          <span className={css(styles.subMenuLink)}>
+            <b>projects</b>
+          </span>
+        </li>
+        {location.pathname === '/' || location.pathname === '/archived' ? (
+          <React.Fragment>
+            <MenuDropdownLink
+              alias="selected"
+              link="/"
+              activeSubMenu={location.pathname === '/'}
+            />
+            <MenuDropdownLink
+              link="archived"
+              activeSubMenu={location.pathname === '/archived'}
+            />
+          </React.Fragment>
+        ) : null}
+      </ul>
+      {/* ############# STUDIO SECTION ############# */}
+      <ul className={css(styles.subMenuCol)}>
+        <li
+          onClick={() => navigate('/about')}
+          className={css(styles.subMenuItem)}
+        >
+          <span className={css(styles.subMenuLink)}>
+            <b>studio</b>
+          </span>
+        </li>
+        {location.pathname === '/about' || location.pathname === '/exploration' || location.pathname === '/texts' ? (
+          <React.Fragment>
+            <MenuDropdownLink
+              link="about"
+              activeSubMenu={location.pathname === '/about'}
+            />
+            <MenuDropdownLink
+              link="exploration"
+              activeSubMenu={location.pathname === '/exploration'}
+            />
+            <MenuDropdownLink
+              link="texts"
+              activeSubMenu={location.pathname === '/texts'}
+            />
+          </React.Fragment>
+        ) : null}
+      </ul>
+      {/* ############# CONTACT SECTION ############# */}
+      <ul className={css(styles.subMenuCol)}>
+        <li
+          onClick={() => navigate('/find-us')}
+          className={css(styles.subMenuItem)}
+        >
+          <span className={css(styles.subMenuLink)}>
+            <b>contact</b>
+          </span>
+        </li>
+        {location.pathname === '/find-us' || location.pathname === '/contact' || location.pathname === '/retailers' ? (
+          <React.Fragment>
+            <MenuDropdownLink
+              link="find us"
+              activeSubMenu={location.pathname === '/find-us'}
+            />
+            <MenuDropdownLink
+              link="press"
+              activeSubMenu={location.pathname === '/press'}
+            />
+            <MenuDropdownLink
+              link="retailers"
+              activeSubMenu={location.pathname === '/retailers'}
+            />
+          </React.Fragment>
+        ) : null}
+      </ul>
+    </Nav>
+    <Nav pullRight>
+      <NavItem eventKey={1} href="#">
+        <b>shop</b>
+      </NavItem>
+    </Nav>
+  </Navbar>
 )
+Menu.propTypes = {
+  location: PropTypes.object.isRequired
+}
 
 export default Menu

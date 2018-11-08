@@ -1,10 +1,31 @@
-import { Container } from "unstated";
+import { Container } from 'unstated'
 
 class CurrentPageContainer extends Container {
   state = {
-    activeMenu: 'projects',
-    activeSubMenu: 'selected',
+    activeMenu: null,
+    activeSubMenu: null,
     showHero: true,
+  }
+
+  menuRouter(location) {
+    let activeMenu = null
+    let activeSubMenu = null
+    const { pathname } = location
+
+    switch (pathname) {
+    case '/archived':
+      activeMenu = 'projects'
+      activeSubMenu = 'archived'
+      break
+    default:
+      activeMenu = 'projects'
+      activeSubMenu = 'selected'
+    }
+
+    this.setState({
+      activeMenu,
+      activeSubMenu,
+    })
   }
 
   toggleHero() {
@@ -27,4 +48,4 @@ class CurrentPageContainer extends Container {
 
 }
 
-export default CurrentPageContainer;
+export default CurrentPageContainer

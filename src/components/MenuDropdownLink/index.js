@@ -1,51 +1,33 @@
 import React, { Component } from 'react'
-import { navigate } from "gatsby"
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
+import Link from 'gatsby-link'
 
 import { styles } from './styles'
 
 class MenuDropdownLink extends Component {
-  constructor(props) {
-    super(props);
-  
-    this.state = {};
-
-    this.handleClick = this.handleClick.bind(this)
-  }
-
-  handleClick(link) {
-    const { setActiveSubMenu } = this.props
-    setActiveSubMenu()
-    navigate(`/${link}`)
-  }
-
   render() {
-    const { link, activeSubMenu } = this.props
+    const { alias, link, activeSubMenu } = this.props
 
     return (
       <li
         className={css(styles.subMenuDropdownLink)}
       >
-      {
-        link === activeSubMenu ?
-          <div onClick={ () => this.handleClick(link)} role="link" tabIndex="0">
-            <b>{link}</b>
-          </div>
-        :
-          <div onClick={ () => this.handleClick(link)} role="link" tabIndex="0">
-            {link}
-          </div>
-      }
+        {
+          activeSubMenu ?
+            <Link to={`/${link}`}><b>{alias || link}</b></Link>
+            :
+            <Link to={`/${link}`}>{alias || link}</Link>
+        }
       </li>
-    );
+    )
   }
 }
 
 MenuDropdownLink.propTypes = {
+  alias: PropTypes.string,
   link: PropTypes.string.isRequired,
   activeSubMenu: PropTypes.string.isRequired,
-  setActiveSubMenu: PropTypes.func.isRequired,
 }
 
 export default MenuDropdownLink
