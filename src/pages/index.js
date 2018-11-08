@@ -1,26 +1,40 @@
 import React from 'react'
 import hero_image from '../images/hero_image.jpg'
-import Layout from '../layouts/index'
+import PropTypes from 'prop-types'
+import Layout from '../layouts'
 import Hero from '../components/Hero'
 import { Grid, Row, Col } from 'react-bootstrap'
 
-const IndexPage = () => (
-  <>
+const IndexPage = ({ location }) => (
+  <React.Fragment>
     <Hero />
-    <Layout>
+    <Layout location={location}>
       <Grid>
         <Row>
-          <Col xs={3}>CONTENT</Col>
-          <Col xs={8}><img src={hero_image} /></Col>
-          <Col xs={1}><img src={hero_image} /></Col>
+          <Col xs={12} md={3}>
+            <p style={{ fontSize: '2em', color: 'black'}}>Spin Lamp, 2018</p>
+          </Col>
+          <Col xs={12} md={9}><img src={hero_image} /></Col>
         </Row>
         <Row>
-          <Col xs={3}>CONTENT 2</Col>
-          <Col xs={9}><img src={hero_image} /></Col>
+          <Col xs={12} md={3}>
+            <p style={{ fontSize: '2em', color: 'black'}}>Liberty Lamp, 2018</p>
+          </Col>
+          <Col xs={12} md={9}><img src={hero_image} /></Col>
+        </Row>
+        <Row>
+          <Col xs={12} md={3}>
+            <p style={{ fontSize: '2em', color: 'black'}}>Alia, 2017</p>
+          </Col>
+          <Col xs={12} md={9}><img src={hero_image} /></Col>
         </Row>
       </Grid>
     </Layout>
-  </>
+  </React.Fragment>
 )
+
+IndexPage.proptypes = {
+  location: PropTypes.object.isRequired,
+}
 
 export default IndexPage

@@ -5,9 +5,7 @@ import Menu from '../components/Menu'
 import './index.css'
 import { StaticQuery, graphql } from 'gatsby'
 
-console.log('Menu', Menu)
-
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -35,7 +33,7 @@ const Layout = ({ children }) => (
             crossorigin="anonymous"
           />
         </Helmet>
-        <Menu />
+        <Menu location={location} />
         <div>{children}</div>
       </>
     )}
