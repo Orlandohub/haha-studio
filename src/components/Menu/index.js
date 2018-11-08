@@ -77,6 +77,7 @@ const Menu = ({ location }) => (
         location.pathname === '/retailers' ? (
             <React.Fragment>
               <MenuDropdownLink
+                alias="find us"
                 link="find-us"
                 activeSubMenu={location.pathname === '/find-us'}
               />

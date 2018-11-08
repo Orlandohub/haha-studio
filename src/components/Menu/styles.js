@@ -39,6 +39,6 @@ export const styles = {
     backgroundColor: 'transparent!important',
     borderWidth: '0!important',
     marginBottom: '0!important',
-    height: 230,
+    minHeight: '230px!important',
   },
 }
