@@ -2,8 +2,22 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
-import './index.css'
+import fonts from '../fonts'
 import { StaticQuery, graphql } from 'gatsby'
+
+import { injectGlobal } from 'emotion'
+
+injectGlobal`
+  @font-face {
+    font-family: "Ginto Normal Regular";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Ginto Normal Regular"), local("ginto-normal-regular"), url(${fonts.GintoNormalRegularEot}) format("eot"), url(${fonts.GintoNormalRegularWoff}) format("woff");
+  }
+  html, body {
+    font-family: "Ginto Normal Regular";
+  }
+`
 
 const Layout = ({ children, location }) => (
   <StaticQuery

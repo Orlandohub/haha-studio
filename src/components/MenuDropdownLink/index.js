@@ -7,6 +7,7 @@ import { styles } from './styles'
 
 class MenuDropdownLink extends Component {
   render() {
+    console.log('this.props', this.props);
     const { alias, link, activeSubMenu } = this.props
 
     return (

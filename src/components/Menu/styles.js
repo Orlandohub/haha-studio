@@ -25,12 +25,25 @@ export const styles = {
     fontSize: '2em',
     color: 'black!important',
   },
+  subMenuLinkShop: {
+    color: '#CACAC8',
+    fontSize: '2em',
+    cursor: 'pointer',
+  },
   subMenuItem: {
     paddingTop: 15,
     paddingBottom: 15,
     paddingLeft: 10,
     paddingRight: 10,
     width: 160,
+  },
+  subMenuItemLeft: {
+    paddingTop: 15,
+    paddingBottom: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
+    width: 160,
+    textAlign: 'right',
   },
   brand: {
     width: '25%',
