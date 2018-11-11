@@ -7,7 +7,12 @@ import { Grid, Row, Col } from 'react-bootstrap'
 
 const IndexPage = ({ location }) => (
   <React.Fragment>
-    <Hero />
+    {
+      sessionStorage.getItem('pathOnStart') === '/' ?
+        <Hero />
+        :
+        null
+    }
     <Layout location={location}>
       <Grid>
         <Row>

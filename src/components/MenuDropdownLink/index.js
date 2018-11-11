@@ -7,7 +7,6 @@ import { styles } from './styles'
 
 class MenuDropdownLink extends Component {
   render() {
-    console.log('this.props', this.props);
     const { alias, link, activeSubMenu } = this.props
 
     return (
@@ -16,9 +15,9 @@ class MenuDropdownLink extends Component {
       >
         {
           activeSubMenu ?
-            <Link className={css(styles.subMenuDropdownLinkActive)} to={`/${link}`}>{alias || link}</Link>
+            <Link className={css(styles.subMenuDropdownLinkActive)} to={`/${link}/`}>{alias || link}</Link>
             :
-            <Link className={css(styles.subMenuDropdownLink)} to={`/${link}`}>{alias || link}</Link>
+            <Link className={css(styles.subMenuDropdownLink)} to={`/${link}/`}>{alias || link}</Link>
         }
       </li>
     )
@@ -28,7 +27,7 @@ class MenuDropdownLink extends Component {
 MenuDropdownLink.propTypes = {
   alias: PropTypes.string,
   link: PropTypes.string.isRequired,
-  activeSubMenu: PropTypes.string.isRequired,
+  activeSubMenu: PropTypes.bool.isRequired,
 }
 
 export default MenuDropdownLink

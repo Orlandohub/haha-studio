@@ -2,8 +2,6 @@ import { Container } from 'unstated'
 
 class CurrentPageContainer extends Container {
   state = {
-    activeMenu: null,
-    activeSubMenu: null,
     showHero: true,
   }
 
