@@ -16,6 +16,7 @@ injectGlobal`
   }
   html, body {
     font-family: "Ginto Normal Regular";
+    height: 100%;
   }
   img {
     max-width: 100%;
@@ -59,6 +60,7 @@ const Layout = ({ children, location }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 export default Layout
