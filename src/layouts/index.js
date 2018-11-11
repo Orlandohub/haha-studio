@@ -17,6 +17,9 @@ injectGlobal`
   html, body {
     font-family: "Ginto Normal Regular";
   }
+  img {
+    max-width: 100%;
+  }
 `
 
 const Layout = ({ children, location }) => (
