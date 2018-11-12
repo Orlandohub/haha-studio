@@ -2,6 +2,13 @@ language: node_js
 node_js:
   - 10
 cache:
-  npm: true
+  yarn: true
   directories:
     - ~/.cache
+install:
+  - nvm install node
+  - node -v
+  - npm i -g yarn
+  - yarn
+scripts:
+  - yarn test
