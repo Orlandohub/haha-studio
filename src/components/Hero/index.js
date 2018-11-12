@@ -9,11 +9,12 @@ const Hero  = () => {
   return (
     <Subscribe to={[CurrentPageContainer]}>
       {currentPage => (
-        <div>
+        <div data-cy="hero">
           {currentPage.state.showHero ? (
             <div className={css(styles.HeroImageWrapper)}>
               <div className={css(styles.ArrowContainer)}>
                 <img
+                  data-cy="arrow"
                   className={css(styles.Img)}
                   src={arrow}
                   alt="arrow"
