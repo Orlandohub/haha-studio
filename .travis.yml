@@ -7,4 +7,3 @@ cache:
     - ~/.cache
 script:
   - yarn run test
-  - yarn run test:e2e:ci
