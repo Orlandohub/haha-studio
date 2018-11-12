@@ -1,10 +1,7 @@
 language: node_js
 node_js:
   - 10
-cache:
-  npm: false
-  directories:
-    - ~/.cache
+cache: yarn
 install:
   - npm ci
 script:
