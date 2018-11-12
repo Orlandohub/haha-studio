@@ -2,10 +2,10 @@ language: node_js
 node_js:
   - 10
 cache:
-  npm: true
+  npm: false
   directories:
     - ~/.cache
 install:
   - npm ci
 script:
-  - $(npm bin)/cypress run --record
+  - $(npm bin)/test:e2e:ci
