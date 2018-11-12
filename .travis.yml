@@ -6,4 +6,4 @@ cache:
   directories:
     - ~/.cache
 script:
-  - $(npm bin)/test:e2e:ci
+  - yarn run test:e2e:ci
