@@ -1,6 +1,7 @@
 import React from 'react'
 import { css } from 'react-emotion'
 import arrow from '../../images/arrow.png'
+import entireLogo from '../../images/entireLogo.png'
 import { styles } from './styles'
 import { Subscribe } from 'unstated'
 import CurrentPageContainer from '../../state/CurrentPageContainer'
@@ -12,6 +13,7 @@ const Hero  = () => {
         <div data-cy="hero">
           {currentPage.state.showHero ? (
             <div className={css(styles.HeroImageWrapper)}>
+            <div className={css(styles.EntireLogoStyle)}><img  src={entireLogo} /></div>
               <div className={css(styles.ArrowContainer)}>
                 <img
                   data-cy="arrow"
