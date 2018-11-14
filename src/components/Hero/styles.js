@@ -70,10 +70,8 @@ const showArrow = keyframes`
 `
 /*######### END #######*/
 
-
 export const styles = {
-   
-    HeroImageWrapper: {
+  HeroImageWrapper: {
     backgroundImage: `url(${hero_image})`,
     height: '100%',
     width: '100%',
@@ -83,30 +81,30 @@ export const styles = {
     position: 'fixed',
     display: 'block',
     transition: 'height 1s ease-in-out',
-    WebkitTransition:'height 1s ease-in-out',
+    WebkitTransition: 'height 1s ease-in-out',
     zIndex: 1,
-    },
+  },
 
-    ArrowContainer: {
+  ArrowContainer: {
     width: '100%',
-    textAlign:'center',
-    position:'fixed',
+    textAlign: 'center',
+    position: 'fixed',
     animation: `${showArrow} 6s ease-in`,
     top: '88%',
     opacity: '1',
     zIndex: 1,
-    },
+  },
 
-    Img: {
+  Img: {
     height: '50px',
     transition: 'height 1s ease-in-out',
     cursor: 'pointer',
     animation: `${bounce} 2s ease infinite`,
     transformOrigin: 'center bottom',
     zIndex: 1,
-    },
+  },
 
-    HideHero: {
+  HideHero: {
     backgroundImage: `url(${hero_image})`,
     height: '0%',
     width: '100%',
@@ -116,25 +114,24 @@ export const styles = {
     position: 'fixed',
     display: 'block',
     transition: 'height 1s ease-in-out',
-    WebkitTransition:'height 1s ease-in-out',
+    WebkitTransition: 'height 1s ease-in-out',
     zIndex: 1,
-    },   
+  },
 
-    HideArrow: {
-        display:'none',
-    },
+  HideArrow: {
+    display: 'none',
+  },
 
-    EntireLogoStyle: {
-        position: 'absolute',
-        height: '100%',
-        width: '100%',
-        animation: `${dissolveFlow} 3s ease-in-out`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        display: 'block',
-        opacity: '0',
-        zIndex: 1,
-    },
-
-    }  
+  EntireLogoStyle: {
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    animation: `${dissolveFlow} 3s ease-in-out`,
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    display: 'block',
+    opacity: '0',
+    zIndex: 1,
+  },
+}
