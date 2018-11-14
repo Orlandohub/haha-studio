@@ -14,7 +14,7 @@ injectGlobal`
     font-weight: normal;
     src: local("Ginto Normal Regular"), local("ginto-normal-regular"), url(${fonts.GintoNormalRegularEot}) format("eot"), url(${fonts.GintoNormalRegularWoff}) format("woff");
   }
-  html, body {
+  html, body, #___gatsby, div[role=group] {
     font-family: "Ginto Normal Regular";
     height: 100%;
   }
@@ -52,7 +52,7 @@ const Layout = ({ children, location }) => (
           />
         </Helmet>
         <Menu location={location} />
-        <div>{children}</div>
+        <div style={{ height: '100%' }}>{children}</div>
       </>
     )}
   />

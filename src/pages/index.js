@@ -5,11 +5,13 @@ import Layout from '../layouts'
 import Hero from '../components/Hero'
 import { Grid, Row, Col } from 'react-bootstrap'
 
-const IndexPage = ({ location }) => (
+import { graphql } from 'gatsby'
+
+const IndexPage = ({ location, data }) => (
   <React.Fragment>
     {
       sessionStorage.getItem('pathOnStart') === '/' ?
-        <Hero />
+        <Hero data={data} />
         :
         null
     }
@@ -43,3 +45,15 @@ IndexPage.proptypes = {
 }
 
 export default IndexPage
+
+export const query = graphql`
+  query {
+    fileName: file(relativePath: { eq: "logo_large.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1060) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
+  }
+`

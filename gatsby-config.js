@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: 'HAHA Studio',
@@ -15,6 +17,15 @@ module.exports = {
         display: 'minimal-ui',
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src', 'images'),
+      },
+    },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-emotion',
       options: {
