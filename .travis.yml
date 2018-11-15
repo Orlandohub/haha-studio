@@ -7,3 +7,4 @@ cache:
     - ~/.cache
 scripts:
   - yarn test
+  - yarn run cy:run
