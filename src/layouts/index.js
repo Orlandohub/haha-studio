@@ -5,6 +5,8 @@ import Menu from '../components/Menu'
 import fonts from '../fonts'
 import { StaticQuery, graphql } from 'gatsby'
 
+import '../assets/bootstrap/css/bootstrap.min.css'
+
 import { injectGlobal } from 'emotion'
 
 injectGlobal`
@@ -44,12 +46,6 @@ const Layout = ({ children, location }) => (
           ]}
         >
           <html lang="en" />
-          <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-            crossorigin="anonymous"
-          />
         </Helmet>
         <Menu location={location} />
         <div style={{ height: '100%' }}>{children}</div>
