@@ -61,12 +61,12 @@ export const styles = {
   }),
   HeroImageWrapper: {
     backgroundImage: `url(${hero_image})`,
-    height: '100%',
+    height: '100vh',
     width: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    position: 'fixed',
+    position: 'relative',
     display: 'block',
     transition: 'height 1s ease-in-out',
     WebkitTransition: 'height 1s ease-in-out',
@@ -76,7 +76,7 @@ export const styles = {
   ArrowContainer: {
     width: '100%',
     textAlign: 'center',
-    position: 'fixed',
+    position: 'relative',
     top: '88%',
     zIndex: 1,
   },
@@ -92,12 +92,12 @@ export const styles = {
 
   HideHero: {
     backgroundImage: `url(${hero_image})`,
-    height: '0%',
+    height: '0vh',
     width: '100%',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
-    position: 'fixed',
+    position: 'relative',
     display: 'block',
     transition: 'height 1s ease-in-out',
     WebkitTransition: 'height 1s ease-in-out',
