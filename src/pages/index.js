@@ -6,7 +6,7 @@ import Hero from '../components/Hero'
 import { Grid, Row, Col } from 'react-bootstrap'
 import { Subscribe } from 'unstated'
 import CurrentPageContainer from '../state/CurrentPageContainer'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 import { graphql } from 'gatsby'
 
@@ -26,6 +26,15 @@ class IndexPage extends React.Component {
       pathOnStart: sessionStorage.getItem('pathOnStart'),
     })
   }
+
+  componentWillUnmount() {
+    // 5. Useful if we have called disableBodyScroll for multiple target elements,
+    // and we just want a kill-switch to undo all that.
+    // OR useful for if the `hideTargetElement()` function got circumvented eg. visitor 
+    // clicks a link which takes him/her to a different page within the app.
+    clearAllBodyScrollLocks()
+  }
+
   render() {
     const { location, data } = this.props
     return (
