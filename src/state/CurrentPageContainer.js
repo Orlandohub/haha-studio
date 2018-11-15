@@ -1,22 +1,17 @@
 import { Container } from 'unstated'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 class CurrentPageContainer extends Container {
   state = {
     showHero: true,
     logoLoaderIsVisible: true,
-    disableBodyScroll: disableBodyScroll(document.getElementById('#___gatsby')),
+    disableBodyScroll: true,
   }
 
   hideLogoLoader() {
-    console.log('trigger', this.state.logoLoaderIsVisible)
     setTimeout(() => {
       this.setState(
         {
           logoLoaderIsVisible: false,
-        },
-        () => {
-          console.log('after', this.state.logoLoaderIsVisible)
         }
       )
     }, 3000)
@@ -32,9 +27,7 @@ class CurrentPageContainer extends Container {
   enableScroll() {
     setTimeout(() => {
       this.setState({
-        disableBodyScroll: enableBodyScroll(
-          document.getElementById('#___gatsby')
-        ),
+        disableBodyScroll: false,
       })
     }, 2000)
   }
