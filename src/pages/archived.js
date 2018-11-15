@@ -6,7 +6,7 @@ import { Grid, Row, Col } from 'react-bootstrap'
 const Archived = ({ location }) => (
   <React.Fragment>
     <Layout location={location}>
-      <Grid>
+      <Grid fluid>
         <Row>
           <Row>
             <Col xs={12}>

@@ -19,6 +19,7 @@ export const styles = {
     position: 'relative',
     listStyle: 'none',
     margin: 0,
+    paddingLeft: 0,
   },
   subMenuLink: {
     cursor: 'pointer',
@@ -54,5 +55,8 @@ export const styles = {
     borderWidth: '0!important',
     marginBottom: '0!important',
     minHeight: '230px!important',
+    paddingLeft: 160,
+    paddingRight: 160,
+    paddingTop: 20,
   },
 }

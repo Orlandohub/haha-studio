@@ -6,7 +6,7 @@ import { Grid, Row, Col } from 'react-bootstrap'
 const Press = ({ location }) => (
   <React.Fragment>
     <Layout location={location}>
-      <Grid>
+      <Grid fluid>
         <Row>
           <Col xs={12}>
             <h2>Press</h2>

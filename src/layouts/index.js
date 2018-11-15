@@ -48,7 +48,7 @@ const Layout = ({ children, location }) => (
           <html lang="en" />
         </Helmet>
         <Menu location={location} />
-        <div style={{ height: '100%' }}>{children}</div>
+        <div style={{ height: '100%', paddingLeft: 160, paddingRight: 160, paddingTop: 40, paddingBottom: 240 }}>{children}</div>
       </>
     )}
   />

@@ -6,7 +6,7 @@ import { Grid, Row, Col } from 'react-bootstrap'
 const FindUs = ({ location }) => (
   <React.Fragment>
     <Layout location={location}>
-      <Grid>
+      <Grid fluid>
         <Row>
           <Col xs={12}>
             <h2>Find us</h2>
