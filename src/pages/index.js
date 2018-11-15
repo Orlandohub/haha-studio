@@ -14,6 +14,7 @@ class IndexPage extends React.Component {
       pathOnStart: null,
     }
   }
+
   componentDidMount() {
     this.setState({
       pathOnStart: sessionStorage.getItem('pathOnStart'),
