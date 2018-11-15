@@ -37,7 +37,6 @@
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
     "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Hello, world!\""
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
