@@ -6,4 +6,4 @@ cache:
   directories:
     - ~/.cache
 scripts:
-  - yarn run cy:run
+  - yarn test
