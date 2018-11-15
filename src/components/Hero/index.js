@@ -16,28 +16,30 @@ const Hero = ({ data }) => {
         <div data-cy="hero">
           {currentPage.state.showHero ? (
             <div className={css(styles.HeroImageWrapper)}>
-              {
-                currentPage.state.logoLoaderIsVisible ?
-                  <div className={css(styles.HeroLogoLoader)}>
-                    <Grid bsClass={`container ${css(styles.HeroLogoContainer)}`}>
-                      <Row>
-                        <Col xs={12}>
-                          <Img onLoad={() => currentPage.hideLogoLoader()} fluid={data.fileName.childImageSharp.fluid} />
-                        </Col>
-                      </Row>
-                    </Grid>
-                  </div>
-                  :
-                  <div className={css(styles.HiddenHeroLogoLoader)}>
-                    <Grid bsClass={`container ${css(styles.HeroLogoContainer)}`}>
-                      <Row>
-                        <Col xs={12}>
-                          <Img fluid={data.fileName.childImageSharp.fluid} />
-                        </Col>
-                      </Row>
-                    </Grid>
-                  </div>
-              }
+              {currentPage.state.logoLoaderIsVisible ? (
+                <div className={css(styles.HeroLogoLoader)}>
+                  <Grid bsClass={`container ${css(styles.HeroLogoContainer)}`}>
+                    <Row>
+                      <Col xs={12}>
+                        <Img
+                          onLoad={() => currentPage.hideLogoLoader()}
+                          fluid={data.fileName.childImageSharp.fluid}
+                        />
+                      </Col>
+                    </Row>
+                  </Grid>
+                </div>
+              ) : (
+                <div className={css(styles.HiddenHeroLogoLoader)}>
+                  <Grid bsClass={`container ${css(styles.HeroLogoContainer)}`}>
+                    <Row>
+                      <Col xs={12}>
+                        <Img fluid={data.fileName.childImageSharp.fluid} />
+                      </Col>
+                    </Row>
+                  </Grid>
+                </div>
+              )}
 
               <div className={css(styles.ArrowContainer)}>
                 <img
