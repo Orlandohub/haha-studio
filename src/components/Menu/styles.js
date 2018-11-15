@@ -49,6 +49,7 @@ export const styles = {
     width: '25%',
   },
   menuContainer: {
+    transition : 'top 0.5 ease-in',
     backgroundColor: 'transparent!important',
     borderWidth: '0!important',
     marginBottom: '0!important',

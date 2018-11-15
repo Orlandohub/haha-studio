@@ -21,6 +21,33 @@ transform: translate3d(0, -5px, 0);
 transform: translate3d(0,-4px,0);
 }
 `
+
+const showArrow = keyframes`
+0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0.45;
+  }
+  90% {
+    opacity: 0.70;
+    }
+  100% {
+    opacity: 1;
+    }      
+`
 /*######### END #######*/
 
 const breakpoints = [576, 768]
@@ -63,17 +90,21 @@ export const styles = {
     backgroundImage: `url(${hero_image})`,
     height: '100vh',
     width: '100%',
+    backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     position: 'relative',
     display: 'block',
-    transition: 'height 1s ease-in-out',
-    WebkitTransition: 'height 1s ease-in-out',
+    transition: 'height 0.8s ease-out',
+    WebkitTransition: 'height 0.8s ease-out',
     zIndex: 1,
+    
   },
 
   ArrowContainer: {
+    animation: `${showArrow} 7s ease-in`,
+    opacity: '1',
     width: '100%',
     textAlign: 'center',
     position: 'relative',
@@ -83,7 +114,7 @@ export const styles = {
 
   Img: {
     height: '50px',
-    transition: 'height 1s ease-in-out',
+    transition: 'height 0.8s ease-out',
     cursor: 'pointer',
     animation: `${bounce} 2s ease infinite`,
     transformOrigin: 'center bottom',
@@ -94,14 +125,16 @@ export const styles = {
     backgroundImage: `url(${hero_image})`,
     height: '0vh',
     width: '100%',
+    backgroundAttachment: 'fixed',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     position: 'relative',
     display: 'block',
-    transition: 'height 1s ease-in-out',
-    WebkitTransition: 'height 1s ease-in-out',
+    transition: 'height 0.8s ease-out',
+    WebkitTransition: 'height 0.8s ease-out',
     zIndex: 1,
+    perspective: '2px',
   },
 
   HideArrow: {
