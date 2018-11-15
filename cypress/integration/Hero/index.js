@@ -11,7 +11,7 @@ context('Hero', () => {
   })
 
   it('Hides on arrow click', () => {
-    cy.get('[data-cy=arrow]')
+    cy.get('[data-cy=arrow]', {timeout: 10000})
       .click()
     cy.get('[data-cy=hero]')
       .should('not.be.visible')
