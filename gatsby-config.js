@@ -27,5 +27,6 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     'gatsby-plugin-emotion',
+    'gatsby-plugin-netlify', // make sure to put last in the array
   ],
 }
