@@ -9,11 +9,4 @@ context('Hero', () => {
     cy.get('[data-cy=hero]')
       .should('exist')
   })
-
-  it('Hides on arrow click', () => {
-    cy.get('[data-cy=arrow]')
-      .click()
-    cy.get('[data-cy=hero]')
-      .should('not.be.visible')
-  })
 })
