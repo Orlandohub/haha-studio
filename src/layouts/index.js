@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
 import fonts from '../fonts'
 import { StaticQuery, graphql } from 'gatsby'
+
 import '../assets/bootstrap/css/bootstrap.min.css'
 
 import { injectGlobal } from 'emotion'
