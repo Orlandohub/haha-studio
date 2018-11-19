@@ -29,11 +29,11 @@ const Menu = ({ location }) => {
           <li onClick={() => navigate('/selected')} className={css(styles.subMenuItem)}>
             <span className={css(styles.subMenuLink)}>projects</span>
           </li>
-          {pathname === '/selected' || pathname === '/archived' ? (
+          {pathname === '/' || pathname === '/selected' || pathname === '/archived' ? (
             <React.Fragment>
               <MenuDropdownLink
                 link="selected"
-                activeSubMenu={pathname === '/selected'}
+                activeSubMenu={pathname === '/' || pathname === '/selected'}
               />
               <MenuDropdownLink
                 link="archived"

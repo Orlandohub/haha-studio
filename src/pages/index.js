@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Hero from '../components/Hero'
+import Layout from '../layouts'
+import Projects from '../components/Projects'
 
 import { graphql } from 'gatsby'
 
@@ -8,7 +10,12 @@ class IndexPage extends React.Component {
   render() {
     const { data } = this.props
     return (
-      <Hero data={data} />
+      <React.Fragment>
+        <Hero data={data} />
+        <Layout location={location}>
+          <Projects />
+        </Layout>
+      </React.Fragment>
     )
   }
 }
