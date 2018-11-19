@@ -5,7 +5,6 @@
   "author": "Collectiiv",
   "dependencies": {
     "babel-plugin-emotion": "^9.2.11",
-    "body-scroll-lock": "^2.5.10",
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "facepaint": "^1.2.1",
@@ -26,8 +25,7 @@
     "react-dom": "^16.6.0",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
-    "react-router-dom": "^4.3.1",
-    "unstated": "^2.1.1"
+    "react-router-dom": "^4.3.1"
   },
   "keywords": [
     "gatsby"
