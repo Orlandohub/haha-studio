@@ -8,7 +8,7 @@ import { graphql } from 'gatsby'
 
 class IndexPage extends React.Component {
   render() {
-    const { data } = this.props
+    const { data, location } = this.props
     return (
       <React.Fragment>
         <Hero data={data} />
