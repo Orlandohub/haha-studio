@@ -5,6 +5,12 @@ module.exports = {
     title: 'HAHA Studio',
   },
   plugins: [
+    {
+      resolve: 'gatsby-plugin-emotion',
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
+    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -26,7 +32,6 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
-    'gatsby-plugin-emotion',
     'gatsby-plugin-netlify', // make sure to put last in the array
   ],
 }
