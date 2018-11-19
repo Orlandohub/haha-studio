@@ -12,8 +12,11 @@ class Hero extends React.Component {
     super(props)
   
     this.state = {
-      logoLoaderIsVisible: true
+      logoLoaderIsVisible: true,
+      slide: false,
     }
+
+    this.slide = this.slide.bind(this)
   }
   componentDidMount() {
     setTimeout(
@@ -26,12 +29,15 @@ class Hero extends React.Component {
       3000
     )
   }
+  slide() {
+    this.setState({ slide: true })
+  }
   render() {
     const { data } = this.props
-    const { logoLoaderIsVisible } = this.state
+    const { logoLoaderIsVisible, slide } = this.state
     return (
       <div data-cy="hero">
-        <div className={css(styles.HeroImageWrapper)}>
+        <div className={slide ? css(styles.HideHero) : css(styles.HeroImageWrapper)}>
           <div className={logoLoaderIsVisible ? css(styles.HeroLogoLoader) : css(styles.HiddenHeroLogoLoader)}>
             <Grid bsClass={`container ${css(styles.HeroLogoContainer)}`}>
               <Row>
@@ -43,12 +49,13 @@ class Hero extends React.Component {
               </Row>
             </Grid>
           </div>
-          <div className={css(styles.ArrowContainer)}>
+          <div className={slide ? css(styles.HideArrow) : css(styles.ArrowContainer)}>
             <img
               data-cy="arrow"
               className={css(styles.Img)}
               src={arrow}
               alt="arrow"
+              onClick={() => this.slide()}
             />
           </div>
         </div>
