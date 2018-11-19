@@ -31,6 +31,7 @@ class Hero extends React.Component {
   }
   slide() {
     this.setState({ slide: true })
+    this.props.enableScroll()
   }
   render() {
     const { data } = this.props
@@ -66,6 +67,7 @@ class Hero extends React.Component {
 
 Hero.propTypes = {
   data: PropTypes.object.isRequired,
+  enableScroll: PropTypes.func.isRequired,
 }
 
 export default Hero
