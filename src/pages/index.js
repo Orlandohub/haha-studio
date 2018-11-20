@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Hero from '../components/Hero'
 import Layout from '../layouts'
 import Projects from '../components/Projects'
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 import { graphql } from 'gatsby'
 

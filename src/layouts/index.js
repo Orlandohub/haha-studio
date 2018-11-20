@@ -50,20 +50,7 @@ const Layout = ({ children, location }) => (
         </Helmet>
         <Menu location={location} />
         <div style={{ height: '100%', paddingLeft: 160, paddingRight: 160, paddingTop: 40, paddingBottom: 240 }}>
-          <PageTransition
-            defaultStyle={{
-              transition: 'left 500ms cubic-bezier(0.47, 0, 0.75, 0.72)',
-              left: '60%',
-              position: 'absolute',
-              width: '100%',
-            }}
-            transitionStyles={{
-              entering: { left: '50%' },
-              entered: { left: '0%' },
-              exiting: { left: '100%' },
-            }}
-            transitionTime={500}
-          >
+          <PageTransition>
             {children}
           </PageTransition>
         </div>

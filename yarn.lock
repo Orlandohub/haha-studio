@@ -5904,10 +5904,9 @@ gatsby-plugin-page-creator@^2.0.4:
     parse-filepath "^1.0.1"
     slash "^1.0.0"
 
-gatsby-plugin-page-transitions@^1.0.7:
+gatsby-plugin-page-transitions@Orlandohub/gatsby-plugin-page-transitions:
   version "1.0.7"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-page-transitions/-/gatsby-plugin-page-transitions-1.0.7.tgz#e6c5a858d3c59fbccfefb19d0bd0834c36535d48"
-  integrity sha512-JyswnEWjyU7bikxndLYurMdu6nkPww2ncWMU22N9zhSnCf9G8ypqqbcK/XaTUeyvM1QlDYFRrsJLjeV2YWnqjA==
+  resolved "https://codeload.github.com/Orlandohub/gatsby-plugin-page-transitions/tar.gz/d955d810a3162b534466023e1ea640c18470590b"
   dependencies:
     history "^4.7.2"
     prop-types "^15.6.2"
