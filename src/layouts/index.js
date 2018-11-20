@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
 import fonts from '../fonts'
 import { StaticQuery, graphql } from 'gatsby'
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 import '../assets/bootstrap/css/bootstrap.min.css'
 
@@ -48,7 +49,11 @@ const Layout = ({ children, location }) => (
           <html lang="en" />
         </Helmet>
         <Menu location={location} />
-        <div style={{ height: '100%', paddingLeft: 160, paddingRight: 160, paddingTop: 40, paddingBottom: 240 }}>{children}</div>
+        <div style={{ height: '100%', paddingLeft: 160, paddingRight: 160, paddingTop: 40, paddingBottom: 240 }}>
+          <PageTransition>
+            {children}
+          </PageTransition>
+        </div>
       </>
     )}
   />
