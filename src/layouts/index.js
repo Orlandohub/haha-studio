@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
 import fonts from '../fonts'
 import { StaticQuery, graphql } from 'gatsby'
-import PageTransition from 'gatsby-plugin-page-transitions';
+import PageTransition from 'gatsby-v2-plugin-page-transitions';
 
 import '../assets/bootstrap/css/bootstrap.min.css'
 

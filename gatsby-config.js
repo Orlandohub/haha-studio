@@ -29,7 +29,7 @@ module.exports = {
         path: path.join(__dirname, 'src', 'images'),
       },
     },
-    'gatsby-plugin-page-transitions',
+    'gatsby-v2-plugin-page-transitions',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
