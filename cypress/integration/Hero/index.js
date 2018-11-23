@@ -7,6 +7,13 @@ context('Hero', () => {
 
   it('Loads', () => {
     cy.get('[data-cy=hero]')
-      .should('exist')
+      .should('exist') 
   })
+  
+  it('clicks an arrow', () => {
+    
+    cy.get('[data-cy=arrow]',{ delay: 4000 }).click()
+     
+  })
+  
 })
