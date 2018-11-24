@@ -18,8 +18,8 @@ const Menu = ({ location }) => {
     <Navbar fluid={true} className={css(styles.menuContainer)}>
       <Navbar.Header className={css(styles.brand)}>
         <Navbar.Brand className={css(styles.logoWrap)}>
-          <Link to="/selected">
-            <img data-cy="logo" className={css(styles.logoImage)} src={logo} alt="HAHA Studio" />
+          <Link to="/selected" data-cy="logo">
+            <img className={css(styles.logoImage)} src={logo} alt="HAHA Studio" />
           </Link>
         </Navbar.Brand>
       </Navbar.Header>
