@@ -19,14 +19,14 @@ const Menu = ({ location }) => {
       <Navbar.Header className={css(styles.brand)}>
         <Navbar.Brand className={css(styles.logoWrap)}>
           <Link to="/selected">
-            <img className={css(styles.logoImage)} src={logo} alt="HAHA Studio" />
+            <img data-cy="logo" className={css(styles.logoImage)} src={logo} alt="HAHA Studio" />
           </Link>
         </Navbar.Brand>
       </Navbar.Header>
       <Nav>
         {/* ############# PROJECT SECTION ############# */}
         <ul className={css(styles.subMenuCol)}>
-          <li onClick={() => navigate('/selected')} className={css(styles.subMenuItem)}>
+          <li  onClick={() => navigate('/selected')} className={css(styles.subMenuItem)}>
             <span className={css(styles.subMenuLink)}>projects</span>
           </li>
           {pathname === '/' || pathname === '/selected' || pathname === '/archived' ? (
@@ -44,7 +44,7 @@ const Menu = ({ location }) => {
         </ul>
         {/* ############# STUDIO SECTION ############# */}
         <ul className={css(styles.subMenuCol)}>
-          <li
+          <li  
             onClick={() => navigate('/about')}
             className={css(styles.subMenuItem)}
           >
@@ -71,7 +71,7 @@ const Menu = ({ location }) => {
         </ul>
         {/* ############# CONTACT SECTION ############# */}
         <ul className={css(styles.subMenuCol)}>
-          <li
+          <li  
             onClick={() => navigate('/find-us')}
             className={css(styles.subMenuItem)}
           >
