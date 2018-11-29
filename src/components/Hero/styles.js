@@ -1,7 +1,7 @@
 import { keyframes } from 'react-emotion'
 import facepaint from 'facepaint'
 import hero_image from '../../images/hero_image.jpg'
-import M_Hero_image from '../../images/M_Hero_image.jpg'
+import mobile_hero_image from '../../images/M_Hero_image.jpg'
 /*###################### ANIMATION SECTION ##################*/
 
 const bounce = keyframes`
@@ -87,7 +87,7 @@ export const styles = {
     marginLeft: ['0px!important', '0px!important', 'auto!important'],
   }),
   HeroImageWrapper: mq({
-    backgroundImage: [`url(${M_Hero_image})`,`url(${hero_image})`],
+    backgroundImage: [`url(${mobile_hero_image})`,`url(${hero_image})`],
     height: '100vh',
     width: '100%',
     backgroundAttachment: 'fixed',
@@ -121,7 +121,7 @@ export const styles = {
   },
 
   HideHero: mq({
-    backgroundImage: [`url(${M_Hero_image})`,`url(${hero_image})`],
+    backgroundImage: [`url(${mobile_hero_image})`,`url(${hero_image})`],
     height: '0vh',
     width: '100%',
     backgroundAttachment: 'fixed',
