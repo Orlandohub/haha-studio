@@ -4,7 +4,9 @@ import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
 import fonts from '../fonts'
 import { StaticQuery, graphql } from 'gatsby'
-import PageTransition from 'gatsby-v2-plugin-page-transitions';
+import PageTransition from 'gatsby-v2-plugin-page-transitions'
+import { css } from 'emotion'
+import { styles } from './styles'
 
 import '../assets/bootstrap/css/bootstrap.min.css'
 
@@ -25,6 +27,7 @@ injectGlobal`
     max-width: 100%;
   }
 `
+
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -49,7 +52,7 @@ const Layout = ({ children, location }) => (
           <html lang="en" />
         </Helmet>
         <Menu location={location} />
-        <div style={{ height: '100%', paddingLeft: 160, paddingRight: 160, paddingTop: 40, paddingBottom: 240 }}>
+        <div className={css(styles.pageWrapper)}>
           <PageTransition>
             {children}
           </PageTransition>
