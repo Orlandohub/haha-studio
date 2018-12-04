@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
 import { navigate } from 'gatsby'
-import { styles } from './styles'
+import * as styles from './styles'
 import MenuDropdownLink from '../MenuDropdownLink'
 //import logo from '../../images/logo_large.png'
 
@@ -17,7 +17,7 @@ const Menu = ({ location }) => {
     <div className={css(styles.menuContainer)}>
       <div className={css(styles.brand)}>
         <div className={css(styles.logoWrap)}>
-          <Link to="/selected" data-cy="logo" className={css(styles.logoLink)}>
+          <Link to="/selected/" data-cy="logo" className={css(styles.logoLink)}>
             HAHA studio
           </Link>
         </div>
@@ -27,14 +27,14 @@ const Menu = ({ location }) => {
       <div className={css(styles.dropDownWrap)}>
         <ul className={css(styles.subMenuCol)}>
           <li
-            onClick={() => navigate('/selected')}
+            onClick={() => navigate('/selected/')}
             className={css(styles.subMenuItem)}
           >
             <span
               className={
                 pathname === '/' ||
-                pathname === '/selected' ||
-                pathname === '/archived'
+                pathname === '/selected/' ||
+                pathname === '/archived/'
                   ? css(styles.subMenuLinkBlack)
                   : css(styles.subMenuLink)
               }
@@ -44,16 +44,16 @@ const Menu = ({ location }) => {
           </li>
 
           {pathname === '/' ||
-          pathname === '/selected' ||
-          pathname === '/archived' ? (
+          pathname === '/selected/' ||
+          pathname === '/archived/' ? (
             <React.Fragment>
               <MenuDropdownLink
                 link="selected"
-                activeSubMenu={pathname === '/' || pathname === '/selected'}
+                activeSubMenu={pathname === '/' || pathname === '/selected/'}
               />
               <MenuDropdownLink
                 link="archived"
-                activeSubMenu={pathname === '/archived'}
+                activeSubMenu={pathname === '/archived/'}
               />
             </React.Fragment>
           ) : null}
@@ -62,14 +62,14 @@ const Menu = ({ location }) => {
         {/* ############# STUDIO SECTION ############# */}
         <ul className={css(styles.subMenuCol)}>
           <li  
-            onClick={() => navigate('/about')}
+            onClick={() => navigate('/about/')}
             className={css(styles.subMenuItem)}
           >
-            <span
+            <span data-cy="studio"
               className={
-                pathname === '/about' ||
-                pathname === '/exploration' ||
-                pathname === '/texts'
+                pathname === '/about/' ||
+                pathname === '/exploration/' ||
+                pathname === '/texts/'
                   ? css(styles.subMenuLinkBlack)
                   : css(styles.subMenuLink)
               }
@@ -77,21 +77,21 @@ const Menu = ({ location }) => {
               studio
             </span>
           </li>
-          {pathname === '/about' ||
-          pathname === '/exploration' ||
-          pathname === '/texts' ? (
+          {pathname === '/about/' ||
+          pathname === '/exploration/' ||
+          pathname === '/texts/' ? (
             <React.Fragment>
               <MenuDropdownLink
                 link="about"
-                activeSubMenu={pathname === '/about'}
+                activeSubMenu={pathname === '/about/'}
               />
               <MenuDropdownLink
                 link="exploration"
-                activeSubMenu={pathname === '/exploration'}
+                activeSubMenu={pathname === '/exploration/'}
               />
               <MenuDropdownLink
                 link="texts"
-                activeSubMenu={pathname === '/texts'}
+                activeSubMenu={pathname === '/texts/'}
               />
             </React.Fragment>
           ) : null}
@@ -100,14 +100,14 @@ const Menu = ({ location }) => {
         {/* ############# CONTACT SECTION ############# */}
         <ul className={css(styles.subMenuCol)}>
           <li  
-            onClick={() => navigate('/find-us')}
+            onClick={() => navigate('/find-us/')}
             className={css(styles.subMenuItem)}
           >
-            <span
+            <span data-cy="constact"
               className={
-                pathname === '/find-us' ||
-                pathname === '/press' ||
-                pathname === '/retailers'
+                pathname === '/find-us/' ||
+                pathname === '/press/' ||
+                pathname === '/retailers/'
                   ? css(styles.subMenuLinkBlack)
                   : css(styles.subMenuLink)
               }
@@ -115,22 +115,22 @@ const Menu = ({ location }) => {
               contact
             </span>
           </li>
-          {pathname === '/find-us' ||
-          pathname === '/press' ||
-          pathname === '/retailers' ? (
+          {pathname === '/find-us/' ||
+          pathname === '/press/' ||
+          pathname === '/retailers/' ? (
             <React.Fragment>
               <MenuDropdownLink
                 alias="find us"
                 link="find-us"
-                activeSubMenu={pathname === '/find-us'}
+                activeSubMenu={pathname === '/find-us/'}
               />
               <MenuDropdownLink
                 link="press"
-                activeSubMenu={pathname === '/press'}
+                activeSubMenu={pathname === '/press/'}
               />
               <MenuDropdownLink
                 link="retailers"
-                activeSubMenu={pathname === '/retailers'}
+                activeSubMenu={pathname === '/retailers/'}
               />
             </React.Fragment>
           ) : null}
@@ -138,10 +138,10 @@ const Menu = ({ location }) => {
       </div>
 
       <div className={css(styles.shopWrap)}>
-        <ul className={css(styles.subMenuCol2)}>
+        <ul className={css(styles.shopLink)}>
           <li className={css(styles.subMenuItemLeft)}>
             <span
-              onClick={() => navigate('/shop')}
+              onClick={() => navigate('/shop/')}
               className={css(styles.subMenuLinkShop)}
             >
               shop
