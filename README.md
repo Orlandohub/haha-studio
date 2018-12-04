@@ -3,9 +3,6 @@
     <img alt="Gatsby" src="./src/images/logo_large.png" width="160" />
   </a>
 </p>
-<h1 align="center">
-  HAHA Studio
-</h1>
 
 ## Docker
   docker build -t cypress-orlando:latest .
