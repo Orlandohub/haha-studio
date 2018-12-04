@@ -17,4 +17,3 @@
     ```sh
     docker run cypress-orlando:latest
     ```
-    docker run cypress-orlando:latest
