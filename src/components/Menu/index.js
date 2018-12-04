@@ -61,7 +61,7 @@ const Menu = ({ location }) => {
 
         {/* ############# STUDIO SECTION ############# */}
         <ul className={css(styles.subMenuCol)}>
-          <li
+          <li  
             onClick={() => navigate('/about')}
             className={css(styles.subMenuItem)}
           >
@@ -99,7 +99,7 @@ const Menu = ({ location }) => {
 
         {/* ############# CONTACT SECTION ############# */}
         <ul className={css(styles.subMenuCol)}>
-          <li
+          <li  
             onClick={() => navigate('/find-us')}
             className={css(styles.subMenuItem)}
           >
