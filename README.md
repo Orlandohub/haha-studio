@@ -5,10 +5,12 @@
 </p>
 
 ## Docker
-    ```sh
+
+  **Build Container**
     docker build -t cypress-orlando:latest .
+  **Run Image**
     docker run cypress-orlando:latest
-    ```
+
 
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://next.gatsbyjs.org/docs/gatsby-starters/)._
