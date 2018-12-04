@@ -6,9 +6,9 @@
 
 ## Docker
 
-  **Build Container**
+    # Build Container
     docker build -t cypress-orlando:latest .
-  **Run Image**
+    # Run Image
     docker run cypress-orlando:latest
 
 
