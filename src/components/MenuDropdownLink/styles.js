@@ -1,10 +1,14 @@
 import { css } from 'emotion'
+import facepaint from 'facepaint'
+
+const breakpoints = [576, 768, 1024, 1200]
+const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const subMenuDropdownItem = css({
   paddingBottom: 5,
   paddingTop: 5,
   marginBottom: 0,
-  paddingLeft: 10,
+  paddingLeft: 15,
   paddingRight: 10,
   width: 160,
 })

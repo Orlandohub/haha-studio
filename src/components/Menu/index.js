@@ -17,7 +17,7 @@ const Menu = ({ location }) => {
     <div className={css(styles.menuContainer)}>
       <div className={css(styles.brand)}>
         <div className={css(styles.logoWrap)}>
-          <Link to="/selected" className={css(styles.logoLink)}>
+          <Link to="/selected" data-cy="logo" className={css(styles.logoLink)}>
             HAHA studio
           </Link>
         </div>
