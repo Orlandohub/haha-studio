@@ -39,8 +39,8 @@ class Hero extends React.Component {
     return (
       <div data-cy="hero">
         <div className={slide ? css(styles.HideHero) : css(styles.HeroImageWrapper)}>
-          <div data-cy="logo" className={logoLoaderIsVisible ? css(styles.HeroLogoLoader) : css(styles.HiddenHeroLogoLoader)}>
-            <Grid bsClass={`container ${css(styles.HeroLogoContainer)}`}>
+          <div  className={logoLoaderIsVisible ? css(styles.HeroLogoLoader) : css(styles.HiddenHeroLogoLoader)}>
+            <Grid data-cy="intro" bsClass={`container ${css(styles.HeroLogoContainer)}`}>
               <Row>
                 <Col xs={12}>
                   <Img
