@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
 
-import { styles } from './styles'
+import * as styles from './styles'
 
 class MenuDropdownLink extends Component {
   render() {
