@@ -4,19 +4,17 @@ import facepaint from 'facepaint'
 const breakpoints = [576, 768]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
-
-
 export const subMenuDropdownItem = mq({
   paddingBottom: 5,
   paddingTop: 5,
   marginBottom: 0,
   paddingLeft: 15,
-  paddingRight: 10,
-  width:['20vw','100px', '160px'],
+  paddingRight: [0, 10, 10],
+  width: ['20vw', '100px', '160px'],
 })
 
 export const subMenuDropdownLink = mq({
-  fontSize: ['1em','1.5em','2em'],
+  fontSize: ['1em', '1.5em', '2em'],
   color: '#CACAC8',
   ':hover,:focus': {
     color: '#CACAC8',

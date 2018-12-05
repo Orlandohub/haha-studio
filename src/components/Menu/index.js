@@ -61,11 +61,12 @@ const Menu = ({ location }) => {
 
         {/* ############# STUDIO SECTION ############# */}
         <ul className={css(styles.subMenuCol)}>
-          <li  
+          <li
             onClick={() => navigate('/about/')}
             className={css(styles.subMenuItem)}
           >
-            <span data-cy="studio"
+            <span
+              data-cy="studio"
               className={
                 pathname === '/about/' ||
                 pathname === '/exploration/' ||
@@ -99,11 +100,12 @@ const Menu = ({ location }) => {
 
         {/* ############# CONTACT SECTION ############# */}
         <ul className={css(styles.subMenuCol)}>
-          <li  
+          <li
             onClick={() => navigate('/find-us/')}
             className={css(styles.subMenuItem)}
           >
-            <span data-cy="constact"
+            <span
+              data-cy="constact"
               className={
                 pathname === '/find-us/' ||
                 pathname === '/press/' ||
@@ -139,7 +141,7 @@ const Menu = ({ location }) => {
 
       <div className={css(styles.shopWrap)}>
         <ul className={css(styles.shopLink)}>
-          <li className={css(styles.subMenuItemLeft)}>
+          <li className={css(styles.subMenuItemShop)}>
             <span
               onClick={() => navigate('/shop/')}
               className={css(styles.subMenuLinkShop)}

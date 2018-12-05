@@ -10,7 +10,7 @@ import Img from 'gatsby-image'
 class Hero extends React.Component {
   constructor(props) {
     super(props)
-  
+
     this.state = {
       logoLoaderIsVisible: true,
       slide: false,
@@ -18,14 +18,14 @@ class Hero extends React.Component {
 
     this.slide = this.slide.bind(this)
   }
+
   componentDidMount() {
     setTimeout(
       function() {
         this.setState({
-          logoLoaderIsVisible: false
+          logoLoaderIsVisible: false,
         })
-      }
-        .bind(this),
+      }.bind(this),
       3000
     )
   }
@@ -38,19 +38,32 @@ class Hero extends React.Component {
     const { logoLoaderIsVisible, slide } = this.state
     return (
       <div data-cy="hero">
-        <div className={slide ? css(styles.HideHero) : css(styles.HeroImageWrapper)}>
-          <div data-cy="intro" className={logoLoaderIsVisible ? css(styles.HeroLogoLoader) : css(styles.HiddenHeroLogoLoader)}>
+        <div
+          className={
+            slide ? css(styles.HideHero) : css(styles.HeroImageWrapper)
+          }
+        >
+          <div
+            data-cy="intro"
+            className={
+              logoLoaderIsVisible
+                ? css(styles.HeroLogoLoader)
+                : css(styles.HiddenHeroLogoLoader)
+            }
+          >
             <Grid bsClass={`container ${css(styles.HeroLogoContainer)}`}>
               <Row>
                 <Col xs={12}>
-                  <Img
-                    fluid={data.fileName.childImageSharp.fluid}
-                  />
+                  <Img fluid={data.fileName.childImageSharp.fluid} />
                 </Col>
               </Row>
             </Grid>
           </div>
-          <div className={slide ? css(styles.HideArrow) : css(styles.ArrowContainer)}>
+          <div
+            className={
+              slide ? css(styles.HideArrow) : css(styles.ArrowContainer)
+            }
+          >
             <img
               data-cy="arrow"
               className={css(styles.Img)}
