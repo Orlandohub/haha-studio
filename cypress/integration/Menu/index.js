@@ -36,8 +36,8 @@ context('Navigation selectors test', () => {
     cy.url().should('include', '/shop/')
     cy.contains('selected'&'archived'&'about'&'exploration'&'texts'&'find us'&'press'&'retailers').should('not.be.visible')      
     
-    cy.get('[data-cy=logo]').click()
-    cy.url().should('include', '/selected/') 
+    // cy.get('[data-cy=logo]').click()
+    // cy.url().should('include', '/selected/') 
   })  
 })
   
