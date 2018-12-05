@@ -10,15 +10,19 @@ class MenuDropdownLink extends Component {
     const { alias, link, activeSubMenu } = this.props
 
     return (
-      <li
-        className={css(styles.subMenuDropdownItem)}
-      >
-        {
-          activeSubMenu ?
-            <Link className={css(styles.subMenuDropdownLinkActive)} to={`/${link}/`}>{alias || link}</Link>
-            :
-            <Link className={css(styles.subMenuDropdownLink)} to={`/${link}/`}>{alias || link}</Link>
-        }
+      <li className={css(styles.subMenuDropdownItem)}>
+        {activeSubMenu ? (
+          <Link
+            className={css(styles.subMenuDropdownLinkActive)}
+            to={`/${link}/`}
+          >
+            {alias || link}
+          </Link>
+        ) : (
+          <Link className={css(styles.subMenuDropdownLink)} to={`/${link}/`}>
+            {alias || link}
+          </Link>
+        )}
       </li>
     )
   }

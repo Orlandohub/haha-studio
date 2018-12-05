@@ -17,7 +17,9 @@ injectGlobal`
     font-family: "Ginto Normal Regular";
     font-style: normal;
     font-weight: normal;
-    src: local("Ginto Normal Regular"), local("ginto-normal-regular"), url(${fonts.GintoNormalRegularEot}) format("eot"), url(${fonts.GintoNormalRegularWoff}) format("woff");
+    src: local("Ginto Normal Regular"), local("ginto-normal-regular"), url(${
+      fonts.GintoNormalRegularEot
+    }) format("eot"), url(${fonts.GintoNormalRegularWoff}) format("woff");
   }
   html, body, #___gatsby, div[role=group] {
     font-family: "Ginto Normal Regular";
@@ -27,7 +29,6 @@ injectGlobal`
     max-width: 100%;
   }
 `
-
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -46,16 +47,17 @@ const Layout = ({ children, location }) => (
           title={data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'HAHA Studio' },
-            { name: 'keywords', content: 'design, design studio, stockholm, gatsby, react' },
+            {
+              name: 'keywords',
+              content: 'design, design studio, stockholm, gatsby, react',
+            },
           ]}
         >
           <html lang="en" />
         </Helmet>
         <Menu location={location} />
         <div className={css(styles.pageWrapper)}>
-          <PageTransition>
-            {children}
-          </PageTransition>
+          <PageTransition>{children}</PageTransition>
         </div>
       </>
     )}
