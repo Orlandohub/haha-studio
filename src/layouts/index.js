@@ -47,6 +47,7 @@ const Layout = ({ children, location }) => (
           ]}
         >
           <html lang="en" />
+          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Helmet>
         <Menu location={location} />
         <div style={{ height: '100%', paddingLeft: 160, paddingRight: 160, paddingTop: 40, paddingBottom: 240 }}>
