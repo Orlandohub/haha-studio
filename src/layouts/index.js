@@ -54,6 +54,7 @@ const Layout = ({ children, location }) => (
           ]}
         >
           <html lang="en" />
+          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Helmet>
         <Menu location={location} />
         <div className={css(styles.pageWrapper)}>
