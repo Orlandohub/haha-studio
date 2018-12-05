@@ -48,17 +48,6 @@ const Layout = ({ children, location }) => (
         >
           <html lang="en" />
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-          <script>
-            if (window.netlifyIdentity) {
-              window.netlifyIdentity.on("init", user => {
-                if (!user) {
-                  window.netlifyIdentity.on("login", () => {
-                    document.location.href = "/admin/";
-                  });
-                }
-              })
-            }
-          </script>
         </Helmet>
         <Menu location={location} />
         <div style={{ height: '100%', paddingLeft: 160, paddingRight: 160, paddingTop: 40, paddingBottom: 240 }}>
