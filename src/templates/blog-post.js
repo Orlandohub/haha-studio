@@ -11,10 +11,11 @@ export const BlogPostTemplate = ({
   description,
   tags,
   title,
+  galleryImages,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-
+  console.log('galleryImages', galleryImages);
   return (
     <section className="section">
       {helmet || ''}
@@ -50,6 +51,7 @@ BlogPostTemplate.propTypes = {
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   title: PropTypes.string,
+  galleryImages: PropTypes.array,
   helmet: PropTypes.object,
 }
 
