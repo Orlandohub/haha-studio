@@ -10,12 +10,14 @@ display_url: https://eloquent-lalande-8cc180.netlify.com
 logo_url: https://eloquent-lalande-8cc180.netlify.com/static/logo_large-7a558ae26e74241eef861563ebad3b2c.png
 
 collections:
-  - name: "projects"
-    label: "Projects"
-    folder: "src/pages/projects"
+  - name: "blog"
+    label: "Blog"
+    folder: "src/pages/blog"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Body", name: "body", widget: "markdown"}
