@@ -104,6 +104,7 @@ export const menuContainer = mq({
 export const dropDownWrap = mq({
   paddingLeft: ['0px', '0px', '0px', '0px'],
   paddingTop: ['25px', '25px', '25px', '0'],
+  paddingBottom: ['46px', '46px', '46px', '79px!important'],
   float: 'left',
   display: 'block',
   width: ['90%', '80%', '80%', '65%'],
