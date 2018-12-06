@@ -1,21 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 
 export const BlogPostTemplate = ({
   content,
   contentComponent,
   description,
-  tags,
   title,
   galleryImages,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-  console.log('galleryImages', galleryImages);
   return (
     <section className="section">
       {helmet || ''}
@@ -25,20 +22,10 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
+            <img src={galleryImages[0]} alt=""/>
+            <img src={galleryImages[1]} alt=""/>
             <p>{description}</p>
             <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map(tag => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </div>
       </div>
@@ -71,8 +58,8 @@ const BlogPost = ({ data }) => {
           <meta name="description" content={`${post.frontmatter.description}`} />
         </Helmet>
       }
-      tags={post.frontmatter.tags}
       title={post.frontmatter.title}
+      galleryImages={post.frontmatter.galleryImages}
     />
   )
 }
@@ -94,7 +81,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        tags
+        galleryImages
       }
     }
   }
