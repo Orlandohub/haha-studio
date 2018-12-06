@@ -4,15 +4,15 @@ backend:
   site_domain: localhost:8000
 
 publish_mode: editorial_workflow
-media_folder: "static/assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: static/assets/uploads
+public_folder: /assets/uploads
 display_url: https://eloquent-lalande-8cc180.netlify.com
 logo_url: https://eloquent-lalande-8cc180.netlify.com/static/logo_large-7a558ae26e74241eef861563ebad3b2c.png
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
+  - name: "projects"
+    label: "Projects"
+    folder: "src/pages/projects"
     create: true
     fields:
       - { name: path, label: Path }
