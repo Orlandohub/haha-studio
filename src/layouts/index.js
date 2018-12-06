@@ -4,7 +4,9 @@ import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
 import fonts from '../fonts'
 import { StaticQuery, graphql } from 'gatsby'
-import PageTransition from 'gatsby-v2-plugin-page-transitions';
+import PageTransition from 'gatsby-v2-plugin-page-transitions'
+import { css } from 'emotion'
+import { styles } from './styles'
 
 import '../assets/bootstrap/css/bootstrap.min.css'
 
@@ -15,7 +17,9 @@ injectGlobal`
     font-family: "Ginto Normal Regular";
     font-style: normal;
     font-weight: normal;
-    src: local("Ginto Normal Regular"), local("ginto-normal-regular"), url(${fonts.GintoNormalRegularEot}) format("eot"), url(${fonts.GintoNormalRegularWoff}) format("woff");
+    src: local("Ginto Normal Regular"), local("ginto-normal-regular"), url(${
+      fonts.GintoNormalRegularEot
+    }) format("eot"), url(${fonts.GintoNormalRegularWoff}) format("woff");
   }
   html, body, #___gatsby, div[role=group] {
     font-family: "Ginto Normal Regular";
@@ -43,17 +47,18 @@ const Layout = ({ children, location }) => (
           title={data.site.siteMetadata.title}
           meta={[
             { name: 'description', content: 'HAHA Studio' },
-            { name: 'keywords', content: 'design, design studio, stockholm, gatsby, react' },
+            {
+              name: 'keywords',
+              content: 'design, design studio, stockholm, gatsby, react',
+            },
           ]}
         >
           <html lang="en" />
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         </Helmet>
         <Menu location={location} />
-        <div style={{ height: '100%', paddingLeft: 160, paddingRight: 160, paddingTop: 40, paddingBottom: 240 }}>
-          <PageTransition>
-            {children}
-          </PageTransition>
+        <div className={css(styles.pageWrapper)}>
+          <PageTransition>{children}</PageTransition>
         </div>
       </>
     )}

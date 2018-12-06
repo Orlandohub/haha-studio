@@ -1,7 +1,7 @@
 import { keyframes } from 'react-emotion'
 import facepaint from 'facepaint'
 import hero_image from '../../images/hero_image.jpg'
-
+import mobile_hero_image from '../../images/M_Hero_image.jpg'
 /*###################### ANIMATION SECTION ##################*/
 
 const bounce = keyframes`
@@ -86,8 +86,8 @@ export const styles = {
     marginRight: ['0px!important', '0px!important', 'auto!important'],
     marginLeft: ['0px!important', '0px!important', 'auto!important'],
   }),
-  HeroImageWrapper: {
-    backgroundImage: `url(${hero_image})`,
+  HeroImageWrapper: mq({
+    backgroundImage: [`url(${mobile_hero_image})`,`url(${hero_image})`],
     height: '100vh',
     width: '100%',
     backgroundAttachment: 'fixed',
@@ -98,9 +98,8 @@ export const styles = {
     display: 'block',
     transition: 'height 0.8s ease-out',
     WebkitTransition: 'height 0.8s ease-out',
-    zIndex: 1,
-    
-  },
+    zIndex: 1,    
+  }),
 
   ArrowContainer: {
     animation: `${showArrow} 7s ease-in`,
@@ -121,8 +120,8 @@ export const styles = {
     zIndex: 1,
   },
 
-  HideHero: {
-    backgroundImage: `url(${hero_image})`,
+  HideHero: mq({
+    backgroundImage: [`url(${mobile_hero_image})`,`url(${hero_image})`],
     height: '0vh',
     width: '100%',
     backgroundAttachment: 'fixed',
@@ -135,7 +134,7 @@ export const styles = {
     WebkitTransition: 'height 0.8s ease-out',
     zIndex: 1,
     perspective: '2px',
-  },
+  }),
 
   HideArrow: {
     display: 'none',
