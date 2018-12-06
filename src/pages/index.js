@@ -30,12 +30,12 @@ class IndexPage extends React.Component {
   render() {
     const { data, location } = this.props
     return (
-      <React.Fragment ref={this.scrollView}>
+      <div ref={this.scrollView}>
         <Hero data={data} enableScroll={this.enableScroll} />
         <Layout location={location}>
           <Projects />
         </Layout>
-      </React.Fragment>
+      </div>
     )
   }
 }
