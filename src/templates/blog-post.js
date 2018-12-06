@@ -22,8 +22,6 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <img src={galleryImages[0]} alt=""/>
-            <img src={galleryImages[1]} alt=""/>
             <p>{description}</p>
             <PostContent content={content} />
           </div>
