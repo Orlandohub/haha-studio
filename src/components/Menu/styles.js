@@ -25,7 +25,7 @@ export const logoLink = css({
 
 export const subMenuCol = mq({
   '& > :nth-child(2)': {
-    paddingTop: ['25px', '25px', '25px', '0'],
+    paddingTop: ['25px', '25px', '25px', '38px'],
   },
   float: 'left',
   display: 'block',
