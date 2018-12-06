@@ -74,7 +74,7 @@ export const subMenuItemShop = mq({
   paddingTop: '15px',
   paddingBottom: '15px',
   paddingLeft: 15,
-  paddingRight: 10,
+  paddingRight: 15,
   width: ['20vw', '20vw', '160px!important'],
   textAlign: 'right',
 })
