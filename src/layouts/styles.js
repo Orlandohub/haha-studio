@@ -8,6 +8,6 @@ export const styles = {
     paddingLeft: ['32px', '32px', '80px', '140', '160'],
     paddingRight: ['32px', '32px', '80px', '140', '160'],
     paddingTop: 40,
-    paddingBottom: 240,
+    //paddingBottom: 240,
   }),
 }

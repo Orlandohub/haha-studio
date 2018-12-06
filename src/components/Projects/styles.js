@@ -3,10 +3,17 @@ const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const styles = {
-  projectWrapper: {
+  projectWrapper: mq({
+    '& > :nth-child(1)': {
+      paddingTop: ['41px', '41px', '41px', '39px'],
+    },
+    '& > :nth-child(2)': {
+      paddingTop: ['41px', '41px', '41px', '39px'],
+    },
     paddingLeft: 15,
     paddingRight: 15,
-  },
+  }),
+
   projectTitle: mq({
     width: ['0%', '0%', '25%'],
     display: ['none', 'none', 'none', 'block'],
