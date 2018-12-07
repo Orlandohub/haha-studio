@@ -25,7 +25,7 @@ export const styles = {
     display: 'block',
     position: 'relative',
     marginTop: 15,
-    marginBottom: [15, 15, 15, 40],
+    marginBottom: [0, 0, 0, 26],
 
     fontSize: '2em',
     color: 'black',

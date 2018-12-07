@@ -6,7 +6,7 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const subMenuDropdownItem = mq({
   paddingBottom: 5,
-  paddingTop: 5,
+  paddingTop: 6,
   marginBottom: 0,
   paddingLeft: 15,
   paddingRight: [0, 10, 10],
