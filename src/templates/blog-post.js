@@ -1,8 +1,10 @@
 import React from 'react'
+import { map, isEmpty } from 'lodash'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
+import Img from 'gatsby-image'
 
 export const BlogPostTemplate = ({
   content,
@@ -13,6 +15,7 @@ export const BlogPostTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content
+
   return (
     <section className="section">
       {helmet || ''}
@@ -22,6 +25,12 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
+            <div>{
+              isEmpty(!galleryImages) ?
+                map(galleryImages, img => <Img fluid={img.childImageSharp.fluid} />)
+                :
+                null
+            }</div>
             <p>{description}</p>
             <PostContent content={content} />
           </div>
@@ -79,7 +88,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         title
         description
-        galleryImages
+        galleryImages {
+          childImageSharp {
+            fluid(maxWidth: 1080) {
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+            }
+          }
+        }
       }
     }
   }
