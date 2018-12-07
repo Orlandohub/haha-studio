@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'react-emotion'
-import arrowDownHero from '../../images/arrowDownhero.png'
+import arrowDownHero from '../../images/arrowDownHero.png'
 import { styles } from './styles'
 import { Grid, Row, Col } from 'react-bootstrap'
 
