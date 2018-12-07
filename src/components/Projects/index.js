@@ -26,6 +26,12 @@ class Projects extends Component {
         <div className={css(styles.imageWrapper)}>
           <img src={image_one} />
         </div>
+        <div className={css(styles.projectTitle)}>
+          <p>Spin Lamp, 2018</p>
+        </div>
+        <div className={css(styles.imageWrapper)}>
+          <img src={image_one} />
+        </div>
       </div>
     )
   }

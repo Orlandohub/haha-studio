@@ -4,10 +4,13 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const styles = {
   pageWrapper: mq({
-    height: '100%',
-    paddingLeft: ['32px', '32px', '80px', '140', '160'],
-    paddingRight: ['32px', '32px', '80px', '140', '160'],
-    paddingTop: 40,
-    //paddingBottom: 240,
+    overflow: 'auto',
+    width: '100%',
+    height: 'auto',
+    display: 'block',
+    position: 'relative',
+    paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
+    paddingRight: ['32px', '32px', '80px', '135px', '160px'],
+    paddingBottom: ['60px', '60px', '60px', '246px'],
   }),
 }
