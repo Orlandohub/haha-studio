@@ -98,8 +98,8 @@ export const menuContainer = mq({
   borderWidth: '0!important',
   marginBottom: '0!important',
   minHeight: '20px!important',
-  paddingLeft: ['32px', '32px', '80px', '140px', '160px'],
-  paddingRight: ['32px', '32px', '80px', '140px', '160px'],
+  paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
+  paddingRight: ['32px', '32px', '80px', '135px', '160px'],
   paddingTop: '37px',
 })
 
