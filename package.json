@@ -19,6 +19,9 @@
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",
     "gatsby-plugin-sharp": "^2.0.12",
+    "gatsby-remark-copy-linked-files": "^2.0.7",
+    "gatsby-remark-images": "^3.0.1",
+    "gatsby-remark-relative-images": "^0.2.1",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-remark": "^2.1.15",
     "gatsby-transformer-sharp": "^2.1.8",
@@ -37,9 +40,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "yarn run clean && gatsby build",
+    "develop": "yarn run clean && gatsby develop",
     "serve": "gatsby serve",
+    "clean": "rimraf .cache public",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
@@ -63,6 +67,7 @@
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
     "prettier": "^1.14.3",
+    "rimraf": "^2.6.2",
     "start-server-and-test": "^1.7.9"
   },
   "repository": {

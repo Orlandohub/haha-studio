@@ -90,20 +90,23 @@ export const brand = mq({
 })
 
 export const menuContainer = mq({
+  overflow: 'auto',
+  width: '100%',
   display: 'block',
   transition: 'top 0.5 ease-in',
   backgroundColor: 'transparent!important',
   borderWidth: '0!important',
   marginBottom: '0!important',
   minHeight: '20px!important',
-  paddingLeft: ['32px', '32px', '80px', '140px', '160px'],
-  paddingRight: ['32px', '32px', '80px', '140px', '160px'],
+  paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
+  paddingRight: ['32px', '32px', '80px', '135px', '160px'],
   paddingTop: '37px',
 })
 
 export const dropDownWrap = mq({
   paddingLeft: ['0px', '0px', '0px', '0px'],
   paddingTop: ['25px', '25px', '25px', '0'],
+  paddingBottom: ['46px', '46px', '46px', '79px!important'],
   float: 'left',
   display: 'block',
   width: ['90%', '80%', '80%', '65%'],
