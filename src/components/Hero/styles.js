@@ -109,7 +109,7 @@ export const styles = {
     transition: 'height 0.8s ease-out',
     cursor: 'pointer',
     animation: `${bounce} 3s ease 1`,
-    animationIterationCount: 3,
+    animationIterationCount: 'infinite',
     animationDelay: '5s',
     transformOrigin: 'center bottom',
     zIndex: 1,
