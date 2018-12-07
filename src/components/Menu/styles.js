@@ -90,6 +90,8 @@ export const brand = mq({
 })
 
 export const menuContainer = mq({
+  overflow: 'auto',
+  width: '100%',
   display: 'block',
   transition: 'top 0.5 ease-in',
   backgroundColor: 'transparent!important',
