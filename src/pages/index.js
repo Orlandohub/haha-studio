@@ -17,7 +17,6 @@ class IndexPage extends React.Component {
 
     this.state = {
       scrollLock: true,
-      position: window.scrollTo(0, 0),
     }
 
     this.enableScroll = this.enableScroll.bind(this)
