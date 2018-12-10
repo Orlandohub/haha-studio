@@ -3,10 +3,6 @@ import { css } from 'emotion'
 import image_one from '../../images/D_homepage_image_01.jpg'
 import { styles, StyledScrollTop } from './styles'
 
-var DistTop = () => {
-  window.innerWidth * 1
-}
-
 class Projects extends Component {
   render() {
     return (
