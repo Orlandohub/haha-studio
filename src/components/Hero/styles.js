@@ -50,7 +50,7 @@ const showArrow = keyframes`
 `
 /*######### END #######*/
 
-const breakpoints = [576, 768]
+const breakpoints = [576, 768, 1024, 1200]
 
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
@@ -87,7 +87,7 @@ export const styles = {
     marginLeft: ['0px!important', '0px!important', 'auto!important'],
   }),
   HeroImageWrapper: mq({
-    backgroundImage: [`url(${mobile_hero_image})`,`url(${hero_image})`],
+    backgroundImage: [`url(${mobile_hero_image})`, `url(${hero_image})`],
     height: '100vh',
     width: '100%',
     backgroundAttachment: 'fixed',
@@ -139,4 +139,12 @@ export const styles = {
   HideArrow: {
     display: 'none',
   },
+
+  introLogo: mq({
+    display: ['none', 'none', 'block'],
+  }),
+
+  mobileIntroLogo: mq({
+    display: ['block', 'block', 'none']
+  })
 }

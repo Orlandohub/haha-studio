@@ -63,5 +63,12 @@ export const query = graphql`
         }
       }
     }
+    mobileFileName: file(relativePath: { eq: "00_M_logo_large@2x.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1060) {
+          ...GatsbyImageSharpFluid_withWebp_noBase64
+        }
+      }
+    }
   }
 `
