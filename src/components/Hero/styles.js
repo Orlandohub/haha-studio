@@ -98,8 +98,8 @@ export const styles = {
     opacity: '1',
     width: '100%',
     textAlign: 'center',
-    position: 'relative',
-    top: '88%',
+    position: 'absolute',
+    bottom: '61px',
     zIndex: 1,
   },
 
