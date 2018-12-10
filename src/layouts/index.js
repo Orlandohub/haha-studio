@@ -39,6 +39,13 @@ const Layout = ({ children, location }) => (
             title
           }
         }
+        logoImage: file(relativePath: { eq: "logo_large.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 1060) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -56,7 +63,7 @@ const Layout = ({ children, location }) => (
           <html lang="en" />
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
         </Helmet>
-        <Menu location={location} />
+        <Menu location={location} data={data} />
         <div className={css(styles.pageWrapper)}>
           <PageTransition>{children}</PageTransition>
         </div>
