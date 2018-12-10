@@ -16,6 +16,11 @@ export const logoWrap = mq({
     '10px!important',
   ],
   fontSize: ['1em', '1.5em', '2.1em', '2.1em'],
+  width: [
+    '81.5px',
+    '81.5px',
+    '168.64px',
+  ]
 })
 
 export const logoLink = css({
@@ -45,22 +50,17 @@ export const shopLink = {
 }
 
 export const subMenuLink = mq({
+  lineHeight: 0,
   cursor: 'pointer',
   fontSize: ['1em', '1.5em', '2em', '2em'],
   color: '#CACAC8!important',
 })
 
-export const subMenuLinkBlack = mq({
-  cursor: 'pointer',
-  fontSize: ['1em', '1.5em', '2em', '2em'],
+export const subMenuLinkBlack = mq(subMenuLink, {
   color: 'black!important',
 })
 
-export const subMenuLinkShop = mq({
-  color: '#CACAC8',
-  fontSize: ['1em', '1.5em', '2em', '2em'],
-  cursor: 'pointer',
-})
+export const subMenuLinkShop = mq(subMenuLink)
 
 export const subMenuItem = mq({
   paddingTop: '15px',
@@ -70,10 +70,7 @@ export const subMenuItem = mq({
   width: ['20vw', '20vw', 160],
 })
 
-export const subMenuItemShop = mq({
-  paddingTop: '15px',
-  paddingBottom: '15px',
-  paddingLeft: 15,
+export const subMenuItemShop = mq(subMenuItem, {
   paddingRight: 15,
   width: ['20vw', '20vw', '160px!important'],
   textAlign: 'right',
