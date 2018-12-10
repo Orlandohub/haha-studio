@@ -42,7 +42,7 @@ const showArrow = keyframes`
 `
 /*######### END #######*/
 
-const breakpoints = [576, 768]
+const breakpoints = [576, 768, 1024, 1200]
 
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
@@ -134,4 +134,12 @@ export const styles = {
   HideArrow: {
     display: 'none',
   },
+
+  introLogo: mq({
+    display: ['none', 'none', 'block'],
+  }),
+
+  mobileIntroLogo: mq({
+    display: ['block', 'block', 'none']
+  })
 }
