@@ -5,20 +5,12 @@ import mobile_hero_image from '../../images/M_Hero_image.jpg'
 /*###################### ANIMATION SECTION ##################*/
 
 const bounce = keyframes`
-from, 20%, 53%, 80%, to {
-transform: translate3d(0,0,0);
+from, 20%, 40%, to {
+  transform: translate3d(0,0,0);
 }
 
-40%, 43% {
-transform: translate3d(0, -10px, 0);
-}
-
-70% {
-transform: translate3d(0, -5px, 0);
-}
-
-90% {
-transform: translate3d(0,-4px,0);
+30%, 50% {
+  transform: translate3d(0, 10px, 0);
 }
 `
 
@@ -87,7 +79,7 @@ export const styles = {
     marginLeft: ['0px!important', '0px!important', 'auto!important'],
   }),
   HeroImageWrapper: mq({
-    backgroundImage: [`url(${mobile_hero_image})`,`url(${hero_image})`],
+    backgroundImage: [`url(${mobile_hero_image})`, `url(${hero_image})`],
     height: '100vh',
     width: '100%',
     backgroundAttachment: 'fixed',
@@ -98,7 +90,7 @@ export const styles = {
     display: 'block',
     transition: 'height 0.8s ease-out',
     WebkitTransition: 'height 0.8s ease-out',
-    zIndex: 1,    
+    zIndex: 1,
   }),
 
   ArrowContainer: {
@@ -106,22 +98,25 @@ export const styles = {
     opacity: '1',
     width: '100%',
     textAlign: 'center',
-    position: 'relative',
-    top: '88%',
+    position: 'absolute',
+    bottom: '61px',
     zIndex: 1,
   },
 
   Img: {
-    height: '50px',
+    height: '20px',
+
     transition: 'height 0.8s ease-out',
     cursor: 'pointer',
-    animation: `${bounce} 2s ease infinite`,
+    animation: `${bounce} 3s ease 1`,
+    animationIterationCount: 'infinite',
+    animationDelay: '5s',
     transformOrigin: 'center bottom',
     zIndex: 1,
   },
 
   HideHero: mq({
-    backgroundImage: [`url(${mobile_hero_image})`,`url(${hero_image})`],
+    backgroundImage: [`url(${mobile_hero_image})`, `url(${hero_image})`],
     height: '0vh',
     width: '100%',
     backgroundAttachment: 'fixed',

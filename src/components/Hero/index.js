@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'react-emotion'
-import arrow from '../../images/arrow.png'
+import arrowDownHero from '../../images/arrowDownHero.png'
 import { styles } from './styles'
 import { Grid, Row, Col } from 'react-bootstrap'
 
@@ -67,7 +67,7 @@ class Hero extends React.Component {
             <img
               data-cy="arrow"
               className={css(styles.Img)}
-              src={arrow}
+              src={arrowDownHero}
               alt="arrow"
               onClick={() => this.slide()}
             />
@@ -84,3 +84,5 @@ Hero.propTypes = {
 }
 
 export default Hero
+
+//sdsds
