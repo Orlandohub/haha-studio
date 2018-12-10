@@ -23,6 +23,9 @@ class IndexPage extends React.Component {
     this.scrollView = React.createRef()
   }
   componentDidMount() {
+    window.onbeforeunload = function() {
+      window.scrollTo(0, 0)
+    }
     disableBodyScroll(this.scrollView.current)
   }
   componentWillUnmount() {

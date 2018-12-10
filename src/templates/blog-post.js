@@ -12,10 +12,10 @@ export const BlogPostTemplate = ({
   description,
   title,
   galleryImages,
+  cmsGalleryImages,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-
   return (
     <section className="section">
       {helmet || ''}
@@ -25,12 +25,14 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <div>{
-              isEmpty(!galleryImages) ?
-                map(galleryImages, img => <Img fluid={img.childImageSharp.fluid} />)
-                :
-                null
-            }</div>
+            <div>
+              {
+                isEmpty(galleryImages) ? null : map(galleryImages, (img, key) => <Img fluid={img.childImageSharp.fluid}/>)
+              }
+              {
+                isEmpty(cmsGalleryImages) ? null : map(cmsGalleryImages, (img, key) => <img src={img} key={key} alt=""/>)
+              }
+            </div>
             <p>{description}</p>
             <PostContent content={content} />
           </div>
@@ -46,12 +48,12 @@ BlogPostTemplate.propTypes = {
   description: PropTypes.string,
   title: PropTypes.string,
   galleryImages: PropTypes.array,
+  cmsGalleryImages: PropTypes.array,
   helmet: PropTypes.object,
 }
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-
   return (
     <BlogPostTemplate
       content={post.html}
