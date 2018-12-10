@@ -42,7 +42,7 @@ const showArrow = keyframes`
 `
 /*######### END #######*/
 
-const breakpoints = [576, 768, 1024]
+const breakpoints = [576, 768, 1024, 1200]
 
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
@@ -79,12 +79,7 @@ export const styles = {
     marginLeft: ['0px!important', '0px!important', 'auto!important'],
   }),
   HeroImageWrapper: mq({
-    backgroundImage: [
-      `url(${mobile_hero_image})`,
-      `url(${mobile_hero_image})`,
-      `url(${mobile_hero_image})`,
-      `url(${hero_image})`,
-    ],
+    backgroundImage: [`url(${mobile_hero_image})`, `url(${hero_image})`],
     height: '100vh',
     width: '100%',
     backgroundAttachment: 'fixed',
@@ -103,8 +98,8 @@ export const styles = {
     opacity: '1',
     width: '100%',
     textAlign: 'center',
-    position: 'relative',
-    top: '88%',
+    position: 'absolute',
+    bottom: '61px',
     zIndex: 1,
   },
 
@@ -112,18 +107,15 @@ export const styles = {
     height: '20px',
     transition: 'height 0.8s ease-out',
     cursor: 'pointer',
-    animation: `${bounce} 2s ease infinite`,
+    animation: `${bounce} 3s ease 1`,
+    animationIterationCount: 'infinite',
+    animationDelay: '5s',
     transformOrigin: 'center bottom',
     zIndex: 1,
   },
 
   HideHero: mq({
-    backgroundImage: [
-      `url(${mobile_hero_image})`,
-      `url(${mobile_hero_image})`,
-      `url(${mobile_hero_image})`,
-      `url(${hero_image})`,
-    ],
+    backgroundImage: [`url(${mobile_hero_image})`, `url(${hero_image})`],
     height: '0vh',
     width: '100%',
     backgroundAttachment: 'fixed',
@@ -141,4 +133,12 @@ export const styles = {
   HideArrow: {
     display: 'none',
   },
+
+  introLogo: mq({
+    display: ['none', 'none', 'block'],
+  }),
+
+  mobileIntroLogo: mq({
+    display: ['block', 'block', 'none'],
+  }),
 }

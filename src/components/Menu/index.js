@@ -7,7 +7,10 @@ import * as styles from './styles'
 import MenuDropdownLink from '../MenuDropdownLink'
 //import logo from '../../images/logo_large.png'
 
-const Menu = ({ location }) => {
+import Img from 'gatsby-image'
+
+const Menu = ({ location, data }) => {
+  console.log('data', data);
   let pathname = null
 
   if (location) {
@@ -18,7 +21,7 @@ const Menu = ({ location }) => {
       <div className={css(styles.brand)}>
         <div className={css(styles.logoWrap)}>
           <Link to="/selected/" data-cy="logo" className={css(styles.logoLink)}>
-            HAHA studio
+            <Img fluid={data.logoImage.childImageSharp.fluid} /> 
           </Link>
         </div>
       </div>
@@ -156,6 +159,7 @@ const Menu = ({ location }) => {
 }
 Menu.propTypes = {
   location: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
 }
 
 export default Menu
