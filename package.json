@@ -32,6 +32,7 @@
     "react-dom": "^16.6.0",
     "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.0",
+    "react-media": "^1.8.0",
     "react-router-dom": "^4.3.1"
   },
   "keywords": [
