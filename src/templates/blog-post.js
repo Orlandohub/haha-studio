@@ -26,12 +26,16 @@ export const BlogPostTemplate = ({
               {title}
             </h1>
             <div>
-              {
-                isEmpty(galleryImages) ? null : map(galleryImages, (img, key) => <Img fluid={img.childImageSharp.fluid}/>)
-              }
-              {
-                isEmpty(cmsGalleryImages) ? null : map(cmsGalleryImages, (img, key) => <img src={img} key={key} alt=""/>)
-              }
+              {isEmpty(galleryImages)
+                ? null
+                : map(galleryImages, (img, key) => (
+                    <Img fluid={img.childImageSharp.fluid} />
+                  ))}
+              {isEmpty(cmsGalleryImages)
+                ? null
+                : map(cmsGalleryImages, (img, key) => (
+                    <img src={img} key={key} alt="" />
+                  ))}
             </div>
             <p>{description}</p>
             <PostContent content={content} />
@@ -60,11 +64,12 @@ const BlogPost = ({ data }) => {
       contentComponent={HTMLContent}
       description={post.frontmatter.description}
       helmet={
-        <Helmet
-          titleTemplate="%s | Blog"
-        >
+        <Helmet titleTemplate="%s | Blog">
           <title>{`${post.frontmatter.title}`}</title>
-          <meta name="description" content={`${post.frontmatter.description}`} />
+          <meta
+            name="description"
+            content={`${post.frontmatter.description}`}
+          />
         </Helmet>
       }
       title={post.frontmatter.title}
