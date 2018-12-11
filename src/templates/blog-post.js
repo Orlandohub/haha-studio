@@ -9,13 +9,15 @@ import Img from 'gatsby-image'
 export const BlogPostTemplate = ({
   content,
   contentComponent,
-  description,
   title,
+  isSelected,
+  year,
   galleryImages,
-  cmsGalleryImages,
+  cmsImageGallery,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
+  console.log('cmsImageGallery', cmsImageGallery)
   return (
     <section className="section">
       {helmet || ''}
@@ -25,15 +27,16 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
+            <p>Is selected {isSelected}</p>
+            <p>year {year}</p>
             <div>
               {
                 isEmpty(galleryImages) ? null : map(galleryImages, (img, key) => <Img fluid={img.childImageSharp.fluid}/>)
               }
               {
-                isEmpty(cmsGalleryImages) ? null : map(cmsGalleryImages, (img, key) => <img src={img} key={key} alt=""/>)
+                isEmpty(cmsImageGallery) ? null : map(cmsImageGallery, (img, key) => <img src={img} key={key} alt=""/>)
               }
             </div>
-            <p>{description}</p>
             <PostContent content={content} />
           </div>
         </div>
@@ -45,10 +48,11 @@ export const BlogPostTemplate = ({
 BlogPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
   title: PropTypes.string,
+  year: PropTypes.string,
+  isSelected: PropTypes.bool,
   galleryImages: PropTypes.array,
-  cmsGalleryImages: PropTypes.array,
+  cmsImageGallery: PropTypes.array,
   helmet: PropTypes.object,
 }
 
