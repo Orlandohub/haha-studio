@@ -15,7 +15,7 @@ class Menu extends Component {
     this.pathname = null
 
     if (props.location) {
-      this.pathname = location.pathname
+      this.pathname = props.location.pathname
     }
 
     this.setActiveMenu = this.setActiveMenu.bind(this)
