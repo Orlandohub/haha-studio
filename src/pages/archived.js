@@ -1,29 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import { Grid, Row, Col } from 'react-bootstrap'
+import Projects from '../components/Projects'
 
-const Archived = ({ location }) => (
-  <React.Fragment>
-    <Layout location={location}>
-      <Grid fluid>
-        <Row>
-          <Row>
-            <Col xs={12}>
-              <h2>Archived</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
-                nobis, molestias labore reprehenderit laborum ad necessitatibus
-                rem quam voluptatem temporibus amet similique tempore ullam cum
-                nulla et voluptatum! Eius, ab!
-              </p>
-            </Col>
-          </Row>
-        </Row>
-      </Grid>
-    </Layout>
-  </React.Fragment>
-)
+class Archived extends React.Component {
+  render() {
+    const { location } = this.props
+    return (
+      <Layout location={location}>
+        <Projects />
+      </Layout>
+    )
+  }
+}
 
 Archived.proptypes = {
   location: PropTypes.object.isRequired,
