@@ -12,13 +12,13 @@ import Img from 'gatsby-image'
 const Menu = ({ location, data }) => {
   console.log('data', data)
   let pathname = null
-  const width = window.innerWidth
+  //const width = window.innerWidth
 
   if (location) {
     pathname = location.pathname
   }
 
-  if (width < 1025) {
+  if (window.innerWidth < 1025) {
     return (
       <div className={css(styles.menuContainer)}>
         <div className={css(styles.brand)}>
