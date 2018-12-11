@@ -1,161 +1,251 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
 import { navigate } from 'gatsby'
 import * as styles from './styles'
 import MenuDropdownLink from '../MenuDropdownLink'
-//import logo from '../../images/logo_large.png'
 
 import Img from 'gatsby-image'
 
-const Menu = ({ location, data }) => {
-  console.log('data', data);
-  let pathname = null
+class Menu extends Component {
+  constructor(props) {
+    super(props)
 
-  if (location) {
-    pathname = location.pathname
+    this.pathname = null
+
+    if (props.location) {
+      this.pathname = location.pathname
+    }
+
+    this.setActiveMenu = this.setActiveMenu.bind(this)
+    this.isActiveMenu = this.isActiveMenu.bind(this)
+    this.isActiveSubMenu = this.isActiveSubMenu.bind(this)
+    this.isShopCurrentPath = this.isShopCurrentPath.bind(this)
+
+    this.state = {
+      activeMenu: null,
+      activeSubMenu: null
+    }
   }
-  return (
-    <div className={css(styles.menuContainer)}>
-      <div className={css(styles.brand)}>
-        <div className={css(styles.logoWrap)}>
-          <Link to="/selected/" data-cy="logo" className={css(styles.logoLink)}>
-            <Img fluid={data.logoImage.childImageSharp.fluid} /> 
-          </Link>
+
+  setActiveMenu() {
+    let activeMenu = null
+    let activeSubMenu = null
+    switch (this.pathname) {
+    case '/':
+      activeMenu = 'projects'
+      activeSubMenu = '/'
+      break
+    case '/selected/':
+      activeMenu = 'projects'
+      activeSubMenu = 'selected'
+      break
+    case '/archived/':
+      activeMenu = 'projects'
+      activeSubMenu = 'archived'
+      break
+    case '/about/':
+      activeMenu = 'studio'
+      activeSubMenu = 'about'
+      break
+    case '/exploration/':
+      activeMenu = 'studio'
+      activeSubMenu = 'exploration'
+      break
+    case '/texts/':
+      activeMenu = 'studio'
+      activeSubMenu = 'texts'
+      break
+    case '/find-us/':
+      activeMenu = 'contact'
+      activeSubMenu = 'find-us'
+      break
+    case '/press/':
+      activeMenu = 'contact'
+      activeSubMenu = 'press'
+      break
+    case '/retailers/':
+      activeMenu = 'contact'
+      activeSubMenu = 'retailers'
+      break
+    case '/shop/':
+      activeMenu = 'shop'
+      break
+    default:
+      activeMenu = null
+    }
+
+    this.setState({
+      activeMenu,
+      activeSubMenu
+    })
+  }
+
+  isActiveMenu(menu) {
+    return menu === this.state.activeMenu
+  }
+
+  isActiveSubMenu(subMenu) {
+    return subMenu === this.state.activeSubMenu
+  }
+
+  isShopCurrentPath() {
+    return 'shop' === this.state.activeMenu
+  }
+
+  componentDidMount() {
+    this.setActiveMenu()
+  }
+
+  render() {
+    const { data } = this.props
+    return (
+      <div className={css(styles.menuContainer)}>
+        <div className={css(styles.brand)}>
+          <div className={css(styles.logoWrap)}>
+            <Link
+              to="/selected/"
+              data-cy="logo"
+              className={css(styles.logoLink)}
+            >
+              <Img fluid={data.logoImage.childImageSharp.fluid} />
+            </Link>
+          </div>
+        </div>
+
+        {/* ############# PROJECT SECTION ############# */}
+        <div className={css(styles.dropDownWrap)}>
+          <ul className={css(styles.subMenuCol)}>
+            <li
+              onClick={() => navigate('/selected/')}
+              className={css(styles.subMenuItem)}
+            >
+              <span
+                className={
+                  this.isShopCurrentPath()
+                    ? css(styles.subMenuLinkInactive)
+                    : this.isActiveMenu('projects')
+                      ? css(styles.subMenuLinkActive)
+                      : css(styles.subMenuLink)
+                }
+              >
+                projects
+              </span>
+            </li>
+
+            {
+              this.isActiveMenu('projects')
+                ? (
+                  <React.Fragment>
+                    <MenuDropdownLink
+                      link="selected"
+                      activeSubMenu={
+                        this.isActiveSubMenu('/') || this.isActiveSubMenu('selected')
+                      }
+                    />
+                    <MenuDropdownLink
+                      link="archived"
+                      activeSubMenu={this.isActiveSubMenu('archived')}
+                    />
+                  </React.Fragment>
+                ) : null
+            }
+          </ul>
+
+          {/* ############# STUDIO SECTION ############# */}
+          <ul className={css(styles.subMenuCol)}>
+            <li
+              onClick={() => navigate('/about/')}
+              className={css(styles.subMenuItem)}
+            >
+              <span
+                data-cy="studio"
+                className={
+                  this.isShopCurrentPath()
+                    ? css(styles.subMenuLinkInactive)
+                    : this.isActiveMenu('studio')
+                      ? css(styles.subMenuLinkActive)
+                      : css(styles.subMenuLink)
+                }
+              >
+                studio
+              </span>
+            </li>
+            {this.isActiveMenu('studio') ? (
+              <React.Fragment>
+                <MenuDropdownLink
+                  link="about"
+                  activeSubMenu={this.isActiveSubMenu('about')}
+                />
+                <MenuDropdownLink
+                  link="exploration"
+                  activeSubMenu={this.isActiveSubMenu('exploration')}
+                />
+                <MenuDropdownLink
+                  link="texts"
+                  activeSubMenu={this.isActiveSubMenu('texts')}
+                />
+              </React.Fragment>
+            ) : null}
+          </ul>
+          {/* ############# CONTACT SECTION ############# */}
+          <ul className={css(styles.subMenuCol)}>
+            <li
+              onClick={() => navigate('/find-us/')}
+              className={css(styles.subMenuItem)}
+            >
+              <span
+                data-cy="contact"
+                className={
+                  this.isShopCurrentPath()
+                    ? css(styles.subMenuLinkInactive)
+                    : this.isActiveMenu('contact')
+                      ? css(styles.subMenuLinkActive)
+                      : css(styles.subMenuLink)
+                }
+              >
+                contact
+              </span>
+            </li>
+            {this.isActiveMenu('contact') ? (
+              <React.Fragment>
+                <MenuDropdownLink
+                  alias="find us"
+                  link="find-us"
+                  activeSubMenu={this.isActiveSubMenu('find-us')}
+                />
+                <MenuDropdownLink
+                  link="press"
+                  activeSubMenu={this.isActiveSubMenu('press')}
+                />
+                <MenuDropdownLink
+                  link="retailers"
+                  activeSubMenu={this.isActiveSubMenu('retailers')}
+                />
+              </React.Fragment>
+            ) : null}
+          </ul>
+        </div>
+        <div className={css(styles.shopWrap)}>
+          <ul className={css(styles.subMenuColShop)}>
+            <li className={css(styles.subMenuItemShop)}>
+              <span
+                onClick={() => navigate('/shop/')}
+                className={
+                  this.isShopCurrentPath()
+                    ? css(styles.subMenuLinkActive)
+                    : css(styles.subMenuLinkInactive)
+                }
+              >
+                shop
+              </span>
+            </li>
+          </ul>
         </div>
       </div>
-
-      {/* ############# PROJECT SECTION ############# */}
-      <div className={css(styles.dropDownWrap)}>
-        <ul className={css(styles.subMenuCol)}>
-          <li
-            onClick={() => navigate('/selected/')}
-            className={css(styles.subMenuItem)}
-          >
-            <span
-              className={
-                pathname === '/' ||
-                pathname === '/selected/' ||
-                pathname === '/archived/'
-                  ? css(styles.subMenuLinkBlack)
-                  : css(styles.subMenuLink)
-              }
-            >
-              projects
-            </span>
-          </li>
-
-          {pathname === '/' ||
-          pathname === '/selected/' ||
-          pathname === '/archived/' ? (
-            <React.Fragment>
-              <MenuDropdownLink
-                link="selected"
-                activeSubMenu={pathname === '/' || pathname === '/selected/'}
-              />
-              <MenuDropdownLink
-                link="archived"
-                activeSubMenu={pathname === '/archived/'}
-              />
-            </React.Fragment>
-          ) : null}
-        </ul>
-
-        {/* ############# STUDIO SECTION ############# */}
-        <ul className={css(styles.subMenuCol)}>
-          <li
-            onClick={() => navigate('/about/')}
-            className={css(styles.subMenuItem)}
-          >
-            <span
-              data-cy="studio"
-              className={
-                pathname === '/about/' ||
-                pathname === '/exploration/' ||
-                pathname === '/texts/'
-                  ? css(styles.subMenuLinkBlack)
-                  : css(styles.subMenuLink)
-              }
-            >
-              studio
-            </span>
-          </li>
-          {pathname === '/about/' ||
-          pathname === '/exploration/' ||
-          pathname === '/texts/' ? (
-            <React.Fragment>
-              <MenuDropdownLink
-                link="about"
-                activeSubMenu={pathname === '/about/'}
-              />
-              <MenuDropdownLink
-                link="exploration"
-                activeSubMenu={pathname === '/exploration/'}
-              />
-              <MenuDropdownLink
-                link="texts"
-                activeSubMenu={pathname === '/texts/'}
-              />
-            </React.Fragment>
-          ) : null}
-        </ul>
-
-        {/* ############# CONTACT SECTION ############# */}
-        <ul className={css(styles.subMenuCol)}>
-          <li
-            onClick={() => navigate('/find-us/')}
-            className={css(styles.subMenuItem)}
-          >
-            <span
-              data-cy="constact"
-              className={
-                pathname === '/find-us/' ||
-                pathname === '/press/' ||
-                pathname === '/retailers/'
-                  ? css(styles.subMenuLinkBlack)
-                  : css(styles.subMenuLink)
-              }
-            >
-              contact
-            </span>
-          </li>
-          {pathname === '/find-us/' ||
-          pathname === '/press/' ||
-          pathname === '/retailers/' ? (
-            <React.Fragment>
-              <MenuDropdownLink
-                alias="find us"
-                link="find-us"
-                activeSubMenu={pathname === '/find-us/'}
-              />
-              <MenuDropdownLink
-                link="press"
-                activeSubMenu={pathname === '/press/'}
-              />
-              <MenuDropdownLink
-                link="retailers"
-                activeSubMenu={pathname === '/retailers/'}
-              />
-            </React.Fragment>
-          ) : null}
-        </ul>
-      </div>
-
-      <div className={css(styles.shopWrap)}>
-        <ul className={css(styles.shopLink)}>
-          <li className={css(styles.subMenuItemShop)}>
-            <span
-              onClick={() => navigate('/shop/')}
-              className={css(styles.subMenuLinkShop)}
-            >
-              shop
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  )
+    )
+  }
 }
 Menu.propTypes = {
   location: PropTypes.object.isRequired,
