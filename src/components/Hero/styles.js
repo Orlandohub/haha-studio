@@ -105,7 +105,6 @@ export const styles = {
 
   Img: {
     height: '20px',
-
     transition: 'height 0.8s ease-out',
     cursor: 'pointer',
     animation: `${bounce} 3s ease 1`,
@@ -140,6 +139,6 @@ export const styles = {
   }),
 
   mobileIntroLogo: mq({
-    display: ['block', 'block', 'none']
-  })
+    display: ['block', 'block', 'none'],
+  }),
 }

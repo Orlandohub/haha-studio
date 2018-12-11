@@ -5,17 +5,15 @@ const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const logoWrap = mq({
-  marginLeft: '0!important',
+  marginLeft: [
+    '17px!important',
+    '17px!important',
+    '17px!important',
+    '10px!important',
+  ],
   paddingTop: '13px!important',
   paddingBottom: '0!important',
   paddingRight: '0!important',
-  paddingLeft: [
-    '15px!important',
-    '15px!important',
-    '15px!important',
-    '10px!important',
-  ],
-  fontSize: ['1em', '1.5em', '2.1em', '2.1em'],
   width: [
     '81.5px',
     '81.5px',
@@ -50,9 +48,9 @@ export const shopLink = {
 }
 
 export const subMenuLink = mq({
-  lineHeight: 0,
+  lineHeight: 1,
   cursor: 'pointer',
-  fontSize: ['1em', '1.5em', '2em', '2em'],
+  fontSize: ['1em', '1em', '2em', '2em'],
   color: '#CACAC8!important',
 })
 
@@ -63,7 +61,7 @@ export const subMenuLinkBlack = mq(subMenuLink, {
 export const subMenuLinkShop = mq(subMenuLink)
 
 export const subMenuItem = mq({
-  paddingTop: '15px',
+  paddingTop: ['15px', '15px', '15px', '7px', '7px'],
   paddingBottom: '15px',
   paddingLeft: 15,
   paddingRight: 10,

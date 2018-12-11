@@ -19,4 +19,3 @@ Selected.proptypes = {
 }
 
 export default Selected
-
