@@ -54,8 +54,14 @@ class Hero extends React.Component {
             <Grid bsClass={`container ${css(styles.HeroLogoContainer)}`}>
               <Row>
                 <Col xs={12}>
-                  <Img className={css(styles.introLogo)} fluid={data.fileName.childImageSharp.fluid} />
-                  <Img className={css(styles.mobileIntroLogo)} fluid={data.mobileFileName.childImageSharp.fluid} />
+                  <Img
+                    className={css(styles.introLogo)}
+                    fluid={data.fileName.childImageSharp.fluid}
+                  />
+                  <Img
+                    className={css(styles.mobileIntroLogo)}
+                    fluid={data.mobileFileName.childImageSharp.fluid}
+                  />
                 </Col>
               </Row>
             </Grid>
@@ -85,5 +91,3 @@ Hero.propTypes = {
 }
 
 export default Hero
-
-//sdsds

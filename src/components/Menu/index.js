@@ -115,7 +115,7 @@ const Menu = ({ location, data }) => {
               className={css(styles.subMenuItem)}
             >
               <span
-                data-cy="constact"
+                data-cy="contact"
                 className={
                   pathname === '/find-us/' ||
                   pathname === '/press/' ||
