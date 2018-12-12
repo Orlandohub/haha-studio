@@ -8,7 +8,7 @@ export const footerWrapper = mq({
   paddingTop: ['35px', '58px'],
   paddingBottom: ['45px', '80px'],
   //marginLeft: 15,
-  //marginRight: 15,
+  //marginRight: 15 o,
   display: 'block!important',
   textAlign: 'center!important',
   fontSize: ['14px!important', '29px!important'],
