@@ -6,18 +6,20 @@ import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 import Img from 'gatsby-image'
 
-export const BlogPostTemplate = ({
+export const ProjectsTemplate = ({
   content,
   contentComponent,
   title,
   isSelected,
+  projectAssistant,
+  photoCredits,
+  producer,
   year,
   galleryImages,
   cmsImageGallery,
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-  console.log('cmsImageGallery', cmsImageGallery)
   return (
     <section className="section">
       {helmet || ''}
@@ -27,16 +29,17 @@ export const BlogPostTemplate = ({
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>Is selected {isSelected}</p>
-            <p>year {year}</p>
+            <p>Is selected: {isSelected ? 'Yes' : 'No'}</p>
+            <p>year: {year}</p>
+            <p>Project Assistant: {projectAssistant}</p>
+            <p>Photo Credits: {photoCredits}</p>
+            <p>Producer: {producer}</p>
             <div>
               {
                 isEmpty(galleryImages) ? null : map(galleryImages, (img, key) => <Img fluid={img.childImageSharp.fluid}/>)
               }
-              {
-                isEmpty(cmsImageGallery) ? null : map(cmsImageGallery, (img, key) => <img src={img} key={key} alt=""/>)
-              }
             </div>
+            {cmsImageGallery}
             <PostContent content={content} />
           </div>
         </div>
@@ -45,24 +48,28 @@ export const BlogPostTemplate = ({
   )
 }
 
-BlogPostTemplate.propTypes = {
+
+ProjectsTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   title: PropTypes.string,
   year: PropTypes.string,
   isSelected: PropTypes.bool,
+  projectAssistant: PropTypes.string,
+  photoCredits: PropTypes.string,
+  producer: PropTypes.string,
   galleryImages: PropTypes.array,
-  cmsImageGallery: PropTypes.array,
+  cmsImageGallery: PropTypes.object,
   helmet: PropTypes.object,
 }
 
-const BlogPost = ({ data }) => {
+const Project = ({ data }) => {
   const { markdownRemark: post } = data
+  console.log('post', post)
   return (
-    <BlogPostTemplate
+    <ProjectsTemplate
       content={post.html}
       contentComponent={HTMLContent}
-      description={post.frontmatter.description}
       helmet={
         <Helmet
           titleTemplate="%s | Blog"
@@ -72,35 +79,27 @@ const BlogPost = ({ data }) => {
         </Helmet>
       }
       title={post.frontmatter.title}
-      galleryImages={post.frontmatter.galleryImages}
+      galleryImages={post.frontmatter.image_gallery}
     />
   )
 }
 
-BlogPost.propTypes = {
+Project.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
 }
 
-export default BlogPost
+export default Project
 
 export const pageQuery = graphql`
-  query BlogPostByID($id: String!) {
+  query ProjectByID($id: String!) {
     markdownRemark(id: { eq: $id }) {
       id
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        description
-        galleryImages {
-          childImageSharp {
-            fluid(maxWidth: 1080) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
       }
     }
   }

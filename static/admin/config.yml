@@ -16,7 +16,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Is Selected", name: "is_selected", widget: "boolean"}
       - {label: "Project Assistant", name: "project_assistant", widget: "string"}
@@ -29,10 +29,6 @@ collections:
         name: image_gallery
         widget: list
         fields:
-          - label: "Media"
-            name: "media"
-            widget: object
-            fields:
-            - {label: Image, name: image, widget: image}
-            - {label: "Is Cover", name: "is_cover", widget: "boolean"}
+          - {label: Image, name: image, widget: image}
+          - {label: "Is Cover", name: "is_cover", widget: "boolean"}
 
