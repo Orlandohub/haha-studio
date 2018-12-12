@@ -16,9 +16,10 @@ export const pageWrapper = mq({
 // ############ STYLING ELEMENTS OF PROJECTS INDEX PAGE #############
 
 export const projectWrapper = mq({
+  width: '100%',
   paddingTop: [15, 15, 15, 123],
-  paddingLeft: 5,
-  paddingRight: 15,
+  paddingLeft: '10px!important',
+  paddingRight: '10!important',
 })
 
 export const projectTitle = mq({
@@ -40,7 +41,6 @@ export const imageWrapper = mq({
   display: 'block',
   position: 'relative',
   marginTop: 10,
-  //marginBottom: [0, 0, 0, 26],
   fontSize: '2em',
   color: 'black',
 })
