@@ -18,17 +18,21 @@ class IndexPage extends React.Component {
     this.state = {
       scrollLock: true,
     }
-
+    this.reloadToTop = this.reloadToTop.bind(this)
     this.enableScroll = this.enableScroll.bind(this)
     this.scrollView = React.createRef()
   }
+
+  reloadToTop() {
+    window.scrollTo(0, 0)
+  }
+
   componentDidMount() {
-    window.onbeforeunload = function() {
-      window.scrollTo(0, 0)
-    }
+    window.addEventListener('beforeunload', this.reloadToTop)
     disableBodyScroll(this.scrollView.current)
   }
   componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.reloadToTop)
     clearAllBodyScrollLocks()
   }
   enableScroll() {
