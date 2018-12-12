@@ -7,7 +7,8 @@ export const footerWrapper = mq({
   position: 'relative',
   paddingTop: ['35px', '58px'],
   paddingBottom: ['45px', '80px'],
-  width: '100%!important',
+  //marginLeft: 15,
+  //marginRight: 15,
   display: 'block!important',
   textAlign: 'center!important',
   fontSize: ['14px!important', '29px!important'],
@@ -19,18 +20,21 @@ export const arrowRight = mq({
   display: 'block!important',
   height: ['8px!important', '18px!important'],
   width: ['23px!important', '53px!important'],
+  float: 'right',
 })
 
 export const arrowLeft = mq(arrowRight, {
   transform: 'scaleX(-1)!important',
+  float: 'left',
 })
 
 export const linkRight = mq({
   position: 'absolute',
   top: ['45px!important', '75px!important'],
   right: 0,
-  display: 'block!important',
+  display: 'inline-block!important',
   float: 'right!important',
+  width: '70px!important',
 })
 
 export const linkLeft = mq(linkRight, {
