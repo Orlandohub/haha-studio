@@ -51,4 +51,9 @@ export const textWrapper = mq(imageWrapper, {
   paddingBottom: [60, 60, 60, 212],
 })
 
+export const Link = mq({
+  textDecoration: 'underline',
+  color: 'black',
+})
+
 // ############ END OF STYLING ELEMENTS OF PROJECTS INDEX PAGE #############

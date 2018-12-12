@@ -4,6 +4,7 @@ import Layout from '../layouts'
 import image_one from '../images/D_homepage_image_01.jpg'
 import * as styles from '../layouts/styles'
 import { css } from 'emotion'
+import Link from 'gatsby-link'
 
 //  DONT FORGET TO REMOVE LINK TAG FROM PROJECTS COMPONEN
 
@@ -41,13 +42,22 @@ class Projects extends React.Component {
             <br />
             <p>
               Sold in units of 1 or 3. Alia is available for purchase at our{' '}
-              <u>retailers</u>, and in our <u>shop</u>.
+              <Link to="/retailers/" className={css(styles.Link)}>
+                retailers
+              </Link>
+              , and in our{' '}
+              <Link to="/shop/" className={css(styles.Link)}>
+                shop
+              </Link>
+              .
             </p>
             <br />
             <br />
             <br />
             <p>
-              <u>Download</u>
+              <Link to="#" className={css(styles.Link)}>
+                Download
+              </Link>
             </p>
           </div>
         </div>
