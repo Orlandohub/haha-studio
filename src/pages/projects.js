@@ -2,22 +2,24 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import image_one from '../images/D_homepage_image_01.jpg'
-import { projectsPage } from '../layouts/styles'
+import * as styles from '../layouts/styles'
 import { css } from 'emotion'
+
+//  DONT FORGET TO REMOVE LINK TAG FROM PROJECTS COMPONEN
 
 class Projects extends React.Component {
   render() {
     const { location } = this.props
     return (
       <Layout location={location}>
-        <div className={css(projectsPage.projectWrapper)}>
-          <div className={css(projectsPage.projectTitle)}>
+        <div className={css(styles.projectWrapper)}>
+          <div className={css(styles.projectTitle)}>
             <p>Spin Lamp, 2018</p>
           </div>
-          <div className={css(projectsPage.imageWrapper)}>
+          <div className={css(styles.imageWrapper)}>
             <img src={image_one} />
           </div>
-          <div className={css(projectsPage.imageWrapper)}>
+          <div className={css(styles.textWrapper)}>
             <p>
               Year: 2017
               <br />
@@ -38,10 +40,15 @@ class Projects extends React.Component {
             <br />
             <br />
             <p>
-              Sold in units of 1 or 3. Alia is available for purchase at our
-              retailers, and in our shop.
+              Sold in units of 1 or 3. Alia is available for purchase at our{' '}
+              <u>retailers</u>, and in our <u>shop</u>.
             </p>
-            <p>Download</p>
+            <br />
+            <br />
+            <br />
+            <p>
+              <u>Download</u>
+            </p>
           </div>
         </div>
       </Layout>

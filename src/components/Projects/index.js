@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { css } from 'emotion'
 import image_one from '../../images/D_homepage_image_01.jpg'
 import { styles } from './styles'
+import Link from 'gatsby-link'
 
 class Projects extends Component {
   render() {
@@ -11,7 +12,9 @@ class Projects extends Component {
           <p>Spin Lamp, 2018</p>
         </div>
         <div className={css(styles.imageWrapper)}>
-          <img src={image_one} />
+          <Link to="/projects/">
+            <img src={image_one} />
+          </Link>
         </div>
 
         <div className={css(styles.projectTitle)}>
@@ -38,3 +41,5 @@ class Projects extends Component {
 }
 
 export default Projects
+
+//  DONT FORGET TO REMOVE LINK TAG FROM PROJECTS COMPONENT
