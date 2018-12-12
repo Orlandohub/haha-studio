@@ -10,6 +10,9 @@ export const styles = {
   projectWrapper: mq({
     paddingLeft: 10,
     paddingRight: 10,
+    '& > :last-child': {
+      paddingBottom: ['60px', '60px', '60px', '226px'],
+    },
   }),
 
   projectTitle: mq({

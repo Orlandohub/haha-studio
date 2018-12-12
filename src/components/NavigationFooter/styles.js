@@ -4,11 +4,11 @@ const breakpoints = [1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const footerWrapper = mq({
-  position: 'relative',
+  position: 'relative!important',
   paddingTop: ['35px', '58px'],
   paddingBottom: ['45px', '80px'],
-  //marginLeft: 15,
-  //marginRight: 15 o,
+  //marginLeft: 10,
+  //marginRight: 10,
   display: 'block!important',
   textAlign: 'center!important',
   fontSize: ['14px!important', '29px!important'],
