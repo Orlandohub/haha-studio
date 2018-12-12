@@ -7,18 +7,28 @@ publish_mode: editorial_workflow
 media_folder: static/assets/uploads
 public_folder: /assets/uploads
 display_url: https://eloquent-lalande-8cc180.netlify.com
-logo_url: https://eloquent-lalande-8cc180.netlify.com/static/logo_large-7a558ae26e74241eef861563ebad3b2c.png
+logo_url: /assets/logo_large.png
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: "projects"
+    label: "Projects"
+    folder: "src/pages/projects"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects"}
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Is Selected", name: "is_selected", widget: "boolean"}
+      - {label: "Project Assistant", name: "project_assistant", widget: "string"}
+      - {label: "Photo Credits", name: "photo_credits", widget: "string"}
+      - {label: "Producer", name: "producer", widget: "string"}
+      - {label: "Year", name: "year", widget: "date", format: "YYYY"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Description", name: "description", widget: "text"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Gallery", name: "galleryImages", widget: "list", field: {label: Image, name: image, widget: image}}
+      - label: Image Gallery
+        name: image_gallery
+        widget: list
+        fields:
+          - {label: Image, name: image, widget: image}
+          - {label: "Is Cover", name: "is_cover", widget: "boolean"}
+
