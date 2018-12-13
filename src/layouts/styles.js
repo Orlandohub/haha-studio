@@ -23,8 +23,9 @@ export const aboutText = mq(aboutImageWrapper, {
 })
 
 export const aboutImageWrapper = mq({
-  paddingTop: [40, 40, 40, 40, 53],
-  paddingBottom: [60, 60, 60, 60, 217],
+  width: '100%',
+  marginTop: [40, 40, 40, 40, 53],
+  marginBottom: [60, 60, 60, 60, 217],
 })
 
 export const leftFloatingEmptySpace = mq({

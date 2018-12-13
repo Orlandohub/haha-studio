@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'emotion'
 import * as styles from '../layouts/styles'
-import image_one from '../images/D_homepage_image_01.jpg'
+import portrait from '../images/D_portrait_image.jpg'
 
 const About = ({ location }) => (
   <React.Fragment>
@@ -37,8 +37,9 @@ const About = ({ location }) => (
               Denmark, London, Milan, New York, and Shanghai.
             </p>
           </div>
-          <div className={css(styles.aboutImageWrapper)} />
-          <img src={image_one} />
+          <div className={css(styles.aboutImageWrapper)}>
+            <img src={portrait} />
+          </div>
         </div>
       </div>
     </Layout>
