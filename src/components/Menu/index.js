@@ -45,7 +45,7 @@ class Menu extends Component {
         activeMenu = 'projects'
         activeSubMenu = 'archived'
         break
-      case '/about/about/':
+      case '/about/':
         activeMenu = 'studio'
         activeSubMenu = 'about'
         break
@@ -154,7 +154,7 @@ class Menu extends Component {
           {/* ############# STUDIO SECTION ############# */}
           <ul className={css(styles.subMenuCol)}>
             <li
-              onClick={() => navigate('/about/about/')}
+              onClick={() => navigate('/about/')}
               className={css(styles.subMenuItem)}
             >
               <span
