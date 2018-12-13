@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../../layouts'
-import image_one from '../../images/D_homepage_image_01.jpg'
-import * as styles from './styles'
+import Layout from '../layouts'
+import image_one from '../images/D_homepage_image_01.jpg'
+import * as styles from '../components/IndexPageStyles/ProjectStyles/styles'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
 
