@@ -10,7 +10,6 @@ export const pageWrapper = mq({
   position: 'relative',
   paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
   paddingRight: ['32px', '32px', '80px', '135px', '160px'],
-  //paddingBottom: ['60px', '60px', '60px', '226px'],
 })
 
 // ############### STYLING FOR ABOUT INDEX PAGE #################
@@ -48,4 +47,4 @@ export const aboutRightColumn = mq({
   paddingLeft: [0, 0, 0, 0, 175],
 })
 
-// ###############  END  ##################
+// ####################  END  #####################
