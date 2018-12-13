@@ -39,41 +39,47 @@ export const styles = {
   }),
 }
 export const StyledScrollTop = styled(ScrollTop)`
-  position: fixed;
-  right: 4%;
-  display: block;
-  bottom: 5%;
-  width: 50px;
-  height: 41px;
-  padding: 15px;
-  border: none;
-  border-radius: 50px;
-  background-image: url(${arrowToTop});
-  background-position: center;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  transition: all 0s;
+  position: fixed !important;
+  right: 4% !important;
+  display: block !important;
+  bottom: 5% !important;
+  width: 50px !important;
+  height: 41px !important;
+  padding: 15px !important;
+  border: none !important;
+  border-radius: 50px !important;
+  background-image: url(${arrowToTop}) !important;
+  background-position: center !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  cursor: pointer !important;
+  outline: none !important;
+  transition: all 0s !important;
+
+  &:focus {
+    outline: none !important;
+  }
 
   &:hover {
-    background-image: url(${arrowBlackGoTop});
-    background-position: center;
-    background-color: transparent;
-    background-repeat: no-repeat;
+    background-image: url(${arrowBlackGoTop}) !important;
+    background-position: center !important;
+    background-color: transparent !important;
+    background-repeat: no-repeat !important;
+    outline: none !important;
   }
   &:before {
-    content: 'top';
-    position: relative;
-    top: -50px;
-    right: 4px;
-    font-size: 20px;
-    color: #cacac8;
+    content: 'top' !important;
+    position: relative !important;
+    top: -50px !important;
+    right: 5px !important;
+    font-size: 20px !important;
+    color: #cacac8 !important;
   }
   &:hover:before {
-    font-size: 20px;
-    color: black;
+    font-size: 20px !important;
+    color: black !important;
   }
   @media (max-width: 1024px) {
-    display: none;
+    display: none !important;
   }
 `
