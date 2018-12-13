@@ -4,7 +4,7 @@ import footerArrow from '../../images/03_D_footer_arrow_project_page.png'
 import * as styles from './styles'
 import Link from 'gatsby-link'
 
-const Footer = props => {
+const NavFooter = props => {
   return (
     <>
       <div className={css(styles.footerWrapper)}>
@@ -32,4 +32,4 @@ const Footer = props => {
   )
 }
 
-export default Footer
+export default NavFooter
