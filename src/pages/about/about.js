@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../layouts'
+import Layout from '../../layouts'
 import { css } from 'emotion'
-import * as styles from '../layouts/styles'
-import portrait from '../images/D_portrait_image.jpg'
+import * as styles from './styles'
+import portrait from '../../images/D_portrait_image.jpg'
 
 const About = ({ location }) => (
   <React.Fragment>

@@ -25,7 +25,7 @@ class Menu extends Component {
 
     this.state = {
       activeMenu: null,
-      activeSubMenu: null
+      activeSubMenu: null,
     }
   }
 
@@ -33,52 +33,52 @@ class Menu extends Component {
     let activeMenu = null
     let activeSubMenu = null
     switch (this.pathname) {
-    case '/':
-      activeMenu = 'projects'
-      activeSubMenu = '/'
-      break
-    case '/selected/':
-      activeMenu = 'projects'
-      activeSubMenu = 'selected'
-      break
-    case '/archived/':
-      activeMenu = 'projects'
-      activeSubMenu = 'archived'
-      break
-    case '/about/':
-      activeMenu = 'studio'
-      activeSubMenu = 'about'
-      break
-    case '/exploration/':
-      activeMenu = 'studio'
-      activeSubMenu = 'exploration'
-      break
-    case '/texts/':
-      activeMenu = 'studio'
-      activeSubMenu = 'texts'
-      break
-    case '/find-us/':
-      activeMenu = 'contact'
-      activeSubMenu = 'find-us'
-      break
-    case '/press/':
-      activeMenu = 'contact'
-      activeSubMenu = 'press'
-      break
-    case '/retailers/':
-      activeMenu = 'contact'
-      activeSubMenu = 'retailers'
-      break
-    case '/shop/':
-      activeMenu = 'shop'
-      break
-    default:
-      activeMenu = null
+      case '/':
+        activeMenu = 'projects'
+        activeSubMenu = '/'
+        break
+      case '/selected/':
+        activeMenu = 'projects'
+        activeSubMenu = 'selected'
+        break
+      case '/archived/':
+        activeMenu = 'projects'
+        activeSubMenu = 'archived'
+        break
+      case '/about/about/':
+        activeMenu = 'studio'
+        activeSubMenu = 'about'
+        break
+      case '/exploration/':
+        activeMenu = 'studio'
+        activeSubMenu = 'exploration'
+        break
+      case '/texts/':
+        activeMenu = 'studio'
+        activeSubMenu = 'texts'
+        break
+      case '/find-us/':
+        activeMenu = 'contact'
+        activeSubMenu = 'find-us'
+        break
+      case '/press/':
+        activeMenu = 'contact'
+        activeSubMenu = 'press'
+        break
+      case '/retailers/':
+        activeMenu = 'contact'
+        activeSubMenu = 'retailers'
+        break
+      case '/shop/':
+        activeMenu = 'shop'
+        break
+      default:
+        activeMenu = null
     }
 
     this.setState({
       activeMenu,
-      activeSubMenu
+      activeSubMenu,
     })
   }
 
@@ -126,37 +126,35 @@ class Menu extends Component {
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
                     : this.isActiveMenu('projects')
-                      ? css(styles.subMenuLinkActive)
-                      : css(styles.subMenuLink)
+                    ? css(styles.subMenuLinkActive)
+                    : css(styles.subMenuLink)
                 }
               >
                 projects
               </span>
             </li>
 
-            {
-              this.isActiveMenu('projects')
-                ? (
-                  <React.Fragment>
-                    <MenuDropdownLink
-                      link="selected"
-                      activeSubMenu={
-                        this.isActiveSubMenu('/') || this.isActiveSubMenu('selected')
-                      }
-                    />
-                    <MenuDropdownLink
-                      link="archived"
-                      activeSubMenu={this.isActiveSubMenu('archived')}
-                    />
-                  </React.Fragment>
-                ) : null
-            }
+            {this.isActiveMenu('projects') ? (
+              <React.Fragment>
+                <MenuDropdownLink
+                  link="selected"
+                  activeSubMenu={
+                    this.isActiveSubMenu('/') ||
+                    this.isActiveSubMenu('selected')
+                  }
+                />
+                <MenuDropdownLink
+                  link="archived"
+                  activeSubMenu={this.isActiveSubMenu('archived')}
+                />
+              </React.Fragment>
+            ) : null}
           </ul>
 
           {/* ############# STUDIO SECTION ############# */}
           <ul className={css(styles.subMenuCol)}>
             <li
-              onClick={() => navigate('/about/')}
+              onClick={() => navigate('/about/about/')}
               className={css(styles.subMenuItem)}
             >
               <span
@@ -165,8 +163,8 @@ class Menu extends Component {
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
                     : this.isActiveMenu('studio')
-                      ? css(styles.subMenuLinkActive)
-                      : css(styles.subMenuLink)
+                    ? css(styles.subMenuLinkActive)
+                    : css(styles.subMenuLink)
                 }
               >
                 studio
@@ -201,8 +199,8 @@ class Menu extends Component {
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
                     : this.isActiveMenu('contact')
-                      ? css(styles.subMenuLinkActive)
-                      : css(styles.subMenuLink)
+                    ? css(styles.subMenuLinkActive)
+                    : css(styles.subMenuLink)
                 }
               >
                 contact
