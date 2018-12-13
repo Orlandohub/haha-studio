@@ -1,14 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Layout from '../layouts'
-import image_one from '../images/D_homepage_image_01.jpg'
-import * as styles from '../layouts/styles'
+import Layout from '../../layouts'
+import image_one from '../../images/D_homepage_image_01.jpg'
+import * as styles from './styles'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
 
-//  DONT FORGET TO REMOVE LINK TAG FROM PROJECTS COMPONENt
-
-class Projects extends React.Component {
+class Project extends React.Component {
   render() {
     const { location } = this.props
     return (
@@ -64,8 +62,8 @@ class Projects extends React.Component {
   }
 }
 
-Projects.proptypes = {
+Project.proptypes = {
   location: PropTypes.object.isRequired,
 }
 
-export default Projects
+export default Project
