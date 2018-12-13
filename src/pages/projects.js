@@ -6,7 +6,7 @@ import * as styles from '../layouts/styles'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
 
-//  DONT FORGET TO REMOVE LINK TAG FROM PROJECTS COMPONEN
+//  DONT FORGET TO REMOVE LINK TAG FROM PROJECTS COMPONENt
 
 class Projects extends React.Component {
   render() {
@@ -15,13 +15,13 @@ class Projects extends React.Component {
       <Layout location={location}>
         <div className={css(styles.projectWrapper)}>
           <div className={css(styles.projectTitle)}>
-            <p>Spin Lamp, 2018</p>
+            <p className={css(styles.styledParagraph)}>Spin Lamp, 2018</p>
           </div>
           <div className={css(styles.imageWrapper)}>
             <img src={image_one} />
           </div>
           <div className={css(styles.textWrapper)}>
-            <p>
+            <p className={css(styles.styledParagraph)}>
               Year: 2017
               <br />
               Producer: HAHA studio Project
@@ -31,7 +31,7 @@ class Projects extends React.Component {
               Photo credits: HAHA studio & Charlie Drevstam
             </p>
             <br />
-            <p>
+            <p className={css(styles.styledParagraph)}>
               Alia, Latin for “Change”, is a candle holder that does exactly
               that. Made from a single repeating branch, Alia is all about
               creating free compositions. One branch works alone, but stacking
@@ -39,8 +39,7 @@ class Projects extends React.Component {
             </p>
             <br />
             <br />
-            <br />
-            <p>
+            <p className={css(styles.styledParagraph)}>
               Sold in units of 1 or 3. Alia is available for purchase at our{' '}
               <Link to="/retailers/" className={css(styles.Link)}>
                 retailers
@@ -53,8 +52,7 @@ class Projects extends React.Component {
             </p>
             <br />
             <br />
-            <br />
-            <p>
+            <p className={css(styles.styledParagraph)}>
               <Link to="#" className={css(styles.Link)}>
                 Download
               </Link>

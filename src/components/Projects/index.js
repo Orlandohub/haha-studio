@@ -6,54 +6,6 @@ import { styles, StyledScrollTop } from './styles'
 const Projects = () => {
   return (
     <div className={css(styles.projectWrapper)}>
-      <div className={css(styles.projectTitle)}>
-        <p>Spin Lamp, 2018</p>
-      </div>
-      <div className={css(styles.imageWrapper)}>
-        <img src={image_one} />
-      </div>
-      <div className={css(styles.projectTitle)}>
-        <p>Spin Lamp, 2018</p>
-      </div>
-      <div className={css(styles.imageWrapper)}>
-        <img src={image_one} />
-      </div>
-      <div className={css(styles.projectTitle)}>
-        <p>Spin Lamp, 2018</p>
-      </div>
-      <div className={css(styles.imageWrapper)}>
-        <img src={image_one} />
-      </div>
-      <div className={css(styles.projectTitle)}>
-        <p>Liberty Lamp, 2018</p>
-      </div>
-      <div className={css(styles.imageWrapper)}>
-        <img src={image_one} />
-      </div>
-      <div className={css(styles.projectTitle)}>
-        <p>Liberty Lamp, 2018</p>
-      </div>
-      <div className={css(styles.imageWrapper)}>
-        <img src={image_one} />
-      </div>
-      <div className={css(styles.projectTitle)}>
-        <p>Spin Lamp, 2018</p>
-      </div>
-      <div className={css(styles.imageWrapper)}>
-        <img src={image_one} />
-      </div>
-      <div className={css(styles.projectTitle)}>
-        <p>Spin Lamp, 2018</p>
-      </div>
-      <div className={css(styles.imageWrapper)}>
-        <img src={image_one} />
-      </div>
-      <div className={css(styles.projectTitle)}>
-        <p>Spin Lamp, 2018</p>
-      </div>
-      <div className={css(styles.imageWrapper)}>
-        <img src={image_one} />
-      </div>
       <StyledScrollTop
         text=""
         distance={1500}
@@ -62,10 +14,56 @@ const Projects = () => {
         target={0}
         icon={null}
       />
+      <div className={css(styles.projectTitle)}>
+        <p>Spin Lamp, 2018</p>
+      </div>
+      <div className={css(styles.imageWrapper)}>
+        <img src={image_one} />
+      </div>
+      <div className={css(styles.projectTitle)}>
+        <p>Spin Lamp, 2018</p>
+      </div>
+      <div className={css(styles.imageWrapper)}>
+        <img src={image_one} />
+      </div>
+      <div className={css(styles.projectTitle)}>
+        <p>Spin Lamp, 2018</p>
+      </div>
+      <div className={css(styles.imageWrapper)}>
+        <img src={image_one} />
+      </div>
+      <div className={css(styles.projectTitle)}>
+        <p>Liberty Lamp, 2018</p>
+      </div>
+      <div className={css(styles.imageWrapper)}>
+        <img src={image_one} />
+      </div>
+      <div className={css(styles.projectTitle)}>
+        <p>Liberty Lamp, 2018</p>
+      </div>
+      <div className={css(styles.imageWrapper)}>
+        <img src={image_one} />
+      </div>
+      <div className={css(styles.projectTitle)}>
+        <p>Spin Lamp, 2018</p>
+      </div>
+      <div className={css(styles.imageWrapper)}>
+        <img src={image_one} />
+      </div>
+      <div className={css(styles.projectTitle)}>
+        <p>Spin Lamp, 2018</p>
+      </div>
+      <div className={css(styles.imageWrapper)}>
+        <img src={image_one} />
+      </div>
+      <div className={css(styles.projectTitle)}>
+        <p>Spin Lamp, 2018</p>
+      </div>
+      <div className={css(styles.imageWrapper)}>
+        <img src={image_one} />
+      </div>
     </div>
   )
 }
 
 export default Projects
-
-//  DONT FORGET TO REMOVE LINK TAG FROM PROJECTS COMPONENT
