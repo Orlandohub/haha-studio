@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import * as styles from '../layouts/styles'
-import image_one from '../../images/D_homepage_image_01.jpg'
+import image_one from '../images/D_homepage_image_01.jpg'
 
 const About = ({ location }) => (
   <React.Fragment>
