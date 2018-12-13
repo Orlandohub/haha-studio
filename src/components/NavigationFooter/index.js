@@ -15,7 +15,11 @@ const Footer = props => {
             alt="arrow left"
           />
         </Link>
-        <p>{props.text}</p>
+        <p>
+          <Link to={props.linkText} className={css(styles.linkText)}>
+            {props.text}
+          </Link>
+        </p>
         <Link to={props.linkRight} className={css(styles.linkRight)}>
           <img
             className={css(styles.arrowRight)}

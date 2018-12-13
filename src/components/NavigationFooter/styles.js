@@ -41,3 +41,8 @@ export const linkLeft = mq(linkRight, {
   float: 'left!important',
   left: 0,
 })
+
+export const linkText = mq({
+  textDecoration: 'none!important',
+  color: 'black!important',
+})

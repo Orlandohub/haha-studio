@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { Grid, Row, Col } from 'react-bootstrap'
+
 const About = ({ location }) => (
   <React.Fragment>
     <Layout location={location}>
