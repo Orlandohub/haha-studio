@@ -11,4 +11,3 @@ export const pageWrapper = mq({
   paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
   paddingRight: ['32px', '32px', '80px', '135px', '160px'],
 })
-//3333
