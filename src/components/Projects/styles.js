@@ -8,8 +8,11 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const styles = {
   projectWrapper: mq({
-    paddingLeft: 15,
-    paddingRight: 15,
+    paddingLeft: 10,
+    paddingRight: 10,
+    '& > :last-child': {
+      paddingBottom: ['60px', '60px', '60px', '226px'],
+    },
   }),
 
   projectTitle: mq({
