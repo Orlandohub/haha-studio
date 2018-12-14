@@ -18,7 +18,7 @@ const Texts = ({ location }) => (
             <Link to={'#'} className={css(styles.linkText)}>
               <h2 className={css(styles.textsHeader)}>
                 What is behind a laughter and how we came to name our studio
-                after it.{' '}
+                after it.
               </h2>
               <br />
               <br />
