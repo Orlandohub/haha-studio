@@ -35,9 +35,11 @@ export const ProjectsTemplate = ({
             <p>Photo Credits: {photoCredits}</p>
             <p>Producer: {producer}</p>
             <div>
-              {
-                isEmpty(galleryImages) ? null : map(galleryImages, (img, key) => <Img fluid={img.childImageSharp.fluid}/>)
-              }
+              {isEmpty(galleryImages)
+                ? null
+                : map(galleryImages, (img, key) => (
+                    <Img fluid={img.childImageSharp.fluid} />
+                  ))}
             </div>
             {cmsImageGallery}
             <PostContent content={content} />
@@ -47,7 +49,6 @@ export const ProjectsTemplate = ({
     </section>
   )
 }
-
 
 ProjectsTemplate.propTypes = {
   content: PropTypes.node.isRequired,
@@ -71,11 +72,12 @@ const Project = ({ data }) => {
       content={post.html}
       contentComponent={HTMLContent}
       helmet={
-        <Helmet
-          titleTemplate="%s | Blog"
-        >
+        <Helmet titleTemplate="%s | Blog">
           <title>{`${post.frontmatter.title}`}</title>
-          <meta name="description" content={`${post.frontmatter.description}`} />
+          <meta
+            name="description"
+            content={`${post.frontmatter.description}`}
+          />
         </Helmet>
       }
       title={post.frontmatter.title}
