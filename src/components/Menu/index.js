@@ -103,12 +103,8 @@ class Menu extends Component {
     return (
       <div className={css(styles.menuContainer)}>
         <div className={css(styles.brand)}>
-          <div className={css(styles.logoWrap)}>
-            <Link
-              to="/selected/"
-              data-cy="logo"
-              className={css(styles.logoLink)}
-            >
+          <div data-cy="logo" className={css(styles.logoWrap)}>
+            <Link to="/selected/" className={css(styles.logoLink)}>
               <Img fluid={data.logoImage.childImageSharp.fluid} />
             </Link>
           </div>

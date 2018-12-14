@@ -19,7 +19,6 @@ export const menuContainer = mq({
   paddingTop: '37px',
 })
 
-
 // MENU
 
 // --> MENU LOGO
@@ -43,11 +42,7 @@ export const logoWrap = mq({
   paddingTop: '13px!important',
   paddingBottom: '0!important',
   paddingRight: '0!important',
-  width: [
-    '81.5px',
-    '81.5px',
-    '168.64px',
-  ]
+  width: ['81.5px', '81.5px', '168.64px'],
 })
 
 export const logoLink = css({
@@ -124,5 +119,3 @@ export const subMenuItemShop = mq(subMenuItem, {
 })
 
 export const subMenuLinkShop = mq(subMenuLink)
-
-
