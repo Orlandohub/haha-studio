@@ -27,7 +27,7 @@ context('Navigation selectors test', () => {
       'selected' & 'archived' & 'find us' & 'press' & 'retailers'
     ).should('not.be.visible')
 
-    cy.get('[data-cy=contact]').click()
+    cy.contains('contact').click()
     cy.url().should('include', '/find-us/')
     cy.contains('find us')
     cy.contains('press').click()
