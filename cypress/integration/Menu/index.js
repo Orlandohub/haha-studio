@@ -51,7 +51,7 @@ context('Navigation selectors test', () => {
         'retailers'
     ).should('not.be.visible')
 
-    cy.get('[data-cy=logo]').click()
+    cy.get('[data-cy=logo]').click({force: true})
     cy.url().should('include', '/selected/')
   })
 })
