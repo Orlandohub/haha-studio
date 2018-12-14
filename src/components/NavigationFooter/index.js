@@ -15,7 +15,7 @@ const NavFooter = props => {
             alt="arrow left"
           />
         </Link>
-        <p>
+        <p className={css(styles.paragraph)}>
           <Link to={props.linkText} className={css(styles.linkText)}>
             {props.text}
           </Link>

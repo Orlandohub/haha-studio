@@ -15,7 +15,7 @@ const Texts = ({ location }) => (
           {/*########################*/}
 
           <div className={css(styles.textsText)}>
-            <Link to={'#'} className={css(styles.linkText)}>
+            <Link to={'/text/'} className={css(styles.linkText)}>
               <h2 className={css(styles.textsHeader)}>
                 What is behind a laughter and how we came to name our studio
                 after it.
@@ -38,7 +38,7 @@ const Texts = ({ location }) => (
           {/*########################*/}
 
           <div className={css(styles.textsText)}>
-            <Link to={'#'} className={css(styles.linkText)}>
+            <Link to={'/text/'} className={css(styles.linkText)}>
               <h2 className={css(styles.textsHeader)}>
                 What is behind a laughter and how we came to name our studio
                 after it.{' '}

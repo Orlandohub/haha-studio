@@ -8,12 +8,9 @@ export const textWrapper = mq({
 export const textText = mq({
   fontSize: ['14px', '14px', '22px', '22px', '22px'],
   width: '100%',
-  marginBottom: 50,
+  marginBottom: [60, 60, 60, 60, 164],
 })
-export const linkText = mq({
-  color: 'black!important',
-  textDecoration: 'none!important',
-})
+
 export const leftFloatingEmptySpace = mq({
   width: ['0%', '0%', '0%', '0%', '25%'],
   float: 'left',
