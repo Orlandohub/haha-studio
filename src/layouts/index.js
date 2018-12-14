@@ -6,7 +6,7 @@ import fonts from '../fonts'
 import { StaticQuery, graphql } from 'gatsby'
 import PageTransition from 'gatsby-v2-plugin-page-transitions'
 import { css } from 'emotion'
-import styles from './styles'
+import * as styles from './styles'
 
 import '../assets/bootstrap/css/bootstrap.min.css'
 
