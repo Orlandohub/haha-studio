@@ -103,8 +103,8 @@ class Menu extends Component {
     return (
       <div className={css(styles.menuContainer)}>
         <div className={css(styles.brand)}>
-          <div data-cy="logo" className={css(styles.logoWrap)}>
-            <Link to="/selected/" className={css(styles.logoLink)}>
+          <div className={css(styles.logoWrap)}>
+            <Link data-cy="logo" to="/selected/" className={css(styles.logoLink)}>
               <Img fluid={data.logoImage.childImageSharp.fluid} />
             </Link>
           </div>
@@ -150,11 +150,11 @@ class Menu extends Component {
           {/* ############# STUDIO SECTION ############# */}
           <ul className={css(styles.subMenuCol)}>
             <li
+              data-cy="studio"
               onClick={() => navigate('/about/')}
               className={css(styles.subMenuItem)}
             >
               <span
-                data-cy="studio"
                 className={
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
@@ -186,11 +186,11 @@ class Menu extends Component {
           {/* ############# CONTACT SECTION ############# */}
           <ul className={css(styles.subMenuCol)}>
             <li
+              data-cy="contact"
               onClick={() => navigate('/find-us/')}
               className={css(styles.subMenuItem)}
             >
               <span
-                data-cy="contact"
                 className={
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
