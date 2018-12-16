@@ -33,12 +33,12 @@ export const brand = mq({
 })
 
 export const logoWrap = mq({
-  marginLeft: [
+  marginLeft: 0 /*[
     '17px!important',
     '17px!important',
     '17px!important',
     '10px!important',
-  ],
+  ]*/,
   paddingTop: '13px!important',
   paddingBottom: '0!important',
   paddingRight: '0!important',
@@ -75,7 +75,7 @@ export const dropDownWrap = mq({
 export const subMenuItem = mq({
   paddingTop: ['15px', '15px', '15px', '7px', '7px'],
   paddingBottom: '15px',
-  paddingLeft: 15,
+  paddingLeft: [0, 0, 0, 15],
   paddingRight: 10,
   width: ['20vw', '20vw', 160],
 })
