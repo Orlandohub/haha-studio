@@ -22,6 +22,10 @@ export const styles = {
     lineHeight: 1.5,
     fontSize: '2em',
     color: 'black',
+    textDecoration: 'none',
+    '& a': {
+      color: 'black',
+    },
   }),
 
   imageWrapper: mq({

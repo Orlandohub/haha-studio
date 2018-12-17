@@ -40,11 +40,12 @@ class IndexPage extends React.Component {
   }
   render() {
     const { data, location } = this.props
+    const { projectsList } = data
     return (
       <div ref={this.scrollView}>
         <Hero data={data} enableScroll={this.enableScroll} />
         <Layout location={location}>
-          <Projects />
+          <Projects projects={projectsList} />
         </Layout>
       </div>
     )
@@ -74,5 +75,32 @@ export const query = graphql`
         }
       }
     }
+    projectsList: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] },
+      filter: { frontmatter: { templateKey: { eq: "project-page" } }}
+    ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              templateKey
+              year
+              image_gallery {
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 1060) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
   }
 `
