@@ -12,7 +12,7 @@ logo_url: /assets/logo_large.png
 collections:
   - name: "projects"
     label: "Projects"
-    folder: "src/pages/project"
+    folder: "src/pages/projects"
     create: true
     slug: "{{slug}}"
     fields:
