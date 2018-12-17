@@ -18,7 +18,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project-page"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Is Selected", name: "is_selected", widget: "boolean"}
+      - {label: "Is Selected", name: "is_selected", widget: "boolean", required: false}
       - {label: "Project Assistant", name: "project_assistant", widget: "string"}
       - {label: "Photo Credits", name: "photo_credits", widget: "string"}
       - {label: "Producer", name: "producer", widget: "string"}
