@@ -31,4 +31,19 @@ collections:
         fields:
           - {label: Image, name: image, widget: image}
           - {label: "Is Cover", name: "is_cover", widget: "boolean"}
-
+  - name: "explorations"
+    label: "Explorations"
+    folder: "src/pages/explorations"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "explorations"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - label: Image Gallery
+        name: image_gallery
+        widget: list
+        fields:
+          - {label: Image, name: image, widget: image}
+          - {label: "Is Cover", name: "is_cover", widget: "boolean"}
