@@ -5,10 +5,11 @@ import Projects from '../components/Projects'
 
 class Archived extends React.Component {
   render() {
-    const { location } = this.props
+    const { location, data } = this.props
+    const { projectsList } = data
     return (
       <Layout location={location}>
-        <Projects />
+        <Projects projects={projectsList} />
       </Layout>
     )
   }
@@ -16,6 +17,39 @@ class Archived extends React.Component {
 
 Archived.proptypes = {
   location: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
 }
 
 export default Archived
+
+export const query = graphql`
+  query {
+    projectsList: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] },
+      filter: { frontmatter: { templateKey: { eq: "project-page" } }}
+    ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              templateKey
+              year
+              image_gallery {
+                image {
+                  childImageSharp {
+                    fluid(maxWidth: 1060) {
+                      ...GatsbyImageSharpFluid_withWebp_noBase64
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  }
+`
