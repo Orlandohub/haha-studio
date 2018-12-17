@@ -66,7 +66,6 @@ ProjectsTemplate.propTypes = {
 
 const Project = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log('post', post)
   return (
     <ProjectsTemplate
       content={post.html}
