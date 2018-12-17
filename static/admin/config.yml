@@ -12,11 +12,11 @@ logo_url: /assets/logo_large.png
 collections:
   - name: "projects"
     label: "Projects"
-    folder: "src/pages/projects"
+    folder: "src/pages/project"
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Is Selected", name: "is_selected", widget: "boolean"}
       - {label: "Project Assistant", name: "project_assistant", widget: "string"}
@@ -37,7 +37,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "texts"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "explorations"

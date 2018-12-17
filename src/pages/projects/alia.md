@@ -1,5 +1,5 @@
 ---
-templateKey: projects
+templateKey: project-page
 title: Alia
 is_selected: true
 project_assistant: Studio Dejawo
