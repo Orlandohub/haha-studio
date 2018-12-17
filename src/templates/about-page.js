@@ -23,8 +23,7 @@ export const AboutPageTemplate = ({ content, contentComponent }) => {
 }
 
 AboutPageTemplate.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
+  content: PropTypes.object,
   contentComponent: PropTypes.func,
 }
 
@@ -52,9 +51,6 @@ export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
-      frontmatter {
-        title
-      }
     }
   }
 `
