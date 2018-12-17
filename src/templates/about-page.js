@@ -28,11 +28,11 @@ AboutPageTemplate.propTypes = {
   contentComponent: PropTypes.func,
 }
 
-const AboutPage = ({ data }) => {
+const AboutPage = ({ data, location }) => {
   const { markdownRemark: post } = data
-
+  
   return (
-    <Layout>
+    <Layout location={location}>
       <AboutPageTemplate
         contentComponent={HTMLContent}
         content={post.html}
@@ -42,6 +42,7 @@ const AboutPage = ({ data }) => {
 }
 
 AboutPage.propTypes = {
+  location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
 }
 
