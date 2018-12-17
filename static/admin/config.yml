@@ -31,6 +31,15 @@ collections:
         fields:
           - {label: Image, name: image, widget: image}
           - {label: "Is Cover", name: "is_cover", widget: "boolean"}
+  - name: "texts"
+    label: "Texts"
+    folder: "src/pages/texts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "explorations"
     label: "Explorations"
     folder: "src/pages/explorations"
