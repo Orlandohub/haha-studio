@@ -33,12 +33,7 @@ export const brand = mq({
 })
 
 export const logoWrap = mq({
-  marginLeft: 0 /*[
-    '17px!important',
-    '17px!important',
-    '17px!important',
-    '10px!important',
-  ]*/,
+  marginLeft: 0,
   paddingTop: '13px!important',
   paddingBottom: '0!important',
   paddingRight: '0!important',
