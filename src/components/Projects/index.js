@@ -1,5 +1,5 @@
 import React from 'react'
-import _ from 'lodash'
+import { map } from 'lodash'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import { styles, StyledScrollTop } from './styles'
@@ -20,7 +20,7 @@ const Projects = (projectsList) => {
         icon={null}
       />
       {
-        _.map(edges, (project) => {
+        map(edges, (project) => {
           const { id } = project && project.node
           const { title, year, image_gallery } = project && project.node && project.node.frontmatter
           const { slug } = project && project.node && project.node.fields

@@ -5,8 +5,12 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 import Img from 'gatsby-image'
+import Layout from '../layouts'
+import { css } from 'emotion'
+import * as styles from '../components/IndexPageStyles/ProjectStyles/styles'
 
 export const ProjectsTemplate = ({
+  location,
   content,
   contentComponent,
   title,
@@ -20,37 +24,42 @@ export const ProjectsTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content
+  console.log('galleryImages', galleryImages)
   return (
-    <section className="section">
-      {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>Is selected: {isSelected ? 'Yes' : 'No'}</p>
-            <p>year: {year}</p>
-            <p>Project Assistant: {projectAssistant}</p>
-            <p>Photo Credits: {photoCredits}</p>
-            <p>Producer: {producer}</p>
-            <div>
-              {isEmpty(galleryImages)
-                ? null
-                : map(galleryImages, (img, key) => (
-                    <Img fluid={img.childImageSharp.fluid} />
-                  ))}
-            </div>
-            {cmsImageGallery}
+    <Layout location={location}>
+      <div className={css(styles.projectWrapper)}>
+        <div className={css(styles.projectTitle)}>
+          <p className={css(styles.styledParagraph)}>
+            {title}, {year}
+          </p>
+        </div>
+        <div className={css(styles.imageWrapper)}>
+          {isEmpty(galleryImages) ? null : (
+            <Img fluid={galleryImages[0].image.childImageSharp.fluid} />
+          )}
+        </div>
+        <div className={css(styles.textWrapper)}>
+          <p className={css(styles.styledParagraph)}>
+            Year: {year}
+            <br />
+            Producer: {producer}
+            <br />
+            Assistant: {projectAssistant}
+            <br />
+            Photo credits: {photoCredits}
+          </p>
+          <br />
+          <p className={css(styles.styledParagraph)}>
             <PostContent content={content} />
-          </div>
+          </p>
         </div>
       </div>
-    </section>
+    </Layout>
   )
 }
 
 ProjectsTemplate.propTypes = {
+  location: PropTypes.object.isRequired,
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   title: PropTypes.string,
@@ -80,6 +89,10 @@ const Project = ({ data }) => {
         </Helmet>
       }
       title={post.frontmatter.title}
+      year={post.frontmatter.year}
+      producer={post.frontmatter.producer}
+      projectAssistant={post.frontmatter.project_assistant}
+      photoCredits={post.frontmatter.photo_credits}
       galleryImages={post.frontmatter.image_gallery}
     />
   )
@@ -101,6 +114,19 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        year
+        producer
+        project_assistant
+        photo_credits
+        image_gallery {
+          image {
+            childImageSharp {
+              fluid(maxWidth: 1060) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
+        }
       }
     }
   }

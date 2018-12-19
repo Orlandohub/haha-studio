@@ -26,7 +26,12 @@ export const query = graphql`
   query {
     projectsList: allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] },
-      filter: { frontmatter: { templateKey: { eq: "project-page" } }}
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "project-page" },
+          is_selected: { eq: true }
+        }
+      }
     ) {
         edges {
           node {
