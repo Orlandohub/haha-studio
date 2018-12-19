@@ -29,6 +29,14 @@ class CoverPress extends React.Component {
     })
   }
 
+  componentDidMount() {
+    window.addEventListener('onmouseover', this.onMouseOver, this.onMouseOut)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('onmouseover', this.onMouseOver, this.onMouseOut)
+  }
+
   render() {
     return (
       <img
