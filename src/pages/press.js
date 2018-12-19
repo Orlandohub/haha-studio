@@ -85,7 +85,7 @@ const Press = ({ location }) => (
             </p>
           </div>
 
-          {/*      BOTTOM IMAGE GRID PART        */}
+          {/*  ###    BOTTOM IMAGE GRID PART     ###   */}
 
           <div className={css(styles.pressGrid)}>
             <div className={css(styles.pressImage)}>
