@@ -93,7 +93,7 @@ export const query = graphql`
       sort: { order: DESC, fields: [frontmatter___date] },
       filter: {
         frontmatter: {
-          templateKey: { eq: "explorations" }
+          templateKey: { eq: "exploration-page" }
         }
       }
     ) {

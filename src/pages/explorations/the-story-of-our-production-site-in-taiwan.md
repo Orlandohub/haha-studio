@@ -1,5 +1,5 @@
 ---
-templateKey: explorations
+templateKey: exploration-page
 title: The story of our production site in Taiwan
 date: 2018-12-19T10:42:28.548Z
 image: /assets/uploads/d_homepage_image_01.jpg
