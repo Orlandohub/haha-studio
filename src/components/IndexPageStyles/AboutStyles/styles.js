@@ -7,14 +7,15 @@ export const aboutWrapper = mq({
   width: '100%',
   paddingTop: [15, 15, 15, 15, 22],
 })
-export const aboutText = mq(aboutImageWrapper, {
+export const aboutText = mq({
   fontSize: ['14px', '14px', '22px', '22px'],
+  margin: '0!important',
+  width: '100%',
 })
 
 export const aboutImageWrapper = mq({
   width: '100%',
   marginTop: [40, 40, 40, 40, 53],
-  marginBottom: [60, 60, 60, 60, 217],
 })
 
 export const leftFloatingEmptySpace = mq({
@@ -35,6 +36,7 @@ export const aboutRightColumn = mq({
   width: ['100%', '100%', '100%', '100%', '75%'],
   float: 'left',
   paddingLeft: [0, 0, 0, 0, 175],
+  marginBottom: [60, 60, 60, 60, 217],
 })
 
 // ####################  END  #####################
