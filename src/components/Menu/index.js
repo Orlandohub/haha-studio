@@ -65,6 +65,10 @@ class Menu extends Component {
         activeMenu = 'contact'
         activeSubMenu = 'press'
         break
+      case '/press-expanded/':
+        activeMenu = 'contact'
+        activeSubMenu = 'press'
+        break
       case '/retailers/':
         activeMenu = 'contact'
         activeSubMenu = 'retailers'
@@ -104,7 +108,11 @@ class Menu extends Component {
       <div className={css(styles.menuContainer)}>
         <div className={css(styles.brand)}>
           <div className={css(styles.logoWrap)}>
-            <Link data-cy="logo" to="/selected/" className={css(styles.logoLink)}>
+            <Link
+              data-cy="logo"
+              to="/selected/"
+              className={css(styles.logoLink)}
+            >
               <Img fluid={data.logoImage.childImageSharp.fluid} />
             </Link>
           </div>
