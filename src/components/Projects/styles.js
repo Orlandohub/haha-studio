@@ -26,6 +26,9 @@ export const styles = {
     '& a': {
       color: 'black',
     },
+    '& a:hover': {
+      textDecoration: 'none',
+    },
   }),
 
   imageWrapper: mq({
