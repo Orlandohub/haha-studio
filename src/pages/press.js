@@ -8,8 +8,14 @@ import keira from '../images/D_press_cover_index_image.png'
 import keiraInverted from '../images/keirainverted.png'
 
 class CoverPress extends React.Component {
-  state = {
-    image: keira,
+  constructor() {
+    super()
+    this.state = {
+      image: keira,
+    }
+
+    this.onMouseOver = this.onMouseOver.bind(this)
+    this.onMouseOut = this.onMouseOut.bind(this)
   }
   onMouseOver(e) {
     this.setState({
@@ -27,8 +33,8 @@ class CoverPress extends React.Component {
     return (
       <img
         src={this.state.image}
-        onMouseEnter={this.onMouseOver.bind(this)}
-        onMouseLeave={this.onMouseOut.bind(this)}
+        onMouseEnter={this.onMouseOver}
+        onMouseLeave={this.onMouseOut}
       />
     )
   }
