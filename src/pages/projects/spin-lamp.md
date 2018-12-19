@@ -1,7 +1,7 @@
 ---
 templateKey: project-page
 title: Spin Lamp
-is_selected: true
+is_selected: false
 project_assistant: Studio Dejawu
 photo_credits: ' HAHA studio & Charlie Drevstam '
 producer: HAHA studio
