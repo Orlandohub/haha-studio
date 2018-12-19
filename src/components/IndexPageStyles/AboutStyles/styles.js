@@ -7,9 +7,10 @@ export const aboutWrapper = mq({
   width: '100%',
   paddingTop: [15, 15, 15, 15, 22],
 })
-export const aboutText = mq(aboutImageWrapper, {
+export const aboutText = mq({
   fontSize: ['14px', '14px', '22px', '22px'],
   margin: '0!important',
+  width: '100%',
 })
 
 export const aboutImageWrapper = mq({
