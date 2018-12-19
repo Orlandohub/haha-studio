@@ -43,6 +43,7 @@ class CoverPress extends React.Component {
         src={this.state.image}
         onMouseEnter={this.onMouseOver}
         onMouseLeave={this.onMouseOut}
+        className={css(styles.pressImgStyle)}
       />
     )
   }

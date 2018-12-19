@@ -75,11 +75,6 @@ export const pressImage = mq({
   marginBottom: [15, 15, 15, 41, 41],
 })
 
-export const pressCover = mq({
-  display: 'block',
+export const pressImgStyle = mq({
   width: '100%',
-  backgroundImage: `url(${keira})`,
-  '&:hover': {
-    backgroundImage: `url(${keiraInverted})`,
-  },
 })
