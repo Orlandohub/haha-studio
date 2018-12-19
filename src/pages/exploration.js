@@ -4,9 +4,11 @@ import Layout from '../layouts'
 import * as styles from '../components/IndexPageStyles/ExplorationStyles/styles'
 import { css } from 'emotion'
 import image from '../images/hero_image.jpg'
+import { graphql } from 'gatsby'
 
-const Exploration = ({ location }) => (
-  <React.Fragment>
+const Exploration = ({ data, location }) => {
+  console.log('data', data);
+  return(
     <Layout location={location}>
       <div className={css(styles.explorationWrapper)}>
         <div className={css(styles.leftFloatingEmptySpace)} />
@@ -76,11 +78,41 @@ const Exploration = ({ location }) => (
         </div>
       </div>
     </Layout>
-  </React.Fragment>
-)
+  )
+}
 
 Exploration.proptypes = {
   location: PropTypes.object.isRequired,
 }
 
 export default Exploration
+
+export const query = graphql`
+  query {
+    explorationList: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] },
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "explorations" }
+        }
+      }
+    ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              date
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1060) {
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  }
+`
