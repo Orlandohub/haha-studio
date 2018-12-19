@@ -1,4 +1,5 @@
 import keira from '../../../images/D_press_cover_index_image.png'
+import keiraInverted from '../../../images/keirainverted.png'
 import facepaint from 'facepaint'
 const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
@@ -78,8 +79,7 @@ export const pressCover = mq({
   display: 'block',
   width: '100%',
   backgroundImage: `url(${keira})`,
-  /*'&:hover': {
-    backgroundImage: `url(${keira})`,
-    transform: 'scaleX(-1)',
-  },*/
+  '&:hover': {
+    backgroundImage: `url(${keiraInverted})`,
+  },
 })
