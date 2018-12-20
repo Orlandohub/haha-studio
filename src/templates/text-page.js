@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'emotion'
-import * as styles from '../components/IndexPageStyles/TextStyles/styles'
+import * as styles from '../components/IndexPageStyles/TextsStyles/styles'
 import NavFooter from '../components/NavigationFooter'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
@@ -32,7 +32,7 @@ export const TextPageTemplate = ({ content, contentComponent, title }) => {
 }
 
 TextPageTemplate.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
   title: PropTypes.string,
 }
