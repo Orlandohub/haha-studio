@@ -103,13 +103,6 @@ export const query = graphql`
             frontmatter {
               title
               date
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 1060) {
-                    ...GatsbyImageSharpFluid_withWebp_noBase64
-                  }
-                }
-              }
             }
           }
         }
