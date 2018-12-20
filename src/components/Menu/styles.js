@@ -1,7 +1,7 @@
 import { css } from 'emotion'
 import facepaint from 'facepaint'
 
-const breakpoints = [576, 768, 1024, 1200]
+const breakpoints = [576, 768, 1024, 1200, 1366]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 // MENU CONTAIMER
@@ -25,6 +25,7 @@ export const menuContainer = mq({
 export const brand = mq({
   float: 'left',
   minWidth: [
+    '100%!important',
     '100%!important',
     '100%!important',
     '100%!important',
@@ -56,23 +57,24 @@ export const subMenuCol = mq({
   listStyle: 'none',
   margin: 0,
   paddingLeft: 0,
+  width: ['30%', '30%', '30%', '30%', 160],
 })
 
 export const dropDownWrap = mq({
   paddingLeft: ['0px', '0px', '0px', '0px'],
-  paddingTop: ['25px', '25px', '25px', '0'],
+  paddingTop: ['25px', '25px', '25px', '25px', '0'],
   paddingBottom: ['46px', '46px', '46px', '79px!important'],
   float: 'left',
   display: 'block',
-  width: ['90%', '80%', '80%', '65%'],
+  width: ['90%', '90%', '90%', '90%', '65%'],
 })
 
 export const subMenuItem = mq({
-  paddingTop: ['15px', '15px', '15px', '7px', '7px'],
+  paddingTop: ['15px', '15px', '15px', '15px', '7px'],
   paddingBottom: '15px',
-  paddingLeft: [0, 0, 0, 15],
+  paddingLeft: [0, 0, 0, 0, 15],
   paddingRight: 10,
-  width: ['25vw', '25vw', 160],
+  //width: ['25vw', '25vw', '20vw', '20vw', 160],
 })
 
 export const subMenuLink = mq({
@@ -92,7 +94,7 @@ export const subMenuLinkInactive = mq(subMenuLink, {
 
 // --> MENU SHOP ITEM & LINK
 export const shopWrap = mq({
-  paddingTop: ['25px', '25px', '25px', '0'],
+  paddingTop: ['25px', '25px', '25px', '25px', '0'],
   position: 'relative',
   float: 'right!important',
   width: ['10%', '10%', '10%', '10%'],

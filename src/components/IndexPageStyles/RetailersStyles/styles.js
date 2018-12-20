@@ -1,5 +1,5 @@
 import facepaint from 'facepaint'
-const breakpoints = [576, 768, 1024, 1200]
+const breakpoints = [576, 768, 1024, 1200, 1366]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const retailersWrapper = mq({
@@ -8,7 +8,7 @@ export const retailersWrapper = mq({
 })
 
 export const leftFloatingEmptySpace = mq({
-  width: ['0%', '0%', '0%', '0%', '25%'],
+  width: ['0%', '0%', '0%', '0%', '0%', '25%'],
   float: 'left',
   minHeight: [
     '0px!important',
@@ -28,9 +28,9 @@ export const retailersHeader = mq({
 })
 
 export const retailersRightColumn = mq({
-  width: ['100%', '100%', '100%', '100%', '75%'],
+  width: ['100%', '100%', '100%', '100%', '100%', '75%'],
   float: 'left',
-  paddingLeft: [0, 0, 0, 0, 335],
+  paddingLeft: [0, 0, 0, 0, '25%', 335],
   marginBottom: [45, 45, 45, 45, 176],
 })
 
@@ -40,9 +40,12 @@ export const retailersText = mq({
 
 export const leftTextColumn = mq({
   float: 'left',
-  width: '50%',
+  width: ['54%', '54%', '54%', '54%', '320px', '50%'],
+  paddingLeft: [0, 0, 0, 0, 15, 0],
 })
 
-export const rightTextColumn = mq(leftTextColumn, {
-  paddingLeft: 12,
+export const rightTextColumn = mq({
+  float: 'left',
+  paddingLeft: [0, 0, 0, 0, 12],
+  width: ['46%', '46%', '46%', '46%', '46%', '50%'],
 })
