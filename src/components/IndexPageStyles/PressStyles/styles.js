@@ -1,5 +1,3 @@
-import keira from '../../../images/D_press_cover_index_image.png'
-import keiraInverted from '../../../images/keirainverted.png'
 import facepaint from 'facepaint'
 const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
@@ -46,6 +44,27 @@ export const pressText = mq({
 })
 
 export const pressGrid = mq({
+  '@media (min-width: 300px)': {
+    marginRight: '-10px',
+  },
+  '@media (min-width: 1024px)': {
+    marginRight: '0px',
+    '& > :nth-child(even)': {
+      paddingRight: 0,
+      paddingLeft: 6,
+    },
+  },
+})
+
+export const pressImage = mq({
+  float: 'left',
+  width: ['25%', '25%', '25%', '50%', '50%'],
+  paddingRight: [10, 10, 10, 6, 6],
+  marginBottom: [15, 15, 15, 41, 41],
+})
+
+export const horizontalLine = mq({
+  display: 'block',
   borderTop: [
     '1.5px solid black',
     '1.5px solid black',
@@ -54,25 +73,6 @@ export const pressGrid = mq({
     '2px solid black',
   ],
   paddingTop: [55, 55, 55, 55, 53],
-  '@media (min-width: 1024px)': {
-    '& > :nth-child(even)': {
-      paddingRight: 0,
-      paddingLeft: 6,
-    },
-  },
-  '@media (max-width: 1023px)': {
-    '& > :nth-child(4n)': {
-      paddingRight: 0,
-      paddingLeft: 5,
-    },
-  },
-})
-
-export const pressImage = mq({
-  float: 'left',
-  width: ['25%', '25%', '25%', '50%', '50%'],
-  paddingRight: [5, 5, 5, 6, 6],
-  marginBottom: [15, 15, 15, 41, 41],
 })
 
 export const pressImgStyle = mq({
