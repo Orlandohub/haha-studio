@@ -29,6 +29,7 @@ export const imageWrapper = mq({
   position: 'relative!important',
   marginTop: 5,
   color: 'black!important',
+  paddingLeft: [0, 0, 0, 0, 15],
 })
 
 export const textWrapper = mq(imageWrapper, {
