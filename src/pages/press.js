@@ -87,7 +87,7 @@ const Press = ({ location }) => (
           </div>
 
           {/*      BOTTOM IMAGE GRID PART        */}
-
+          <div className={css(styles.horizontalLine)} />
           <div className={css(styles.pressGrid)}>
             <div className={css(styles.pressImage)}>
               <Link to={'/press-expanded/'}>

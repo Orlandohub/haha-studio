@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import Projects from '../components/Projects'
+import { graphql } from 'gatsby'
 
 class Archived extends React.Component {
   render() {
