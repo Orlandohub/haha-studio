@@ -37,7 +37,7 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "texts"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "text-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Body", name: "body", widget: "markdown"}
   - name: "explorations"
