@@ -72,7 +72,7 @@ export const subMenuItem = mq({
   paddingBottom: '15px',
   paddingLeft: [0, 0, 0, 15],
   paddingRight: 10,
-  width: ['20vw', '20vw', 160],
+  width: ['25vw', '25vw', 160],
 })
 
 export const subMenuLink = mq({
