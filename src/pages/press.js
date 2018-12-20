@@ -43,6 +43,7 @@ class CoverPress extends React.Component {
         src={this.state.image}
         onMouseEnter={this.onMouseOver}
         onMouseLeave={this.onMouseOut}
+        className={css(styles.pressImgStyle)}
       />
     )
   }
@@ -86,7 +87,7 @@ const Press = ({ location }) => (
           </div>
 
           {/*      BOTTOM IMAGE GRID PART        */}
-
+          <div className={css(styles.horizontalLine)} />
           <div className={css(styles.pressGrid)}>
             <div className={css(styles.pressImage)}>
               <Link to={'/press-expanded/'}>
