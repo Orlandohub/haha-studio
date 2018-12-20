@@ -4,7 +4,6 @@ import Layout from '../layouts'
 import { map } from 'lodash'
 import * as styles from '../components/IndexPageStyles/ExplorationStyles/styles'
 import { css } from 'emotion'
-import image from '../images/hero_image.jpg'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
