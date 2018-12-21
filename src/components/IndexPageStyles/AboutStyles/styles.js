@@ -18,24 +18,14 @@ export const aboutImageWrapper = mq({
   marginTop: [40, 40, 40, 40, 53],
 })
 
-export const leftFloatingEmptySpace = mq({
-  width: ['0%', '0%', '0%', '0%', '25%'],
-  float: 'left',
-  minHeight: [
-    '0px!important',
-    '0px!important',
-    '0px!important',
-    '0px!important',
-    '1px!important',
-  ],
-})
 export const styledAboutParagraph = mq({
   margin: '0px!important',
 })
 export const aboutRightColumn = mq({
-  width: ['100%', '100%', '100%', '100%', '75%'],
+  width: '100%',
   float: 'left',
-  paddingLeft: [0, 0, 0, 0, 175],
+  paddingLeft: [0, 0, 0, 0, '38%'],
+  marginLeft: [0, 0, 0, 0, '17px'],
   marginBottom: [60, 60, 60, 60, 217],
 })
 

@@ -21,15 +21,15 @@ const Retailers = ({ location }) => (
                 <br />
                 www.aplace.com
                 <br />
-                <br />
-                <br />
+                <br className={css(styles.noBr)} />
+                <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>Designtorget</h2>
                 All stores and webshop
                 <br />
                 www.designtorget.se
                 <br />
-                <br />
-                <br />
+                <br className={css(styles.noBr)} />
+                <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>Grått</h2>
                 Baggensgatan 12
                 <br />
@@ -37,22 +37,22 @@ const Retailers = ({ location }) => (
                 <br />
                 www.gratt.se
                 <br />
-                <br />
-                <br />
+                <br className={css(styles.noBr)} />
+                <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>Om.design</h2>
                 Lejonsgatan 4C
                 <br /> Kalix, Sweden
                 <br /> www.omdesign.se
                 <br />
-                <br />
-                <br />
+                <br className={css(styles.noBr)} />
+                <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>1stdibs</h2>
                 Webshop
                 <br />
                 www.1stdibs.com
                 <br />
-                <br />
-                <br />
+                <br className={css(styles.noBr)} />
+                <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>Pamono</h2>
                 Webshop
                 <br /> www.pamono.com
@@ -70,8 +70,8 @@ const Retailers = ({ location }) => (
                 <br />
                 www.betonggruvan.se
                 <br />
-                <br />
-                <br />
+                <br className={css(styles.noBr)} />
+                <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>Fracas Gallery</h2>
                 Rue des Chartreux
                 <br />
@@ -79,8 +79,8 @@ const Retailers = ({ location }) => (
                 <br />
                 www.fracas-online.com
                 <br />
-                <br />
-                <br />
+                <br className={css(styles.noBr)} />
+                <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>Mimou</h2>
                 Gamla Landsvägen 2
                 <br />
@@ -88,8 +88,8 @@ const Retailers = ({ location }) => (
                 <br />
                 www.mimou.se
                 <br />
-                <br />
-                <br />
+                <br className={css(styles.noBr)} />
+                <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>
                   The Home Company
                 </h2>
@@ -99,8 +99,8 @@ const Retailers = ({ location }) => (
                 <br />
                 www.homecompany.se
                 <br />
-                <br />
-                <br />
+                <br className={css(styles.noBr)} />
+                <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>Designonline</h2>
                 Webshop
                 <br />

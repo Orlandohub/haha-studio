@@ -30,8 +30,8 @@ export const retailersHeader = mq({
 export const retailersRightColumn = mq({
   width: ['100%', '100%', '100%', '100%', '100%', '75%'],
   float: 'left',
-  paddingLeft: [0, 0, 0, 0, '25%', 335],
-  marginBottom: [45, 45, 45, 45, 176],
+  paddingLeft: [0, 0, 0, 0, 0, '26%'],
+  marginBottom: [150, 150, 150, 150, 205],
 })
 
 export const retailersText = mq({
@@ -40,12 +40,16 @@ export const retailersText = mq({
 
 export const leftTextColumn = mq({
   float: 'left',
-  width: ['54%', '54%', '54%', '54%', '320px', '50%'],
-  paddingLeft: [0, 0, 0, 0, 15, 0],
+  width: ['54%', '54%', '54%', '54%', '51%', '50%'],
+  paddingLeft: [0, 0, 0, 0, 15, 15, 15],
 })
 
 export const rightTextColumn = mq({
   float: 'left',
   paddingLeft: [0, 0, 0, 0, 12],
   width: ['46%', '46%', '46%', '46%', '46%', '50%'],
+})
+
+export const noBr = mq({
+  display: ['none', 'none', 'none', 'block'],
 })

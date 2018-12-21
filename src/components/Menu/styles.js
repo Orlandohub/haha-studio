@@ -1,7 +1,7 @@
 import { css } from 'emotion'
 import facepaint from 'facepaint'
 
-const breakpoints = [576, 768, 1024, 1200, 1366]
+const breakpoints = [576, 768, 1024, 1200, 1366, 1720]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 // MENU CONTAIMER
@@ -57,7 +57,7 @@ export const subMenuCol = mq({
   listStyle: 'none',
   margin: 0,
   paddingLeft: 0,
-  width: ['30%', '30%', '30%', '30%', 160],
+  width: ['30%', '30%', '30%', '30%', '20%'],
 })
 
 export const dropDownWrap = mq({
@@ -72,9 +72,8 @@ export const dropDownWrap = mq({
 export const subMenuItem = mq({
   paddingTop: ['15px', '15px', '15px', '15px', '7px'],
   paddingBottom: '15px',
-  paddingLeft: [0, 0, 0, 0, 15],
+  paddingLeft: [0, 0, 0, 0, 17],
   paddingRight: 10,
-  //width: ['25vw', '25vw', '20vw', '20vw', 160],
 })
 
 export const subMenuLink = mq({
@@ -111,7 +110,6 @@ export const subMenuColShop = {
 
 export const subMenuItemShop = mq(subMenuItem, {
   paddingRight: 15,
-  width: ['20vw', '20vw', '160px!important'],
   textAlign: 'right',
 })
 

@@ -14,30 +14,34 @@ const Texts = ({ location, data }) => {
     <React.Fragment>
       <Layout location={location}>
         <div className={css(styles.textWrapper)}>
-          <div className={css(styles.leftFloatingEmptySpace)} />
-
           <div className={css(styles.textRightColumn)}>
+            {map(edges, edge => {
+              return (
+                <div className={css(styles.textText)}>
+                  <h2 className={css(styles.textHeader)}>
+                    <Link
+                      to={edge.node.fields.slug}
+                      className={css(styles.linkText)}
+                    >
+                      {edge.node.frontmatter.title}
+                    </Link>
+                  </h2>
+                  <br />
+                  <br />
 
-            {
-              map(edges, (edge) => {
-                return (
-                  <div className={css(styles.textText)}>
-                    <h2 className={css(styles.textHeader)}>
-                      <Link to={edge.node.fields.slug} className={css(styles.linkText)}>
-                        {edge.node.frontmatter.title}
-                      </Link>
-                    </h2>
-                    <br />
-                    <br />
-
-                    <p className={css(styles.textParagraph)}>
-                      {edge.node.excerpt} <Link to={edge.node.fields.slug} className={css(styles.linkText)}>read more</Link>
-                    </p>
-                    <br />
-                  </div>
-                )
-              })
-            }
+                  <p className={css(styles.textParagraph)}>
+                    {edge.node.excerpt}{' '}
+                    <Link
+                      to={edge.node.fields.slug}
+                      className={css(styles.linkText)}
+                    >
+                      read more
+                    </Link>
+                  </p>
+                  <br />
+                </div>
+              )
+            })}
           </div>
         </div>
       </Layout>
@@ -55,26 +59,22 @@ export default Texts
 export const query = graphql`
   query {
     textsList: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
-      filter: {
-        frontmatter: {
-          templateKey: { eq: "text-page" }
-        }
-      }
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "text-page" } } }
     ) {
-        edges {
-          node {
-            id
-            excerpt(pruneLength: 240)
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              templateKey
-            }
+      edges {
+        node {
+          id
+          excerpt(pruneLength: 240)
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            templateKey
           }
         }
       }
+    }
   }
 `

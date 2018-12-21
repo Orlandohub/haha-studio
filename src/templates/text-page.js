@@ -12,13 +12,10 @@ export const TextPageTemplate = ({ content, contentComponent, title }) => {
 
   return (
     <div className={css(styles.textWrapper)}>
-      <div className={css(styles.leftFloatingEmptySpace)} />
       <div className={css(styles.textRightColumn)}>
         {/*########################*/}
         <div className={css(styles.textText)}>
-          <h2 className={css(styles.textHeader)}>
-            {title}
-          </h2>
+          <h2 className={css(styles.textHeader)}>{title}</h2>
           <br />
           <br />
           <p className={css(styles.textParagraph)}>
@@ -39,7 +36,7 @@ TextPageTemplate.propTypes = {
 
 const TextPage = ({ data, location }) => {
   const { markdownRemark: post } = data
-  
+
   return (
     <Layout location={location}>
       <TextPageTemplate

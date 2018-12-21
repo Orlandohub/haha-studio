@@ -7,25 +7,14 @@ export const pressWrapper = mq({
   paddingTop: [15, 15, 15, 15, 22],
 })
 
-export const leftFloatingEmptySpace = mq({
-  width: ['0%', '0%', '0%', '0%', '25%'],
-  float: 'left',
-  minHeight: [
-    '0px!important',
-    '0px!important',
-    '0px!important',
-    '0px!important',
-    '1px!important',
-  ],
-})
 export const pressParagraph = mq({
   margin: '0px!important',
   fontSize: [14, 14, 29, 29, 29],
 })
 export const pressRightColumn = mq({
-  width: ['100%', '100%', '100%', '100%', '75%'],
+  width: '100%',
   float: 'left',
-  paddingLeft: [0, 0, 0, 0, 335],
+  paddingLeft: [0, 0, 0, 0, '51%'],
   marginBottom: [45, 45, 45, 45, 176],
 })
 
@@ -41,18 +30,15 @@ export const mailTo = mq({
 
 export const pressText = mq({
   paddingBottom: [40, 40, 40, 40, 53],
+  paddingLeft: [0, 0, 0, 0, 17],
 })
 
 export const pressGrid = mq({
-  '@media (min-width: 300px)': {
-    marginRight: '-10px',
-  },
-  '@media (min-width: 1024px)': {
-    marginRight: '0px',
-    '& > :nth-child(even)': {
-      paddingRight: 0,
-      paddingLeft: 6,
-    },
+  paddingLeft: [0, 0, 0, 0, 17],
+  marginRight: ['-10px', '-10px', '-10px', '0px', '0px'],
+  '& > :nth-child(even)': {
+    paddingRight: [10, 10, 10, 0, 0],
+    paddingLeft: [0, 0, 0, 6, 6],
   },
 })
 
@@ -65,6 +51,7 @@ export const pressImage = mq({
 
 export const horizontalLine = mq({
   display: 'block',
+  marginLeft: [0, 0, 0, 0, 15],
   borderTop: [
     '1.5px solid black',
     '1.5px solid black',

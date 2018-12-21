@@ -17,17 +17,7 @@ export const linkText = mq({
   color: 'black!important',
   textDecoration: 'none!important',
 })
-export const leftFloatingEmptySpace = mq({
-  width: ['0%', '0%', '0%', '0%', '25%'],
-  float: 'left',
-  minHeight: [
-    '0px!important',
-    '0px!important',
-    '0px!important',
-    '0px!important',
-    '1px!important',
-  ],
-})
+
 export const textParagraph = mq({
   margin: '0!important',
 })
@@ -36,11 +26,12 @@ export const textHeader = mq(textParagraph, {
   fontSize: [18, 18, 29, 29, 29],
 })
 export const textRightColumn = mq({
-  width: ['100%', '100%', '100%', '100%', '75%'],
+  width: '100%',
   float: 'left',
-  paddingLeft: [0, 0, 0, 0, 175],
+  paddingLeft: [0, 0, 0, 0, '38%'],
+  marginLeft: [0, 0, 0, 0, 17],
   '& > :last-child': {
-    border: 'none',
+    border: 'none!important',
     padding: 0,
     marginBottom: [60, 60, 60, 60, 247],
   },
