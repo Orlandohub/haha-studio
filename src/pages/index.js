@@ -3,12 +3,6 @@ import PropTypes from 'prop-types'
 import Hero from '../components/Hero'
 import Layout from '../layouts'
 import Projects from '../components/Projects'
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock'
-
 import { graphql } from 'gatsby'
 
 class IndexPage extends React.Component {
@@ -16,37 +10,27 @@ class IndexPage extends React.Component {
     super(props)
 
     this.state = {
-      scrollLock: true,
+      content: false,
     }
-    this.reloadToTop = this.reloadToTop.bind(this)
-    this.enableScroll = this.enableScroll.bind(this)
-    this.scrollView = React.createRef()
+
+    this.showContent = this.showContent.bind(this)
   }
 
-  reloadToTop() {
-    window.scrollTo(0, 0)
+  showContent() {
+    this.setState({ content: true })
   }
 
-  componentDidMount() {
-    window.addEventListener('beforeunload', this.reloadToTop)
-    disableBodyScroll(this.scrollView.current)
-  }
-  componentWillUnmount() {
-    window.removeEventListener('beforeunload', this.reloadToTop)
-    clearAllBodyScrollLocks()
-  }
-  enableScroll() {
-    enableBodyScroll(this.scrollView.current)
-  }
   render() {
     const { data, location } = this.props
     const { projectsList } = data
     return (
-      <div ref={this.scrollView}>
-        <Hero data={data} enableScroll={this.enableScroll} />
-        <Layout location={location}>
-          <Projects projects={projectsList} />
-        </Layout>
+      <div>
+        <Hero data={data} showContent={this.showContent} />
+        {this.state.content && (
+          <Layout location={location}>
+            <Projects projects={projectsList} />
+          </Layout>
+        )}
       </div>
     )
   }
@@ -76,30 +60,29 @@ export const query = graphql`
       }
     }
     projectsList: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
+      sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
-          templateKey: { eq: "project-page" },
+          templateKey: { eq: "project-page" }
           is_selected: { eq: true }
         }
       }
     ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              templateKey
-              year
-              image_gallery {
-                image {
-                  childImageSharp {
-                    fluid(maxWidth: 1060) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
-                    }
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            templateKey
+            year
+            image_gallery {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1060) {
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
               }
@@ -107,5 +90,6 @@ export const query = graphql`
           }
         }
       }
+    }
   }
 `
