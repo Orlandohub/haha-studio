@@ -10,37 +10,37 @@ import Img from 'gatsby-image'
 const Exploration = ({ data, location }) => {
   const { edges } = data.explorationList
 
-  return(
+  return (
     <Layout location={location}>
       <div className={css(styles.explorationWrapper)}>
         <div className={css(styles.leftFloatingEmptySpace)} />
         <div className={css(styles.explorationRightColumn)}>
-          {
-            map(edges, (edge) => {
-              return (
-                <React.Fragment key={edge.node.id}>
-                  <div className={css(styles.explorationImageWrapper)}>
-                    <Img fluid={edge.node.frontmatter.image.childImageSharp.fluid} />
-                  </div>
-                  <div className={css(styles.explorationText)}>
-                    <div className={css(styles.explorationHeaderWrapper)}>
-                      <p className={css(styles.explorationParagraph)}>
-                        {edge.node.frontmatter.date}
-                        <h2 className={css(styles.explorationHeader)}>
-                          {edge.node.frontmatter.title}{' '}
-                        </h2>
-                        <br />
-                      </p>
-                    </div>
+          {map(edges, edge => {
+            return (
+              <React.Fragment key={edge.node.id}>
+                <div className={css(styles.explorationImageWrapper)}>
+                  <Img
+                    fluid={edge.node.frontmatter.image.childImageSharp.fluid}
+                  />
+                </div>
+                <div className={css(styles.explorationText)}>
+                  <div className={css(styles.explorationHeaderWrapper)}>
                     <p className={css(styles.explorationParagraph)}>
-                      {edge.node.internal.content}
+                      {edge.node.frontmatter.date}
                     </p>
+                    <h2 className={css(styles.explorationHeader)}>
+                      {edge.node.frontmatter.title}{' '}
+                    </h2>
                     <br />
                   </div>
-                </React.Fragment>
-              )
-            })
-          }
+                  <p className={css(styles.explorationParagraph)}>
+                    {edge.node.internal.content}
+                  </p>
+                  <br />
+                </div>
+              </React.Fragment>
+            )
+          })}
         </div>
       </div>
     </Layout>
@@ -56,32 +56,28 @@ export default Exploration
 export const query = graphql`
   query {
     explorationList: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
-      filter: {
-        frontmatter: {
-          templateKey: { eq: "exploration-page" }
-        }
-      }
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { templateKey: { eq: "exploration-page" } } }
     ) {
-        edges {
-          node {
-            id
-            internal {
-              content
-            }
-            frontmatter {
-              title
-              date(formatString: "YYYY.MM")
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 1060) {
-                    ...GatsbyImageSharpFluid_withWebp_noBase64
-                  }
+      edges {
+        node {
+          id
+          internal {
+            content
+          }
+          frontmatter {
+            title
+            date(formatString: "YYYY.MM")
+            image {
+              childImageSharp {
+                fluid(maxWidth: 1060) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
             }
           }
         }
       }
+    }
   }
 `
