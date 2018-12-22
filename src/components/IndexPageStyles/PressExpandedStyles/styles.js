@@ -66,5 +66,4 @@ export const pressExpandedImage = mq({
 export const Image = mq({
   width: '50%',
   paddingRight: [5, 5, 5, 5, 6],
-  marginBottom: ['55px', '55px', '55px', '55px', '53px'],
 })
