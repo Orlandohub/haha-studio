@@ -6,13 +6,9 @@ import * as styles from './styles'
 const ShopNavigation = () => (
   <div className={css(styles.ShopNavigationWrapper)}>
     <span className={css(styles.supportLink)}>
-      <Link
-        to={'/support/'}
-        className={css(styles.linkStyles)}
-        activeClassName={css(styles.activeLink)}
-      >
+      <a href="mailto:press@hahastudio.se" className={css(styles.linkStyles)}>
         support
-      </Link>
+      </a>
     </span>
     <span className={css(styles.shippingLink)}>
       <Link
