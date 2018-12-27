@@ -73,6 +73,15 @@ class Menu extends Component {
         activeMenu = 'contact'
         activeSubMenu = 'retailers'
         break
+      case '/support/':
+        activeMenu = 'shop'
+        break
+      case '/shipping/':
+        activeMenu = 'shop'
+        break
+      case '/terms-licenses/':
+        activeMenu = 'shop'
+        break
       case '/shop/':
         activeMenu = 'shop'
         break

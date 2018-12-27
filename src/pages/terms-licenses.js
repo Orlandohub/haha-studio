@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'react-emotion'
 import * as styles from '../components/IndexPageStyles/TermsAndLicensesStyles/styles'
+import ShopNavigation from '../components/ShopNavigation/index'
 
 const TermsAndLicenses = ({ location }) => (
   <React.Fragment>
@@ -163,7 +164,7 @@ const TermsAndLicenses = ({ location }) => (
           <br />
           All Rights Reserved.
         </div>
-        {/*############### SHOP FOOTER MENU GOES HERE ################*/}
+        <ShopNavigation />
       </div>
     </Layout>
   </React.Fragment>
