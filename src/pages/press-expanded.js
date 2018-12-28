@@ -10,7 +10,6 @@ const Press = ({ location }) => (
   <React.Fragment>
     <Layout location={location}>
       <div className={css(styles.pressExpandedWrapper)}>
-        <div className={css(styles.leftFloatingEmptySpace)} />
         <div className={css(styles.pressExpandedRightColumn)}>
           <div className={css(styles.pressExpandedText)}>
             <p className={css(styles.pressExpandedParagraph)}>

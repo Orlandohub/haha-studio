@@ -12,7 +12,6 @@ export const TextPageTemplate = ({ content, contentComponent, title }) => {
 
   return (
     <div className={css(styles.textWrapper)}>
-      <div className={css(styles.leftFloatingEmptySpace)} />
       <div className={css(styles.textRightColumn)}>
         {/*########################*/}
         <div className={css(styles.textText)}>

@@ -13,7 +13,6 @@ const Exploration = ({ data, location }) => {
   return (
     <Layout location={location}>
       <div className={css(styles.explorationWrapper)}>
-        <div className={css(styles.leftFloatingEmptySpace)} />
         <div className={css(styles.explorationRightColumn)}>
           {map(edges, edge => {
             return (

@@ -12,7 +12,6 @@ export const AboutPageTemplate = ({ content, contentComponent }) => {
 
   return (
     <div className={css(styles.aboutWrapper)}>
-      <div className={css(styles.leftFloatingEmptySpace)} />
       <div className={css(styles.aboutRightColumn)}>
         <div className={css(styles.aboutText)}>
           <PageContent className="content" content={content} />

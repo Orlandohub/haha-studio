@@ -14,8 +14,6 @@ const Texts = ({ location, data }) => {
     <React.Fragment>
       <Layout location={location}>
         <div className={css(styles.textWrapper)}>
-          <div className={css(styles.leftFloatingEmptySpace)} />
-
           <div className={css(styles.textRightColumn)}>
             {map(edges, edge => {
               return (

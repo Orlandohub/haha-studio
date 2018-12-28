@@ -76,30 +76,29 @@ export const query = graphql`
       }
     }
     projectsList: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
+      sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
-          templateKey: { eq: "project-page" },
+          templateKey: { eq: "project-page" }
           is_selected: { eq: true }
         }
       }
     ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              templateKey
-              year
-              image_gallery {
-                image {
-                  childImageSharp {
-                    fluid(maxWidth: 1060) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
-                    }
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            templateKey
+            year
+            image_gallery {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1060) {
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
               }
@@ -107,5 +106,6 @@ export const query = graphql`
           }
         }
       }
+    }
   }
 `

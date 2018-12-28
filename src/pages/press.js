@@ -56,8 +56,6 @@ const Press = ({ location }) => (
   <React.Fragment>
     <Layout location={location}>
       <div className={css(styles.pressWrapper)}>
-        <div className={css(styles.leftFloatingEmptySpace)} />
-
         <div className={css(styles.pressRightColumn)}>
           <div className={css(styles.pressText)}>
             <p className={css(styles.pressParagraph)}>
