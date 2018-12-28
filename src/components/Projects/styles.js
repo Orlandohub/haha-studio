@@ -32,7 +32,7 @@ export const styles = {
   }),
 
   imageWrapper: mq({
-    paddingLeft: [0, 0, 0, 15],
+    paddingLeft: [0, 0, 0, 17],
     width: ['100%', '100%', '100%', '75%'],
     float: 'left',
     display: 'block',

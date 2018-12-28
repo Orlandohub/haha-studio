@@ -1,6 +1,6 @@
 ---
 templateKey: project-page
-title: Alia
+title: Alias
 is_selected: true
 project_assistant: Studio Dejawo
 photo_credits: HAHA Studio and Charlie Drevstam

@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'emotion'
-import Link from 'gatsby-link'
 import * as styles from '../components/IndexPageStyles/PressExpandedStyles/styles'
 import keira from '../images/D_press_cover_index_image.png'
 import NavFooter from '../components/NavigationFooter'
@@ -11,7 +10,6 @@ const Press = ({ location }) => (
   <React.Fragment>
     <Layout location={location}>
       <div className={css(styles.pressExpandedWrapper)}>
-        <div className={css(styles.leftFloatingEmptySpace)} />
         <div className={css(styles.pressExpandedRightColumn)}>
           <div className={css(styles.pressExpandedText)}>
             <p className={css(styles.pressExpandedParagraph)}>
@@ -47,9 +45,14 @@ const Press = ({ location }) => (
 
           <div className={css(styles.pressExpandedGrid)}>
             <div className={css(styles.pressExpandedImage)}>
+              <img id="image" src={keira} className={css(styles.Image)} />
               <img src={keira} className={css(styles.Image)} />
-              <img src={keira} className={css(styles.Image)} />
-              <NavFooter linkText="/press/" text="view all" />
+              <NavFooter
+                linkLeft="/find-us/"
+                linkRight="/retailers/"
+                linkText="/press/"
+                text="view all"
+              />
             </div>
           </div>
         </div>
