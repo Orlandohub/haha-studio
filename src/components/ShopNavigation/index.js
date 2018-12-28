@@ -5,12 +5,12 @@ import * as styles from './styles'
 
 const ShopNavigation = () => (
   <div className={css(styles.ShopNavigationWrapper)}>
-    <span className={css(styles.supportLink)}>
+    <span className={css(styles.navFooter)}>
       <a href="mailto:press@hahastudio.se" className={css(styles.linkStyles)}>
         support
       </a>
     </span>
-    <span className={css(styles.shippingLink)}>
+    <span className={css(styles.navFooter)}>
       <Link
         to={'/shipping/'}
         className={css(styles.linkStyles)}
@@ -19,7 +19,7 @@ const ShopNavigation = () => (
         shipping
       </Link>
     </span>
-    <span className={css(styles.termsLink)}>
+    <span className={css(styles.navFooter)}>
       <Link
         to={'/terms-licenses/'}
         className={css(styles.linkStyles)}

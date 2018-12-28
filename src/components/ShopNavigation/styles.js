@@ -4,23 +4,15 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const ShopNavigationWrapper = mq({
   float: 'left',
-  width: ['100%', '100%', '100%', '100%', '70%'],
-  //paddingTop: [60, 60, 60, 60, 258],
+  width: ['80%', '80%', '80%', '90%', '70%'],
   paddingLeft: ['0%', '0%', '0%', '0%', '25%'],
-  paddingBottom: 53,
+  paddingBottom: [60, 60, 60, 60, 53],
 })
 
-export const supportLink = mq({
+export const navFooter = mq({
   float: 'left',
   textAlign: 'left',
   width: '33.3%',
-})
-export const shippingLink = mq(supportLink, {
-  textAlign: ['center', 'center', 'center', 'center', 'left'],
-})
-
-export const termsLink = mq(supportLink, {
-  textAlign: ['right', 'right', 'right', 'right', 'left'],
 })
 
 export const linkStyles = mq({
