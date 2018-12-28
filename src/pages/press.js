@@ -2,10 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'emotion'
+import { genericHashLink } from 'react-router-hash-link'
 import Link from 'gatsby-link'
 import * as styles from '../components/IndexPageStyles/PressStyles/styles'
 import keira from '../images/D_press_cover_index_image.png'
 import keiraInverted from '../images/keirainverted.png'
+
+const MyHashLink = props => genericHashLink(props, Link)
 
 class CoverPress extends React.Component {
   constructor() {
@@ -17,13 +20,13 @@ class CoverPress extends React.Component {
     this.onMouseOver = this.onMouseOver.bind(this)
     this.onMouseOut = this.onMouseOut.bind(this)
   }
-  onMouseOver(e) {
+  onMouseOver() {
     this.setState({
       image: keiraInverted,
     })
   }
 
-  onMouseOut(e) {
+  onMouseOut() {
     this.setState({
       image: keira,
     })
@@ -88,44 +91,44 @@ const Press = ({ location }) => (
           <div className={css(styles.horizontalLine)} />
           <div className={css(styles.pressGrid)}>
             <div className={css(styles.pressImage)}>
-              <Link to={'/press-expanded/'}>
+              <MyHashLink to={'/press-expanded/#image'}>
                 <CoverPress />
-              </Link>
+              </MyHashLink>
             </div>
             <div className={css(styles.pressImage)}>
-              <Link to={'/press-expanded/'}>
+              <MyHashLink to={'/press-expanded/#image'}>
                 <CoverPress />
-              </Link>
+              </MyHashLink>
             </div>
             <div className={css(styles.pressImage)}>
-              <Link to={'/press-expanded/'}>
+              <MyHashLink to={'/press-expanded/#image'}>
                 <CoverPress />
-              </Link>
+              </MyHashLink>
             </div>
             <div className={css(styles.pressImage)}>
-              <Link to={'/press-expanded/'}>
+              <MyHashLink to={'/press-expanded/#image'}>
                 <CoverPress />
-              </Link>
+              </MyHashLink>
             </div>
             <div className={css(styles.pressImage)}>
-              <Link to={'/press-expanded/'}>
+              <MyHashLink to={'/press-expanded/#image'}>
                 <CoverPress />
-              </Link>
+              </MyHashLink>
             </div>
             <div className={css(styles.pressImage)}>
-              <Link to={'/press-expanded/'}>
+              <MyHashLink to={'/press-expanded/#image'}>
                 <CoverPress />
-              </Link>
+              </MyHashLink>
             </div>
             <div className={css(styles.pressImage)}>
-              <Link to={'/press-expanded/'}>
+              <MyHashLink to={'/press-expanded/#image'}>
                 <CoverPress />
-              </Link>
+              </MyHashLink>
             </div>
             <div className={css(styles.pressImage)}>
-              <Link to={'/press-expanded/'}>
+              <MyHashLink to={'/press-expanded/#image'}>
                 <CoverPress />
-              </Link>
+              </MyHashLink>
             </div>
           </div>
         </div>

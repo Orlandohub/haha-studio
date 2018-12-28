@@ -22,7 +22,7 @@ export const AboutPageTemplate = ({ content, contentComponent }) => {
 }
 
 AboutPageTemplate.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 

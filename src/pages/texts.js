@@ -17,7 +17,7 @@ const Texts = ({ location, data }) => {
           <div className={css(styles.textRightColumn)}>
             {map(edges, edge => {
               return (
-                <div className={css(styles.textText)}>
+                <div key={edge.node.id} className={css(styles.textText)}>
                   <h2 className={css(styles.textHeader)}>
                     <Link
                       to={edge.node.fields.slug}

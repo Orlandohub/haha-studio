@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'emotion'
-import * as styles from '../components/IndexPageStyles/TextsStyles/styles'
+import * as styles from '../components/IndexPageStyles/IndividualTextStyles/styles'
 import NavFooter from '../components/NavigationFooter'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
@@ -18,11 +18,16 @@ export const TextPageTemplate = ({ content, contentComponent, title }) => {
           <h2 className={css(styles.textHeader)}>{title}</h2>
           <br />
           <br />
-          <p className={css(styles.textParagraph)}>
+          <div className={css(styles.textParagraph)}>
             <PageContent className="content" content={content} />
-          </p>
+          </div>
         </div>
-        <NavFooter linkText="/texts/" text="back" />
+        <NavFooter
+          linkLeft="/about/"
+          linkRight="/exploration/"
+          linkText="/texts/"
+          text="back"
+        />
       </div>
     </div>
   )
