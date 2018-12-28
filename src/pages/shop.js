@@ -1,24 +1,92 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import { Grid, Row, Col } from 'react-bootstrap'
+import Link from 'gatsby-link'
+import { css } from 'react-emotion'
+import * as styles from '../components/IndexPageStyles/ShopPageStyles/styles'
+import shopProduct from '../images/D_shop_product_index_image.jpg'
+import ShopNavigation from '../components/ShopNavigation/index'
 
 const Shop = ({ location }) => (
   <React.Fragment>
     <Layout location={location}>
-      <Grid fluid>
-        <Row>
-          <Col xs={12}>
-            <h2>Shop</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit
-              nobis, molestias labore reprehenderit laborum ad necessitatibus
-              rem quam voluptatem temporibus amet similique tempore ullam cum
-              nulla et voluptatum! Eius, ab!
-            </p>
-          </Col>
-        </Row>
-      </Grid>
+      <div className={css(styles.shopWrapper)}>
+        <div className={css(styles.shopRightColumn)}>
+          <div className={css(styles.shopImage)}>
+            <Link to={'/press-expanded/'}>
+              <img src={shopProduct} className={css(styles.imgFullWidth)} />
+            </Link>
+            <div className={css(styles.shopText)}>
+              Alia, Pack A <br />
+              45 &#8364;
+            </div>
+          </div>
+          <div className={css(styles.shopImage)}>
+            <Link to={'/press-expanded/'}>
+              <img src={shopProduct} className={css(styles.imgFullWidth)} />
+            </Link>
+            <div className={css(styles.shopText)}>
+              Alia, Pack A <br />
+              45 &#8364;
+            </div>
+          </div>
+          <div className={css(styles.shopImage)}>
+            <Link to={'/press-expanded/'}>
+              <img src={shopProduct} className={css(styles.imgFullWidth)} />
+            </Link>
+            <div className={css(styles.shopText)}>
+              Alia, Pack A <br />
+              45 &#8364;
+            </div>
+          </div>
+          <div className={css(styles.shopImage)}>
+            <Link to={'/press-expanded/'}>
+              <img src={shopProduct} className={css(styles.imgFullWidth)} />
+            </Link>
+            <div className={css(styles.shopText)}>
+              Alia, Pack A <br />
+              45 &#8364;
+            </div>
+          </div>
+          <div className={css(styles.shopImage)}>
+            <Link to={'/press-expanded/'}>
+              <img src={shopProduct} className={css(styles.imgFullWidth)} />
+            </Link>
+            <div className={css(styles.shopText)}>
+              Alia, Pack A <br />
+              45 &#8364;
+            </div>
+          </div>
+          <div className={css(styles.shopImage)}>
+            <Link to={'/press-expanded/'}>
+              <img src={shopProduct} className={css(styles.imgFullWidth)} />
+            </Link>
+            <div className={css(styles.shopText)}>
+              Alia, Pack A <br />
+              45 &#8364;
+            </div>
+          </div>
+          <div className={css(styles.shopImage)}>
+            <Link to={'/press-expanded/'}>
+              <img src={shopProduct} className={css(styles.imgFullWidth)} />
+            </Link>
+            <div className={css(styles.shopText)}>
+              Alia, Pack A <br />
+              45 &#8364;
+            </div>
+          </div>
+          <div className={css(styles.shopImage)}>
+            <Link to={'/press-expanded/'}>
+              <img src={shopProduct} className={css(styles.imgFullWidth)} />
+            </Link>
+            <div className={css(styles.shopText)}>
+              Alia, Pack A <br />
+              45 &#8364;
+            </div>
+          </div>
+        </div>
+        <ShopNavigation />
+      </div>
     </Layout>
   </React.Fragment>
 )
