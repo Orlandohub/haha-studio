@@ -4,12 +4,8 @@ const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const footerWrapper = mq({
-  position: 'relative!important',
   paddingTop: ['35px', '35px', '35px', '35px', '53px'],
-  paddingBottom: ['45px', '45px', '45px', '45px', '80px'],
 
-  display: 'block!important',
-  textAlign: 'center!important',
   fontSize: [
     '14px!important',
     '14px!important',
@@ -21,7 +17,6 @@ export const footerWrapper = mq({
 })
 
 export const arrowRight = mq({
-  display: 'block!important',
   height: [
     '8px!important',
     '8px!important',
@@ -37,6 +32,7 @@ export const arrowRight = mq({
     '53px!important',
   ],
   float: 'right',
+  verticalAlign: 'middle!important',
 })
 
 export const arrowLeft = mq(arrowRight, {
@@ -44,24 +40,9 @@ export const arrowLeft = mq(arrowRight, {
   float: 'left',
 })
 
-export const linkRight = mq({
-  position: 'absolute',
-  top: [
-    '43px!important',
-    '43px!important',
-    '48px!important',
-    '48px!important',
-    '67px!important',
-  ],
-  right: 0,
+export const linkStyle = mq({
+  verticalAlign: 'middle',
   display: 'inline-block!important',
-  float: 'right!important',
-  width: '70px!important',
-})
-
-export const linkLeft = mq(linkRight, {
-  float: 'left!important',
-  left: 0,
 })
 
 export const linkText = mq({
@@ -69,6 +50,24 @@ export const linkText = mq({
   color: 'black!important',
 })
 
+export const spanLeft = mq({
+  display: 'inline-block',
+  height: '100%',
+  verticalAlign: 'middle!important',
+  float: 'left!important',
+  width: '20%',
+  textAlign: 'left',
+  marginBottom: ['45px', '45px', '45px', '45px', '80px'],
+})
+
+export const spanCenter = mq(spanLeft, {
+  width: '60%',
+  textAlign: 'center',
+})
+export const spanRight = mq(spanLeft, {
+  textAlign: 'right',
+})
+
 export const paragraph = mq({
-  margin: '0!important',
+  margin: '0px!important',
 })

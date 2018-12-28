@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'emotion'
-import * as styles from '../components/IndexPageStyles/TextsStyles/styles'
+import * as styles from '../components/IndexPageStyles/IndividualTextStyles/styles'
 import NavFooter from '../components/NavigationFooter'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
@@ -16,9 +16,7 @@ export const TextPageTemplate = ({ content, contentComponent, title }) => {
       <div className={css(styles.textRightColumn)}>
         {/*########################*/}
         <div className={css(styles.textText)}>
-          <h2 className={css(styles.textHeader)}>
-            {title}
-          </h2>
+          <h2 className={css(styles.textHeader)}>{title}</h2>
           <br />
           <br />
           <p className={css(styles.textParagraph)}>
@@ -39,7 +37,7 @@ TextPageTemplate.propTypes = {
 
 const TextPage = ({ data, location }) => {
   const { markdownRemark: post } = data
-  
+
   return (
     <Layout location={location}>
       <TextPageTemplate
