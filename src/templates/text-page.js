@@ -19,11 +19,16 @@ export const TextPageTemplate = ({ content, contentComponent, title }) => {
           <h2 className={css(styles.textHeader)}>{title}</h2>
           <br />
           <br />
-          <p className={css(styles.textParagraph)}>
+          <div className={css(styles.textParagraph)}>
             <PageContent className="content" content={content} />
-          </p>
+          </div>
         </div>
-        <NavFooter linkText="/texts/" text="back" />
+        <NavFooter
+          linkLeft="/about/"
+          linkRight="/exploration/"
+          linkText="/texts/"
+          text="back"
+        />
       </div>
     </div>
   )

@@ -48,7 +48,12 @@ const Press = ({ location }) => (
             <div className={css(styles.pressExpandedImage)}>
               <img id="image" src={keira} className={css(styles.Image)} />
               <img src={keira} className={css(styles.Image)} />
-              <NavFooter linkText="/press/" text="view all" />
+              <NavFooter
+                linkLeft="/find-us/"
+                linkRight="/retailers/"
+                linkText="/press/"
+                text="view all"
+              />
             </div>
           </div>
         </div>

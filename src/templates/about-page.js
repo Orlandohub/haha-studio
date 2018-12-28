@@ -23,19 +23,16 @@ export const AboutPageTemplate = ({ content, contentComponent }) => {
 }
 
 AboutPageTemplate.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
 const AboutPage = ({ data, location }) => {
   const { markdownRemark: post } = data
-  
+
   return (
     <Layout location={location}>
-      <AboutPageTemplate
-        contentComponent={HTMLContent}
-        content={post.html}
-      />
+      <AboutPageTemplate contentComponent={HTMLContent} content={post.html} />
     </Layout>
   )
 }
