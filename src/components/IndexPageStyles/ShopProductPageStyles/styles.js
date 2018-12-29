@@ -46,6 +46,7 @@ export const blackColor = mq({
   float: 'left',
   marginRight: [15, 15, 15, 15, 18],
   marginTop: [15, 15, 15, 15, 18],
+  paddingBottom: 5,
 })
 
 export const greyColor = mq(blackColor, {
