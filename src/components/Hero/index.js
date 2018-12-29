@@ -19,7 +19,6 @@ class Hero extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.slide)
     setTimeout(
       function() {
         this.setState({
@@ -29,13 +28,9 @@ class Hero extends React.Component {
       3000
     )
   }
-
-  componentWillUnmount() {
-    window.addEventListener('scroll', this.slide)
-  }
-
   slide() {
     this.setState({ slide: true })
+    this.props.showContent()
   }
   render() {
     const { data } = this.props

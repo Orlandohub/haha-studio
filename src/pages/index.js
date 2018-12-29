@@ -6,8 +6,18 @@ import Projects from '../components/Projects'
 import { graphql } from 'gatsby'
 
 class IndexPage extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      content: false,
+    }
+
+    this.showContent = this.showContent.bind(this)
+  }
+
+  showContent() {
+    this.setState({ content: true })
   }
 
   render() {
@@ -15,10 +25,12 @@ class IndexPage extends React.Component {
     const { projectsList } = data
     return (
       <div>
-        <Hero data={data} />
-        <Layout location={location}>
-          <Projects projects={projectsList} />
-        </Layout>
+        <Hero data={data} showContent={this.showContent} />
+        {this.state.content && (
+          <Layout location={location}>
+            <Projects projects={projectsList} />
+          </Layout>
+        )}
       </div>
     )
   }
