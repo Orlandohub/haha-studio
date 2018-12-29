@@ -8,8 +8,6 @@ const FindUs = ({ location }) => (
   <React.Fragment>
     <Layout location={location}>
       <div className={css(styles.findUsWrapper)}>
-        <div className={css(styles.leftFloatingEmptySpace)} />
-
         <div className={css(styles.findUsRightColumn)}>
           <p className={css(styles.findUsParagraph)}>
             HAHA studio

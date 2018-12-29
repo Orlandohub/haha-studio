@@ -7,25 +7,15 @@ export const pressExpandedWrapper = mq({
   paddingTop: [15, 15, 15, 15, 22],
 })
 
-export const leftFloatingEmptySpace = mq({
-  width: ['0%', '0%', '0%', '0%', '25%'],
-  float: 'left',
-  minHeight: [
-    '0px!important',
-    '0px!important',
-    '0px!important',
-    '0px!important',
-    '1px!important',
-  ],
-})
 export const pressExpandedParagraph = mq({
   margin: '0px!important',
   fontSize: [14, 14, 29, 29, 29],
+  paddingLeft: [0, 0, 0, 0, 5],
 })
 export const pressExpandedRightColumn = mq({
-  width: ['100%', '100%', '100%', '100%', '75%'],
+  width: '100%',
   float: 'left',
-  paddingLeft: 0,
+  paddingLeft: [0, 0, 0, 0, 24],
 })
 
 export const pressExpandedLink = mq({
@@ -39,7 +29,8 @@ export const mailTo = mq({
 })
 
 export const pressExpandedText = mq({
-  paddingLeft: [0, 0, 0, 0, 335],
+  width: '100%',
+  paddingLeft: [0, 0, 0, 0, '51%'],
   paddingBottom: [40, 40, 40, 40, 53],
 })
 
@@ -52,10 +43,11 @@ export const pressExpandedGrid = mq({
     '2px solid black',
   ],
   paddingTop: [55, 55, 55, 55, 53],
+  marginLeft: [0, 0, 0, 0, '25%'],
 })
 
 export const pressExpandedImage = mq({
-  '& > :nth-child(even)': {
+  '& > :nth-child(2)': {
     paddingRight: 0,
     paddingLeft: [5, 5, 5, 5, 6],
   },
@@ -66,5 +58,5 @@ export const pressExpandedImage = mq({
 export const Image = mq({
   width: '50%',
   paddingRight: [5, 5, 5, 5, 6],
-  marginBottom: [15, 15, 15, 41, 41],
+  marginBottom: [55, 55, 55, 55, 53],
 })
