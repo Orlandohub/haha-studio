@@ -66,7 +66,7 @@ class ShopProduct extends React.Component {
               75 €
             </div>
             <button className={css(styles.cardButton)}>ADD TO CART</button>
-            <NavFooter linkText="/press/" text="view all" />
+            <NavFooter linkText="/shop/" text="shop" />
           </div>
         </div>
       </Layout>

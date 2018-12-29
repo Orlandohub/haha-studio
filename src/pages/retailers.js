@@ -21,12 +21,14 @@ const Retailers = ({ location }) => (
                 <br />
                 www.aplace.com
                 <br />
+                <br />
                 <br className={css(styles.noBr)} />
                 <br className={css(styles.noBr)} />
                 <h2 className={css(styles.retailersHeader)}>Designtorget</h2>
                 All stores and webshop
                 <br />
                 www.designtorget.se
+                <br />
                 <br />
                 <br className={css(styles.noBr)} />
                 <br className={css(styles.noBr)} />
