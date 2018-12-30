@@ -1,4 +1,5 @@
 import facepaint from 'facepaint'
+import styled from 'react-emotion'
 const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
@@ -30,7 +31,7 @@ export const imgStyles = mq({
   marginBottom: 36,
 })
 
-export const colorTag = mq({
+export const colorDescription = mq({
   fontSize: 14,
 })
 export const productDescriptionWrapper = mq({
@@ -39,23 +40,29 @@ export const productDescriptionWrapper = mq({
   paddingTop: [20, 20, 20, 20, 44],
 })
 
-export const blackColor = mq({
+export const colorBoxWrapper = mq({
   width: ['22px', '22px', '22px', '22px', '36px'],
-  height: ['22px', '22px', '22px', '22px', '36px'],
-  backgroundColor: 'black',
+  height: ['30px', '30px', '30px', '30px', '44px'],
   float: 'left',
   marginRight: [15, 15, 15, 15, 18],
   marginTop: [15, 15, 15, 15, 18],
-  paddingBottom: 5,
 })
 
-export const greyColor = mq(blackColor, {
-  backgroundColor: 'grey',
+export const colorBoxSelected = mq(colorBoxWrapper, {
+  borderBottom: '2px solid black',
 })
 
-export const yellowColor = mq(blackColor, {
-  backgroundColor: 'yellow',
-})
+export const ColoredBox = styled.div`
+  @media (min-width: 100px) {
+    width: 22px;
+    height: 22px;
+  }
+  @media (min-width: 1200px) {
+    width: 36px;
+    height: 36px;
+  }
+  ${props => ({ backgroundColor: props.backgroundColor })};
+`
 
 export const cardButton = mq({
   width: [170, 170, 390, 390, 390],

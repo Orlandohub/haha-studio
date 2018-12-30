@@ -79,6 +79,9 @@ class Menu extends Component {
       case '/terms-licenses/':
         activeMenu = 'shop'
         break
+      case '/shop-product-page/':
+        activeMenu = 'shop'
+        break
       case '/shop/':
         activeMenu = 'shop'
         break
