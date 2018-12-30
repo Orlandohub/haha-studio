@@ -9,12 +9,12 @@ import NavFooter from '../components/NavigationFooter'
 //######################## COLOR BOX COMPONENT ######################
 
 class ColoredBoxWrapper extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
     this.state = {
-      activeClass: this.props.activeClass,
+      activeClass: styles.colorBoxWrapper,
     }
-    //this.setActiveClassName = this.setActiveClassName.bind(this)
+
     this.handleClick = this.handleClick.bind(this)
     this.handleClickOutside = this.handleClickOutside.bind(this)
     this.onMouseOver = this.onMouseOver.bind(this)
@@ -23,7 +23,6 @@ class ColoredBoxWrapper extends React.Component {
 
   handleClick() {
     this.setState({
-      activeClass: styles.colorBoxWrapper,
       activeClass: styles.colorBoxSelected,
     })
   }
@@ -58,13 +57,9 @@ class ColoredBoxWrapper extends React.Component {
 
   render() {
     const { children } = this.props
-    const { setActiveClassName } = this.props
-      ? styles.colorBoxSelected
-      : styles.colorBoxWrapper
     return (
       <div
-        activeClass={this.props.activeClass}
-        className={setActiveClassName}
+        className={this.state.activeClass}
         onClick={this.handleClick}
         onMouseDown={this.handleClickOutside}
       >
@@ -91,15 +86,15 @@ const ShopProduct = ({ location }) => {
           </div>
           <p className={css(styles.colorDescription)}>BLACK</p>
 
-          <ColoredBoxWrapper activeClass={true}>
+          <ColoredBoxWrapper>
             <styles.ColoredBox backgroundColor="green" />
           </ColoredBoxWrapper>
 
-          <ColoredBoxWrapper activeClass={false}>
+          <ColoredBoxWrapper>
             <styles.ColoredBox backgroundColor="red" />
           </ColoredBoxWrapper>
 
-          <ColoredBoxWrapper activeClass={false}>
+          <ColoredBoxWrapper>
             <styles.ColoredBox backgroundColor="yellow" />
           </ColoredBoxWrapper>
 
