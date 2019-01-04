@@ -15,7 +15,7 @@ const Retailers = ({ location }) => (
             {/*##################   LEFT COLUMN   ##################*/}
 
             <div className={css(styles.leftTextColumn)}>
-              <p className={css(styles.retailersParagraph)}>
+              <div className={css(styles.retailersParagraph)}>
                 <h2 className={css(styles.retailersHeader)}>Aplace</h2>
                 All stores and webshop
                 <br />
@@ -59,12 +59,12 @@ const Retailers = ({ location }) => (
                 Webshop
                 <br /> www.pamono.com
                 <br />
-              </p>
+              </div>
             </div>
             {/*##################   RIGHT COLUMN   ##################*/}
 
             <div className={css(styles.rightTextColumn)}>
-              <p className={css(styles.retailersParagraph)}>
+              <div className={css(styles.retailersParagraph)}>
                 <h2 className={css(styles.retailersHeader)}>Betonggruvan</h2>
                 Roslagsgatan 25
                 <br />
@@ -110,7 +110,7 @@ const Retailers = ({ location }) => (
                 <br />
                 www.designonline.se
                 <br />
-              </p>
+              </div>
             </div>
           </div>
         </div>
