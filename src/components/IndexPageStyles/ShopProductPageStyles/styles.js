@@ -1,5 +1,4 @@
 import facepaint from 'facepaint'
-import styled from 'react-emotion'
 const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
@@ -51,18 +50,6 @@ export const colorBoxWrapper = mq({
 export const colorBoxSelected = mq(colorBoxWrapper, {
   borderBottom: '2px solid black',
 })
-
-export const ColoredBox = styled.div`
-  @media (min-width: 100px) {
-    width: 22px;
-    height: 22px;
-  }
-  @media (min-width: 1200px) {
-    width: 36px;
-    height: 36px;
-  }
-  ${props => ({ backgroundColor: props.backgroundColor })};
-`
 
 export const cardButton = mq({
   width: [170, 170, 390, 390, 390],

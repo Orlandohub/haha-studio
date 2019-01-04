@@ -2,141 +2,65 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'emotion'
+import styled from 'react-emotion'
 import * as styles from '../components/IndexPageStyles/ShopProductPageStyles/styles'
 import productImg from '../images/D_homepage_image_01.jpg'
 import NavFooter from '../components/NavigationFooter'
 import { map } from 'lodash'
 
-//######################## COLOR BOX COMPONENT ######################
-
-class ColoredBoxWrapper extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      activeClass: styles.colorBoxWrapper,
-    }
-
-    this.handleClick = this.handleClick.bind(this)
-    this.handleClickOutside = this.handleClickOutside.bind(this)
-    // this.onMouseOver = this.onMouseOver.bind(this)
-    //this.onMouseOut = this.onMouseOut.bind(this)
+const ColoredBox = styled.div`
+  @media (min-width: 100px) {
+    width: 22px;
+    height: 22px;
   }
-
-  handleClick() {
-    this.setState({
-      activeClass: styles.colorBoxSelected,
-    })
+  @media (min-width: 1200px) {
+    width: 36px;
+    height: 36px;
   }
-
-  handleClickOutside() {
-    this.setState({
-      activeClass: styles.colorBoxWrapper,
-    })
-  }
-  /*
-  onMouseOver() {
-    this.setState({
-      colorName: productImg,
-    })
-  }
-
-  onMouseOut() {
-    this.setState({
-      colorName: productImg,
-    })
-  }
-*/
-  componentDidMount() {
-    window.addEventListener('onmouseover', this.onMouseOver, this.onMouseOut)
-    window.addEventListener('mousedown', this.handleClickOutside)
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('onmouseover', this.onMouseOver, this.onMouseOut)
-    window.removeEventListener('mousedown', this.handleClickOutside)
-  }
-
-  render() {
-    const { children } = this.props
-    return (
-      <div
-        className={css(this.state.activeClass)}
-        onClick={this.handleClick}
-        onMouseDown={this.handleClickOutside}
-      >
-        {children}
-      </div>
-    )
-  }
-}
-
-/*########################## END OF COLOR BOX #########################*/
+  ${props => ({ backgroundColor: props.backgroundColor })};
+`
 
 class ShopProduct extends React.Component {
-  constructor(props) {
-    super(props)
+  constructor() {
+    super()
 
     this.state = {
-      colorList: [
-        { color: '#f44242', colorName: 'RED' },
-        { color: '#4bf442', isSelected: true, colorName: 'GREEN' },
-        { color: '#000000', colorName: 'BLACK' },
-      ],
+      hex: ['#f44242', '#000000', '#4bf442'],
+      color: ['RED', 'BLACK', 'GREEN'],
+      selectedColor: 0,
+      hoverColor: 0,
     }
-
-    this.handleClick = this.handleClick.bind(this)
-    //this.handleClickOutside = this.handleClickOutside.bind(this)
-    // this.onMouseOver = this.onMouseOver.bind(this)
-    //this.onMouseOut = this.onMouseOut.bind(this)
   }
 
   handleClick = index => {
-    console.log('index is ' + index)
-
     this.setState({
-      colorList: this.state.colorList.map(obj =>
-        obj.isSelected === true
-          ? Object.assign(obj, { isSelected: false })
-          : obj
-      ),
-      colorList: colorList[index].concat({ isSelected: true }),
+      selectedColor: index,
+      hoverColor: index,
     })
   }
 
-  /*
-  handleClickOutside() {
+  onMouseOver = index => {
     this.setState({
-      activeClass: styles.colorBoxWrapper,
-    })
-  }
-  
-  onMouseOver() {
-    this.setState({
-      colorName: productImg,
+      hoverColor: index,
     })
   }
 
   onMouseOut() {
+    const prevColor = this.state.selectedColor
     this.setState({
-      colorName: productImg,
+      hoverColor: prevColor,
     })
   }
-*/
+
   componentDidMount() {
     window.addEventListener('onmouseover', this.onMouseOver, this.onMouseOut)
-    window.addEventListener('mousedown', this.handleClick)
   }
 
   componentWillUnmount() {
     window.removeEventListener('onmouseover', this.onMouseOver, this.onMouseOut)
-    window.removeEventListener('mousedown', this.handleClick)
   }
 
   render() {
-    let activeIndex = this.state.colorList.findIndex(
-      obj => obj['isSelected'] === true
-    )
-
     return (
       <Layout location={location}>
         <div className={css(styles.shopProductWrapper)}>
@@ -150,23 +74,24 @@ class ShopProduct extends React.Component {
               />
             </div>
             <p className={css(styles.colorDescription)}>
-              {this.state.colorList[activeIndex].colorName}
+              {this.state.color[this.state.hoverColor]}
             </p>
 
             {/*########################## END OF COLOR BOX #########################*/}
             <React.Fragment>
-              {map(this.state.colorList, (product, index) => (
+              {map(this.state.hex, (product, index) => (
                 <div
-                  key={product.colorName}
+                  key={product}
                   className={
-                    product.isSelected
+                    index === this.state.selectedColor
                       ? css(styles.colorBoxSelected)
                       : css(styles.colorBoxWrapper)
                   }
                   onClick={this.handleClick.bind(this, index)}
-                  onMouseDown={this.handleClickOutside}
+                  onMouseOver={this.onMouseOver.bind(this, index)}
+                  onMouseLeave={this.onMouseOut.bind(this, index)}
                 >
-                  <styles.ColoredBox backgroundColor={product.color} />
+                  <ColoredBox backgroundColor={product} />
                 </div>
               ))}
             </React.Fragment>
