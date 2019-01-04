@@ -61,6 +61,7 @@ class ShopProduct extends React.Component {
   }
 
   render() {
+    const { location } = this.props
     return (
       <Layout location={location}>
         <div className={css(styles.shopProductWrapper)}>
