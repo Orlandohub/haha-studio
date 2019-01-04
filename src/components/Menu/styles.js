@@ -24,6 +24,7 @@ export const menuContainer = mq({
 // --> MENU LOGO
 export const brand = mq({
   float: 'left',
+  paddingLeft: 3,
   minWidth: [
     '100%!important',
     '100%!important',

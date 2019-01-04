@@ -13,7 +13,7 @@ const Shop = ({ location }) => (
       <div className={css(styles.shopWrapper)}>
         <div className={css(styles.shopRightColumn)}>
           <div className={css(styles.shopImage)}>
-            <Link to={'/press-expanded/'}>
+            <Link to={'/shop-product-page/'}>
               <img src={shopProduct} className={css(styles.imgFullWidth)} />
             </Link>
             <div className={css(styles.shopText)}>
@@ -22,7 +22,7 @@ const Shop = ({ location }) => (
             </div>
           </div>
           <div className={css(styles.shopImage)}>
-            <Link to={'/press-expanded/'}>
+            <Link to={'/shop-product-page/'}>
               <img src={shopProduct} className={css(styles.imgFullWidth)} />
             </Link>
             <div className={css(styles.shopText)}>
@@ -31,7 +31,7 @@ const Shop = ({ location }) => (
             </div>
           </div>
           <div className={css(styles.shopImage)}>
-            <Link to={'/press-expanded/'}>
+            <Link to={'/shop-product-page/'}>
               <img src={shopProduct} className={css(styles.imgFullWidth)} />
             </Link>
             <div className={css(styles.shopText)}>
@@ -40,7 +40,7 @@ const Shop = ({ location }) => (
             </div>
           </div>
           <div className={css(styles.shopImage)}>
-            <Link to={'/press-expanded/'}>
+            <Link to={'/shop-product-page/'}>
               <img src={shopProduct} className={css(styles.imgFullWidth)} />
             </Link>
             <div className={css(styles.shopText)}>
@@ -49,7 +49,7 @@ const Shop = ({ location }) => (
             </div>
           </div>
           <div className={css(styles.shopImage)}>
-            <Link to={'/press-expanded/'}>
+            <Link to={'/shop-product-page/'}>
               <img src={shopProduct} className={css(styles.imgFullWidth)} />
             </Link>
             <div className={css(styles.shopText)}>
@@ -58,7 +58,7 @@ const Shop = ({ location }) => (
             </div>
           </div>
           <div className={css(styles.shopImage)}>
-            <Link to={'/press-expanded/'}>
+            <Link to={'/shop-product-page/'}>
               <img src={shopProduct} className={css(styles.imgFullWidth)} />
             </Link>
             <div className={css(styles.shopText)}>
@@ -67,7 +67,7 @@ const Shop = ({ location }) => (
             </div>
           </div>
           <div className={css(styles.shopImage)}>
-            <Link to={'/press-expanded/'}>
+            <Link to={'/shop-product-page/'}>
               <img src={shopProduct} className={css(styles.imgFullWidth)} />
             </Link>
             <div className={css(styles.shopText)}>
@@ -76,7 +76,7 @@ const Shop = ({ location }) => (
             </div>
           </div>
           <div className={css(styles.shopImage)}>
-            <Link to={'/press-expanded/'}>
+            <Link to={'/shop-product-page/'}>
               <img src={shopProduct} className={css(styles.imgFullWidth)} />
             </Link>
             <div className={css(styles.shopText)}>
