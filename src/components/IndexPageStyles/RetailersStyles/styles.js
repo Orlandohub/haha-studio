@@ -41,7 +41,7 @@ export const retailersText = mq({
 export const leftTextColumn = mq({
   float: 'left',
   width: ['54%', '54%', '54%', '54%', '51%', '50%'],
-  paddingLeft: [0, 0, 0, 0, 15, 15, 15],
+  paddingLeft: [0, 0, 0, 0, 0, 15],
 })
 
 export const rightTextColumn = mq({
