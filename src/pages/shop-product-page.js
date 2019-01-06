@@ -4,9 +4,10 @@ import Layout from '../layouts'
 import { css } from 'emotion'
 import styled from 'react-emotion'
 import * as styles from '../components/IndexPageStyles/ShopProductPageStyles/styles'
-import productImg from '../images/D_homepage_image_01.jpg'
+//import productImg from '../images/D_homepage_image_01.jpg'
 import NavFooter from '../components/NavigationFooter'
 import { map } from 'lodash'
+import Carousel from '../components/Carousel/index'
 
 const ColoredBox = styled.div`
   @media (min-width: 100px) {
@@ -67,35 +68,29 @@ class ShopProduct extends React.Component {
         <div className={css(styles.shopProductWrapper)}>
           <div className={css(styles.leftTitleColumn)}>Libery Lamp, Small</div>
           <div className={css(styles.mainBodyWrapper)}>
-            <div className={css(styles.galleryWrapper)}>
-              <img
-                src={productImg}
-                className={css(styles.imgStyles)}
-                alt="image"
-              />
-            </div>
+            <Carousel />
             <p className={css(styles.colorDescription)}>
               {this.state.color[this.state.hoverColor]}
             </p>
 
             {/*########################## END OF COLOR BOX #########################*/}
-            <React.Fragment>
-              {map(this.state.hex, (product, index) => (
-                <div
-                  key={product}
-                  className={
-                    index === this.state.selectedColor
-                      ? css(styles.colorBoxSelected)
-                      : css(styles.colorBoxWrapper)
-                  }
-                  onClick={this.handleClick.bind(this, index)}
-                  onMouseOver={this.onMouseOver.bind(this, index)}
-                  onMouseLeave={this.onMouseOut.bind(this, index)}
-                >
-                  <ColoredBox backgroundColor={product} />
-                </div>
-              ))}
-            </React.Fragment>
+
+            {map(this.state.hex, (product, index) => (
+              <div
+                key={product.hex}
+                className={
+                  index === this.state.selectedColor
+                    ? css(styles.colorBoxSelected)
+                    : css(styles.colorBoxWrapper)
+                }
+                onClick={this.handleClick.bind(this, index)}
+                onMouseOver={this.onMouseOver.bind(this, index)}
+                onMouseLeave={this.onMouseOut.bind(this, index)}
+              >
+                <ColoredBox backgroundColor={product} />
+              </div>
+            ))}
+
             {/*########################## END OF COLOR BOX #########################*/}
 
             <div className={css(styles.productDescriptionWrapper)}>
