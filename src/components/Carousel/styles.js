@@ -1,4 +1,3 @@
-import { keyframes } from 'react-emotion'
 import facepaint from 'facepaint'
 const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
@@ -10,49 +9,24 @@ export const slidesContainer = mq({
   width: '100%',
 })
 
-/* carousel animations */
-const slideLeft = keyframes`
-0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0%);
-    }      
-`
-
-const slideRight = keyframes`
-0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0%);
-    }      
-`
-
 /* image container styles */
 export const hiddenSlideRight = mq({
   display: 'block',
   width: '100%',
   position: 'absolute',
   top: 0,
-  //animation: `${slideRight} 0.2s ease-in`,
-  transform: 'translateX(100%)',
-  transition: 'all 0.3s ease-in',
-  WebkitTransition: 'all 0.3s ease-in',
+  transform: 'translateX(-100%)',
+  transition: 'all 0.2s ease-in',
+  WebkitTransition: 'all 0.2s ease-in',
 })
 
 export const activeSlide = mq(hiddenSlideRight, {
-  display: 'block',
   position: 'relative',
   transform: 'translateX(0%)',
-  //right: 0,
-  //left: 0,
 })
 
 export const hiddenSlideLeft = mq(hiddenSlideRight, {
-  transform: 'translateX(-100%)',
-  //animation: `${slideLeft} 0.2s ease-in`,
-  //left: '-100%',
+  transform: 'translateX(100%)',
 })
 
 /* image styles */
@@ -101,9 +75,13 @@ export const indicators = mq({
   cursor: 'pointer',
   height: ['2px', '2px', '3px', '3px'],
   width: '100%',
-  backgroundColor: '#bbb',
+  backgroundColor: '#D9D9D7',
   transition: 'background-color 0.3s ease-in',
   ':active,:hover': {
     backgroundColor: '#717171',
   },
+})
+
+export const activeBars = mq(indicators, {
+  backgroundColor: 'black',
 })

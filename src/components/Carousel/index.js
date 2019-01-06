@@ -40,9 +40,9 @@ class Carousel extends React.Component {
   }
 
   prevSlide() {
-    //const lastItem = this.state.imagesList.length - 1
-    // const firstItem = 0
-    //console.log(' active index is ' + this.state.activeImage)
+    const lastItem = this.state.imagesList.length - 1
+    const firstItem = 0
+    console.log(' active index is ' + this.state.activeImage)
     firstItem === this.state.activeImage
       ? this.setState({
           activeImage: lastItem,
@@ -59,11 +59,11 @@ class Carousel extends React.Component {
   }
 
   componentDidMount() {
-    //window.addEventListener('onmouseover', this.onMouseOver, this.onMouseOut)
+    window.addEventListener('onmousedown', this.prevSlide, this.nextSlide)
   }
 
   componentWillUnmount() {
-    //window.removeEventListener('onmouseover', this.onMouseOver, this.onMouseOut)
+    window.removeEventListener('onmouseover', this.prevSlide, this.nextSlide)
   }
 
   render() {
@@ -72,42 +72,43 @@ class Carousel extends React.Component {
     return (
       <div className={css(styles.slidesContainer)}>
         <div style={{ position: 'relative' }}>
-          {/* ###################### gallery part #######################*/}
+          <button className={css(styles.prev)} onClick={this.prevSlide}>
+            &#10094;
+          </button>
+
+          <button className={css(styles.next)} onClick={this.nextSlide}>
+            &#10095;
+          </button>
 
           {map(this.state.imagesList, (slide, index) => (
             <div
               key={index}
               className={
                 index === this.state.activeImage
-                  ? css(styles.activeImage)
+                  ? css(styles.activeSlide)
+                  : index < this.state.activeImage
+                  ? css(styles.hiddenSlideLeft)
                   : css(styles.hiddenSlideRight)
               }
             >
-              <button
-                className={css(styles.prev)}
-                onClick={this.prevSlide.bind(this, index)}
-              >
-                &#10094;
-              </button>
-
-              <button
-                className={css(styles.next)}
-                onClick={this.nextSlide.bind(this, index)}
-              >
-                &#10095;
-              </button>
               <img src={slide} className={css(styles.myImage)} />
             </div>
           ))}
-          {/* ###################### gallery part #######################*/}
         </div>
+
         <div className={css(styles.barsContainers)}>
           {map(this.state.imagesList, (numOfbar, num) => (
             <BarWrapper
               width={numberOfBars + '%'}
               onClick={this.currentSlide.bind(this, num)}
             >
-              <div className={css(styles.indicators)} />
+              <div
+                className={
+                  num === this.state.activeImage
+                    ? css(styles.activeBars)
+                    : css(styles.indicators)
+                }
+              />
             </BarWrapper>
           ))}
         </div>
