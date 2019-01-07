@@ -7,9 +7,8 @@ import NavFooter from '../components/NavigationFooter'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 
-export const TextPageTemplate = ({ content, contentComponent, title }) => {
+export const TextPageTemplate = ({ content, contentComponent, title, pageContext }) => {
   const PageContent = contentComponent || Content
-
   return (
     <div className={css(styles.textWrapper)}>
       <div className={css(styles.textRightColumn)}>
@@ -23,8 +22,8 @@ export const TextPageTemplate = ({ content, contentComponent, title }) => {
           </div>
         </div>
         <NavFooter
-          linkLeft="/about/"
-          linkRight="/exploration/"
+          linkLeft={pageContext.prev}
+          linkRight={pageContext.next}
           linkText="/texts/"
           text="back"
         />
@@ -37,16 +36,17 @@ TextPageTemplate.propTypes = {
   content: PropTypes.string,
   contentComponent: PropTypes.func,
   title: PropTypes.string,
+  pageContext: PropTypes.object.isRequired,
 }
 
-const TextPage = ({ data, location }) => {
+const TextPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
-
   return (
     <Layout location={location}>
       <TextPageTemplate
         contentComponent={HTMLContent}
         content={post.html}
+        pageContext={pageContext}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -56,6 +56,7 @@ const TextPage = ({ data, location }) => {
 TextPage.propTypes = {
   location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
 }
 
 export default TextPage

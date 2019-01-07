@@ -1,14 +1,21 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import footerArrow from '../../images/03_D_footer_arrow_project_page.png'
 import * as styles from './styles'
 import Link from 'gatsby-link'
 
 const NavFooter = props => {
+  const {
+    linkLeft,
+    linkRight,
+    linkText,
+    text
+  } = props
   return (
     <div className={css(styles.footerWrapper)}>
       <span className={css(styles.spanLeft)}>
-        <Link to={props.linkLeft} className={css(styles.linkStyle)}>
+        <Link to={linkLeft} className={css(styles.linkStyle)}>
           <img
             className={css(styles.arrowLeft)}
             src={footerArrow}
@@ -20,15 +27,15 @@ const NavFooter = props => {
       <span className={css(styles.spanCenter)}>
         {' '}
         <p className={css(styles.paragraph)}>
-          <Link to={props.linkText} className={css(styles.linkText)}>
-            {props.text}
+          <Link to={linkText} className={css(styles.linkText)}>
+            {text}
           </Link>
         </p>
       </span>
 
       <span className={css(styles.spanRight)}>
         {' '}
-        <Link to={props.linkRight} className={css(styles.linkStyle)}>
+        <Link to={linkRight} className={css(styles.linkStyle)}>
           <img
             className={css(styles.arrowRight)}
             src={footerArrow}
@@ -38,6 +45,13 @@ const NavFooter = props => {
       </span>
     </div>
   )
+}
+
+NavFooter.propTypes = {
+  linkLeft: PropTypes.string.isRequired,
+  linkRight: PropTypes.string.isRequired,
+  linkText: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
 }
 
 export default NavFooter
