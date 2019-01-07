@@ -21,7 +21,6 @@ class Carousel extends React.Component {
     this.state = {
       imagesList: [image1, image2, image3, image2, image3],
       activeImage: 0,
-      prevImage: null,
     }
     this.nextSlide = this.nextSlide.bind(this)
     this.prevSlide = this.prevSlide.bind(this)
