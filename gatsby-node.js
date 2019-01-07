@@ -30,7 +30,38 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges
 
+    const texts = _.filter(posts, post => {
+      return post.node.frontmatter.templateKey === 'text-page'
+    })
+
+    _.forEach(texts, (edge, index) => {
+      const id = edge.node.id
+      const prev = index === 0
+        ? `${texts[index].node.fields.slug}/#`
+        : texts[index - 1].node.fields.slug
+
+      const next = texts.length === index + 1
+        ? `${texts[index].node.fields.slug}/#`
+        : texts[index + 1].node.fields.slug
+
+      createPage({
+        path: edge.node.fields.slug,
+        component: path.resolve(
+          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+        ),
+        // additional data can be passed via context
+        context: {
+          id,
+          prev,
+          next
+        },
+      })
+    })
+
     posts.forEach(edge => {
+      if (edge.node.frontmatter.templateKey === 'text-page') {
+        return null
+      }
       const id = edge.node.id
       createPage({
         path: edge.node.fields.slug,
