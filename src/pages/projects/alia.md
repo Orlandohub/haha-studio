@@ -25,4 +25,4 @@ Alia is available for purchase at our [retailers](https://google.com), and in ou
 
 <br>
 
-[Download](https://drive.google.com/open?id=1qGf67PLJ4LAplS_avpAJiY-oNZ7FxLRh)
+Download
