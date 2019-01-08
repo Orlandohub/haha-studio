@@ -1,8 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'react-emotion'
-import { css } from 'emotion'
-import * as styles from './styles'
 import { map } from 'lodash'
 import Img from 'gatsby-image'
 import Slider from 'react-slick'
