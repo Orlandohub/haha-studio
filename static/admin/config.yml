@@ -31,6 +31,19 @@ collections:
         fields:
           - {label: Image, name: image, widget: image}
           - {label: "Is Cover", name: "is_cover", widget: "boolean"}
+  - name: "press"
+    label: "Press"
+    folder: "src/pages/press"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: Template Key, name: templateKey, widget: hidden, default: press-page}
+      - {label: Title, name: title, widget: string}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: Cover, name: cover, widget: image}
+      - {label: Counter Cover, name: counter_cover, widget: image}
+      - {label: Content Image Left, name: content_image_left, widget: image}
+      - {label: Content Image Right, name: content_image_right, widget: image}
   - name: "texts"
     label: "Texts"
     folder: "src/pages/texts"

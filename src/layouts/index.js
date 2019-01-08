@@ -46,6 +46,16 @@ injectGlobal`
   .slick-dots li.slick-active div {
     background-color: #000;
   }
+  .pressThumbnailCounterCover {
+    display: none;
+  }
+  .pressThumbnailWrap:hover .pressThumbnailCover {
+    display: none;
+  }
+  .pressThumbnailWrap:hover .pressThumbnailCounterCover {
+    display: block;
+  }
+  
 `
 
 const Layout = ({ children, location }) => (
