@@ -1,3 +1,4 @@
+import { startsWith } from 'lodash'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
@@ -32,6 +33,7 @@ class Menu extends Component {
   setActiveMenu() {
     let activeMenu = null
     let activeSubMenu = null
+
     switch (this.pathname) {
       case '/':
         activeMenu = 'projects'
@@ -53,21 +55,9 @@ class Menu extends Component {
         activeMenu = 'studio'
         activeSubMenu = 'exploration'
         break
-      case '/texts/':
-        activeMenu = 'studio'
-        activeSubMenu = 'texts'
-        break
       case '/find-us/':
         activeMenu = 'contact'
         activeSubMenu = 'find-us'
-        break
-      case '/press/':
-        activeMenu = 'contact'
-        activeSubMenu = 'press'
-        break
-      case '/press-expanded/':
-        activeMenu = 'contact'
-        activeSubMenu = 'press'
         break
       case '/retailers/':
         activeMenu = 'contact'
@@ -87,6 +77,16 @@ class Menu extends Component {
         break
       default:
         activeMenu = null
+    }
+
+    if (startsWith(this.pathname, '/texts/')) {
+      activeMenu = 'studio'
+      activeSubMenu = 'texts'
+    }
+
+    if (startsWith(this.pathname, '/press/')) {
+      activeMenu = 'contact'
+      activeSubMenu = 'press'
     }
 
     this.setState({
