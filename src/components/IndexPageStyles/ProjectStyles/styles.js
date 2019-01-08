@@ -21,7 +21,6 @@ export const projectTitle = mq({
 })
 
 export const imageWrapper = mq({
-  paddingLeft: 0,
   paddingRight: [0, 0, 0, 0, 191],
   width: ['100%', '100%', '100%', '100%', '75%'],
   float: 'left!important',
@@ -30,6 +29,7 @@ export const imageWrapper = mq({
   marginTop: 5,
   color: 'black!important',
   paddingLeft: [0, 0, 0, 0, 15],
+  paddingBottom: 20,
 })
 
 export const textWrapper = mq(imageWrapper, {

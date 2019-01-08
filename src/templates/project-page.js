@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
+import Carousel from '../components/Carousel'
 import Img from 'gatsby-image'
 import Layout from '../layouts'
 import { css } from 'emotion'
@@ -34,9 +35,7 @@ export const ProjectsTemplate = ({
           </p>
         </div>
         <div className={css(styles.imageWrapper)}>
-          {isEmpty(galleryImages) ? null : (
-            <Img fluid={galleryImages[0].image.childImageSharp.fluid} />
-          )}
+          <Carousel images={galleryImages} />
         </div>
         <div className={css(styles.textWrapper)}>
           <p className={css(styles.styledParagraph)}>
