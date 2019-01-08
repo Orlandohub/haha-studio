@@ -5,12 +5,9 @@ import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/PressExpandedStyles/styles'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import * as styles from '../components/IndexPageStyles/PressExpandedStyles/styles'
-import keira from '../images/D_press_cover_index_image.png'
 import NavFooter from '../components/NavigationFooter'
 
 export const PressPageTemplate = ({ post }) => {
-  console.log('post', post);
   return (
     <div className={css(styles.pressExpandedWrapper)}>
       <div className={css(styles.pressExpandedRightColumn)}>
@@ -46,10 +43,10 @@ export const PressPageTemplate = ({ post }) => {
 
         {/* Bottom part */}
 
-        <div className={css(styles.pressExpandedGrid)}>
+        <div className={css(styles.pressExpandedGrid)} id="image">
           <div className={css(styles.pressExpandedImage)}>
-            <img id="image" src={keira} className={css(styles.Image)} />
-            <img src={keira} className={css(styles.Image)} />
+            <Img fluid={post.frontmatter.content_image_left.childImageSharp.fluid} />
+            <Img fluid={post.frontmatter.content_image_right.childImageSharp.fluid} />
             <NavFooter
               linkLeft="/find-us/"
               linkRight="/retailers/"
