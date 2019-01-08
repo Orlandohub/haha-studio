@@ -12,7 +12,6 @@ image_gallery:
     is_cover: true
   - image: /assets/uploads/d_homepage_image_01.jpg
 ---
-
 Alia, Latin for “Change”, is a candle holder that does exactly that. Made from a single repeating branch, Alia is all about creating free compositions. One branch works alone, but stacking more is just so much more impressive.
 
 <br>
