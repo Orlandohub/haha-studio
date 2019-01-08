@@ -46,6 +46,10 @@ export const Link = mq({
 
 export const styledParagraph = mq({
   margin: '0!important',
+  '& a': {
+    textDecoration: 'underline!important',
+    color: 'black!important',
+  }
 })
 
 // ############ END OF STYLING ELEMENTS OF PROJECTS INDEX PAGE #############
