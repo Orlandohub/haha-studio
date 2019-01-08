@@ -35,7 +35,7 @@ const Texts = ({ location, data }) => {
                       to={edge.node.fields.slug}
                       className={css(styles.linkText)}
                     >
-                      read more
+                      <u>read more</u>
                     </Link>
                   </p>
                   <br />
