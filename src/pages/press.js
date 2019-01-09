@@ -48,7 +48,8 @@ const Press = ({ location, data }) => {
           </div>
 
           {/*      BOTTOM IMAGE GRID PART        */}
-          <div className={css(styles.horizontalLine)} />
+          <div className={css(styles.horizontalLine)}>
+          </div>
           <div className={css(styles.pressGrid)}>
             {
               map(edges, (edge, key) => {
