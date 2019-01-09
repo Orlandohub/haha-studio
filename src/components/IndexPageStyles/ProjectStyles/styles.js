@@ -4,27 +4,34 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const projectWrapper = mq({
   width: '100%',
+  height: '100%',
+  position: 'relative',
   paddingTop: [0, 0, 0, 0, 126],
 })
 
 export const projectTitle = mq({
   width: ['100%', '100%', '100%', '100%', '25%'],
-  height: ['auto', 'auto', 'auto', 'auto', '1500px'],
-  display: 'block!important',
-  float: 'left!important',
+  height: ['auto', 'auto', 'auto', 'auto', 'auto'],
+  display: ['block!important', 'block!important', 'block!important', 'block!important', 'inline-block!important'],
+  // float: 'left!important',
   lineHeight: 1,
   marginTop: 0,
   fontSize: ['1em', '1em', '2em', '2em'],
   color: 'black!important',
   paddingRight: 10,
   paddingBottom: 26,
+  position: 'relative',
+})
+
+export const projectTitleSliderWrap = mq({
+  display: ['block', 'block', 'block', 'block', 'flex']
 })
 
 export const imageWrapper = mq({
   paddingRight: [0, 0, 0, 0, 191],
   width: ['100%', '100%', '100%', '100%', '75%'],
-  float: 'left!important',
-  display: 'block!important',
+  // float: 'left!important',
+  display: ['block!important', 'block!important', 'block!important', 'block!important', 'inline-block!important'],
   position: 'relative!important',
   marginTop: 5,
   color: 'black!important',
