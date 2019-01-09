@@ -37,11 +37,11 @@ exports.createPages = ({ actions, graphql }) => {
     _.forEach(texts, (edge, index) => {
       const id = edge.node.id
       const prev = index === 0
-        ? `${texts[index].node.fields.slug}/#`
+        ? `${texts[texts.length - 1].node.fields.slug}`
         : texts[index - 1].node.fields.slug
 
       const next = texts.length === index + 1
-        ? `${texts[index].node.fields.slug}/#`
+        ? `${texts[0].node.fields.slug}`
         : texts[index + 1].node.fields.slug
 
       createPage({
