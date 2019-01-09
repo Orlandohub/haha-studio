@@ -3,8 +3,9 @@ import facepaint from 'facepaint'
 const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
-export const checkoutWrapper = mq({
+export const cartWrapper = mq({
   fontSize: [14, 14, 14, 22, 22],
+  color: 'black',
 })
 
 export const orderStyles = mq({
@@ -66,6 +67,7 @@ export const placeholderStyles = mq({
   outline: 'none',
   border: 'none',
   width: '100%',
+  fontWeight: 'normal',
 })
 
 export const arrowWrap = mq({
@@ -112,4 +114,20 @@ export const sumRowBottom = mq({
 
 export const sumRowBottomRight = mq(sumRowBottom, {
   textAlign: 'right',
+})
+
+export const formWrapper = mq({
+  width: '100%',
+})
+
+export const formLabels = mq({
+  width: '30%',
+  //paddingTop: 30,
+  width: '100%',
+  fontWeight: 'normal',
+})
+
+export const inputWrapper = mq({
+  width: '70%',
+  float: 'right',
 })
