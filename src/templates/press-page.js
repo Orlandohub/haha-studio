@@ -49,8 +49,8 @@ export const PressPageTemplate = ({ post, pageContext }) => {
             <Img fluid={post.frontmatter.content_image_right.childImageSharp.fluid} className={css(styles.Image)}/>
           </div>
           <NavFooter
-            linkLeft={pageContext.prev}
-            linkRight={pageContext.next}
+            linkLeft={`${pageContext.prev}#image`}
+            linkRight={`${pageContext.next}#image`}
             linkText="/press/"
             text="view all"
           />
