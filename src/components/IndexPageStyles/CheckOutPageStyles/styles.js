@@ -3,6 +3,54 @@ import facepaint from 'facepaint'
 const breakpoints = [411, 576, 768, 1024, 1200, 1500]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
+export const pageWrapper = mq({
+  overflow: 'auto',
+  width: '100%',
+  height: 'auto',
+  display: 'block',
+  position: 'relative',
+  paddingTop: ['49px', '49px', '49px', '55px', '55px'],
+  paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
+  paddingRight: ['32px', '32px', '80px', '135px', '160px'],
+})
+
+export const brand = mq({
+  paddingBottom: [89, 89, 89, 139, 139],
+  display: 'block',
+  position: 'relative',
+  float: 'left',
+  paddingLeft: 1,
+  width: '100%!important',
+})
+
+export const logoWrap = mq({
+  float: 'left',
+  margin: 0,
+  paddingTop: '13px!important',
+  paddingBottom: '0!important',
+  paddingRight: '0!important',
+  width: ['81.5px!important', '81.5px!important', '168.64px!important'],
+})
+
+export const shopLink = mq({
+  textDecoration: 'none!important',
+  color: 'black!important',
+  textAlign: 'right',
+})
+
+export const shopWrap = mq({
+  fontSize: [14, 14, 14, 29, 29],
+  display: ['block', 'block', 'block', 'block', 'block', 'none'],
+  float: 'right',
+  width: '20%',
+  textAlign: 'right',
+})
+
+export const shopWrapRight = mq(shopWrap, {
+  display: ['none', 'none', 'none', 'none', 'none', 'block'],
+  width: '100%',
+})
+
 export const cartWrapper = mq({
   float: 'left',
   position: [
@@ -191,6 +239,7 @@ export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
 })
 
 export const purchaseBtn = mq({
+  clear: 'both!important',
   width: ['100%', '100%', '100%', '100%', '100%', '100%', 390],
   height: ['40', '40', '40', 53],
   marginTop: [60, 60, 60, 196],
