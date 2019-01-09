@@ -25,7 +25,6 @@ export const ProjectsTemplate = ({
   pageContext,
 }) => {
   const PostContent = contentComponent || Content
-  console.log('galleryImages', galleryImages)
   return (
     <Layout location={location}>
       <div className={css(styles.projectWrapper)}>
@@ -52,9 +51,9 @@ export const ProjectsTemplate = ({
             Photo credits: {photoCredits}
           </p>
           <br />
-          <p className={css(styles.styledParagraph)}>
+          <div className={css(styles.styledParagraph)}>
             <PostContent content={content} />
-          </p>
+          </div>
         </div>
         <NavFooter
           linkLeft={`${pageContext.prev}`}
@@ -83,7 +82,8 @@ ProjectsTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const Project = ({ data, pageContext }) => {
+
+const Project = ({ data, pageContext, location }) => {
   const { markdownRemark: post } = data
   return (
     <ProjectsTemplate
@@ -98,6 +98,7 @@ const Project = ({ data, pageContext }) => {
           />
         </Helmet>
       }
+      location={location}
       pageContext={pageContext}
       title={post.frontmatter.title}
       year={post.frontmatter.year}
@@ -113,6 +114,7 @@ Project.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
+  location: PropTypes.object,
   pageContext: PropTypes.object,
 }
 
