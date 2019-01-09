@@ -6,6 +6,15 @@ import Slider from 'react-slick'
 
 class Carousel extends React.Component {
 
+  constructor(props) {
+    super(props)
+  
+    this.state = {}
+    this.nextSlide = this.nextSlide.bind(this)
+  }
+  nextSlide() {
+    this.slider.slickNext()
+  }
   render() {
     const { images } = this.props
     const settings = {
@@ -32,10 +41,11 @@ class Carousel extends React.Component {
     }
     return (
       <div>
-        <Slider {...settings}>
+        <Slider ref={slider => (this.slider = slider)} {...settings}>
           {map(images, (slide, index) => (
             <div
               key={index}
+              onClick={this.nextSlide}
             >
               <Img fluid={slide.image.childImageSharp.fluid} />
             </div>
