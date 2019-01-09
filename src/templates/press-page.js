@@ -80,6 +80,7 @@ const PressPage = ({ data, location, pageContext }) => {
 PressPage.propTypes = {
   location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object,
 }
 
 export default PressPage

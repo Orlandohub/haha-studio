@@ -6,6 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 import Carousel from '../components/Carousel'
 import Layout from '../layouts'
 import { css } from 'emotion'
+import NavFooter from '../components/NavigationFooter'
 import * as styles from '../components/IndexPageStyles/ProjectStyles/styles'
 
 export const ProjectsTemplate = ({
@@ -21,19 +22,24 @@ export const ProjectsTemplate = ({
   galleryImages,
   cmsImageGallery,
   helmet,
+  pageContext,
 }) => {
   const PostContent = contentComponent || Content
   console.log('galleryImages', galleryImages)
   return (
     <Layout location={location}>
       <div className={css(styles.projectWrapper)}>
-        <div className={css(styles.projectTitle)}>
-          <p className={css(styles.styledParagraph)}>
-            {title}, {year}
-          </p>
+        <div className={css(styles.projectTitleSliderWrap)}>
+          <div className={css(styles.projectTitle)}>
+            <p className={css(styles.styledParagraph)}>
+              {title}, {year}
+            </p>
+          </div>
+          <div className={css(styles.imageWrapper)}>
+            <Carousel images={galleryImages} />
+          </div>
         </div>
-        <div className={css(styles.imageWrapper)}>
-          <Carousel images={galleryImages} />
+        <div className={css(styles.projectTitle)}>
         </div>
         <div className={css(styles.textWrapper)}>
           <p className={css(styles.styledParagraph)}>
@@ -50,12 +56,19 @@ export const ProjectsTemplate = ({
             <PostContent content={content} />
           </p>
         </div>
+        <NavFooter
+          linkLeft={`${pageContext.prev}`}
+          linkRight={`${pageContext.next}`}
+          linkText="/selected/"
+          text="view all"
+        />
       </div>
     </Layout>
   )
 }
 
 ProjectsTemplate.propTypes = {
+  pageContext: PropTypes.object,
   location: PropTypes.object.isRequired,
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
@@ -70,7 +83,7 @@ ProjectsTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const Project = ({ data }) => {
+const Project = ({ data, pageContext }) => {
   const { markdownRemark: post } = data
   return (
     <ProjectsTemplate
@@ -85,6 +98,7 @@ const Project = ({ data }) => {
           />
         </Helmet>
       }
+      pageContext={pageContext}
       title={post.frontmatter.title}
       year={post.frontmatter.year}
       producer={post.frontmatter.producer}
@@ -99,6 +113,7 @@ Project.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
+  pageContext: PropTypes.object,
 }
 
 export default Project
