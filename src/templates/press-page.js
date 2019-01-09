@@ -45,15 +45,15 @@ export const PressPageTemplate = ({ post }) => {
 
         <div className={css(styles.pressExpandedGrid)} id="image">
           <div className={css(styles.pressExpandedImage)}>
-            <Img fluid={post.frontmatter.content_image_left.childImageSharp.fluid} />
-            <Img fluid={post.frontmatter.content_image_right.childImageSharp.fluid} />
-            <NavFooter
-              linkLeft="/find-us/"
-              linkRight="/retailers/"
-              linkText="/press/"
-              text="view all"
-            />
+            <Img fluid={post.frontmatter.content_image_left.childImageSharp.fluid} className={css(styles.Image)}/>
+            <Img fluid={post.frontmatter.content_image_right.childImageSharp.fluid} className={css(styles.Image)}/>
           </div>
+          <NavFooter
+            linkLeft="/find-us/"
+            linkRight="/retailers/"
+            linkText="/press/"
+            text="view all"
+          />
         </div>
       </div>
     </div>
