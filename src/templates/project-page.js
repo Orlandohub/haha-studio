@@ -69,7 +69,7 @@ ProjectsTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-const Project = ({ data }) => {
+const Project = ({ data, location }) => {
   const { markdownRemark: post } = data
   return (
     <ProjectsTemplate
@@ -99,6 +99,7 @@ Project.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
   }),
+  location: PropTypes.object,
 }
 
 export default Project
