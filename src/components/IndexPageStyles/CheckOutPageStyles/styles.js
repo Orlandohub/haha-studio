@@ -1,9 +1,20 @@
 import entercodearrow from '../../../images/06_M_arrow_entercode_checkout_page.png'
 import facepaint from 'facepaint'
-const breakpoints = [576, 768, 1024, 1200]
+const breakpoints = [411, 576, 768, 1024, 1200, 1500]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const cartWrapper = mq({
+  float: 'left',
+  position: [
+    'relative',
+    'relative',
+    'relative',
+    'relative',
+    'relative',
+    'fixed',
+  ],
+  width: ['100%', '100%', '100%', '100%', '100%', '50%'],
+  paddingRight: [0, 0, 0, 0, 0, '15%'],
   fontSize: [14, 14, 14, 22, 22],
   color: 'black',
 })
@@ -87,8 +98,23 @@ export const submitBtn = mq({
   backgroundPosition: 'bottom',
 })
 
+export const clientFormWrapper = mq({
+  width: '100%',
+  paddingLeft: [0, 0, 0, 0, 0, '50%'],
+  fontSize: [14, 14, 14, 22, 22],
+})
+
+export const ClientDetails = mq({
+  paddingBottom: [35, 35, 35, 30, 30],
+})
+
+export const paragraph = mq({
+  fontSize: [8, 8, 8, 18, 18],
+  color: '#7B7C81',
+})
+
 export const summaryTable = mq(tableStyles, {
-  borderBottom: '2px solid black',
+  borderBottom: '1.5px solid black',
 })
 
 export const sumRowTop = mq({
@@ -116,18 +142,67 @@ export const sumRowBottomRight = mq(sumRowBottom, {
   textAlign: 'right',
 })
 
-export const formWrapper = mq({
-  width: '100%',
-})
-
 export const formLabels = mq({
-  width: '30%',
-  //paddingTop: 30,
   width: '100%',
   fontWeight: 'normal',
 })
 
 export const inputWrapper = mq({
-  width: '70%',
+  width: ['62%', '70%', '70%', '75%', '75%', '66%', '75%'],
   float: 'right',
+  outline: 'none',
+  border: 'none',
+  borderBottom: '1.5px solid black',
+})
+
+export const halfWidthForms = mq({
+  width: ['100%', '100%', '100%', '50%', '50%', '50%', '50%'],
+  float: 'right',
+  fontWeight: 'normal',
+})
+
+export const halfWidthFormsInputs = mq(halfWidthForms, {
+  width: ['62%', '70%', '70%', '50%', '50%', '32%', '50%'],
+  outline: 'none',
+  border: 'none',
+  borderBottom: '1.5px solid black',
+})
+
+export const halfWidthFormsCenter = mq(halfWidthForms, {
+  textAlign: ['left', 'left', 'left', 'center'],
+})
+
+export const halfWidthDate = mq({
+  width: '50%',
+  float: 'right',
+  fontWeight: 'normal',
+})
+
+export const halfWidthDateCenter = mq(halfWidthDate, {
+  textAlign: 'center',
+})
+
+export const halfWidthFormsCVC = mq(halfWidthDate, {
+  float: 'left',
+})
+
+export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
+  width: ['24%', '40%', '40%', '50%', '50%', '32%', '50%'],
+})
+
+export const purchaseBtn = mq({
+  width: ['100%', '100%', '100%', '100%', '100%', '100%', 390],
+  height: ['40', '40', '40', 53],
+  marginTop: [60, 60, 60, 196],
+  backgroundColor: 'transparent',
+  border: '2px solid black',
+  transitionDuration: '0.4s',
+  outline: 'none',
+  '&:hover': {
+    backgroundColor: 'black',
+    color: 'white',
+  },
+  '&:active': {
+    transform: 'translateY(3px)',
+  },
 })
