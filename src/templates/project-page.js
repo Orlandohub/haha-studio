@@ -23,7 +23,6 @@ export const ProjectsTemplate = ({
   helmet,
 }) => {
   const PostContent = contentComponent || Content
-  console.log('galleryImages', galleryImages)
   return (
     <Layout location={location}>
       <div className={css(styles.projectWrapper)}>
@@ -46,9 +45,9 @@ export const ProjectsTemplate = ({
             Photo credits: {photoCredits}
           </p>
           <br />
-          <p className={css(styles.styledParagraph)}>
+          <div className={css(styles.styledParagraph)}>
             <PostContent content={content} />
-          </p>
+          </div>
         </div>
       </div>
     </Layout>
@@ -85,6 +84,7 @@ const Project = ({ data }) => {
           />
         </Helmet>
       }
+      location={location}
       title={post.frontmatter.title}
       year={post.frontmatter.year}
       producer={post.frontmatter.producer}
