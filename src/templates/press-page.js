@@ -7,7 +7,7 @@ import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import NavFooter from '../components/NavigationFooter'
 
-export const PressPageTemplate = ({ post }) => {
+export const PressPageTemplate = ({ post, pageContext }) => {
   return (
     <div className={css(styles.pressExpandedWrapper)}>
       <div className={css(styles.pressExpandedRightColumn)}>
@@ -49,8 +49,8 @@ export const PressPageTemplate = ({ post }) => {
             <Img fluid={post.frontmatter.content_image_right.childImageSharp.fluid} className={css(styles.Image)}/>
           </div>
           <NavFooter
-            linkLeft="/find-us/"
-            linkRight="/retailers/"
+            linkLeft={pageContext.prev}
+            linkRight={pageContext.next}
             linkText="/press/"
             text="view all"
           />
@@ -62,15 +62,16 @@ export const PressPageTemplate = ({ post }) => {
 
 PressPageTemplate.propTypes = {
   post: PropTypes.object,
+  pageContext: PropTypes.object,
 }
 
-const PressPage = ({ data, location }) => {
+const PressPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
-  
   return (
     <Layout location={location}>
       <PressPageTemplate
         post={post}
+        pageContext={pageContext}
       />
     </Layout>
   )
