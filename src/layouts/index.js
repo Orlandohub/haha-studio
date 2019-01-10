@@ -49,14 +49,16 @@ injectGlobal`
   li.slick-active div.color_wrapp {
     border-bottom: 2px solid black;
   }
-  .pressThumbnailCounterCover {
-    display: none;
-  }
-  .pressThumbnailWrap:hover .pressThumbnailCover {
-    display: none;
-  }
-  .pressThumbnailWrap:hover .pressThumbnailCounterCover {
-    display: block;
+  @media (min-width: 1024px) {
+    .pressThumbnailCounterCover {
+      display: none;
+    }
+    .pressThumbnailWrap:hover .pressThumbnailCover {
+      display: none;
+    }
+    .pressThumbnailWrap:hover .pressThumbnailCounterCover {
+      display: block;
+    }
   }
   .ril-outer.ril__outer.ril__outerAnimating   {
     background-color: white;

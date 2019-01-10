@@ -8,6 +8,7 @@ import Link from 'gatsby-link'
 import * as styles from '../components/IndexPageStyles/PressStyles/styles'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import Media from 'react-media'
 
 const MyHashLink = props => genericHashLink(props, Link)
 
@@ -58,7 +59,14 @@ const Press = ({ location, data }) => {
                     <MyHashLink to={`${edge.node.fields.slug}#image`}>
                       <div className='pressThumbnailWrap'>
                         <Img className='pressThumbnailCover' fluid={edge.node.frontmatter.cover.childImageSharp.fluid} />
-                        <Img className='pressThumbnailCounterCover' fluid={edge.node.frontmatter.counter_cover.childImageSharp.fluid} />
+                        <Media query="(min-width: 1024px)">
+                          {matches =>
+                            matches ?
+                              <Img className='pressThumbnailCounterCover' fluid={edge.node.frontmatter.counter_cover.childImageSharp.fluid} />
+                              :
+                              null
+                          }
+                        </Media>
                       </div>
                     </MyHashLink>
                   </div>
