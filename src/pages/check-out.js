@@ -43,7 +43,7 @@ const CheckOut = ({ client, data }) => {
             </Link>
           </div>
           <div className={css(styles.shopWrap)}>
-            <Link to="/shop" className={css(styles.shopLink)}>
+            <Link to="/shop/" className={css(styles.shopLink)}>
               shop
             </Link>
           </div>
@@ -140,7 +140,7 @@ const CheckOut = ({ client, data }) => {
       <div className={css(styles.clientFormWrapper)}>
         <div className={css(styles.brand)}>
           <div className={css(styles.shopWrapRight)}>
-            <Link to="/shop" className={css(styles.shopLink)}>
+            <Link to="/shop/" className={css(styles.shopLink)}>
               shop
             </Link>
           </div>
