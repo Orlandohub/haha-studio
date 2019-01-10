@@ -17,9 +17,9 @@ const Shop = ({ location, data }) => {
       <div className={css(styles.shopWrapper)}>
         <div className={css(styles.shopRightColumn)}>
           {
-            map(edges, edge => {
+            map(edges, (edge, key) => {
               return (
-                <div className={css(styles.shopImage)}>
+                <div key={key} className={css(styles.shopImage)}>
                   <Link to={edge.node.fields.slug}>
                     <Img fluid={edge.node.frontmatter.cover_image.childImageSharp.fluid} />
                   </Link>

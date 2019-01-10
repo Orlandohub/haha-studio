@@ -68,49 +68,61 @@ injectGlobal`
   }
 `
 
-const Layout = ({ children, location }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-        logoImage: file(relativePath: { eq: "logo_large.png" }) {
-          childImageSharp {
-            fluid(maxWidth: 1060) {
-              ...GatsbyImageSharpFluid_withWebp_noBase64
+class Layout extends React.Component {
+  componentDidMount() {
+    window.Snipcart.api.configure('show_cart_automatically', false)
+  }
+  render() {
+    const { location, children } = this.props
+    return (
+      <StaticQuery
+        query={graphql`
+          query SiteTitleQuery {
+            site {
+              siteMetadata {
+                title
+              }
+            }
+            logoImage: file(relativePath: { eq: "logo_large.png" }) {
+              childImageSharp {
+                fluid(maxWidth: 1060) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
+                }
+              }
             }
           }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'HAHA Studio' },
-            {
-              name: 'keywords',
-              content: 'design, design studio, stockholm, gatsby, react',
-            },
-          ]}
-        >
-          <html lang="en" />
-          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-        </Helmet>
-        <Menu location={location} data={data} />
-        <div className={css(styles.pageWrapper)}>
-          <PageTransition>{children}</PageTransition>
-        </div>
-      </>
-    )}
-  />
-)
+        `}
+        render={data => (
+          <>
+            <Helmet
+              title={data.site.siteMetadata.title}
+              meta={[
+                { name: 'description', content: 'HAHA Studio' },
+                {
+                  name: 'keywords',
+                  content: 'design, design studio, stockholm, gatsby, react',
+                },
+              ]}
+            >
+              <html lang="en" />
+              <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+              <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+              <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+              <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" id="snipcart" data-api-key="MWVmODM4YmYtNzkxOS00ZmVhLThjODUtNzY2M2IwNTg5Zjk4NjM2Nzk1NDk1MTMzMDAzNTM0"></script>
+              <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" type="text/css" rel="stylesheet" />
+            </Helmet>
+            <Menu location={location} data={data} />
+            <div className={css(styles.pageWrapper)}>
+              <PageTransition>{children}</PageTransition>
+            </div>
+          </>
+        )}
+      />
+    )
+  }
+
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

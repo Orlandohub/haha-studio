@@ -31,7 +31,21 @@ export const ProductPageTemplate = ({
             <br />
             {price} €
           </div>
-          <button className={css(styles.cardButton)}>ADD TO CART</button>
+          <button
+            className={`${css(styles.cardButton)} snipcart-add-item`}
+            data-item-id="2"
+            data-item-name="Bacon"
+            data-item-price="3.00"
+            data-item-weight="20"
+            data-item-url="http://localhost:8000/products/liberty-lamp-small/"
+            data-item-description="Some fresh bacon">
+                 ADD TO CART
+          </button>
+          <a href="#" className="snipcart-checkout">Click here to checkout</a>
+          <div className="snipcart-summary">
+              Number of items: <span className="snipcart-total-items"></span>
+              Total price: <span className="snipcart-total-price"></span>
+          </div>
           <NavFooter
             linkText="/shop/"
             text="shop"
