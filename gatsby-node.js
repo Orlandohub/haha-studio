@@ -68,6 +68,11 @@ exports.createPages = ({ actions, graphql }) => {
       return post.node.frontmatter.templateKey === 'project-page'
     })
 
+    const products = _.filter(posts, post => {
+      return post.node.frontmatter.templateKey === 'product-page'
+    })
+
+    createPagesWithNavigation(products, createPage)
     createPagesWithNavigation(projects, createPage)
     createPagesWithNavigation(press, createPage)
     createPagesWithNavigation(texts, createPage)
@@ -80,6 +85,9 @@ exports.createPages = ({ actions, graphql }) => {
         return null
       }
       if (edge.node.frontmatter.templateKey === 'project-page') {
+        return null
+      }
+      if (edge.node.frontmatter.templateKey === 'product-page') {
         return null
       }
       const id = edge.node.id

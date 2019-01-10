@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 import { map } from 'lodash'
 import Img from 'gatsby-image'
 import Lightbox from 'react-image-lightbox'
-import Media from 'react-media';
+import Media from 'react-media'
+import styled from 'react-emotion'
 import 'react-image-lightbox/style.css'
 import Slider from 'react-slick'
+
 
 class Carousel extends React.Component {
 
