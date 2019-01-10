@@ -99,7 +99,7 @@ export const styles = {
     width: '100%',
     textAlign: 'center',
     position: 'absolute',
-    bottom: '61px',
+    bottom: '110px',
     zIndex: 1,
   },
 
