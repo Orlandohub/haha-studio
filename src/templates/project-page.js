@@ -90,7 +90,7 @@ const Project = ({ data, pageContext, location }) => {
       content={post.html}
       contentComponent={HTMLContent}
       helmet={
-        <Helmet titleTemplate="%s | Blog">
+        <Helmet titleTemplate="%s | Project">
           <title>{`${post.frontmatter.title}`}</title>
           <meta
             name="description"
