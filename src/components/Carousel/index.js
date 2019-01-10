@@ -1,11 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { map } from 'lodash'
+import { map, upperCase } from 'lodash'
 import Img from 'gatsby-image'
 import Lightbox from 'react-image-lightbox'
-import Media from 'react-media';
+import Media from 'react-media'
+import styled from 'react-emotion'
 import 'react-image-lightbox/style.css'
 import Slider from 'react-slick'
+import { css } from 'emotion'
+import * as styles from '../IndexPageStyles/ShopProductPageStyles/styles'
+
+const ColoredBox = styled.div`
+  @media (min-width: 100px) {
+    width: 22px;
+    height: 22px;
+  }
+  @media (min-width: 1200px) {
+    width: 36px;
+    height: 36px;
+  }
+  ${props => ({ backgroundColor: props.backgroundColor })};
+`
 
 class Carousel extends React.Component {
 
@@ -15,18 +30,20 @@ class Carousel extends React.Component {
     this.state = {
       photoIndex: 0,
       isOpen: false,
+      hoverColor: null,
     }
     this.nextSlide = this.nextSlide.bind(this)
   }
   nextSlide(index) {
     this.slider.slickNext()
     this.setState({
-      photoIndex: index + 1
+      photoIndex: index
     })
   }
   render() {
-    const { photoIndex, isOpen } = this.state
-    const { images } = this.props
+    const { photoIndex, isOpen, hoverColor } = this.state
+    const { images, isProduct } = this.props
+    const { color_name, color_hex } = images[photoIndex]
     const settings = {
       dots: true,
       draggable: false,
@@ -34,19 +51,42 @@ class Carousel extends React.Component {
       speed: 500,
       slidesToShow: 1,
       slidesToScroll: 1,
-      appendDots: dots => (
-        <div
-        >
-          <ul style={{ paddingLeft: 0, height: 40, paddingTop: 60, display: 'flex' }}> {dots} </ul>
-        </div>
-      ),
-      customPaging: () => (
-        <div
-          style={{
-            flex: 'flex-grow',
-            height: 3,
-          }}
-        >
+      appendDots: dots => {
+        return (
+          <React.Fragment>
+            {
+              isProduct ?
+                <div className={css(styles.colorPickerWrap)}>
+                  <p className={css(styles.colorDescription)}>
+                    {upperCase(hoverColor) || upperCase(color_name)}
+                  </p>
+                  <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex' }}> {dots} </ul>
+                </div>
+                :
+                <ul style={{ paddingLeft: 0, height: 40, paddingTop: 60, display: 'flex' }}> {dots} </ul>
+            }
+          </React.Fragment>
+        )},
+      customPaging: (i) => (
+        <div>
+          {
+            isProduct ?
+              <div
+                className={`${css(styles.colorBoxWrapper)} color_wrapp`}
+                onMouseOver={() => this.setState({hoverColor: images[i].color_name})}
+                onMouseOut={() => this.setState({hoverColor: null})}
+              >
+                <ColoredBox backgroundColor={images[i].color_hex} />
+              </div>
+              :
+              <div
+                style={{
+                  flex: 'flex-grow',
+                  height: 3,
+                }}
+              >
+              </div>
+          }
         </div>
       ),
       afterChange: (i) => {
@@ -94,4 +134,5 @@ export default Carousel
 
 Carousel.proptypes = {
   images: PropTypes.array.isRequired,
+  isProduct: PropTypes.bool,
 }
