@@ -58,6 +58,12 @@ injectGlobal`
   .pressThumbnailWrap:hover .pressThumbnailCounterCover {
     display: block;
   }
+  .ril-outer.ril__outer.ril__outerAnimating   {
+    background-color: white;
+  }
+  .ril-toolbar.ril__toolbar {
+    display: none;
+  }
 `
 
 const Layout = ({ children, location }) => (
