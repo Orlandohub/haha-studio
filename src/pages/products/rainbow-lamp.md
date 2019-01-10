@@ -14,4 +14,6 @@ image_gallery:
 ---
 Sand blasted aluminum
 
-1.2 kg 270 x 355 x 125 mm (H/W/D)
+1.2 kg
+
+270 x 355 x 125 mm (H/W/D)
