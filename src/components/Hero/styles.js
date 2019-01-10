@@ -5,11 +5,11 @@ import mobile_hero_image from '../../images/M_Hero_image.jpg'
 /*###################### ANIMATION SECTION ##################*/
 
 const bounce = keyframes`
-from, 20%, 40%, to {
+from, 0%, 50%, to {
   transform: translate3d(0,0,0);
 }
 
-30%, 50% {
+25%, 75% {
   transform: translate3d(0, 10px, 0);
 }
 `
