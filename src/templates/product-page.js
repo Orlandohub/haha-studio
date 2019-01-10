@@ -24,7 +24,7 @@ export const ProductPageTemplate = ({
       <div className={css(styles.shopProductWrapper)}>
         <div className={css(styles.leftTitleColumn)}>{title}</div>
         <div className={css(styles.mainBodyWrapper)}>
-          <Carousel images={imageGallery} />
+          <Carousel images={imageGallery} isProduct={true} />
           <div className={css(styles.productDescriptionWrapper)}>
             <PageContent className="content" content={content} />
             <br />

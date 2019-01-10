@@ -46,6 +46,9 @@ injectGlobal`
   .slick-dots li.slick-active div {
     background-color: #000;
   }
+  li.slick-active div.color_wrapp {
+    border-bottom: 2px solid black;
+  }
   .pressThumbnailCounterCover {
     display: none;
   }
@@ -55,7 +58,6 @@ injectGlobal`
   .pressThumbnailWrap:hover .pressThumbnailCounterCover {
     display: block;
   }
-  
 `
 
 const Layout = ({ children, location }) => (
