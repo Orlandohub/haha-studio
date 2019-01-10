@@ -123,6 +123,7 @@ class Carousel extends React.Component {
           <Lightbox
             mainSrc={images[photoIndex].image.childImageSharp.fluid.src}
             onCloseRequest={() => this.setState({ isOpen: false })}
+            enableZoom={false}
           />
         )}
       </div>
