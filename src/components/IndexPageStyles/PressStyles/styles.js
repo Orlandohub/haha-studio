@@ -34,6 +34,8 @@ export const pressText = mq({
 })
 
 export const pressGrid = mq({
+  display: 'flex',
+  flexWrap: 'wrap',
   paddingLeft: [0, 0, 0, 0, 17],
   marginRight: ['-10px', '-10px', '-10px', '0px', '0px'],
   '& > :nth-child(even)': {
@@ -43,8 +45,7 @@ export const pressGrid = mq({
 })
 
 export const pressImage = mq({
-  float: 'left',
-  width: ['25%', '25%', '25%', '50%', '50%'],
+  flexBasis: ['25%', '25%', '25%', '50%', '50%'],
   paddingRight: [10, 10, 10, 6, 6],
   marginBottom: [15, 15, 15, 41, 41],
 })

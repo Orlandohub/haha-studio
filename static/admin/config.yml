@@ -10,6 +10,26 @@ display_url: https://eloquent-lalande-8cc180.netlify.com
 logo_url: /assets/logo_large.png
 
 collections:
+  - name: "products"
+    label: "Products"
+    folder: "src/pages/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Is Active", name: "is_active", widget: "boolean", required: false}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: Price, name: price, widget: string}
+      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: Cover Image, name: cover_image, widget: image}
+      - label: Image Gallery
+        name: image_gallery
+        widget: list
+        fields:
+          - {label: Image, name: image, widget: image}
+          - {label: "Color Name", name: "color_name", widget: "string"}
+          - {label: "Color Hexadecimal", name: "color_hex", widget: "string"}
   - name: "projects"
     label: "Projects"
     folder: "src/pages/projects"
@@ -31,6 +51,19 @@ collections:
         fields:
           - {label: Image, name: image, widget: image}
           - {label: "Is Cover", name: "is_cover", widget: "boolean"}
+  - name: "press"
+    label: "Press"
+    folder: "src/pages/press"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: Template Key, name: templateKey, widget: hidden, default: press-page}
+      - {label: Title, name: title, widget: string}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: Cover, name: cover, widget: image}
+      - {label: Counter Cover, name: counter_cover, widget: image}
+      - {label: Content Image Left, name: content_image_left, widget: image}
+      - {label: Content Image Right, name: content_image_right, widget: image}
   - name: "texts"
     label: "Texts"
     folder: "src/pages/texts"

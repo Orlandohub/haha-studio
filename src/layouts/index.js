@@ -28,6 +28,44 @@ injectGlobal`
   img {
     max-width: 100%;
   }
+  .slick-dots li {
+    flex: 1!important;
+  }
+  .slick-dots li:first-child {
+    margin-left: 0;
+  }
+  .slick-dots li:last-child {
+    margin-right: 0;
+  }
+  .slick-dots li div {
+    background-color: #D9D9D7;
+  }
+  .slick-dots li div:hover {
+    background-color: #000;
+  }
+  .slick-dots li.slick-active div {
+    background-color: #000;
+  }
+  li.slick-active div.color_wrapp {
+    border-bottom: 2px solid black;
+  }
+  @media (min-width: 1024px) {
+    .pressThumbnailCounterCover {
+      display: none;
+    }
+    .pressThumbnailWrap:hover .pressThumbnailCover {
+      display: none;
+    }
+    .pressThumbnailWrap:hover .pressThumbnailCounterCover {
+      display: block;
+    }
+  }
+  .ril-outer.ril__outer.ril__outerAnimating   {
+    background-color: white;
+  }
+  .ril-toolbar.ril__toolbar {
+    display: none;
+  }
 `
 
 const Layout = ({ children, location }) => (
@@ -61,6 +99,8 @@ const Layout = ({ children, location }) => (
           ]}
         >
           <html lang="en" />
+          <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
         </Helmet>
         <Menu location={location} data={data} />

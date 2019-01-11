@@ -32,7 +32,7 @@ const FindUs = ({ location }) => (
               className={css(styles.findUsLink)}
               target="blank"
             >
-              Instagram
+              <u>Instagram</u>
             </a>
             <br />
             <a
@@ -40,7 +40,7 @@ const FindUs = ({ location }) => (
               className={css(styles.findUsLink)}
               target="blank"
             >
-              Facebook
+              <u>Facebook</u>
             </a>
             <br />
             <br /> Credits

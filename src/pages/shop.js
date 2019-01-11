@@ -1,98 +1,80 @@
 import React from 'react'
+import { map } from 'lodash'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import Link from 'gatsby-link'
 import { css } from 'react-emotion'
 import * as styles from '../components/IndexPageStyles/ShopPageStyles/styles'
-import shopProduct from '../images/D_shop_product_index_image.jpg'
 import ShopNavigation from '../components/ShopNavigation/index'
+import { graphql } from 'gatsby'
+import Img from 'gatsby-image'
 
-const Shop = ({ location }) => (
-  <React.Fragment>
+const Shop = ({ location, data }) => {
+  const { projectsList: posts } = data
+  const { edges } = posts
+  return (
     <Layout location={location}>
       <div className={css(styles.shopWrapper)}>
         <div className={css(styles.shopRightColumn)}>
-          <div className={css(styles.shopImage)}>
-            <Link to={'/shop-product-page/'}>
-              <img src={shopProduct} className={css(styles.imgFullWidth)} />
-            </Link>
-            <div className={css(styles.shopText)}>
-              Alia, Pack A <br />
-              45 &#8364;
-            </div>
-          </div>
-          <div className={css(styles.shopImage)}>
-            <Link to={'/shop-product-page/'}>
-              <img src={shopProduct} className={css(styles.imgFullWidth)} />
-            </Link>
-            <div className={css(styles.shopText)}>
-              Alia, Pack A <br />
-              45 &#8364;
-            </div>
-          </div>
-          <div className={css(styles.shopImage)}>
-            <Link to={'/shop-product-page/'}>
-              <img src={shopProduct} className={css(styles.imgFullWidth)} />
-            </Link>
-            <div className={css(styles.shopText)}>
-              Alia, Pack A <br />
-              45 &#8364;
-            </div>
-          </div>
-          <div className={css(styles.shopImage)}>
-            <Link to={'/shop-product-page/'}>
-              <img src={shopProduct} className={css(styles.imgFullWidth)} />
-            </Link>
-            <div className={css(styles.shopText)}>
-              Alia, Pack A <br />
-              45 &#8364;
-            </div>
-          </div>
-          <div className={css(styles.shopImage)}>
-            <Link to={'/shop-product-page/'}>
-              <img src={shopProduct} className={css(styles.imgFullWidth)} />
-            </Link>
-            <div className={css(styles.shopText)}>
-              Alia, Pack A <br />
-              45 &#8364;
-            </div>
-          </div>
-          <div className={css(styles.shopImage)}>
-            <Link to={'/shop-product-page/'}>
-              <img src={shopProduct} className={css(styles.imgFullWidth)} />
-            </Link>
-            <div className={css(styles.shopText)}>
-              Alia, Pack A <br />
-              45 &#8364;
-            </div>
-          </div>
-          <div className={css(styles.shopImage)}>
-            <Link to={'/shop-product-page/'}>
-              <img src={shopProduct} className={css(styles.imgFullWidth)} />
-            </Link>
-            <div className={css(styles.shopText)}>
-              Alia, Pack A <br />
-              45 &#8364;
-            </div>
-          </div>
-          <div className={css(styles.shopImage)}>
-            <Link to={'/shop-product-page/'}>
-              <img src={shopProduct} className={css(styles.imgFullWidth)} />
-            </Link>
-            <div className={css(styles.shopText)}>
-              Alia, Pack A <br />
-              45 &#8364;
-            </div>
-          </div>
+          {
+            map(edges, edge => {
+              return (
+                <div className={css(styles.shopImage)}>
+                  <Link to={edge.node.fields.slug}>
+                    <Img fluid={edge.node.frontmatter.cover_image.childImageSharp.fluid} />
+                  </Link>
+                  <div className={css(styles.shopText)}>
+                    {edge.node.frontmatter.title} <br />
+                    {edge.node.frontmatter.price} &#8364;
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
         <ShopNavigation />
       </div>
     </Layout>
-  </React.Fragment>
-)
+  )
+}
 
 Shop.proptypes = {
   location: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
 }
 
 export default Shop
+
+export const query = graphql`
+  query {
+    projectsList: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] },
+      filter: {
+        frontmatter: {
+          templateKey: { eq: "product-page" },
+          is_active: { eq: true }
+        }
+      }
+    ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+              price
+              cover_image {
+                childImageSharp {
+                  fluid(maxWidth: 1060) {
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  }
+`

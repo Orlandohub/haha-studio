@@ -11,7 +11,7 @@ export const shopProductWrapper = mq({
 export const leftTitleColumn = mq({
   width: ['100%', '100%', '100%', '100%', '25%'],
   float: 'left',
-  paddingBottom: 26,
+  paddingBottom: 36,
 })
 
 export const mainBodyWrapper = mq({
@@ -27,10 +27,14 @@ export const galleryWrapper = mq({
 
 export const imgStyles = mq({
   width: '100%',
-  marginBottom: 36,
+})
+
+export const colorPickerWrap = mq({
+
 })
 
 export const colorDescription = mq({
+  paddingTop: [20, 20, 20, 36, 36],
   fontSize: 14,
 })
 export const productDescriptionWrapper = mq({
@@ -45,6 +49,9 @@ export const colorBoxWrapper = mq({
   float: 'left',
   marginRight: [15, 15, 15, 15, 18],
   marginTop: [15, 15, 15, 15, 18],
+  '& :hover': {
+    cursor: 'pointer',
+  }
 })
 
 export const colorBoxSelected = mq(colorBoxWrapper, {

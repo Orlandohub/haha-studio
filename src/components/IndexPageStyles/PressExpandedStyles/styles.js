@@ -47,16 +47,16 @@ export const pressExpandedGrid = mq({
 })
 
 export const pressExpandedImage = mq({
+  display: 'flex',
   '& > :nth-child(2)': {
-    paddingRight: 0,
-    paddingLeft: [5, 5, 5, 5, 6],
+    marginRight: 0,
+    marginLeft: [5, 5, 5, 5, 6],
   },
-  float: 'left',
   width: '100%',
 })
 
 export const Image = mq({
-  width: '50%',
+  flex: 1,
   paddingRight: [5, 5, 5, 5, 6],
   marginBottom: [55, 55, 55, 55, 53],
 })
