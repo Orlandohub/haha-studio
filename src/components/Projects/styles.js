@@ -49,8 +49,8 @@ export const StyledScrollTop = styled(ScrollTop)`
   right: 4% !important;
   display: block !important;
   bottom: 5% !important;
-  width: 50px !important;
-  height: 41px !important;
+  width: 14px !important;
+  height: 21px !important;
   padding: 15px !important;
   border: none !important;
   border-radius: 50px !important;
@@ -71,13 +71,15 @@ export const StyledScrollTop = styled(ScrollTop)`
     background-position: center !important;
     background-color: transparent !important;
     background-repeat: no-repeat !important;
+    width: 14px !important;
+    height: 21px !important;
     outline: none !important;
   }
   &:before {
     content: 'top' !important;
     position: relative !important;
     top: -50px !important;
-    right: 5px !important;
+    right: 14px !important;
     font-size: 20px !important;
     color: #cacac8 !important;
   }

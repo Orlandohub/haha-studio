@@ -8,10 +8,10 @@ import { graphql } from 'gatsby'
 import * as styles from '../components/IndexPageStyles/CheckOutPageStyles/styles'
 import prImgMob from '../images/M_product_thumbnail_checkout_page.jpg'
 //import prImgDesk from '../images/D_product_thumbnail_checkout_page.jpg'
-import { withFormik, Form, Field, ErrorMessage } from 'formik'
+import { withFormik, Form, Field } from 'formik'
 import * as Yup from 'yup'
+import Cart from '../components/CartComponent/index'
 
-const checkMark = <p>&#10004;</p>
 const date = new Date()
 const year = date.getFullYear()
 console.log(' The year is ' + year)
@@ -44,8 +44,8 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting }) => {
         </div>
 
         {/* #############################     CART GOES HERE        #############################*/}
-
-        <table className={css(styles.tableStyles)}>
+        <Cart />
+        {/*<table className={css(styles.tableStyles)}>
           <tbody>
             <tr>
               <td className={css(styles.rowStyles)}>
@@ -73,12 +73,12 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting }) => {
               <td className={css(styles.rowStylesRight)}>{product} &#8364;</td>
             </tr>
           </tbody>
-        </table>
+  </table>*/}
 
         {/* #############################    DISCOUNT SUBMISSION     #############################*/}
 
         <div className={css(styles.promoWrapper)}>
-          <form onSubmit="{this.handleSubmit}">
+          <form onSubmit={submitPromoCode}>
             <table style={{ width: '100%' }}>
               <tbody>
                 <tr>
@@ -271,7 +271,6 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting }) => {
                 <p style={{ lineHeight: 0.7, fontSize: '22px' }}>&#10004;</p>
               ) : null}
             </div>
-            {'     '}
             Ship to another adress?
           </label>
 

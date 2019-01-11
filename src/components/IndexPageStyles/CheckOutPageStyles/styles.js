@@ -289,8 +289,8 @@ export const purchaseBtn = mq({
 // ***************** CHECK BOX STYLING
 
 export const checkBox = mq({
-  paddingTop: [38, 33, 33, 33, 33, 33],
-  paddingBottom: [48, 53, 53, 88, 88, 88],
+  paddingTop: [38, 38, 38, 33, 33, 33],
+  paddingBottom: [48, 48, 53, 88, 88, 88],
   paddingLeft: 20,
   fontWeight: 'normal',
   position: 'relative',
@@ -303,12 +303,8 @@ export const customCheckBox = mq({
   position: 'absolute',
   backgroundColor: 'white',
   cursor: 'pointer',
-  //color: 'white',
   top: '40px',
   left: '0px',
-  '& > :focus-within': {
-    color: 'black',
-  },
 })
 
 // **************  ERROR STYLING ************
