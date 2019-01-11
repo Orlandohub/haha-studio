@@ -108,6 +108,8 @@ export const cardBtn = mq({
   backgroundColor: 'transparent',
 })
 
+// **************** DISCOUNT CODE WRAPPER, SUBMIT BUTTON AND PLACEHOLDER STYLING
+
 export const promoWrapper = mq({
   paddingTop: [120, 120, 120, 74, 74],
   fontSize: [14, 14, 14, 18, 18],
@@ -119,10 +121,6 @@ export const labelStyles = mq({
   width: '95%',
   marginRight: 'auto',
 })
-
-// 768  70%  40%
-
-// **************** DISCOUNT CODE WRAPPER, SUBMIT BUTTON AND PLACEHOLDER STYLING
 
 export const arrowWrap = mq({
   verticalAlign: 'bottom',

@@ -1,23 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-//import Layout from '../layouts'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import { graphql } from 'gatsby'
 import * as styles from '../components/IndexPageStyles/CheckOutPageStyles/styles'
-import prImgMob from '../images/M_product_thumbnail_checkout_page.jpg'
-//import prImgDesk from '../images/D_product_thumbnail_checkout_page.jpg'
 import { withFormik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import Cart from '../components/CartComponent/index'
 
 const date = new Date()
 const year = date.getFullYear()
-console.log(' The year is ' + year)
 const product = 999
 const promoCode = 0.15
-console.log('Quantity of product is ' + Object.keys(product))
 const submitPromoCode = () => {
   console.log('Quantity of product is ' + product.lenght())
 }
@@ -216,11 +211,13 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting }) => {
               name="adressLine2"
               className={css(styles.inputWrapper)}
             />
-            {touched.adressLine2 && errors.adressLine2 && (
-              <div className={css(styles.errorStyles)}>
-                {errors.adressLine2}
-              </div>
-            )}
+            {values.shiptoanotheradress &&
+              touched.adressLine2 &&
+              errors.adressLine2 && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.adressLine2}
+                </div>
+              )}
           </label>
           <label className={css(styles.halfWidthFormsCenter)}>
             City
@@ -438,7 +435,7 @@ const FormikCheckOut = withFormik({
     lastName: Yup.string().required('Last name is required!'),
     phoneNumber: Yup.number().required('Phone number is required!'),
     adressLine1: Yup.string().required('Adress is required!'),
-    //adressLine2: Yup.string().required('Adress is required!'),
+    adressLine2: Yup.string().required('Adress 2 is required!'),
     city: Yup.string().required('Required!'),
     zipCode: Yup.string().required('Required!'),
     country: Yup.string().required('Country is required!'),

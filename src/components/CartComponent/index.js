@@ -14,12 +14,13 @@ class Cart extends React.Component {
     super()
 
     this.state = {
-      name: 'Alia, Pack A',
+      name: 'Alia, Pack A ghfjfjfjhf',
       price: 333,
       activeClass: css(styles.cartWrapper),
     }
-    ;(this.hideCart = this.hideCart.bind(this)),
-      (this.showCart = this.showCart.bind(this))
+
+    this.hideCart = this.hideCart.bind(this)
+    this.showCart = this.showCart.bind(this)
   }
 
   hideCart() {
@@ -32,6 +33,14 @@ class Cart extends React.Component {
     this.setState({
       activeClass: css(styles.cartWrapper),
     })
+  }
+
+  componentDidMount() {
+    window.addEventListener('onmousedown', this.hideCart, this.showCart)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('onmousedown', this.hideCart, this.showCart)
   }
 
   render() {
@@ -70,10 +79,16 @@ class Cart extends React.Component {
         <table className={css(styles.tableStyles)}>
           <tbody>
             <tr>
-              <td className={css(styles.rowStyles)}>
-                <img src={prImgMob} alt="product image" />
-              </td>
-              <td className={css(styles.rowStyles)}>Alia, Pack A</td>
+              {isChkOut === '/check-out/' ? (
+                <td className={css(styles.rowStyles)}>
+                  <img
+                    className={css(styles.imageWrap)}
+                    src={prImgDesk}
+                    alt="product image"
+                  />
+                </td>
+              ) : null}
+              <td className={css(styles.rowStyles)}>{this.state.name}</td>
               <td className={css(styles.rowStylesRight)}>
                 <button className={css(styles.cardBtn)}>-</button>
                 <span className={css(styles.numWrap)}>11</span>
