@@ -4,18 +4,18 @@ const breakpoints = [411, 576, 768, 1024, 1200, 1500]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const pageWrapper = mq({
-  overflow: 'auto',
+  //overflow: 'auto',
   width: '100%',
-  height: 'auto',
+  //height: 'auto',
   display: 'block',
-  position: 'relative',
-  paddingTop: ['49px', '49px', '49px', '55px', '55px'],
+  //position: 'relative',
+  paddingTop: ['43px', '43px', '43px', '48px', '48px'],
   paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
   paddingRight: ['32px', '32px', '80px', '135px', '160px'],
 })
 
 export const brand = mq({
-  paddingBottom: [89, 89, 89, 139, 139],
+  marginBottom: [89, 89, 89, 139, 139],
   display: 'block',
   position: 'relative',
   float: 'left',
@@ -26,7 +26,7 @@ export const brand = mq({
 export const logoWrap = mq({
   float: 'left',
   margin: 0,
-  paddingTop: '13px!important',
+  paddingTop: '12px!important',
   paddingBottom: '0!important',
   paddingRight: '0!important',
   width: ['81.5px!important', '81.5px!important', '168.64px!important'],
@@ -39,16 +39,18 @@ export const shopLink = mq({
 })
 
 export const shopWrap = mq({
-  fontSize: [14, 14, 14, 29, 29],
+  fontSize: [14, 14, 29, 29, 29],
   display: ['block', 'block', 'block', 'block', 'block', 'none'],
   float: 'right',
   width: '20%',
   textAlign: 'right',
+  paddingTop: [6.1, 6.2, 0],
 })
 
 export const shopWrapRight = mq(shopWrap, {
   display: ['none', 'none', 'none', 'none', 'none', 'block'],
   width: '100%',
+  lineHeight: 1.38,
 })
 
 export const cartWrapper = mq({
@@ -61,8 +63,7 @@ export const cartWrapper = mq({
     'relative',
     'fixed',
   ],
-  width: ['100%', '100%', '100%', '100%', '100%', '50%'],
-  paddingRight: [0, 0, 0, 0, 0, '15%'],
+  width: ['100%', '100%', '100%', '100%', '100%', '35%'],
   fontSize: [14, 14, 14, 22, 22],
   color: 'black',
 })
@@ -119,15 +120,9 @@ export const labelStyles = mq({
   marginRight: 'auto',
 })
 
-export const placeholderStyles = mq({
-  '&::placeholder': {
-    opacity: 0.5,
-  },
-  outline: 'none',
-  border: 'none',
-  width: '100%',
-  fontWeight: 'normal',
-})
+// 768  70%  40%
+
+// **************** DISCOUNT CODE WRAPPER, SUBMIT BUTTON AND PLACEHOLDER STYLING
 
 export const arrowWrap = mq({
   verticalAlign: 'bottom',
@@ -146,20 +141,39 @@ export const submitBtn = mq({
   backgroundPosition: 'bottom',
 })
 
+export const placeholderStyles = mq({
+  '&::placeholder': {
+    opacity: 0.5,
+  },
+  outline: 'none',
+  border: 'none',
+  width: '100%',
+  fontWeight: 'normal',
+})
+
+// ************* CLIENT DATA WRAPPER STYLING
+
 export const clientFormWrapper = mq({
   width: '100%',
   paddingLeft: [0, 0, 0, 0, 0, '50%'],
   fontSize: [14, 14, 14, 22, 22],
+  zIndex: 5,
 })
+
+// ************* "CLIENT DETAILS" WRAPPER
 
 export const ClientDetails = mq({
   paddingBottom: [35, 35, 35, 30, 30],
 })
 
+// ************* SMALL PARAGRAPHS STYLING
+
 export const paragraph = mq({
   fontSize: [8, 8, 8, 18, 18],
   color: '#7B7C81',
 })
+
+// *******************  PRODUCT INFO TABLE STYLING
 
 export const summaryTable = mq(tableStyles, {
   borderBottom: '1.5px solid black',
@@ -190,13 +204,17 @@ export const sumRowBottomRight = mq(sumRowBottom, {
   textAlign: 'right',
 })
 
+// ******************* FORM LABELS AND INPUT FIELDS STYLING
+
 export const formLabels = mq({
+  position: 'relative',
   width: '100%',
   fontWeight: 'normal',
+  paddingTop: 10,
 })
 
 export const inputWrapper = mq({
-  width: ['62%', '70%', '70%', '75%', '75%', '66%', '75%'],
+  width: ['62%', '70%', '70%', '70%', '75%', '66%', '75%'],
   float: 'right',
   outline: 'none',
   border: 'none',
@@ -204,13 +222,15 @@ export const inputWrapper = mq({
 })
 
 export const halfWidthForms = mq({
+  position: 'relative',
   width: ['100%', '100%', '100%', '50%', '50%', '50%', '50%'],
   float: 'right',
   fontWeight: 'normal',
+  paddingTop: 5.5,
 })
 
 export const halfWidthFormsInputs = mq(halfWidthForms, {
-  width: ['62%', '70%', '70%', '50%', '50%', '32%', '50%'],
+  width: ['62%', '70%', '70%', '40%', '50%', '32%', '50%'],
   outline: 'none',
   border: 'none',
   borderBottom: '1.5px solid black',
@@ -221,22 +241,32 @@ export const halfWidthFormsCenter = mq(halfWidthForms, {
 })
 
 export const halfWidthDate = mq({
-  width: '50%',
+  paddingTop: 5,
+  width: ['100%', '50%', '50%'],
   float: 'right',
   fontWeight: 'normal',
 })
 
 export const halfWidthDateCenter = mq(halfWidthDate, {
-  textAlign: 'center',
-})
-
-export const halfWidthFormsCVC = mq(halfWidthDate, {
-  float: 'left',
+  textAlign: ['left', 'center', 'center'],
 })
 
 export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
-  width: ['24%', '40%', '40%', '50%', '50%', '32%', '50%'],
+  width: ['62%', '40%', '40%', '40%', '50%', '32%', '50%'],
 })
+
+export const halfWidthFormsCVC = mq(halfWidthDate, {
+  paddingTop: 5,
+  position: 'relative',
+  float: 'left',
+  width: ['100%', '100%', '100%', '50%', '50%', '50%', '50%'],
+})
+
+export const halfWidthCVCinput = mq({
+  width: ['62%', '70%', '70%', '50%', '50%', '32%', '50%'],
+})
+
+// **************** PURCHASE BUTTON STYLING
 
 export const purchaseBtn = mq({
   clear: 'both!important',
@@ -251,7 +281,46 @@ export const purchaseBtn = mq({
     backgroundColor: 'black',
     color: 'white',
   },
-  '&:active': {
+  '&:focus': {
     transform: 'translateY(3px)',
   },
+})
+
+// ***************** CHECK BOX STYLING
+
+export const checkBox = mq({
+  paddingTop: [38, 33, 33, 33, 33, 33],
+  paddingBottom: [48, 53, 53, 88, 88, 88],
+  paddingLeft: 20,
+  fontWeight: 'normal',
+  position: 'relative',
+})
+
+export const customCheckBox = mq({
+  width: 20,
+  height: 20,
+  border: '1px solid black',
+  position: 'absolute',
+  backgroundColor: 'white',
+  cursor: 'pointer',
+  //color: 'white',
+  top: '40px',
+  left: '0px',
+  '& > :focus-within': {
+    color: 'black',
+  },
+})
+
+// **************  ERROR STYLING ************
+
+export const errorStyles = mq({
+  width: '50%',
+  fontSize: [8, 8, 8, 18, 18],
+  color: 'red',
+  textAlign: 'right',
+  position: 'absolute',
+  fontStyle: 'italic',
+  zIndex: 1,
+  top: '-5px',
+  left: '50%',
 })
