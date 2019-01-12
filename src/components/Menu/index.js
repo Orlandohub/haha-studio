@@ -6,7 +6,7 @@ import Link from 'gatsby-link'
 import { navigate } from 'gatsby'
 import * as styles from './styles'
 import MenuDropdownLink from '../MenuDropdownLink'
-
+import Cart from '../CartComponent/index'
 import Img from 'gatsby-image'
 
 class Menu extends Component {
@@ -251,6 +251,7 @@ class Menu extends Component {
               >
                 shop
               </span>
+              <Cart />
             </li>
           </ul>
         </div>

@@ -59,7 +59,15 @@ class Cart extends React.Component {
               <tbody>
                 <tr>
                   <td>
-                    <p style={{ margin: 0, padding: '29px 0px' }}>CART</p>
+                    <p
+                      style={{
+                        margin: 0,
+                        padding: '29px 0px',
+                        textAlign: 'left',
+                      }}
+                    >
+                      CART
+                    </p>
                   </td>
                   <td>
                     <p style={{ textAlign: 'right' }}>
@@ -107,7 +115,11 @@ class Cart extends React.Component {
             <table style={{ width: '100%' }}>
               <tbody>
                 <tr>
-                  <td>
+                  <td
+                    style={{
+                      textAlign: 'left',
+                    }}
+                  >
                     Subtotal
                     <br /> <br /> <br />
                     Shipping & taxes calculated at checkout

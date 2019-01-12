@@ -9,10 +9,10 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 export const cartWrapper = mq({
   fontSize: ['14px', '14px', '14px', '18px', '18px', '18px'],
   display: 'block',
-  position: 'relative',
+  position: 'absolute',
   float: 'right',
   marginLeft: 29,
-  marginRight: 29,
+  //marginRight: 29,
   top: 0,
   right: 0,
   width: ['100%', '100%', '100%', '100%', '462px', 462],
@@ -64,6 +64,7 @@ export const tableStyles = mq({
 })
 export const rowStyles = mq({
   width: '25%',
+  textAlign: 'left',
   verticalAlign: 'initial',
   paddingTop: [40, 40, 40, 40, 29, 29],
 })
