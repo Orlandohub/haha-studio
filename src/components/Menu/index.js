@@ -23,11 +23,26 @@ class Menu extends Component {
     this.isActiveMenu = this.isActiveMenu.bind(this)
     this.isActiveSubMenu = this.isActiveSubMenu.bind(this)
     this.isShopCurrentPath = this.isShopCurrentPath.bind(this)
+    this.hideCart = this.hideCart.bind(this)
+    this.showCart = this.showCart.bind(this)
 
     this.state = {
       activeMenu: null,
       activeSubMenu: null,
+      activeClass: css(styles.cartWrapperHidden),
     }
+  }
+
+  hideCart() {
+    this.setState({
+      activeClass: css(styles.cartWrapperHidden),
+    })
+  }
+
+  showCart() {
+    this.setState({
+      activeClass: css(styles.cartWrapper),
+    })
   }
 
   setActiveMenu() {
@@ -112,7 +127,8 @@ class Menu extends Component {
   }
 
   render() {
-    const { data } = this.props
+    const { data, showBtn } = this.props
+
     return (
       <div className={css(styles.menuContainer)}>
         <div className={css(styles.brand)}>
@@ -251,9 +267,19 @@ class Menu extends Component {
               >
                 shop
               </span>
-              <Cart />
+              {showBtn ? (
+                <button
+                  className={css(styles.cartShowBtn)}
+                  onClick={this.showCart}
+                >
+                  1
+                </button>
+              ) : null}
             </li>
           </ul>
+        </div>
+        <div className={this.state.activeClass}>
+          <Cart hideCart={this.hideCart} />
         </div>
       </div>
     )
@@ -262,6 +288,7 @@ class Menu extends Component {
 Menu.propTypes = {
   location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
+  showBtn: PropTypes.bool.isRequired,
 }
 
 export default Menu

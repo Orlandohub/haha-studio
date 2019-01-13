@@ -6,7 +6,7 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 // MENU CONTAIMER
 export const menuContainer = mq({
-  overflow: 'auto',
+  overflowX: 'hidden!important',
   width: '100%',
   display: 'block',
   transition: 'top 0.5 ease-in',
@@ -98,6 +98,7 @@ export const shopWrap = mq({
   position: 'relative',
   float: 'right!important',
   width: ['10%', '10%', '10%', '10%'],
+  //overflow: 'hidden',
 })
 
 export const subMenuColShop = {
@@ -115,3 +116,38 @@ export const subMenuItemShop = mq(subMenuItem, {
 })
 
 export const subMenuLinkShop = mq(subMenuLink)
+
+// **********************  CART SHOW BUTTON AND CART WRAPPERS
+
+export const cartShowBtn = mq({
+  textAlign: 'center',
+  backgroundColor: '#0A00FF',
+  color: 'white',
+  borderRadius: 50,
+  border: 'none',
+  outline: 'none',
+  width: [12, 12, 25],
+  height: [12, 12, 25],
+  marginLeft: [8, 19, 19, 41],
+  fontSize: [8, 8, 20],
+  lineHeight: 1,
+})
+
+export const cartWrapper = mq({
+  display: 'block',
+  position: 'absolute',
+  paddingLeft: 29,
+  paddingRight: 29,
+  top: 0,
+  right: 0,
+  width: ['100%', '100%', '462px', '462px', '462px', 462],
+  transform: 'translateX(0%)',
+  height: '100%',
+  transition: 'all 0.5s',
+  backgroundColor: 'white',
+  zIndex: 100,
+})
+
+export const cartWrapperHidden = mq(cartWrapper, {
+  transform: 'translateX(100%)',
+})

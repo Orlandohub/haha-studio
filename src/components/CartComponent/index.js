@@ -2,10 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import { navigate } from 'gatsby'
-import Link from 'gatsby-link'
 import * as styles from './styles'
-import { Location } from '@reach/router'
-import prImgMob from '../../images/M_product_thumbnail_checkout_page.jpg'
 import prImgDesk from '../../images/D_product_thumbnail_checkout_page.jpg'
 
 const isChkOut = location.pathname
@@ -14,33 +11,24 @@ class Cart extends React.Component {
     super()
 
     this.state = {
-      name: 'Alia, Pack A ghfjfjfjhf',
+      name: 'Alia, Pack A',
       price: 333,
       activeClass: css(styles.cartWrapper),
     }
 
     this.hideCart = this.hideCart.bind(this)
-    this.showCart = this.showCart.bind(this)
   }
 
   hideCart() {
-    this.setState({
-      activeClass: css(styles.cartWrapperHidden),
-    })
-  }
-
-  showCart() {
-    this.setState({
-      activeClass: css(styles.cartWrapper),
-    })
+    this.props.hideCart()
   }
 
   componentDidMount() {
-    window.addEventListener('onmousedown', this.hideCart, this.showCart)
+    window.addEventListener('onmousedown', this.hideCart)
   }
 
   componentWillUnmount() {
-    window.removeEventListener('onmousedown', this.hideCart, this.showCart)
+    window.removeEventListener('onmousedown', this.hideCart)
   }
 
   render() {
@@ -48,7 +36,7 @@ class Cart extends React.Component {
       <div
         className={
           isChkOut !== '/check-out/'
-            ? this.state.activeClass
+            ? css(styles.cartWrapper)
             : css(styles.cartWrapperForCheckOut)
         }
       >

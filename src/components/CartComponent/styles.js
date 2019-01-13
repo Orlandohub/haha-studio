@@ -9,22 +9,9 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 export const cartWrapper = mq({
   fontSize: ['14px', '14px', '14px', '18px', '18px', '18px'],
   display: 'block',
-  position: 'absolute',
-  float: 'right',
-  marginLeft: 29,
-  //marginRight: 29,
-  top: 0,
-  right: 0,
-  width: ['100%', '100%', '100%', '100%', '462px', 462],
-  transform: 'translateX(0)',
-  height: '100vh',
-  transition: 'all 0.5s',
-})
-
-// *************************** HIDDEN WRAPPER
-
-export const cartWrapperHidden = mq(cartWrapper, {
-  transform: 'translateX(130%)',
+  position: 'relative',
+  width: '100%',
+  height: '100%',
 })
 
 // ****************************** WRAPPER TO RENDER ON CHECK OUT PAGE
@@ -52,10 +39,14 @@ export const imageWrap = mq({
 
 export const subtotalWrapper = mq({
   width: '100%',
+  position: 'absolute',
+  bottom: 0,
+  right: 0,
   borderTop: '2px solid black',
   marginTop: 103,
   paddingTop: 26,
   marginBottom: 53,
+  //marginLeft: 29,
 })
 
 export const tableStyles = mq({
