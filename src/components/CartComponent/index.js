@@ -5,7 +5,6 @@ import { navigate } from 'gatsby'
 import * as styles from './styles'
 import prImgDesk from '../../images/D_product_thumbnail_checkout_page.jpg'
 
-const isChkOut = location.pathname
 class Cart extends React.Component {
   constructor() {
     super()
@@ -14,9 +13,24 @@ class Cart extends React.Component {
       name: 'Alia, Pack A',
       price: 333,
       activeClass: css(styles.cartWrapper),
+      counter: 1,
     }
 
     this.hideCart = this.hideCart.bind(this)
+    this.add = this.add.bind(this)
+    this.substract = this.substract.bind(this)
+  }
+
+  add() {
+    this.setState(prevState => {
+      return { counter: prevState.counter + 1 }
+    })
+  }
+
+  substract() {
+    this.setState(prevState => {
+      return { counter: prevState.counter - 1 }
+    })
   }
 
   hideCart() {
@@ -32,16 +46,18 @@ class Cart extends React.Component {
   }
 
   render() {
+    const showElements = this.props.showElements
+    let counterValue = this.state.counter
     return (
       <div
         className={
-          isChkOut !== '/check-out/'
-            ? css(styles.cartWrapper)
+          showElements === false
+            ? this.state.activeClass
             : css(styles.cartWrapperForCheckOut)
         }
       >
         {/* *********************** HEADER ************************* */}
-        {isChkOut !== '/check-out/' ? (
+        {showElements === false ? (
           <div className={css(styles.cartHeader)}>
             <table style={{ width: '100%' }}>
               <tbody>
@@ -71,34 +87,57 @@ class Cart extends React.Component {
           </div>
         ) : null}
 
-        {/* *********************** HEADER ************************* */}
-        <table className={css(styles.tableStyles)}>
-          <tbody>
-            <tr>
-              {isChkOut === '/check-out/' ? (
-                <td className={css(styles.rowStyles)}>
-                  <img
-                    className={css(styles.imageWrap)}
-                    src={prImgDesk}
-                    alt="product image"
-                  />
+        {/* *********************** HEADER END ************************* */}
+
+        {counterValue > 0 ? (
+          <table className={css(styles.tableStyles)}>
+            <tbody>
+              <tr>
+                {showElements && (
+                  <td className={css(styles.rowStyles)}>
+                    <img
+                      className={css(styles.imageWrap)}
+                      src={prImgDesk}
+                      alt="product image"
+                    />
+                  </td>
+                )}
+                <td className={css(styles.rowStyles)}>{this.state.name}</td>
+                <td className={css(styles.rowStylesRight)}>
+                  {counterValue < 2 ? (
+                    <button
+                      className={css(styles.cardBtn)}
+                      onClick={this.substract}
+                    >
+                      &times;
+                    </button>
+                  ) : (
+                    <button
+                      className={css(styles.cardBtn)}
+                      onClick={this.substract}
+                    >
+                      -
+                    </button>
+                  )}
+                  <span className={css(styles.numWrap)}>
+                    {this.state.counter}
+                  </span>
+                  <button className={css(styles.cardBtn)} onClick={this.add}>
+                    +
+                  </button>
                 </td>
-              ) : null}
-              <td className={css(styles.rowStyles)}>{this.state.name}</td>
-              <td className={css(styles.rowStylesRight)}>
-                <button className={css(styles.cardBtn)}>-</button>
-                <span className={css(styles.numWrap)}>11</span>
-                <button className={css(styles.cardBtn)}>+</button>
-              </td>
 
-              <td className={css(styles.rowStylesRight)}>
-                {this.state.price} &#8364;
-              </td>
-            </tr>
-          </tbody>
-        </table>
+                <td className={css(styles.rowStylesRight)}>
+                  {this.state.counter * this.state.price} &#8364;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        ) : null}
 
-        {isChkOut !== '/check-out/' ? (
+        {/* #######################################   BOTTOM PART   ##################################### */}
+
+        {showElements === false ? (
           <div className={css(styles.subtotalWrapper)}>
             <table style={{ width: '100%' }}>
               <tbody>
@@ -110,10 +149,10 @@ class Cart extends React.Component {
                   >
                     Subtotal
                     <br /> <br /> <br />
-                    Shipping & taxes calculated at checkout
+                    Shipping & taxes calculated at checkout <br />
                   </td>
                   <td style={{ textAlign: 'right', verticalAlign: 'initial' }}>
-                    value
+                    {this.state.counter * this.state.price}
                   </td>
                 </tr>
               </tbody>
@@ -132,6 +171,10 @@ class Cart extends React.Component {
       </div>
     )
   }
+}
+Cart.propTypes = {
+  showElements: PropTypes.bool.isRequired,
+  hideCart: PropTypes.func.isRequired,
 }
 
 export default Cart

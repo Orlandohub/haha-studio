@@ -62,6 +62,7 @@ export const rowStyles = mq({
 
 export const rowStylesRight = mq(rowStyles, {
   textAlign: 'right',
+  whiteSpace: 'nowrap',
 })
 
 // ************************** BUTTONS ***********************
@@ -77,6 +78,7 @@ export const numWrap = mq({
 })
 
 export const cardBtn = mq({
+  color: 'black',
   border: 'none',
   outline: 'none',
   backgroundColor: 'transparent',

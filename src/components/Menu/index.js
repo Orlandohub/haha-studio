@@ -127,7 +127,7 @@ class Menu extends Component {
   }
 
   render() {
-    const { data, showBtn } = this.props
+    const { data } = this.props
 
     return (
       <div className={css(styles.menuContainer)}>
@@ -267,19 +267,18 @@ class Menu extends Component {
               >
                 shop
               </span>
-              {showBtn ? (
-                <button
-                  className={css(styles.cartShowBtn)}
-                  onClick={this.showCart}
-                >
-                  1
-                </button>
-              ) : null}
+
+              <button
+                className={css(styles.cartShowBtn)}
+                onClick={this.showCart}
+              >
+                1
+              </button>
             </li>
           </ul>
         </div>
         <div className={this.state.activeClass}>
-          <Cart hideCart={this.hideCart} />
+          <Cart showElements={false} hideCart={this.hideCart} />
         </div>
       </div>
     )
@@ -288,7 +287,6 @@ class Menu extends Component {
 Menu.propTypes = {
   location: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
-  showBtn: PropTypes.bool.isRequired,
 }
 
 export default Menu

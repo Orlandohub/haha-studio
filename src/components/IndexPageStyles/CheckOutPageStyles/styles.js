@@ -1,17 +1,15 @@
 import entercodearrow from '../../../images/06_M_arrow_entercode_checkout_page.png'
+import selectArrow from '../../../images/06_D_down_arrow_checkout_page.png'
 import facepaint from 'facepaint'
 const breakpoints = [411, 576, 768, 1024, 1200, 1500]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const pageWrapper = mq({
-  //overflow: 'auto',
   width: '100%',
-  //height: 'auto',
   display: 'block',
-  //position: 'relative',
   paddingTop: ['43px', '43px', '43px', '48px', '48px'],
-  paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
-  paddingRight: ['32px', '32px', '80px', '135px', '160px'],
+  paddingLeft: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
+  paddingRight: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
 })
 
 export const brand = mq({
@@ -26,10 +24,20 @@ export const brand = mq({
 export const logoWrap = mq({
   float: 'left',
   margin: 0,
-  paddingTop: '12px!important',
+  paddingTop: [
+    '11.5px!important',
+    '11.5px!important',
+    '11.5px!important',
+    '12px!important',
+  ],
   paddingBottom: '0!important',
   paddingRight: '0!important',
-  width: ['81.5px!important', '81.5px!important', '168.64px!important'],
+  width: [
+    '81.5px!important',
+    '81.5px!important',
+    '81.5px!important',
+    '168.64px!important',
+  ],
 })
 
 export const shopLink = mq({
@@ -39,7 +47,7 @@ export const shopLink = mq({
 })
 
 export const shopWrap = mq({
-  fontSize: [14, 14, 29, 29, 29],
+  fontSize: [14, 14, 14, 29, 29, 29],
   display: ['block', 'block', 'block', 'block', 'block', 'none'],
   float: 'right',
   width: '20%',
@@ -251,6 +259,20 @@ export const halfWidthDateCenter = mq(halfWidthDate, {
 
 export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
   width: ['62%', '40%', '40%', '40%', '50%', '32%', '50%'],
+
+  WebkitAppearance: 'none',
+  MozAppearance: 'none',
+  appearance: 'none',
+  backgroundImage: `url(${selectArrow})`,
+  backgroundPosition: '100% 80%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: [
+    '8px 4.6px',
+    '8px 4.6px',
+    '8px 4.6px',
+    '17px 10px',
+    '17px 10px',
+  ],
 })
 
 export const halfWidthFormsCVC = mq(halfWidthDate, {

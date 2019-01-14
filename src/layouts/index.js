@@ -69,7 +69,7 @@ injectGlobal`
   }
 `
 
-const Layout = ({ children, location, showBtn }) => (
+const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -113,7 +113,7 @@ const Layout = ({ children, location, showBtn }) => (
           />
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
         </Helmet>
-        <Menu location={location} data={data} showBtn={showBtn} />
+        <Menu location={location} data={data} />
         <div className={css(styles.pageWrapper)}>
           <PageTransition>{children}</PageTransition>
         </div>
@@ -125,7 +125,6 @@ const Layout = ({ children, location, showBtn }) => (
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   location: PropTypes.object.isRequired,
-  showBtn: PropTypes.bool.isRequired,
 }
 
 export default Layout

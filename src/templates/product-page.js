@@ -16,17 +16,11 @@ export const ProductPageTemplate = ({
   title,
   price,
   imageGallery,
-  showBtn,
 }) => {
   const PageContent = contentComponent || Content
 
-  const showCartBtn = () => {
-    showBtn = true
-    console.log(' IS BTN VISIBLE? ' + showBtn)
-  }
-
   return (
-    <Layout location={location} showBtn={showBtn}>
+    <Layout location={location}>
       <div className={css(styles.shopProductWrapper)}>
         <div className={css(styles.leftTitleColumn)}>{title}</div>
         <div className={css(styles.mainBodyWrapper)}>
@@ -37,9 +31,7 @@ export const ProductPageTemplate = ({
             <br />
             {price} €
           </div>
-          <button className={css(styles.cardButton)} onClick={showCartBtn}>
-            ADD TO CART
-          </button>
+          <button className={css(styles.cardButton)}>ADD TO CART</button>
           <NavFooter
             linkText="/shop/"
             text="shop"
@@ -60,10 +52,9 @@ ProductPageTemplate.propTypes = {
   title: PropTypes.string,
   price: PropTypes.string,
   imageGallery: PropTypes.array,
-  showBtn: PropTypes.object,
 }
 
-const ProductPage = ({ data, location, pageContext, showBtn }) => {
+const ProductPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
 
   return (
@@ -75,7 +66,6 @@ const ProductPage = ({ data, location, pageContext, showBtn }) => {
       title={post.frontmatter.title}
       price={post.frontmatter.price}
       imageGallery={post.frontmatter.image_gallery}
-      showBtn={showBtn}
     />
   )
 }
@@ -86,7 +76,6 @@ ProductPage.propTypes = {
   }),
   location: PropTypes.object,
   pageContext: PropTypes.object,
-  showBtn: PropTypes.bool,
 }
 
 export default ProductPage

@@ -39,7 +39,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting }) => {
         </div>
 
         {/* #############################     CART GOES HERE        #############################*/}
-        <Cart />
+        <Cart showElements={true} />
         {/*<table className={css(styles.tableStyles)}>
           <tbody>
             <tr>
