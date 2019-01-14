@@ -8,9 +8,11 @@ export const aboutWrapper = mq({
   paddingTop: [15, 15, 15, 15, 22],
 })
 export const aboutText = mq({
-  fontSize: ['14px', '14px', '22px', '22px'],
+  fontSize: ['14px', '14px', '21px', '21px'],
   margin: '0!important',
-  width: '100%',
+  width: ['100%', '100%', '100%', '100%', '80%'],
+  // letterSpacing: '0.33em',
+  lineHeight: '27px',
 })
 
 export const aboutImageWrapper = mq({
