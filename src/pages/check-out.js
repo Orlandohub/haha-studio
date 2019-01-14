@@ -11,13 +11,12 @@ import Cart from '../components/CartComponent/index'
 
 const date = new Date()
 const year = date.getFullYear()
-const product = 999
-const promoCode = 0.15
+
 const submitPromoCode = () => {
-  console.log('Quantity of product is ' + product.lenght())
+  console.log('promooooo')
 }
 
-const CheckOut = ({ data, values, errors, touched, isSubmitting }) => {
+const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
   return (
     <div className={css(styles.pageWrapper)}>
       <div className={css(styles.cartWrapper)}>
@@ -38,37 +37,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting }) => {
           <p>Order summary</p>
         </div>
 
-        {/* #############################     CART GOES HERE        #############################*/}
         <Cart showElements={true} />
-        {/*<table className={css(styles.tableStyles)}>
-          <tbody>
-            <tr>
-              <td className={css(styles.rowStyles)}>
-                <img src={prImgMob} alt="product image" />
-              </td>
-              <td className={css(styles.rowStyles)}>Alia, Pack A</td>
-              <td className={css(styles.rowStylesRight)}>
-                <button className={css(styles.cardBtn)}>-</button>
-                <span className={css(styles.numWrap)}>11</span>
-                <button className={css(styles.cardBtn)}>+</button>
-              </td>
-              <td className={css(styles.rowStylesRight)}>{product} &#8364;</td>
-            </tr>
-            <tr>
-              <td className={css(styles.rowStyles)}>
-                <img src={prImgMob} alt="product image" />
-              </td>
-              <td className={css(styles.rowStyles)}>Alia, Pack A</td>
-              <td className={css(styles.rowStylesRight)}>
-                <button className={css(styles.cardBtn)}>-</button>
-                <span className={css(styles.numWrap)}>11</span>
-                <button className={css(styles.cardBtn)}>+</button>
-              </td>
-
-              <td className={css(styles.rowStylesRight)}>{product} &#8364;</td>
-            </tr>
-          </tbody>
-  </table>*/}
 
         {/* #############################    DISCOUNT SUBMISSION     #############################*/}
 
@@ -84,8 +53,10 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting }) => {
                       <input
                         className={css(styles.placeholderStyles)}
                         type="text"
-                        value=""
-                        onChange="{this.handleChange}"
+                        value={typed}
+                        onChange={event => {
+                          typed = event.target.value
+                        }}
                         placeholder="Enter code"
                       />
                     </label>
