@@ -23,13 +23,17 @@ export const explorationParagraph = mq({
   margin: '0!important',
 })
 
+export const explorationParagraphDate = mq(explorationParagraph, {
+  color: '#CACAC8',
+})
+
 export const explorationHeaderWrapper = mq({
-  paddingTop: [40, 40, 40, 40, 53],
-  paddingBottom: [20, 20, 20, 20, 53],
+  paddingTop: [11, 11, 11, 11, 24],
+  paddingBottom: [18, 18, 18, 40, 40],
 })
 
 export const explorationHeader = mq(explorationParagraph, {
-  fontSize: [18, 18, 29, 29, 29],
+  fontSize: [14, 14, 22, 22, 22],
 })
 
 export const explorationRightColumn = mq({

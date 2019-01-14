@@ -24,13 +24,12 @@ const Exploration = ({ data, location }) => {
                 </div>
                 <div className={css(styles.explorationText)}>
                   <div className={css(styles.explorationHeaderWrapper)}>
-                    <p className={css(styles.explorationParagraph)}>
+                    <p className={css(styles.explorationParagraphDate)}>
                       {edge.node.frontmatter.date}
                     </p>
                     <h2 className={css(styles.explorationHeader)}>
                       {edge.node.frontmatter.title}{' '}
                     </h2>
-                    <br />
                   </div>
                   <p className={css(styles.explorationParagraph)}>
                     {edge.node.internal.content}
