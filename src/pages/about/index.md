@@ -13,4 +13,6 @@ The studio’s work has been presented by Vitra, FRACAS Gallery, Raumplan, Bienn
 
 <br/>
 
+
+
 ![Team](/assets/uploads/d_portrait_image.jpg)
