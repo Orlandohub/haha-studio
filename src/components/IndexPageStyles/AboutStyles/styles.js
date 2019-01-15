@@ -14,7 +14,7 @@ export const aboutText = mq({
   letterSpacing: ['normal', 'normal', 'normal', 'normal', '0.25px'],
   lineHeight: ['18px', '18px', '27px', '27px', '27px'],
   '& img': {
-    top: '10px!important',
+    top: ['51px!important', '51px!important', '51px!important', '51px!important', '45px!important'],
   }
 })
 

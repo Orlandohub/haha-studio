@@ -10,7 +10,7 @@ export const explorationWrapper = mq({
 export const explorationText = mq({
   fontSize: ['14px', '14px', '22px', '22px', '22px'],
   width: '100%',
-  paddingBottom: [41, 41, 41, 41, 50],
+  paddingBottom: [41, 41, 41, 41, 54],
   borderBottom: ['1.5px solid #D9D9D7', '2px solid #D9D9D7'],
   marginBottom: [20, 20, 20, 20, 60],
 })
@@ -21,6 +21,7 @@ export const explorationImageWrapper = mq({
 
 export const explorationParagraph = mq({
   margin: '0!important',
+  lineHeight: ['18px', '18px', '18px', '18px', '28px']
 })
 
 export const explorationParagraphDate = mq(explorationParagraph, {
@@ -29,7 +30,7 @@ export const explorationParagraphDate = mq(explorationParagraph, {
 
 export const explorationHeaderWrapper = mq({
   paddingTop: [11, 11, 11, 11, 24],
-  paddingBottom: [18, 18, 18, 40, 40],
+  paddingBottom: [18, 18, 18, 48, 48],
 })
 
 export const explorationHeader = mq(explorationParagraph, {

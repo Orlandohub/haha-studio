@@ -13,10 +13,12 @@ export const textText = mq({
 
 export const textParagraph = mq({
   margin: '0!important',
+  lineHeight: ['18px', '18px', '18px', '18px', '28px'],
+  letterSpacing: '0.25px',
 })
 export const textHeader = mq(textParagraph, {
-  fontSize: [18, 18, 29, 29, 29],
-  lineHeight: '28px',
+  fontSize: [14, 14, 29, 29, 29],
+  paddingBottom: ['22px', '22px', '30px', '30px', '30px'],
   letterSpacing: ['normal', 'normal', 'normal', 'normal', '0.25px'],
 })
 export const textRightColumn = mq({
