@@ -9,9 +9,9 @@ export const textWrapper = mq({
 export const textText = mq({
   fontSize: ['14px', '14px', '22px', '22px', '22px'],
   width: '100%',
-  paddingBottom: [25, 25, 25, 25, 53],
-  borderBottom: ['1.5px solid black', '2px solid black'],
-  marginBottom: [55, 55, 55, 55, 106],
+  paddingBottom: [54, 54, 54, 54, 29],
+  borderBottom: ['1.5px solid #D9D9D7', '2px solid #D9D9D7'],
+  marginBottom: [20, 20, 20, 20, 75],
 })
 export const linkText = mq({
   color: 'black!important',
@@ -20,10 +20,13 @@ export const linkText = mq({
 
 export const textParagraph = mq({
   margin: '0!important',
+  lineHeight: ['18px', '18px', '18px', '18px', '28px'],
+  letterSpacing: ['normal', 'normal', 'normal', 'normal', '0.25px'],
 })
 
 export const textHeader = mq(textParagraph, {
-  fontSize: [18, 18, 29, 29, 29],
+  fontSize: [14, 14, 29, 29, 29],
+  paddingBottom: ['22px', '22px', '22px', '22px', '29px'],
 })
 export const textRightColumn = mq({
   width: '100%',
