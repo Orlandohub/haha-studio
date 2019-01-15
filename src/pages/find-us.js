@@ -43,10 +43,19 @@ const FindUs = ({ location }) => (
               <u>Facebook</u>
             </a>
             <br />
+            <a
+              href="https://www.linkedin.com/"
+              className={css(styles.findUsLink)}
+              target="blank"
+            >
+              <u>Linkedin</u>
+            </a>
+            <br />
             <br /> Credits
             <br />
-            Website by Anna Heck
-            <br /> Programming by Orlando Goncalves
+            Website by <u>Anna Heck</u>
+            <br /> Programming by <u>Orlando Goncalves</u>
+            <br/>
             <br /> HAHA studio all rights reserved
           </p>
         </div>
