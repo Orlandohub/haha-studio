@@ -174,7 +174,6 @@ class Cart extends React.Component {
 }
 Cart.propTypes = {
   showElements: PropTypes.bool.isRequired,
-  hideCart: PropTypes.func.isRequired,
 }
 
 export default Cart

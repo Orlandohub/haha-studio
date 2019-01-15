@@ -8,13 +8,10 @@ import * as styles from '../components/IndexPageStyles/CheckOutPageStyles/styles
 import { withFormik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import Cart from '../components/CartComponent/index'
+import MaskedInput from 'react-text-mask'
 
 const date = new Date()
 const year = date.getFullYear()
-
-const submitPromoCode = () => {
-  console.log('promooooo')
-}
 
 const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
   return (
@@ -42,7 +39,12 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
         {/* #############################    DISCOUNT SUBMISSION     #############################*/}
 
         <div className={css(styles.promoWrapper)}>
-          <form onSubmit={submitPromoCode}>
+          <form
+            onSubmit={event => {
+              alert('A code was submitted: ' + typed)
+              event.preventDefault()
+            }}
+          >
             <table style={{ width: '100%' }}>
               <tbody>
                 <tr>
@@ -62,7 +64,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
                     </label>
                   </td>
                   <td className={css(styles.arrowWrap)}>
-                    <input
+                    <button
                       type="submit"
                       value=""
                       className={css(styles.submitBtn)}
@@ -80,19 +82,19 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
           <tbody>
             <tr>
               <td className={css(styles.sumRowTop)}>Subtotal</td>
-              <td className={css(styles.sumRowTopRight)}>as</td>
+              <td className={css(styles.sumRowTopRight)}>35 &#8364;</td>
             </tr>
             <tr>
               <td className={css(styles.middleRows)}>Shipping</td>
-              <td className={css(styles.middleRowsRight)}>as</td>
+              <td className={css(styles.middleRowsRight)}>25 &#8364;</td>
             </tr>
             <tr>
               <td className={css(styles.middleRows)}>Tax included 25% </td>
-              <td className={css(styles.middleRowsRight)}>as</td>
+              <td className={css(styles.middleRowsRight)}>55 &#8364;</td>
             </tr>
             <tr>
               <td className={css(styles.sumRowBottom)}>Total</td>
-              <td className={css(styles.sumRowBottomRight)}>as</td>
+              <td className={css(styles.sumRowBottomRight)}>55 &#8364;</td>
             </tr>
           </tbody>
         </table>
@@ -154,7 +156,36 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
             <Field
               type="tel"
               name="phoneNumber"
-              className={css(styles.inputWrapper)}
+              render={({ field }) => {
+                return (
+                  <MaskedInput
+                    {...field}
+                    mask={[
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                    ]}
+                    guide={false}
+                    keepCharPositions={false}
+                    className={css(styles.inputWrapper)}
+                  />
+                )
+              }}
             />
             {touched.phoneNumber && errors.phoneNumber && (
               <div className={css(styles.errorStyles)}>
@@ -226,7 +257,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
 
           {/*####################### CHECK BOX HERE  ##################*/}
 
-          <label for="chk" className={css(styles.checkBox)}>
+          <label className={css(styles.checkBox)}>
             <Field
               style={{ visibility: 'hidden' }}
               id="chk"
@@ -262,7 +293,37 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
             <Field
               type="text"
               name="cardNumber"
-              className={css(styles.inputWrapper)}
+              render={({ field }) => {
+                return (
+                  <MaskedInput
+                    {...field}
+                    mask={[
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      ' ',
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      ' ',
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      ' ',
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                      /\d/,
+                    ]}
+                    guide={false}
+                    keepCharPositions={false}
+                    className={css(styles.inputWrapper)}
+                  />
+                )
+              }}
             />
             {touched.cardNumber && errors.cardNumber && (
               <div className={css(styles.errorStyles)}>{errors.cardNumber}</div>
@@ -325,7 +386,17 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
             <Field
               type="text"
               name="CVC"
-              className={css(styles.halfWidthFormsInputs)}
+              render={({ field }) => {
+                return (
+                  <MaskedInput
+                    {...field}
+                    mask={[/\d/, /\d/, /\d/, /\d/]}
+                    guide={false}
+                    keepCharPositions={false}
+                    className={css(styles.halfWidthFormsInputs)}
+                  />
+                )
+              }}
             />
             {touched.CVC && errors.CVC && (
               <div className={css(styles.errorStyles)}>{errors.CVC}</div>
@@ -411,23 +482,26 @@ const FormikCheckOut = withFormik({
     zipCode: Yup.string().required('Required!'),
     country: Yup.string().required('Country is required!'),
     cardDetails: Yup.string().required('Card details are required!'),
-    cardNumber: Yup.number().required('Card number is required!'),
+    cardNumber: Yup.string()
+      .min(16, 'Minimum 16 digits')
+      .required('Card number is required!'),
     nameOnCard: Yup.string().required('Name on card is required!'),
     CVC: Yup.string()
       .min(3, 'Minimum 3 digits')
-      .max(3, 'Maximum 3 digits')
+      .max(4, 'Maximum 3 digits')
       .required('CVC is required!'),
   }),
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-    console.log(values)
     setTimeout(() => {
-      if (values.shiptoanotheradress === true) {
-        setErrors({ adressLine2: 'Secondary adress is required!' })
+      console.log('values are ' + values)
+      // errors example below
+      if (values.email === 'andrew@test.io') {
+        setErrors({ email: 'That email is already taken' })
       } else {
         resetForm()
       }
       setSubmitting(false)
-    }, 1000)
+    }, 2000)
   },
 })(CheckOut)
 

@@ -98,7 +98,7 @@ export const shopWrap = mq({
   position: 'relative',
   float: 'right!important',
   width: ['10%', '10%', '10%', '10%'],
-  //overflow: 'hidden',
+  whiteSpace: 'nowrap',
 })
 
 export const subMenuColShop = {
@@ -111,7 +111,7 @@ export const subMenuColShop = {
 }
 
 export const subMenuItemShop = mq(subMenuItem, {
-  paddingRight: 15,
+  paddingRight: 0,
   textAlign: 'right',
 })
 
@@ -131,6 +131,10 @@ export const cartShowBtn = mq({
   marginLeft: [8, 19, 19, 41],
   fontSize: [8, 8, 20],
   lineHeight: 1,
+})
+
+export const cartShowBtnHidden = mq(cartShowBtn, {
+  visibility: 'hidden',
 })
 
 export const cartWrapper = mq({

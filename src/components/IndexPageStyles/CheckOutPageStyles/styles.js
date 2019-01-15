@@ -182,7 +182,7 @@ export const paragraph = mq({
 // *******************  PRODUCT INFO TABLE STYLING
 
 export const summaryTable = mq(tableStyles, {
-  borderBottom: '1.5px solid black',
+  borderBottom: '2px solid black',
 })
 
 export const sumRowTop = mq({
@@ -301,7 +301,7 @@ export const purchaseBtn = mq({
     backgroundColor: 'black',
     color: 'white',
   },
-  '&:focus': {
+  '&:focus,:active': {
     transform: 'translateY(3px)',
   },
 })

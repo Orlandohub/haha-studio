@@ -46,7 +46,6 @@ export const subtotalWrapper = mq({
   marginTop: 103,
   paddingTop: 26,
   marginBottom: 53,
-  //marginLeft: 29,
 })
 
 export const tableStyles = mq({
