@@ -34,7 +34,6 @@ const Exploration = ({ data, location }) => {
                   <p className={css(styles.explorationParagraph)}>
                     {edge.node.internal.content}
                   </p>
-                  <br />
                 </div>
               </React.Fragment>
             )

@@ -26,9 +26,6 @@ const Texts = ({ location, data }) => {
                       {edge.node.frontmatter.title}
                     </Link>
                   </h2>
-                  <br />
-                  <br />
-
                   <p className={css(styles.textParagraph)}>
                     {edge.node.excerpt}{' '}
                     <Link
@@ -38,7 +35,6 @@ const Texts = ({ location, data }) => {
                       <u>read more</u>
                     </Link>
                   </p>
-                  <br />
                 </div>
               )
             })}

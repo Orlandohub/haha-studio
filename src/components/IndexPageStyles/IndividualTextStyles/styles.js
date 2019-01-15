@@ -16,6 +16,8 @@ export const textParagraph = mq({
 })
 export const textHeader = mq(textParagraph, {
   fontSize: [18, 18, 29, 29, 29],
+  lineHeight: '28px',
+  letterSpacing: ['normal', 'normal', 'normal', 'normal', '0.25px'],
 })
 export const textRightColumn = mq({
   width: '100%',
