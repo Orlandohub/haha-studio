@@ -48,4 +48,6 @@ export const bottomRowStyles = mq({
 
 export const disclaimerStyles = mq({
   paddingTop: [40, 40, 40, 40, 53],
+  color: '#7B7C81',
+  fontSize: [10, 10, 22],
 })

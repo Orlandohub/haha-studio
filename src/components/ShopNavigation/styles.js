@@ -18,7 +18,7 @@ export const navFooter = mq({
 export const linkStyles = mq({
   fontSize: ['1em', '1em', '2em', '2em'],
   textDecoration: 'none!important',
-  color: '#CACAC8!important',
+  color: '#D9D9D7!important',
   paddingLeft: [0, 0, 0, 0, 17],
 })
 
