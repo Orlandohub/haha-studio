@@ -1,6 +1,7 @@
 ---
 templateKey: project-page
 title: Rainbow Lamp
+is_selected: true
 project_assistant: Arash Eskafi
 photo_credits: HAHA studio
 producer: HAHA studio
