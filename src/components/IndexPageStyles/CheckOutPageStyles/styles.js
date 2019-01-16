@@ -13,7 +13,7 @@ export const pageWrapper = mq({
 })
 
 export const brand = mq({
-  marginBottom: [89, 89, 89, 139, 139],
+  paddingBottom: [89, 89, 89, 89, 139, 139],
   display: 'block',
   position: 'relative',
   float: 'left',
@@ -59,10 +59,10 @@ export const shopWrapRight = mq(shopWrap, {
   display: ['none', 'none', 'none', 'none', 'none', 'block'],
   width: '100%',
   lineHeight: 1.38,
+  paddingBottom: [89, 89, 89, 89, 139, 139],
 })
 
 export const cartWrapper = mq({
-  float: 'left',
   position: [
     'relative',
     'relative',
@@ -84,7 +84,7 @@ export const orderStyles = mq({
 
 export const headerStyles = mq({
   fontSize: [14, 14, 14, 22, 22],
-  paddingBottom: [16, 16, 16, 38, 38],
+  paddingBottom: [6, 6, 6, 28, 28],
   borderBottom: '1.5px solid black',
 })
 
@@ -154,7 +154,7 @@ export const promoLabelStyles = mq({
 
 export const placeholderStyles = mq({
   '&::placeholder': {
-    color: '#7B7C81',
+    color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#7B7C81'],
   },
   outline: 'none',
   border: 'none',
@@ -175,19 +175,28 @@ export const clientFormWrapper = mq({
 
 export const ClientDetails = mq({
   paddingBottom: [35, 35, 35, 30, 30],
+  position: 'relative',
+  top: '-7px',
 })
 
 // ************* SMALL PARAGRAPHS STYLING
 
 export const paragraph = mq({
   fontSize: [8, 8, 8, 18, 18],
-  color: '#7B7C81',
+  color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#7B7C81'],
+})
+
+export const paragraphBottom = mq(paragraph, {
+  paddingTop: 15,
+  fontSize: [10, 10, 10, 18, 18],
+  paddingBottom: [25, 25, 25, 25, 25, 355],
 })
 
 // *******************  PRODUCT INFO TABLE STYLING
 
 export const summaryTable = mq(tableStyles, {
   borderBottom: '2px solid black',
+  marginBottom: [60, 60, 60, 60, 134, 134],
 })
 
 export const sumRowTop = mq({
@@ -314,8 +323,8 @@ export const purchaseBtn = mq({
 // ***************** CHECK BOX STYLING
 
 export const checkBox = mq({
-  paddingTop: [38, 38, 38, 33, 33, 33],
-  paddingBottom: [48, 48, 53, 88, 88, 88],
+  paddingTop: [44, 44, 44, 40, 40, 40],
+  paddingBottom: [38, 38, 38, 38, 73, 73],
   paddingLeft: 20,
   fontWeight: 'normal',
   position: 'relative',
@@ -328,7 +337,7 @@ export const customCheckBox = mq({
   position: 'absolute',
   backgroundColor: 'white',
   cursor: 'pointer',
-  top: '40px',
+  top: ['45px', '45px', '45px', '47px'],
   left: '0px',
 })
 
@@ -344,4 +353,16 @@ export const errorStyles = mq({
   zIndex: 1,
   top: '-5px',
   left: '50%',
+})
+
+// ****************************  BBOTTOM LINK DECORATION
+
+export const bottomLinkDecoration = mq({
+  textDecoration: 'none!important',
+  color: [
+    '#D9D9D7!important',
+    '#D9D9D7!important',
+    '#D9D9D7!important',
+    '#7B7C81!important',
+  ],
 })

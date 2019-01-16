@@ -103,13 +103,12 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
       {/*########################## CLIENT FORM ################################*/}
 
       <div className={css(styles.clientFormWrapper)}>
-        <div className={css(styles.brand)}>
-          <div className={css(styles.shopWrapRight)}>
-            <Link to="/shop/" className={css(styles.shopLink)}>
-              shop
-            </Link>
-          </div>
+        <div className={css(styles.shopWrapRight)}>
+          <Link to="/shop/" className={css(styles.shopLink)}>
+            shop
+          </Link>
         </div>
+
         <div className={css(styles.ClientDetails)}>
           <p style={{ margin: 0 }}>Your details</p>
 
@@ -410,11 +409,11 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
             >
               COMPLETE PURCHASE
             </button>
-            <p className={css(styles.paragraph)}>
+            <p className={css(styles.paragraphBottom)}>
               By completing your purchase you accept to the{' '}
               <Link
                 to="/terms-licenses/"
-                style={{ textDecoration: 'none', color: '#7B7C81' }}
+                className={css(styles.bottomLinkDecoration)}
               >
                 <u>terms and conditions</u>
               </Link>
