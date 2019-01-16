@@ -147,9 +147,14 @@ export const submitBtn = mq({
   backgroundPosition: 'bottom',
 })
 
+export const promoLabelStyles = mq({
+  fontWeight: 'normal',
+  color: ['black', 'black', 'black', 'black', 'black', '#7B7C81'],
+})
+
 export const placeholderStyles = mq({
   '&::placeholder': {
-    opacity: 0.5,
+    color: '#7B7C81',
   },
   outline: 'none',
   border: 'none',

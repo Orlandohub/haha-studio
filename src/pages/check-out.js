@@ -49,7 +49,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
               <tbody>
                 <tr>
                   <td>
-                    <label style={{ fontWeight: 'normal' }}>
+                    <label className={css(styles.promoLabelStyles)}>
                       Have a promo code? Enter code here:
                       <br />
                       <input

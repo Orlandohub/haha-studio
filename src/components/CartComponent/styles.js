@@ -69,7 +69,12 @@ export const rowStylesRight = mq(rowStyles, {
 export const numWrap = mq({
   textAlign: 'center',
   display: 'inline-block',
-  border: '1px solid black',
+  border: [
+    '1px solid black',
+    '1px solid black',
+    '1px solid black',
+    '1px solid #707070',
+  ],
   marginRight: ['0px', '11px', '11px', '11px'],
   marginLeft: ['0px', '11px', '11px', '11px'],
   minWidth: ['24px', '26px', '26px', '44px', '44px', '44px'],
