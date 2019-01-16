@@ -93,15 +93,14 @@ export const styles = {
     zIndex: 1,
   }),
 
-  ArrowContainer: {
+  ArrowContainer: mq({
     animation: `${showArrow} 7s ease-in`,
     opacity: '1',
     width: '100%',
     textAlign: 'center',
     position: 'absolute',
-    bottom: '110px',
-    zIndex: 1,
-  },
+    bottom: ['110px', '110px', '110px', '60px'],
+  }),
 
   Img: {
     height: '20px',
