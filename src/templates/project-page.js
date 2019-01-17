@@ -8,7 +8,7 @@ import Layout from '../layouts'
 import { css } from 'emotion'
 import NavFooter from '../components/NavigationFooter'
 import * as styles from '../components/IndexPageStyles/ProjectStyles/styles'
-
+//dfsfd
 export const ProjectsTemplate = ({
   location,
   content,
