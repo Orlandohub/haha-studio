@@ -56,7 +56,7 @@ ProductPageTemplate.propTypes = {
 
 const ProductPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
-  
+
   return (
     <ProductPageTemplate
       contentComponent={HTMLContent}

@@ -27,6 +27,7 @@ export const ProjectsTemplate = ({
   const PostContent = contentComponent || Content
   return (
     <Layout location={location}>
+      {helmet || ''}
       <div className={css(styles.projectWrapper)}>
         <div className={css(styles.projectTitleSliderWrap)}>
           <div className={css(styles.projectTitle)}>
@@ -38,8 +39,7 @@ export const ProjectsTemplate = ({
             <Carousel images={galleryImages} />
           </div>
         </div>
-        <div className={css(styles.projectTitle)}>
-        </div>
+        <div className={css(styles.projectTitle)} />
         <div className={css(styles.textWrapper)}>
           <p className={css(styles.styledParagraph)}>
             Year: {year}
@@ -82,7 +82,6 @@ ProjectsTemplate.propTypes = {
   helmet: PropTypes.object,
 }
 
-
 const Project = ({ data, pageContext, location }) => {
   const { markdownRemark: post } = data
   return (
@@ -92,9 +91,12 @@ const Project = ({ data, pageContext, location }) => {
       helmet={
         <Helmet titleTemplate="%s | Project">
           <title>{`${post.frontmatter.title}`}</title>
+          <meta name="description" content={post.html} />
           <meta
-            name="description"
-            content={`${post.frontmatter.description}`}
+            property="og:image"
+            content={
+              post.frontmatter.image_gallery[0].image.childImageSharp.fluid.src
+            }
           />
         </Helmet>
       }
