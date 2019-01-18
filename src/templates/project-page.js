@@ -8,7 +8,7 @@ import Layout from '../layouts'
 import { css } from 'emotion'
 import NavFooter from '../components/NavigationFooter'
 import * as styles from '../components/IndexPageStyles/ProjectStyles/styles'
-//dfsfd
+
 export const ProjectsTemplate = ({
   location,
   content,
@@ -21,13 +21,15 @@ export const ProjectsTemplate = ({
   year,
   galleryImages,
   cmsImageGallery,
-  helmet,
   pageContext,
 }) => {
   const PostContent = contentComponent || Content
   return (
     <Layout location={location}>
-      {helmet || ''}
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={content} />
+      </Helmet>
       <div className={css(styles.projectWrapper)}>
         <div className={css(styles.projectTitleSliderWrap)}>
           <div className={css(styles.projectTitle)}>
@@ -88,18 +90,6 @@ const Project = ({ data, pageContext, location }) => {
     <ProjectsTemplate
       content={post.html}
       contentComponent={HTMLContent}
-      helmet={
-        <Helmet titleTemplate="%s | Project">
-          <title>{`${post.frontmatter.title}`}</title>
-          <meta name="description" content={post.html} />
-          <meta
-            property="og:image"
-            content={
-              post.frontmatter.image_gallery[0].image.childImageSharp.fluid.src
-            }
-          />
-        </Helmet>
-      }
       location={location}
       pageContext={pageContext}
       title={post.frontmatter.title}

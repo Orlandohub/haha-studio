@@ -1,13 +1,19 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
+import Helmet from 'react-helmet'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/IndividualTextStyles/styles'
 import NavFooter from '../components/NavigationFooter'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 
-export const TextPageTemplate = ({ content, contentComponent, title, pageContext }) => {
+export const TextPageTemplate = ({
+  content,
+  contentComponent,
+  title,
+  pageContext,
+}) => {
   const PageContent = contentComponent || Content
   return (
     <div className={css(styles.textWrapper)}>
@@ -41,6 +47,10 @@ const TextPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
   return (
     <Layout location={location}>
+      <Helmet>
+        <title>{`${post.frontmatter.title}`}</title>
+        <meta name="description" content={`${post.html}`} />
+      </Helmet>
       <TextPageTemplate
         contentComponent={HTMLContent}
         content={post.html}

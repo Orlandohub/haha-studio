@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
+import Helmet from 'react-helmet'
 import Projects from '../components/Projects'
 import { graphql } from 'gatsby'
 
@@ -10,6 +11,13 @@ class Archived extends React.Component {
     const { projectsList } = data
     return (
       <Layout location={location}>
+        <Helmet>
+          <title>{'HAHA Studio archived'}</title>
+          <meta
+            name="description"
+            content={'HAHA Studio all of products and projects'}
+          />
+        </Helmet>
         <Projects projects={projectsList} />
       </Layout>
     )
@@ -26,30 +34,29 @@ export default Archived
 export const query = graphql`
   query {
     projectsList: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
+      sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
-          templateKey: { eq: "project-page" },
+          templateKey: { eq: "project-page" }
           is_selected: { eq: false }
         }
       }
     ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              templateKey
-              year
-              image_gallery {
-                image {
-                  childImageSharp {
-                    fluid(maxWidth: 1060) {
-                      ...GatsbyImageSharpFluid_withWebp_noBase64
-                    }
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            templateKey
+            year
+            image_gallery {
+              image {
+                childImageSharp {
+                  fluid(maxWidth: 1060) {
+                    ...GatsbyImageSharpFluid_withWebp_noBase64
                   }
                 }
               }
@@ -57,5 +64,6 @@ export const query = graphql`
           }
         }
       }
+    }
   }
 `

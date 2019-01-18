@@ -15,10 +15,7 @@ export const PressPageTemplate = ({ post, pageContext }) => {
           <p className={css(styles.pressExpandedParagraph)}>
             For press inquiries
             <br />{' '}
-            <a
-              href="mailto:press@hahastudio.se"
-              className={css(styles.mailTo)}
-            >
+            <a href="mailto:press@hahastudio.se" className={css(styles.mailTo)}>
               press@hahastudio.se
             </a>
             <br />
@@ -45,8 +42,14 @@ export const PressPageTemplate = ({ post, pageContext }) => {
 
         <div className={css(styles.pressExpandedGrid)} id="image">
           <div className={css(styles.pressExpandedImage)}>
-            <Img fluid={post.frontmatter.content_image_left.childImageSharp.fluid} className={css(styles.Image)}/>
-            <Img fluid={post.frontmatter.content_image_right.childImageSharp.fluid} className={css(styles.Image)}/>
+            <Img
+              fluid={post.frontmatter.content_image_left.childImageSharp.fluid}
+              className={css(styles.Image)}
+            />
+            <Img
+              fluid={post.frontmatter.content_image_right.childImageSharp.fluid}
+              className={css(styles.Image)}
+            />
           </div>
           <NavFooter
             linkLeft={`${pageContext.prev}#image`}
@@ -69,10 +72,7 @@ const PressPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
   return (
     <Layout location={location}>
-      <PressPageTemplate
-        post={post}
-        pageContext={pageContext}
-      />
+      <PressPageTemplate post={post} pageContext={pageContext} />
     </Layout>
   )
 }

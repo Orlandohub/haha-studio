@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'react-emotion'
+import Helmet from 'react-helmet'
 import arrowDownHero from '../../images/arrowDownHero.png'
 import { styles } from './styles'
 import { Grid, Row, Col } from 'react-bootstrap'
@@ -37,6 +38,10 @@ class Hero extends React.Component {
     const { logoLoaderIsVisible, slide } = this.state
     return (
       <div data-cy="hero">
+        <Helmet>
+          <title>{'HAHA Studio'}</title>
+          <meta name="description" content={'HAHA Studio introduction'} />
+        </Helmet>
         <div
           className={
             slide ? css(styles.HideHero) : css(styles.HeroImageWrapper)

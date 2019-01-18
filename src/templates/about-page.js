@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
+import Helmet from 'react-helmet'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/AboutStyles/styles'
 
@@ -31,6 +32,15 @@ const AboutPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
+      <Helmet>
+        <title>{'About HAHA Studio'}</title>
+        <meta
+          name="description"
+          content={
+            'You listen up here iss a story about a little guys that lives in a HAHA world...'
+          }
+        />
+      </Helmet>
       <AboutPageTemplate contentComponent={HTMLContent} content={post.html} />
     </Layout>
   )

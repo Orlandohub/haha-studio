@@ -84,6 +84,13 @@ const Layout = ({ children, location }) => (
             }
           }
         }
+        fileName: file(relativePath: { eq: "hero_image.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1060) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
       }
     `}
     render={data => (
@@ -91,18 +98,39 @@ const Layout = ({ children, location }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'HAHA Studio' },
+            {
+              name: 'description',
+              content:
+                'HAHA studio is the Stockholm based design practice. Hailing from different cultures— Scandinavia and East Asia. HAHA works hand in hand with craftspeople in Sweden and Taiwan. The practice designs lighting fixtures, accessories, limited editions, and undertakes regular collaborations in interior architecture.',
+            },
             {
               name: 'keywords',
               content: 'design, design studio, stockholm, gatsby, react',
             },
+
+            // *****************    OPEN GRAPH META DATA
+
+            { property: 'og:title', content: 'HAHA Studio' },
             {
               property: 'og:image',
-              content: `${data.logoImage.childImageSharp.fluid.src}`,
+              content: `${data.fileName.childImageSharp.fluid.src}`,
             },
+            { property: 'og:image:alt', content: 'HAHA studio designs' },
+            { property: 'og:url', content: 'http://hahastudio.se/' },
+
+            // *****************     TWITTER METADATA
+
+            { property: 'twitter:title', content: 'HAHA Studio' },
+            {
+              property: 'twitter:image:src',
+              content: `${data.fileName.childImageSharp.fluid.src}`,
+            },
+            { property: 'twitter:card', content: 'HAHA studio designs' },
+            { property: 'twitter:url', content: 'http://hahastudio.se/' },
           ]}
         >
           <html lang="en" />
+          <link rel="canonical" href="http://hahastudio.se/" />
           <link
             rel="stylesheet"
             type="text/css"

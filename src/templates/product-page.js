@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
+import Helmet from 'react-helmet'
 import Carousel from '../components/Carousel'
 import { graphql } from 'gatsby'
 import NavFooter from '../components/NavigationFooter'
@@ -21,6 +22,10 @@ export const ProductPageTemplate = ({
 
   return (
     <Layout location={location}>
+      <Helmet>
+        <title>{title}</title>
+        <meta name="description" content={content} />
+      </Helmet>
       <div className={css(styles.shopProductWrapper)}>
         <div className={css(styles.leftTitleColumn)}>{title}</div>
         <div className={css(styles.mainBodyWrapper)}>

@@ -1,16 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 
 export const ExplorationPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content
 
-  return (
-    <PageContent className="content" content={content} />
-  )
+  return <PageContent className="content" content={content} />
 }
 
 ExplorationPageTemplate.propTypes = {
@@ -20,7 +17,7 @@ ExplorationPageTemplate.propTypes = {
 
 const ExplorationPage = ({ data, location }) => {
   const { markdownRemark: post } = data
-  
+
   return (
     <Layout location={location}>
       <ExplorationPageTemplate

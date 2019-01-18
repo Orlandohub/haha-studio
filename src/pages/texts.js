@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
+import Helmet from 'react-helmet'
 import * as styles from '../components/IndexPageStyles/TextsStyles/styles'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
@@ -11,37 +12,42 @@ import { graphql } from 'gatsby'
 const Texts = ({ location, data }) => {
   const { edges } = data.textsList
   return (
-    <React.Fragment>
-      <Layout location={location}>
-        <div className={css(styles.textWrapper)}>
-          <div className={css(styles.textRightColumn)}>
-            {map(edges, edge => {
-              return (
-                <div key={edge.node.id} className={css(styles.textText)}>
-                  <h2 className={css(styles.textHeader)}>
-                    <Link
-                      to={edge.node.fields.slug}
-                      className={css(styles.linkText)}
-                    >
-                      {edge.node.frontmatter.title}
-                    </Link>
-                  </h2>
-                  <p className={css(styles.textParagraph)}>
-                    {edge.node.excerpt}{' '}
-                    <Link
-                      to={edge.node.fields.slug}
-                      className={css(styles.linkText)}
-                    >
-                      <u>read more</u>
-                    </Link>
-                  </p>
-                </div>
-              )
-            })}
-          </div>
+    <Layout location={location}>
+      <Helmet>
+        <title>{'HAHA Studio texts page'}</title>
+        <meta
+          name="description"
+          content={'HAHA Studio reflections and articles'}
+        />
+      </Helmet>
+      <div className={css(styles.textWrapper)}>
+        <div className={css(styles.textRightColumn)}>
+          {map(edges, edge => {
+            return (
+              <div key={edge.node.id} className={css(styles.textText)}>
+                <h2 className={css(styles.textHeader)}>
+                  <Link
+                    to={edge.node.fields.slug}
+                    className={css(styles.linkText)}
+                  >
+                    {edge.node.frontmatter.title}
+                  </Link>
+                </h2>
+                <p className={css(styles.textParagraph)}>
+                  {edge.node.excerpt}{' '}
+                  <Link
+                    to={edge.node.fields.slug}
+                    className={css(styles.linkText)}
+                  >
+                    <u>read more</u>
+                  </Link>
+                </p>
+              </div>
+            )
+          })}
         </div>
-      </Layout>
-    </React.Fragment>
+      </div>
+    </Layout>
   )
 }
 
