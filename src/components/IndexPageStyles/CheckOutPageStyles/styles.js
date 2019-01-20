@@ -366,3 +366,35 @@ export const bottomLinkDecoration = mq({
     '#7B7C81!important',
   ],
 })
+
+// ****************************** STYLES FOR THE THANK YOU PAGE
+
+export const thankYouWrapper = mq({
+  width: ['100%', '100%', '100%', 681],
+  paddingTop: [50, 50, 50, 100],
+  paddingLeft: 32,
+  paddingRight: 32,
+  margin: 'auto',
+  fontSize: [14, 14, 14, 22],
+  paddingBottom: [60, 60, 60, 100],
+})
+
+export const clientName = mq({
+  paddingBottom: [22, 22, 22, 20],
+})
+
+export const thankYouText = mq({
+  paddingBottom: [80, 80, 80, 138],
+})
+
+export const orderConfirmation = mq({
+  paddingBottom: [6, 6, 6, 10],
+  borderBottom: '1.5px solid black',
+})
+
+export const backToHomeBtn = mq(purchaseBtn, {
+  width: ['100%', '100%', '100%', 390],
+  marginTop: [60, 60, 60, 122],
+  margin: 'auto',
+  display: 'block',
+})
