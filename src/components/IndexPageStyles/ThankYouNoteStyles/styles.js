@@ -26,12 +26,11 @@ export const thankYouText = mq({
 export const orderConfirmation = mq({
   paddingBottom: [6, 6, 6, 10],
   borderBottom: '1.5px solid black',
-  marginBottom: [0, 0, 0, 33, 33],
+  marginBottom: [0, 0, 0, 0, 33],
 })
 
 export const backToHomeBtn = mq({
   width: ['100%', '100%', '100%', 390],
-  marginTop: [60, 60, 60, 122],
   margin: 'auto',
   display: 'block',
 
@@ -53,6 +52,7 @@ export const thanksSummaryTable = mq(tableStyles, {
   borderTop: '2px solid black',
   marginTop: [40, 40, 40, 40, 124.5],
   width: '100%',
+  marginBottom: [60, 60, 60, 122],
 })
 
 export const thanksSumRowTop = mq({
@@ -75,7 +75,7 @@ export const tableStyles = mq({
 export const rowStyles = mq({
   width: '25%',
   verticalAlign: 'initial',
-  paddingTop: [40, 40, 40, 15, 15],
+  paddingTop: [40, 40, 40, 40, 15],
 })
 
 export const rowStylesRight = mq(rowStyles, {
