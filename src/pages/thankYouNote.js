@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import { navigate } from 'gatsby'
-import * as styles from '../components/IndexPageStyles/CheckOutPageStyles/styles'
-import Cart from '../components/CartComponent/index'
+import * as styles from '../components/IndexPageStyles/ThankYouNoteStyles/styles'
+import prImgDesk from '../images/D_product_thumbnail_checkout_page.jpg'
 
 const ThankYouNote = () => {
   return (
@@ -23,17 +23,69 @@ const ThankYouNote = () => {
         <p>Order Confirmation</p>
       </div>
 
-      <Cart showElements={true} />
-      <Cart showElements={true} />
-      <Cart showElements={true} />
+      <table className={css(styles.tableStyles)}>
+        <tbody>
+          <tr>
+            <td className={css(styles.rowStyles)}>
+              <img
+                className={css(styles.imageWrap)}
+                src={prImgDesk}
+                alt="product image"
+              />
+            </td>
+
+            <td className={css(styles.rowStyles)}>Alia, Pack A</td>
+            <td className={css(styles.rowStylesCenter)}>1</td>
+
+            <td className={css(styles.rowStylesRight)}>5000 &#8364;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table className={css(styles.tableStyles)}>
+        <tbody>
+          <tr>
+            <td className={css(styles.rowStyles)}>
+              <img
+                className={css(styles.imageWrap)}
+                src={prImgDesk}
+                alt="product image"
+              />
+            </td>
+
+            <td className={css(styles.rowStyles)}>Alia, Pack A</td>
+            <td className={css(styles.rowStylesCenter)}>1</td>
+
+            <td className={css(styles.rowStylesRight)}>5000 &#8364;</td>
+          </tr>
+        </tbody>
+      </table>
+      <table className={css(styles.tableStyles)}>
+        <tbody>
+          <tr>
+            <td className={css(styles.rowStyles)}>
+              <img
+                className={css(styles.imageWrap)}
+                src={prImgDesk}
+                alt="product image"
+              />
+            </td>
+
+            <td className={css(styles.rowStyles)}>Alia, Pack A</td>
+            <td className={css(styles.rowStylesCenter)}>1</td>
+
+            <td className={css(styles.rowStylesRight)}>5000 &#8364;</td>
+          </tr>
+        </tbody>
+      </table>
 
       {/* #############################     SUMMARY TABLE   #############################*/}
 
-      <table className={css(styles.summaryTable)}>
+      <table className={css(styles.thanksSummaryTable)}>
         <tbody>
           <tr>
-            <td className={css(styles.sumRowTop)}>Subtotal</td>
-            <td className={css(styles.sumRowTopRight)}>35 &#8364;</td>
+            <td className={css(styles.thanksSumRowTop)}>Subtotal</td>
+            <td className={css(styles.thanksSumRowTopRight)}>35 &#8364;</td>
           </tr>
           <tr>
             <td className={css(styles.middleRows)}>Shipping</td>
