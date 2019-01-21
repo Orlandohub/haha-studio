@@ -116,7 +116,7 @@ const Layout = ({ children, location }) => (
               content: `${data.fileName.childImageSharp.fluid.src}`,
             },
             { property: 'og:image:alt', content: 'HAHA studio designs' },
-            { property: 'og:url', content: 'http://hahastudio.se/' },
+            { property: 'og:url', content: 'https://hahastudio.se/' },
 
             // *****************     TWITTER METADATA
 
@@ -126,11 +126,11 @@ const Layout = ({ children, location }) => (
               content: `${data.fileName.childImageSharp.fluid.src}`,
             },
             { property: 'twitter:card', content: 'HAHA studio designs' },
-            { property: 'twitter:url', content: 'http://hahastudio.se/' },
+            { property: 'twitter:url', content: 'https://hahastudio.se/' },
           ]}
         >
           <html lang="en" />
-          <link rel="canonical" href="http://hahastudio.se/" />
+          <link rel="canonical" href="https://hahastudio.se/" />
           <link
             rel="stylesheet"
             type="text/css"
