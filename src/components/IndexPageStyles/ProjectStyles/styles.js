@@ -12,7 +12,13 @@ export const projectWrapper = mq({
 export const projectTitle = mq({
   width: ['100%', '100%', '100%', '100%', '25%'],
   height: ['auto', 'auto', 'auto', 'auto', 'auto'],
-  display: ['block!important', 'block!important', 'block!important', 'block!important', 'inline-block!important'],
+  display: [
+    'block!important',
+    'block!important',
+    'block!important',
+    'block!important',
+    'inline-block!important',
+  ],
   // float: 'left!important',
   lineHeight: 1,
   marginTop: 0,
@@ -24,14 +30,20 @@ export const projectTitle = mq({
 })
 
 export const projectTitleSliderWrap = mq({
-  display: ['block', 'block', 'block', 'block', 'flex']
+  display: ['block', 'block', 'block', 'block', 'flex'],
 })
 
 export const imageWrapper = mq({
   paddingRight: [0, 0, 0, 0, 191],
   width: ['100%', '100%', '100%', '100%', '75%'],
   // float: 'left!important',
-  display: ['block!important', 'block!important', 'block!important', 'block!important', 'inline-block!important'],
+  display: [
+    'block!important',
+    'block!important',
+    'block!important',
+    'block!important',
+    'inline-block!important',
+  ],
   position: 'relative!important',
   marginTop: 5,
   color: 'black!important',
@@ -56,7 +68,12 @@ export const styledParagraph = mq({
   '& a': {
     textDecoration: 'underline!important',
     color: 'black!important',
-  }
+  },
+})
+
+export const footerWrap = mq({
+  paddingLeft: [0, 0, 0, 0, '25%'],
+  marginLeft: [0, 0, 0, 0, '15px'],
 })
 
 // ############ END OF STYLING ELEMENTS OF PROJECTS INDEX PAGE #############
