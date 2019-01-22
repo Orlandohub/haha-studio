@@ -100,6 +100,7 @@ export const styles = {
     textAlign: 'center',
     position: 'absolute',
     bottom: ['110px', '110px', '110px', '60px'],
+    zIndex: 1,
   }),
 
   Img: {
