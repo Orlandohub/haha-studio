@@ -1,10 +1,10 @@
 ---
 templateKey: press-page
-title: last
-date: 2019-01-09T13:29:42.802Z
-cover: /assets/uploads/d_portrait_image.jpg
-counter_cover: /assets/uploads/d_homepage_image_01.jpg
-content_image_left: /assets/uploads/screenshot-2018-12-06-at-15.08.31.png
-content_image_right: /assets/uploads/d_portrait_image.jpg
+title: ELLE_Decoration_NL_2018_april-may
+date: 2019-01-20T11:00:00.000Z
+cover: /assets/uploads/d_press_cover_ednl.jpg
+counter_cover: /assets/uploads/d_press_counter_cover_ednl.jpg
+content_image_left: /assets/uploads/d_press_content_left_ednl.jpg
+content_image_right: /assets/uploads/d_press_content_right_ednl.jpg
 ---
 
