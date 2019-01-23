@@ -160,7 +160,7 @@ class Cart extends React.Component {
 
             <button
               className={css(styles.checkOutBtn)}
-              onClick={() => navigate('/check-out/')}
+              onClick={() => navigate('/checkout/')}
               role="link"
               tabIndex="0"
             >
