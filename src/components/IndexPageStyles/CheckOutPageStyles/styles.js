@@ -59,7 +59,7 @@ export const shopWrapRight = mq(shopWrap, {
   display: ['none', 'none', 'none', 'none', 'none', 'block'],
   width: '100%',
   lineHeight: 1.38,
-  paddingBottom: [89, 89, 89, 89, 139, 139],
+  paddingBottom: [89, 89, 89, 89, 132, 132],
 })
 
 export const cartWrapper = mq({
@@ -175,8 +175,6 @@ export const clientFormWrapper = mq({
 
 export const ClientDetails = mq({
   paddingBottom: [35, 35, 35, 30, 30],
-  position: 'relative',
-  top: '-7px',
 })
 
 // ************* SMALL PARAGRAPHS STYLING
