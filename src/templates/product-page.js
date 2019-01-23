@@ -31,7 +31,14 @@ export const ProductPageTemplate = ({
             <br />
             {price} €
           </div>
-          <button className={css(styles.cardButton)}>ADD TO CART</button>
+          <button
+            className={`${css(styles.cardButton)} snipcart-add-item`}
+            data-item-id={2}
+            data-item-name={title}
+            data-item-price={price}
+            data-item-url="/products/liberty-lamp-small/">
+                 ADD TO CART
+          </button>
           <NavFooter
             linkText="/shop/"
             text="shop"
