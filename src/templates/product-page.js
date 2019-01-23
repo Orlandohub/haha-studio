@@ -45,7 +45,7 @@ export const ProductPageTemplate = ({
 }
 
 ProductPageTemplate.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
   pageContext: PropTypes.object,
   location: PropTypes.object,
@@ -56,7 +56,7 @@ ProductPageTemplate.propTypes = {
 
 const ProductPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
-  
+
   return (
     <ProductPageTemplate
       contentComponent={HTMLContent}
