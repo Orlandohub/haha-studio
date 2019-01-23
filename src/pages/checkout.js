@@ -193,7 +193,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
             )}
           </label>
           <label className={css(styles.formLabels)}>
-            Adress line 1
+            Address line 1
             <Field
               type="text"
               name="adressLine1"
@@ -206,7 +206,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
             )}
           </label>
           <label className={css(styles.formLabels)}>
-            Adress line 2
+            Address line 2
             <Field
               type="text"
               name="adressLine2"
@@ -310,7 +310,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
             </label>
 
             <label className={css(styles.formLabels)}>
-              Adress line 1
+              Address line 1
               <Field
                 type="text"
                 name="deliveryAdressLine1"
@@ -323,7 +323,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
               )}
             </label>
             <label className={css(styles.formLabels)}>
-              Adress line 2
+              Address line 2
               <Field
                 type="text"
                 name="deliveryAdressLine2"
