@@ -16,6 +16,8 @@ export const ProductPageTemplate = ({
   title,
   price,
   imageGallery,
+  productId,
+  slug,
 }) => {
   const PageContent = contentComponent || Content
 
@@ -33,12 +35,10 @@ export const ProductPageTemplate = ({
           </div>
           <button
             className={`${css(styles.cardButton)} snipcart-add-item`}
-            data-item-id="2"
-            data-item-name="Bacon"
-            data-item-price="3.00"
-            data-item-weight="20"
-            data-item-url="http://localhost:8000/products/liberty-lamp-small/"
-            data-item-description="Some fresh bacon">
+            data-item-id={productId}
+            data-item-name={title}
+            data-item-price={price}
+            data-item-url={slug}>
                  ADD TO CART
           </button>
           <a href="#" className="snipcart-checkout">Click here to checkout</a>
@@ -59,13 +59,15 @@ export const ProductPageTemplate = ({
 }
 
 ProductPageTemplate.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
   pageContext: PropTypes.object,
   location: PropTypes.object,
   title: PropTypes.string,
   price: PropTypes.string,
   imageGallery: PropTypes.array,
+  productId: PropTypes.string,
+  slug: PropTypes.string,
 }
 
 const ProductPage = ({ data, location, pageContext }) => {
@@ -75,10 +77,12 @@ const ProductPage = ({ data, location, pageContext }) => {
     <ProductPageTemplate
       contentComponent={HTMLContent}
       content={post.html}
+      productId={post.id}
       pageContext={pageContext}
       location={location}
       title={post.frontmatter.title}
       price={post.frontmatter.price}
+      slug={post.fields.slug}
       imageGallery={post.frontmatter.image_gallery}
     />
   )
@@ -97,7 +101,11 @@ export default ProductPage
 export const productPageQuery = graphql`
   query ProductPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
+      id
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         price

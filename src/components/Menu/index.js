@@ -109,6 +109,23 @@ class Menu extends Component {
 
   componentDidMount() {
     this.setActiveMenu()
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      document.addEventListener('snipcart.ready', function() {
+        window.Snipcart.subscribe('item.added', function () {
+          const count = window.Snipcart.api.items.count()
+          console.log('count', count)
+        })
+        window.Snipcart.subscribe('item.removed', function () {
+          const count = window.Snipcart.api.items.count()
+          console.log('count', count)
+        })
+        window.Snipcart.subscribe('item.updated', function () {
+          const count = window.Snipcart.api.items.count()
+          console.log('count', count)
+        })
+      })
+    }
+
   }
 
   render() {
@@ -139,8 +156,8 @@ class Menu extends Component {
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
                     : this.isActiveMenu('projects')
-                    ? css(styles.subMenuLinkActive)
-                    : css(styles.subMenuLink)
+                      ? css(styles.subMenuLinkActive)
+                      : css(styles.subMenuLink)
                 }
               >
                 projects
@@ -176,8 +193,8 @@ class Menu extends Component {
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
                     : this.isActiveMenu('studio')
-                    ? css(styles.subMenuLinkActive)
-                    : css(styles.subMenuLink)
+                      ? css(styles.subMenuLinkActive)
+                      : css(styles.subMenuLink)
                 }
               >
                 studio
@@ -212,8 +229,8 @@ class Menu extends Component {
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
                     : this.isActiveMenu('contact')
-                    ? css(styles.subMenuLinkActive)
-                    : css(styles.subMenuLink)
+                      ? css(styles.subMenuLinkActive)
+                      : css(styles.subMenuLink)
                 }
               >
                 contact
