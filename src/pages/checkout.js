@@ -274,289 +274,247 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
 
           {/*#######################  ANOTHER ADDRESS FORM  ##################*/}
 
-          {values.shiptoanotheradress && (
-            <div className={css(styles.deliveryForm)}>
-              <p style={{ margin: 0 }}>Delivery address:</p>
+          <div
+            className={
+              values.shiptoanotheradress
+                ? css(styles.deliveryForm)
+                : css(styles.deliveryFormHidden)
+            }
+          >
+            <div className={css(styles.paddingWrap)} />
+            <label className={css(styles.formLabels)}>
+              First name
+              <Field
+                type="text"
+                name="deliveryFirstName"
+                className={css(styles.inputWrapper)}
+              />
+              {touched.deliveryFirstName && errors.deliveryFirstName && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.deliveryFirstName}
+                </div>
+              )}
+            </label>
+            <label className={css(styles.formLabels)}>
+              Last name
+              <Field
+                type="text"
+                name="deliveryLastName"
+                className={css(styles.inputWrapper)}
+              />
+              {touched.deliveryLastName && errors.deliveryLastName && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.deliveryLastName}
+                </div>
+              )}
+            </label>
 
-              <label className={css(styles.formLabels)}>
-                First name
-                <Field
-                  type="text"
-                  name="deliveryFirstName"
-                  className={css(styles.inputWrapper)}
-                />
-                {touched.deliveryFirstName && errors.deliveryFirstName && (
-                  <div className={css(styles.errorStyles)}>
-                    {errors.deliveryFirstName}
-                  </div>
-                )}
-              </label>
-              <label className={css(styles.formLabels)}>
-                Last name
-                <Field
-                  type="text"
-                  name="deliveryLastName"
-                  className={css(styles.inputWrapper)}
-                />
-                {touched.deliveryLastName && errors.deliveryLastName && (
-                  <div className={css(styles.errorStyles)}>
-                    {errors.deliveryLastName}
-                  </div>
-                )}
-              </label>
-              <label className={css(styles.formLabels)}>
-                Email
-                <Field
-                  type="text"
-                  name="deliveryEmail"
-                  className={css(styles.inputWrapper)}
-                />
-                {touched.deliveryEmail && errors.deliveryEmail && (
-                  <div className={css(styles.errorStyles)}>
-                    {errors.deliveryEmail}
-                  </div>
-                )}
-              </label>
-              <label className={css(styles.formLabels)}>
-                Phone number
-                <Field
-                  type="tel"
-                  name="deliveryPhoneNumber"
-                  render={({ field }) => {
-                    return (
-                      <MaskedInput
-                        {...field}
-                        mask={[
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                          /\d/,
-                        ]}
-                        guide={false}
-                        keepCharPositions={false}
-                        className={css(styles.inputWrapper)}
-                      />
-                    )
-                  }}
-                />
-                {touched.deliveryPhoneNumber && errors.deliveryPhoneNumber && (
-                  <div className={css(styles.errorStyles)}>
-                    {errors.deliveryPhoneNumber}
-                  </div>
-                )}
-              </label>
-              <label className={css(styles.formLabels)}>
-                Adress line 1
-                <Field
-                  type="text"
-                  name="deliveryAdressLine1"
-                  className={css(styles.inputWrapper)}
-                />
-                {touched.deliveryAdressLine1 && errors.deliveryAdressLine1 && (
-                  <div className={css(styles.errorStyles)}>
-                    {errors.deliveryAdressLine1}
-                  </div>
-                )}
-              </label>
-              <label className={css(styles.formLabels)}>
-                Adress line 2
-                <Field
-                  type="text"
-                  name="deliveryAdressLine2"
-                  className={css(styles.inputWrapper)}
-                />
-                {touched.deliveryAdressLine2 && errors.deliveryAdressLine2 && (
-                  <div className={css(styles.errorStyles)}>
-                    {errors.deliveryAdressLine2}
-                  </div>
-                )}
-              </label>
-              <label className={css(styles.halfWidthFormsCenter)}>
-                City
-                <Field
-                  type="text"
-                  name="deliveryCity"
-                  className={css(styles.halfWidthFormsInputs)}
-                />
-                {touched.deliveryCity && errors.deliveryCity && (
-                  <div className={css(styles.errorStyles)}>
-                    {errors.deliveryCity}
-                  </div>
-                )}
-              </label>
-              <label className={css(styles.halfWidthForms)}>
-                Zip code
-                <Field
-                  type="text"
-                  name="deliveryZipCode"
-                  className={css(styles.halfWidthFormsInputs)}
-                />
-                {touched.deliveryZipCode && errors.deliveryZipCode && (
-                  <div className={css(styles.errorStyles)}>
-                    {errors.deliveryZipCode}
-                  </div>
-                )}
-              </label>
-              <label className={css(styles.formLabels)}>
-                Country
-                <Field
-                  type="text"
-                  name="deliveryCountry"
-                  className={css(styles.inputWrapper)}
-                />
-                {touched.deliveryCountry && errors.deliveryCountry && (
-                  <div className={css(styles.errorStyles)}>
-                    {errors.deliveryCountry}
-                  </div>
-                )}
-              </label>
-            </div>
-          )}
+            <label className={css(styles.formLabels)}>
+              Adress line 1
+              <Field
+                type="text"
+                name="deliveryAdressLine1"
+                className={css(styles.inputWrapper)}
+              />
+              {touched.deliveryAdressLine1 && errors.deliveryAdressLine1 && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.deliveryAdressLine1}
+                </div>
+              )}
+            </label>
+            <label className={css(styles.formLabels)}>
+              Adress line 2
+              <Field
+                type="text"
+                name="deliveryAdressLine2"
+                className={css(styles.inputWrapper)}
+              />
+              {touched.deliveryAdressLine2 && errors.deliveryAdressLine2 && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.deliveryAdressLine2}
+                </div>
+              )}
+            </label>
+            <label className={css(styles.halfWidthFormsCenter)}>
+              City
+              <Field
+                type="text"
+                name="deliveryCity"
+                className={css(styles.halfWidthFormsInputs)}
+              />
+              {touched.deliveryCity && errors.deliveryCity && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.deliveryCity}
+                </div>
+              )}
+            </label>
+            <label className={css(styles.halfWidthForms)}>
+              Zip code
+              <Field
+                type="text"
+                name="deliveryZipCode"
+                className={css(styles.halfWidthFormsInputs)}
+              />
+              {touched.deliveryZipCode && errors.deliveryZipCode && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.deliveryZipCode}
+                </div>
+              )}
+            </label>
+            <label className={css(styles.formLabels)}>
+              Country
+              <Field
+                type="text"
+                name="deliveryCountry"
+                className={css(styles.inputWrapper)}
+              />
+              {touched.deliveryCountry && errors.deliveryCountry && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.deliveryCountry}
+                </div>
+              )}
+            </label>
+          </div>
 
           {/*#######################       END            ##################*/}
 
-          <label className={css(styles.formLabels)}>
-            Card details
-            <Field
-              type="text"
-              name="cardDetails"
-              className={css(styles.inputWrapper)}
-            />
-            {touched.cardDetails && errors.cardDetails && (
-              <div className={css(styles.errorStyles)}>
-                {errors.cardDetails}
-              </div>
-            )}
-          </label>
-          <label className={css(styles.formLabels)}>
-            Card number
-            <Field
-              type="text"
-              name="cardNumber"
-              render={({ field }) => {
-                return (
-                  <MaskedInput
-                    {...field}
-                    mask={[
-                      /\d/,
-                      /\d/,
-                      /\d/,
-                      /\d/,
-                      ' ',
-                      /\d/,
-                      /\d/,
-                      /\d/,
-                      /\d/,
-                      ' ',
-                      /\d/,
-                      /\d/,
-                      /\d/,
-                      /\d/,
-                      ' ',
-                      /\d/,
-                      /\d/,
-                      /\d/,
-                      /\d/,
-                    ]}
-                    guide={false}
-                    keepCharPositions={false}
-                    className={css(styles.inputWrapper)}
-                  />
-                )
-              }}
-            />
-            {touched.cardNumber && errors.cardNumber && (
-              <div className={css(styles.errorStyles)}>{errors.cardNumber}</div>
-            )}
-          </label>
-          <label className={css(styles.formLabels)}>
-            Name on Card
-            <Field
-              type="text"
-              name="nameOnCard"
-              className={css(styles.inputWrapper)}
-            />
-            {touched.nameOnCard && errors.nameOnCard && (
-              <div className={css(styles.errorStyles)}>{errors.nameOnCard}</div>
-            )}
-          </label>
-          <label className={css(styles.halfWidthDateCenter)}>
-            Expiry year
-            <Field
-              component="select"
-              name="expiryYear"
-              className={css(styles.halfWidthDateInputs)}
-            >
-              <option value={year}>{year}</option>
-              <option value={year + 1}>{year + 1}</option>
-              <option value={year + 2}>{year + 2}</option>
-              <option value={year + 3}>{year + 3}</option>
-              <option value={year + 4}>{year + 4}</option>
-              <option value={year + 5}>{year + 5}</option>
-              <option value={year + 6}>{year + 6}</option>
-              <option value={year + 7}>{year + 7}</option>
-              <option value={year + 8}>{year + 8}</option>
-              <option value={year + 9}>{year + 9}</option>
-              <option value={year + 10}>{year + 10}</option>
-              <option value={year + 11}>{year + 11}</option>
-            </Field>
-          </label>
-          <label className={css(styles.halfWidthDate)}>
-            Expiry month
-            <Field
-              component="select"
-              name="expiryMonth"
-              className={css(styles.halfWidthDateInputs)}
-            >
-              <option value="01">01</option>
-              <option value="02">02</option>
-              <option value="03">03</option>
-              <option value="04">04</option>
-              <option value="05">05</option>
-              <option value="06">06</option>
-              <option value="07">07</option>
-              <option value="09">09</option>
-              <option value="10">10</option>
-              <option value="11">11</option>
-              <option value="12">12</option>
-            </Field>
-          </label>
-          <label className={css(styles.halfWidthFormsCVC)}>
-            CVC
-            <Field
-              type="text"
-              name="CVC"
-              render={({ field }) => {
-                return (
-                  <MaskedInput
-                    {...field}
-                    mask={[/\d/, /\d/, /\d/, /\d/]}
-                    guide={false}
-                    keepCharPositions={false}
-                    className={css(styles.halfWidthFormsInputs)}
-                  />
-                )
-              }}
-            />
-            {touched.CVC && errors.CVC && (
-              <div className={css(styles.errorStyles)}>{errors.CVC}</div>
-            )}
-          </label>
+          <div className={css(styles.cardInfoWrap)}>
+            <label className={css(styles.formLabels)}>
+              Card details
+              <Field
+                type="text"
+                name="cardDetails"
+                className={css(styles.inputWrapper)}
+              />
+              {touched.cardDetails && errors.cardDetails && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.cardDetails}
+                </div>
+              )}
+            </label>
+            <label className={css(styles.formLabels)}>
+              Card number
+              <Field
+                type="text"
+                name="cardNumber"
+                render={({ field }) => {
+                  return (
+                    <MaskedInput
+                      {...field}
+                      mask={[
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        ' ',
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        ' ',
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        ' ',
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                        /\d/,
+                      ]}
+                      guide={false}
+                      keepCharPositions={false}
+                      className={css(styles.inputWrapper)}
+                    />
+                  )
+                }}
+              />
+              {touched.cardNumber && errors.cardNumber && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.cardNumber}
+                </div>
+              )}
+            </label>
+            <label className={css(styles.formLabels)}>
+              Name on Card
+              <Field
+                type="text"
+                name="nameOnCard"
+                className={css(styles.inputWrapper)}
+              />
+              {touched.nameOnCard && errors.nameOnCard && (
+                <div className={css(styles.errorStyles)}>
+                  {errors.nameOnCard}
+                </div>
+              )}
+            </label>
+            <label className={css(styles.halfWidthDateCenter)}>
+              Expiry year
+              <Field
+                component="select"
+                name="expiryYear"
+                className={css(styles.halfWidthDateInputs)}
+              >
+                <option value={year}>{year}</option>
+                <option value={year + 1}>{year + 1}</option>
+                <option value={year + 2}>{year + 2}</option>
+                <option value={year + 3}>{year + 3}</option>
+                <option value={year + 4}>{year + 4}</option>
+                <option value={year + 5}>{year + 5}</option>
+                <option value={year + 6}>{year + 6}</option>
+                <option value={year + 7}>{year + 7}</option>
+                <option value={year + 8}>{year + 8}</option>
+                <option value={year + 9}>{year + 9}</option>
+                <option value={year + 10}>{year + 10}</option>
+                <option value={year + 11}>{year + 11}</option>
+              </Field>
+            </label>
+            <label className={css(styles.halfWidthDate)}>
+              Expiry month
+              <Field
+                component="select"
+                name="expiryMonth"
+                className={css(styles.halfWidthDateInputs)}
+              >
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+              </Field>
+            </label>
+            <label className={css(styles.halfWidthFormsCVC)}>
+              CVC
+              <Field
+                type="text"
+                name="CVC"
+                render={({ field }) => {
+                  return (
+                    <MaskedInput
+                      {...field}
+                      mask={[/\d/, /\d/, /\d/, /\d/]}
+                      guide={false}
+                      keepCharPositions={false}
+                      className={css(styles.halfWidthFormsInputs)}
+                    />
+                  )
+                }}
+              />
+              {touched.CVC && errors.CVC && (
+                <div className={css(styles.errorStyles)}>{errors.CVC}</div>
+              )}
+            </label>
+          </div>
+
           <div style={{ float: 'left', width: '100%' }}>
+            {/* ####################################      BUTTON IS HERE         ################################ */}
+
             <button
               className={css(styles.purchaseBtn)}
               type="submit"
@@ -596,10 +554,8 @@ const FormikCheckOut = withFormik({
     city,
     zipCode,
     country,
-    deliveryEmail,
     deliveryFirstName,
     deliveryLastName,
-    deliveryPhoneNumber,
     deliveryAdressLine1,
     deliveryAdressLine2,
     deliveryCity,
@@ -623,10 +579,8 @@ const FormikCheckOut = withFormik({
       city: city || '',
       zipCode: zipCode || '',
       country: country || '',
-      deliveryEmail,
       deliveryFirstName: deliveryFirstName || '',
       deliveryLastName: deliveryLastName || '',
-      deliveryPhoneNumber: deliveryPhoneNumber || '',
       deliveryAdressLine1: deliveryAdressLine1 || '',
       deliveryAdressLine2: deliveryAdressLine2 || '',
       deliveryCity: deliveryCity || '',
@@ -642,6 +596,8 @@ const FormikCheckOut = withFormik({
     }
   },
   validationSchema: Yup.object().shape({
+    // ************************** BILLING ADDRESS
+
     email: Yup.string()
       .email('Email not valid!')
       .required('Email is required!'),
@@ -653,17 +609,44 @@ const FormikCheckOut = withFormik({
     city: Yup.string().required('Required!'),
     zipCode: Yup.string().required('Required!'),
     country: Yup.string().required('Country is required!'),
-    deliveryEmail: Yup.string()
-      .email('Email not valid!')
-      .required('Email is required!'),
-    deliveryFirstName: Yup.string().required('First name is required!'),
-    deliveryLastName: Yup.string().required('Last name is required!'),
-    deliveryPhoneNumber: Yup.number().required('Phone number is required!'),
-    deliveryAdressLine1: Yup.string().required('Adress is required!'),
-    deliveryAdressLine2: Yup.string(),
-    deliveryCity: Yup.string().required('Required!'),
-    deliveryZipCode: Yup.string().required('Required!'),
-    deliveryCountry: Yup.string().required('Country is required!'),
+    shiptoanotheradress: Yup.boolean().notRequired(),
+
+    // ************************ DELIVERY ADDRESS
+
+    deliveryFirstName: Yup.string().when('shiptoanotheradress', {
+      is: true,
+      then: Yup.string().required('First name is required!'),
+      otherwise: Yup.string().notRequired(),
+    }),
+    deliveryLastName: Yup.string().when('shiptoanotheradress', {
+      is: true,
+      then: Yup.string().required('Last name is required!'),
+      otherwise: Yup.string().notRequired(),
+    }),
+    deliveryAdressLine1: Yup.string().when('shiptoanotheradress', {
+      is: true,
+      then: Yup.string().required('Address is required!'),
+      otherwise: Yup.string().notRequired(),
+    }),
+    deliveryAdressLine2: Yup.string().notRequired(),
+    deliveryCity: Yup.string().when('shiptoanotheradress', {
+      is: true,
+      then: Yup.string().required('Required!'),
+      otherwise: Yup.string().notRequired(),
+    }),
+    deliveryZipCode: Yup.string().when('shiptoanotheradress', {
+      is: true,
+      then: Yup.string().required('Required!'),
+      otherwise: Yup.string().notRequired(),
+    }),
+    deliveryCountry: Yup.string().when('shiptoanotheradress', {
+      is: true,
+      then: Yup.string().required('Country is required!'),
+      otherwise: Yup.string().notRequired(),
+    }),
+
+    // *************************** CARD DETAILS
+
     cardDetails: Yup.string().required('Card details are required!'),
     cardNumber: Yup.string()
       .min(16, 'Minimum 16 digits')
@@ -674,6 +657,9 @@ const FormikCheckOut = withFormik({
       .max(4, 'Maximum 3 digits')
       .required('CVC is required!'),
   }),
+
+  // *************************** HANDLE SUBMIT AND VALIDATION
+
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
     setTimeout(() => {
       console.log('values are ' + values)
