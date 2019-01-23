@@ -69,57 +69,21 @@ injectGlobal`
   }
 `
 
-class Layout extends React.Component {
-  render() {
-    const { location, children } = this.props
-    return (
-      <StaticQuery
-        query={graphql`
-          query SiteTitleQuery {
-            site {
-              siteMetadata {
-                title
-              }
-            }
-            logoImage: file(relativePath: { eq: "logo_large.png" }) {
-              childImageSharp {
-                fluid(maxWidth: 1060) {
-                  ...GatsbyImageSharpFluid_withWebp_noBase64
-                }
-              }
+const Layout = ({ children, location }) => (
+  <StaticQuery
+    query={graphql`
+      query SiteTitleQuery {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+        logoImage: file(relativePath: { eq: "logo_large.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 1060) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
-<<<<<<< HEAD
-        `}
-        render={data => (
-          <>
-            <Helmet
-              title={data.site.siteMetadata.title}
-              meta={[
-                { name: 'description', content: 'HAHA Studio' },
-                {
-                  name: 'keywords',
-                  content: 'design, design studio, stockholm, gatsby, react',
-                },
-              ]}
-            >
-              <html lang="en" />
-              <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
-              <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-              <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-            </Helmet>
-            <Menu location={location} data={data} />
-            <div className={css(styles.pageWrapper)}>
-              <PageTransition>{children}</PageTransition>
-            </div>
-          </>
-        )}
-      />
-    )
-  }
-
-}
-=======
         }
       }
     `}
@@ -157,7 +121,6 @@ class Layout extends React.Component {
     )}
   />
 )
->>>>>>> master
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

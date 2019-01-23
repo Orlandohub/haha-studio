@@ -18,6 +18,7 @@ export const ProductPageTemplate = ({
   imageGallery,
   productId,
   slug,
+  thumbnail,
 }) => {
   const PageContent = contentComponent || Content
 
@@ -38,7 +39,8 @@ export const ProductPageTemplate = ({
             data-item-id={productId}
             data-item-name={title}
             data-item-price={price}
-            data-item-url={slug}>
+            data-item-url={slug}
+            data-item-image={thumbnail}>
                  ADD TO CART
           </button>
           <a href="#" className="snipcart-checkout">Click here to checkout</a>
@@ -68,11 +70,11 @@ ProductPageTemplate.propTypes = {
   imageGallery: PropTypes.array,
   productId: PropTypes.string,
   slug: PropTypes.string,
+  thumbnail: PropTypes.string,
 }
 
 const ProductPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
-
   return (
     <ProductPageTemplate
       contentComponent={HTMLContent}
@@ -84,6 +86,7 @@ const ProductPage = ({ data, location, pageContext }) => {
       price={post.frontmatter.price}
       slug={post.fields.slug}
       imageGallery={post.frontmatter.image_gallery}
+      thumbnail={post.frontmatter.cover_image.childImageSharp.fixed.src}
     />
   )
 }
@@ -109,6 +112,13 @@ export const productPageQuery = graphql`
       frontmatter {
         title
         price
+        cover_image {
+          childImageSharp {
+            fixed(width: 95, height: 120) {
+              src
+            }
+          }
+        }
         image_gallery {
           image {
             childImageSharp {
