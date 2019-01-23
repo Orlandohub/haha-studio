@@ -658,7 +658,7 @@ const FormikCheckOut = withFormik({
       .required('CVC is required!'),
   }),
 
-  // *************************** HANDLE SUBMIT AND VALIDATION
+  // ************************** HANDLE SUBMIT AND VALIDATION
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
     setTimeout(() => {
