@@ -33,7 +33,7 @@ export const ProductPageTemplate = ({
           </div>
           <button
             className={`${css(styles.cardButton)} snipcart-add-item`}
-            data-item-id={2}
+            data-item-id="39efb6a9-56d3-5353-b4bb-32217515ea38"
             data-item-name={title}
             data-item-price={price}
             data-item-url="/products/liberty-lamp-small/">
