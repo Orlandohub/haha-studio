@@ -81,7 +81,7 @@ export const subMenuLink = mq({
   lineHeight: 1,
   cursor: 'pointer',
   fontSize: ['1em', '1em', '2em', '2em'],
-  color: ['#CACAC8', '#CACAC8', '#CACAC8', '#000000', '#000000'],
+  color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#000000', '#000000'],
 })
 
 export const subMenuLinkActive = mq(subMenuLink, {
@@ -89,7 +89,7 @@ export const subMenuLinkActive = mq(subMenuLink, {
 })
 
 export const subMenuLinkInactive = mq(subMenuLink, {
-  color: ['#CACAC8', '#CACAC8', '#CACAC8', '#CACAC8', '#CACAC8'],
+  color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7'],
 })
 
 // --> MENU SHOP ITEM & LINK
