@@ -649,7 +649,7 @@ const FormikCheckOut = withFormik({
 
     cardDetails: Yup.string().required('Card details are required!'),
     cardNumber: Yup.string()
-      .min(16, 'Minimum 16 digits')
+      .min(12, 'Minimum 12 digits')
       .required('Card number is required!'),
     nameOnCard: Yup.string().required('Name on card is required!'),
     CVC: Yup.string()
