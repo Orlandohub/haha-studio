@@ -15,8 +15,6 @@ export const TextPageTemplate = ({ content, contentComponent, title, pageContext
         {/*########################*/}
         <div className={css(styles.textText)}>
           <h2 className={css(styles.textHeader)}>{title}</h2>
-          <br />
-          <br />
           <div className={css(styles.textParagraph)}>
             <PageContent className="content" content={content} />
           </div>

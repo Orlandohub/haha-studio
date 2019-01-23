@@ -8,6 +8,7 @@
     "emotion": "^9.2.12",
     "emotion-server": "^9.2.12",
     "facepaint": "^1.2.1",
+    "formik": "^1.4.2",
     "gatsby": "^2.0.29",
     "gatsby-image": "^2.0.20",
     "gatsby-link": "^2.0.4",
@@ -37,7 +38,8 @@
     "react-router-dom": "^4.3.1",
     "react-router-hash-link": "^1.2.1",
     "react-scrolltop-button": "^0.1.5",
-    "react-slick": "^0.23.2"
+    "react-slick": "^0.23.2",
+    "yup": "^0.26.6"
   },
   "keywords": [
     "gatsby"
@@ -71,6 +73,7 @@
     "eslint-plugin-react": "^7.11.1",
     "eslint-plugin-standard": "^4.0.0",
     "prettier": "^1.14.3",
+    "react-text-mask": "^5.4.3",
     "rimraf": "^2.6.2",
     "start-server-and-test": "^1.7.9"
   },

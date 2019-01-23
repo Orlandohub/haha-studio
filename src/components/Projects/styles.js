@@ -1,8 +1,8 @@
 import ScrollTop from 'react-scrolltop-button'
 import facepaint from 'facepaint'
 import styled from 'react-emotion'
-import arrowToTop from '../../images/arrow_go_to_top.svg'
-import arrowBlackGoTop from '../../images/arrowBlackGoTop.png'
+import arrowToTop from '../../images/arrow_go_top.png'
+import arrowBlackGoTop from '../../images/02_D_arrow_black_go_to_top.png'
 const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
@@ -49,11 +49,10 @@ export const StyledScrollTop = styled(ScrollTop)`
   right: 4% !important;
   display: block !important;
   bottom: 5% !important;
-  width: 50px !important;
-  height: 41px !important;
+  width: 14px !important;
+  height: 21px !important;
   padding: 15px !important;
   border: none !important;
-  border-radius: 50px !important;
   background-image: url(${arrowToTop}) !important;
   background-position: center !important;
   background-color: transparent !important;
@@ -77,7 +76,7 @@ export const StyledScrollTop = styled(ScrollTop)`
     content: 'top' !important;
     position: relative !important;
     top: -50px !important;
-    right: 5px !important;
+    right: 14px !important;
     font-size: 20px !important;
     color: #cacac8 !important;
   }

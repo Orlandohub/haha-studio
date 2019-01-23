@@ -24,6 +24,7 @@ injectGlobal`
   html, body, #___gatsby, div[role=group] {
     font-family: "Ginto Normal Regular";
     height: 100%;
+    overflow-x: hidden;
   }
   img {
     max-width: 100%;
@@ -88,6 +89,7 @@ class Layout extends React.Component {
               }
             }
           }
+<<<<<<< HEAD
         `}
         render={data => (
           <>
@@ -117,6 +119,45 @@ class Layout extends React.Component {
   }
 
 }
+=======
+        }
+      }
+    `}
+    render={data => (
+      <>
+        <Helmet
+          title={data.site.siteMetadata.title}
+          meta={[
+            { name: 'description', content: 'HAHA Studio' },
+            {
+              name: 'keywords',
+              content: 'design, design studio, stockholm, gatsby, react',
+            },
+          ]}
+        >
+          <html lang="en" />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            charset="UTF-8"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
+          />
+          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
+        </Helmet>
+        <Menu location={location} data={data} />
+        <div className={css(styles.pageWrapper)}>
+          <PageTransition>{children}</PageTransition>
+        </div>
+      </>
+    )}
+  />
+)
+>>>>>>> master
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

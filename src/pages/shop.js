@@ -16,21 +16,23 @@ const Shop = ({ location, data }) => {
     <Layout location={location}>
       <div className={css(styles.shopWrapper)}>
         <div className={css(styles.shopRightColumn)}>
-          {
-            map(edges, (edge, key) => {
-              return (
-                <div key={key} className={css(styles.shopImage)}>
-                  <Link to={edge.node.fields.slug}>
-                    <Img fluid={edge.node.frontmatter.cover_image.childImageSharp.fluid} />
-                  </Link>
-                  <div className={css(styles.shopText)}>
-                    {edge.node.frontmatter.title} <br />
-                    {edge.node.frontmatter.price} &#8364;
-                  </div>
+          {map(edges, edge => {
+            return (
+              <div key={edge.node.id} className={css(styles.shopImage)}>
+                <Link to={edge.node.fields.slug}>
+                  <Img
+                    fluid={
+                      edge.node.frontmatter.cover_image.childImageSharp.fluid
+                    }
+                  />
+                </Link>
+                <div className={css(styles.shopText)}>
+                  {edge.node.frontmatter.title} <br />
+                  {edge.node.frontmatter.price} &#8364;
                 </div>
-              )
-            })
-          }
+              </div>
+            )
+          })}
         </div>
         <ShopNavigation />
       </div>
@@ -48,33 +50,33 @@ export default Shop
 export const query = graphql`
   query {
     projectsList: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] },
+      sort: { order: DESC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
-          templateKey: { eq: "product-page" },
+          templateKey: { eq: "product-page" }
           is_active: { eq: true }
         }
       }
     ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              price
-              cover_image {
-                childImageSharp {
-                  fluid(maxWidth: 1060) {
-                    ...GatsbyImageSharpFluid_withWebp_noBase64
-                  }
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            price
+            cover_image {
+              childImageSharp {
+                fluid(maxWidth: 1060) {
+                  ...GatsbyImageSharpFluid_withWebp_noBase64
                 }
               }
             }
           }
         }
       }
+    }
   }
 `
