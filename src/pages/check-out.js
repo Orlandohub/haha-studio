@@ -212,13 +212,11 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
               name="adressLine2"
               className={css(styles.inputWrapper)}
             />
-            {values.shiptoanotheradress &&
-              touched.adressLine2 &&
-              errors.adressLine2 && (
-                <div className={css(styles.errorStyles)}>
-                  {errors.adressLine2}
-                </div>
-              )}
+            {touched.adressLine2 && errors.adressLine2 && (
+              <div className={css(styles.errorStyles)}>
+                {errors.adressLine2}
+              </div>
+            )}
           </label>
           <label className={css(styles.halfWidthFormsCenter)}>
             City
@@ -262,7 +260,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
               id="chk"
               type="checkbox"
               name="shiptoanotheradress"
-              checked={values.shipToAnotherAdress}
+              checked={values.shiptoanotheradress}
             />
             <div className={css(styles.customCheckBox)}>
               {values.shiptoanotheradress ? (
@@ -273,6 +271,163 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
           </label>
 
           {/*####################### END here##################*/}
+
+          {/*#######################  ANOTHER ADDRESS FORM  ##################*/}
+
+          {values.shiptoanotheradress && (
+            <div className={css(styles.deliveryForm)}>
+              <p style={{ margin: 0 }}>Delivery address:</p>
+
+              <label className={css(styles.formLabels)}>
+                First name
+                <Field
+                  type="text"
+                  name="deliveryFirstName"
+                  className={css(styles.inputWrapper)}
+                />
+                {touched.deliveryFirstName && errors.deliveryFirstName && (
+                  <div className={css(styles.errorStyles)}>
+                    {errors.deliveryFirstName}
+                  </div>
+                )}
+              </label>
+              <label className={css(styles.formLabels)}>
+                Last name
+                <Field
+                  type="text"
+                  name="deliveryLastName"
+                  className={css(styles.inputWrapper)}
+                />
+                {touched.deliveryLastName && errors.deliveryLastName && (
+                  <div className={css(styles.errorStyles)}>
+                    {errors.deliveryLastName}
+                  </div>
+                )}
+              </label>
+              <label className={css(styles.formLabels)}>
+                Email
+                <Field
+                  type="text"
+                  name="deliveryEmail"
+                  className={css(styles.inputWrapper)}
+                />
+                {touched.deliveryEmail && errors.deliveryEmail && (
+                  <div className={css(styles.errorStyles)}>
+                    {errors.deliveryEmail}
+                  </div>
+                )}
+              </label>
+              <label className={css(styles.formLabels)}>
+                Phone number
+                <Field
+                  type="tel"
+                  name="deliveryPhoneNumber"
+                  render={({ field }) => {
+                    return (
+                      <MaskedInput
+                        {...field}
+                        mask={[
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                          /\d/,
+                        ]}
+                        guide={false}
+                        keepCharPositions={false}
+                        className={css(styles.inputWrapper)}
+                      />
+                    )
+                  }}
+                />
+                {touched.deliveryPhoneNumber && errors.deliveryPhoneNumber && (
+                  <div className={css(styles.errorStyles)}>
+                    {errors.deliveryPhoneNumber}
+                  </div>
+                )}
+              </label>
+              <label className={css(styles.formLabels)}>
+                Adress line 1
+                <Field
+                  type="text"
+                  name="deliveryAdressLine1"
+                  className={css(styles.inputWrapper)}
+                />
+                {touched.deliveryAdressLine1 && errors.deliveryAdressLine1 && (
+                  <div className={css(styles.errorStyles)}>
+                    {errors.deliveryAdressLine1}
+                  </div>
+                )}
+              </label>
+              <label className={css(styles.formLabels)}>
+                Adress line 2
+                <Field
+                  type="text"
+                  name="deliveryAdressLine2"
+                  className={css(styles.inputWrapper)}
+                />
+                {touched.deliveryAdressLine2 && errors.deliveryAdressLine2 && (
+                  <div className={css(styles.errorStyles)}>
+                    {errors.deliveryAdressLine2}
+                  </div>
+                )}
+              </label>
+              <label className={css(styles.halfWidthFormsCenter)}>
+                City
+                <Field
+                  type="text"
+                  name="deliveryCity"
+                  className={css(styles.halfWidthFormsInputs)}
+                />
+                {touched.deliveryCity && errors.deliveryCity && (
+                  <div className={css(styles.errorStyles)}>
+                    {errors.deliveryCity}
+                  </div>
+                )}
+              </label>
+              <label className={css(styles.halfWidthForms)}>
+                Zip code
+                <Field
+                  type="text"
+                  name="deliveryZipCode"
+                  className={css(styles.halfWidthFormsInputs)}
+                />
+                {touched.deliveryZipCode && errors.deliveryZipCode && (
+                  <div className={css(styles.errorStyles)}>
+                    {errors.deliveryZipCode}
+                  </div>
+                )}
+              </label>
+              <label className={css(styles.formLabels)}>
+                Country
+                <Field
+                  type="text"
+                  name="deliveryCountry"
+                  className={css(styles.inputWrapper)}
+                />
+                {touched.deliveryCountry && errors.deliveryCountry && (
+                  <div className={css(styles.errorStyles)}>
+                    {errors.deliveryCountry}
+                  </div>
+                )}
+              </label>
+            </div>
+          )}
+
+          {/*#######################       END            ##################*/}
 
           <label className={css(styles.formLabels)}>
             Card details
@@ -441,6 +596,15 @@ const FormikCheckOut = withFormik({
     city,
     zipCode,
     country,
+    deliveryEmail,
+    deliveryFirstName,
+    deliveryLastName,
+    deliveryPhoneNumber,
+    deliveryAdressLine1,
+    deliveryAdressLine2,
+    deliveryCity,
+    deliveryZipCode,
+    deliveryCountry,
     shiptoanotheradress,
     cardDetails,
     cardNumber,
@@ -459,6 +623,15 @@ const FormikCheckOut = withFormik({
       city: city || '',
       zipCode: zipCode || '',
       country: country || '',
+      deliveryEmail,
+      deliveryFirstName: deliveryFirstName || '',
+      deliveryLastName: deliveryLastName || '',
+      deliveryPhoneNumber: deliveryPhoneNumber || '',
+      deliveryAdressLine1: deliveryAdressLine1 || '',
+      deliveryAdressLine2: deliveryAdressLine2 || '',
+      deliveryCity: deliveryCity || '',
+      deliveryZipCode: deliveryZipCode || '',
+      deliveryCountry: deliveryCountry || '',
       shiptoanotheradress: shiptoanotheradress || false,
       cardDetails: cardDetails || '',
       cardNumber: cardNumber || '',
@@ -476,10 +649,21 @@ const FormikCheckOut = withFormik({
     lastName: Yup.string().required('Last name is required!'),
     phoneNumber: Yup.number().required('Phone number is required!'),
     adressLine1: Yup.string().required('Adress is required!'),
-    adressLine2: Yup.string().required('Adress 2 is required!'),
+    adressLine2: Yup.string(),
     city: Yup.string().required('Required!'),
     zipCode: Yup.string().required('Required!'),
     country: Yup.string().required('Country is required!'),
+    deliveryEmail: Yup.string()
+      .email('Email not valid!')
+      .required('Email is required!'),
+    deliveryFirstName: Yup.string().required('First name is required!'),
+    deliveryLastName: Yup.string().required('Last name is required!'),
+    deliveryPhoneNumber: Yup.number().required('Phone number is required!'),
+    deliveryAdressLine1: Yup.string().required('Adress is required!'),
+    deliveryAdressLine2: Yup.string(),
+    deliveryCity: Yup.string().required('Required!'),
+    deliveryZipCode: Yup.string().required('Required!'),
+    deliveryCountry: Yup.string().required('Country is required!'),
     cardDetails: Yup.string().required('Card details are required!'),
     cardNumber: Yup.string()
       .min(16, 'Minimum 16 digits')

@@ -328,6 +328,7 @@ export const checkBox = mq({
   paddingLeft: 20,
   fontWeight: 'normal',
   position: 'relative',
+  userSelect: 'none',
 })
 
 export const customCheckBox = mq({
@@ -355,7 +356,7 @@ export const errorStyles = mq({
   left: '50%',
 })
 
-// ****************************  BBOTTOM LINK DECORATION
+// ****************************  BOTTOM LINK DECORATION
 
 export const bottomLinkDecoration = mq({
   textDecoration: 'none!important',
@@ -365,4 +366,8 @@ export const bottomLinkDecoration = mq({
     '#D9D9D7!important',
     '#7B7C81!important',
   ],
+})
+
+export const deliveryForm = mq({
+  paddingBottom: [38, 38, 38, 38, 73, 73],
 })
