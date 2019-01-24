@@ -379,19 +379,8 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
           {/*#######################       END            ##################*/}
 
           <div className={css(styles.cardInfoWrap)}>
-            <label className={css(styles.formLabels)}>
-              Card details
-              <Field
-                type="text"
-                name="cardDetails"
-                className={css(styles.inputWrapper)}
-              />
-              {touched.cardDetails && errors.cardDetails && (
-                <div className={css(styles.errorStyles)}>
-                  {errors.cardDetails}
-                </div>
-              )}
-            </label>
+            <p>Card details</p>
+
             <label className={css(styles.formLabels)}>
               Card number
               <Field
@@ -562,7 +551,6 @@ const FormikCheckOut = withFormik({
     deliveryZipCode,
     deliveryCountry,
     shiptoanotheradress,
-    cardDetails,
     cardNumber,
     nameOnCard,
     expiryYear,
@@ -587,7 +575,6 @@ const FormikCheckOut = withFormik({
       deliveryZipCode: deliveryZipCode || '',
       deliveryCountry: deliveryCountry || '',
       shiptoanotheradress: shiptoanotheradress || false,
-      cardDetails: cardDetails || '',
       cardNumber: cardNumber || '',
       nameOnCard: nameOnCard || '',
       expiryYear: expiryYear || '2019',
@@ -647,7 +634,6 @@ const FormikCheckOut = withFormik({
 
     // *************************** CARD DETAILS
 
-    cardDetails: Yup.string().required('Card details are required!'),
     cardNumber: Yup.string()
       .min(12, 'Minimum 12 digits')
       .required('Card number is required!'),
