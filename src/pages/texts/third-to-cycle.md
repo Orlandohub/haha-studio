@@ -1,16 +1,6 @@
 ---
 templateKey: text-page
-date: 2019-01-09T14:10:19.177Z
-title: Third to cycle
+date: 2019-01-23T05:30:00.000Z
+title: Does laughter connote play?
 ---
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Proposing playful products and experience is important for a designer. However, when starting HAHA, this was not quite the first message we wanted to share, or maybe not the only one. In fact, we are quite skeptical about the notion of “playfulness” as it is today widely used by cynical marketing agents, gaming groups or uninspired creators as a catch-all and empty motto. If we need to recognize the essence of our human character, we believe that is not in the four corners of our computer screen, neither in the false user-friendly formulas, or the illusionary work/play society models that are offered to us today.

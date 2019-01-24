@@ -1,6 +1,6 @@
 ---
 templateKey: product-page
-title: 'Liberty Lamp, Small'
+title: 'Liberty Lamp, Black'
 is_active: true
 date: 2019-01-10T12:45:54.119Z
 price: '75'
