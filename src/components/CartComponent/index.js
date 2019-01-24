@@ -24,22 +24,42 @@ class Cart extends React.Component {
     this.refreshItems = this.refreshItems.bind(this)
   }
 
-  add(id) {
-    this.setState(prevState => {
-      return { counter: prevState.counter + 1 }
+  add(id, quantity) {
+    const refreshItems = this.refreshItems
+    window.Snipcart.api.items.update(id, {
+      quantity: quantity + 1,
+    }).then(() => {
+      refreshItems()
     })
   }
 
-  substract(id) {
-    this.setState(prevState => {
-      return { counter: prevState.counter - 1 }
-    })
+  substract(id, quantity) {
+    const refreshItems = this.refreshItems
+    const hideCart = this.hideCart
+
+    quantity === 1 ?
+      window.Snipcart.api.items.remove(id)
+        .then(() => {
+          refreshItems()
+          window.Snipcart.api.items.count() === 0 ? hideCart() : null
+        })
+      :
+      window.Snipcart.api.items.update(id, {
+        quantity: quantity - 1,
+      }).then(() => {
+        refreshItems()
+      })
   }
 
   hideCart() {
     this.props.hideCart()
   }
   refreshItems() {
+    const { setItemsCount } = this.props
+
+    if (typeof setItemsCount !== 'undefined') {
+      setItemsCount()
+    }
     this.setState({
       items: window.Snipcart.api.items.all()
     })
@@ -55,6 +75,16 @@ class Cart extends React.Component {
       document.addEventListener('snipcart.ready', function() {
         refreshItems()
       })
+
+      window.Snipcart.subscribe('item.added', function () {
+        refreshItems()
+      })
+      window.Snipcart.subscribe('item.removed', function () {
+        refreshItems()
+      })
+      window.Snipcart.subscribe('item.updated', function () {
+        refreshItems()
+      })
     }
   }
 
@@ -63,7 +93,7 @@ class Cart extends React.Component {
   }
 
   render() {
-    const showElements = this.props.showElements
+    const { showElements } = this.props
     let counterValue = this.state.counter
     const { items } = this.state
     console.log('items', items);
@@ -135,17 +165,17 @@ class Cart extends React.Component {
                         </td>
                         :
                         <td className={css(styles.rowStylesRight)}>
-                          {counterValue < 2 ? (
+                          {item.quantity === 1 ? (
                             <button
                               className={css(styles.cardBtn)}
-                              onClick={this.substract(item.id)}
+                              onClick={() => this.substract(item.id, item.quantity)}
                             >
                               &times;
                             </button>
                           ) : (
                             <button
                               className={css(styles.cardBtn)}
-                              onClick={() => this.substract(item.id)}
+                              onClick={() => this.substract(item.id, item.quantity)}
                             >
                               -
                             </button>
@@ -153,7 +183,7 @@ class Cart extends React.Component {
                           <span className={css(styles.numWrap)}>
                             {item.quantity}
                           </span>
-                          <button className={css(styles.cardBtn)} onClick={() => this.add(item.id)}>
+                          <button className={css(styles.cardBtn)} onClick={() => this.add(item.id, item.quantity)}>
                             +
                           </button>
                         </td>
@@ -210,6 +240,7 @@ class Cart extends React.Component {
 Cart.propTypes = {
   showElements: PropTypes.bool.isRequired,
   hideCart: PropTypes.func.isRequired,
+  setItemsCount: PropTypes.func
 }
 
 export default Cart
