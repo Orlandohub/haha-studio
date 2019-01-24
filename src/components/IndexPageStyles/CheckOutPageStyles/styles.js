@@ -5,6 +5,7 @@ const breakpoints = [411, 576, 768, 1024, 1200, 1500]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const pageWrapper = mq({
+  userSelect: 'none',
   width: '100%',
   display: 'block',
   paddingTop: ['43px', '43px', '43px', '48px', '48px'],
@@ -323,10 +324,10 @@ export const purchaseBtn = mq({
 
 export const checkBox = mq({
   paddingTop: [44, 44, 44, 40, 40, 40],
-  paddingBottom: [38, 38, 38, 38, 73, 73],
   paddingLeft: 20,
   fontWeight: 'normal',
   position: 'relative',
+  userSelect: 'none',
 })
 
 export const customCheckBox = mq({
@@ -354,7 +355,7 @@ export const errorStyles = mq({
   left: '50%',
 })
 
-// ****************************  BBOTTOM LINK DECORATION
+// ****************************  BOTTOM LINK DECORATION
 
 export const bottomLinkDecoration = mq({
   textDecoration: 'none!important',
@@ -364,4 +365,22 @@ export const bottomLinkDecoration = mq({
     '#D9D9D7!important',
     '#7B7C81!important',
   ],
+})
+
+export const deliveryForm = mq({
+  maxHeight: '1000px',
+  transition: 'max-height 1s linear',
+  overflow: 'hidden',
+})
+
+export const deliveryFormHidden = mq(deliveryForm, {
+  maxHeight: '0px',
+})
+
+export const cardInfoWrap = mq({
+  paddingTop: [38, 38, 38, 38, 73, 73],
+})
+
+export const paddingWrap = mq({
+  height: [38, 38, 38, 38, 73, 73],
 })
