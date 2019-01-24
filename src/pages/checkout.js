@@ -13,6 +13,35 @@ import MaskedInput from 'react-text-mask'
 const date = new Date()
 const year = date.getFullYear()
 
+function connect() {
+  if (typeof window !== 'undefined') {
+    window.Snipcart.api.modal.show()
+    window.jQuery('.js-next').click()
+
+    window.jQuery('#snip-name').val('Yujin haha')
+    window.jQuery('#snip-address1').val('Tellusborgsvägen')
+    window.jQuery('#snip-city').val('Stockholm')
+    window.jQuery('#snip-country').val('Canada')
+    window.jQuery('#snip-country option').filter(function() {
+      return window.jQuery(this).text() === 'Sweden' 
+    }).prop('selected', true)
+    window.jQuery('#snip-postalCode').val('126 28')
+    window.jQuery('#snip-email').val('orlando.goncalves@gmail.com')
+    window.jQuery('#snip-phone').val('2134234234')
+
+    window.jQuery('#snipcart-next').click()
+    window.jQuery('#snip-type').val('visa')
+    window.jQuery('#snip-ownerName').val('Glenn Quagmire')
+    window.jQuery('#snip-number').val('4242424242424242')
+    window.jQuery('#snip-cvc').val('345')
+    window.jQuery('#snip-expirationMonth').val('5')
+    window.jQuery('#snip-expirationYear').val('2022')
+
+    setTimeout(function(){ window.jQuery('#snipcart-paymentmethod-pay').click() }, 1000)
+    setTimeout(function(){ window.jQuery('.js-submit').click() }, 1000)
+  }
+}
+
 const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
   return (
     <div className={css(styles.pageWrapper)}>
@@ -409,6 +438,7 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
             >
               COMPLETE PURCHASE
             </button>
+            <button type="button" onClick={connect}>CONNECT</button>
             <p className={css(styles.paragraphBottom)}>
               By completing your purchase you accept to the{' '}
               <Link
@@ -491,6 +521,7 @@ const FormikCheckOut = withFormik({
       .required('CVC is required!'),
   }),
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
+    console.log('handle submit values', values);
     setTimeout(() => {
       console.log('values are ' + values)
       // errors example below

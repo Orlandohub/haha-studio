@@ -67,6 +67,10 @@ injectGlobal`
   .ril-toolbar.ril__toolbar {
     display: none;
   }
+
+  .snip-layout {
+    visibility: hidden;
+  }
 `
 
 const Layout = ({ children, location }) => (

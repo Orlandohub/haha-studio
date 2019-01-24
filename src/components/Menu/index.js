@@ -132,46 +132,13 @@ class Menu extends Component {
     this.setActiveMenu()
     const setItemsCount = this.setItemsCount
 
-    fetch("https://app.snipcart.com/api/orders", {
-      credentials: 'include',
-      mode: "no-cors",
-      headers: {
-        Accept: "application/json",
-        Authorization: "user YWFlODEyNzctZWIxNy00ZjBiLTliY2ItYzg1ZmM2MWMyNmM1NjM2ODMxNTM0MjQwMDE1NzI5"
-      }
-    })
-      .then(response => {
-        console.log('response', response);
-        return response.json().then(json => {
-          console.log('RESPONSE json', json);
-          if (response.ok) {
-            return json;
-          } else {
-            return Promise.reject(
-              Object.assign({}, json, {
-                status: response.status,
-                statusText: response.statusText
-              })
-            );
-          }
-        });
-      })
-      .catch(error => {
-        console.log('error', error);
-      })
-
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       setItemsCount()
 
       window.Snipcart.subscribe('page.changed', function (page) {
         console.log('page', page)
-        var cart = Snipcart.api.cart.get();
-        console.log('cart', cart);
+        // clearInterval(paymentDetailsButton)
       })
-
-      Snipcart.subscribe('order.completed', function (data) {
-          console.log('ORDER', data);
-      });
 
       document.addEventListener('snipcart.ready', function() {
         setItemsCount()

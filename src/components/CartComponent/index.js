@@ -96,7 +96,6 @@ class Cart extends React.Component {
     const { showElements } = this.props
     let counterValue = this.state.counter
     const { items } = this.state
-    console.log('items', items);
     return (
       <div
         className={
@@ -143,7 +142,6 @@ class Cart extends React.Component {
           <tbody>
             {
               map(items, item => {
-                console.log('item', item);
                 return (
                   <tr key={item.id}>
                     {showElements && (
