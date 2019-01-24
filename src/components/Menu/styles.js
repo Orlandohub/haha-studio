@@ -95,6 +95,19 @@ export const subMenuLinkInactive = mq(subMenuLink, {
   },
 })
 
+export const subMenuLinkActiveShop = mq(subMenuLink, {
+  color: ['#000000', '#000000', '#000000', '#000000', '#000000'],
+  marginRight: [8, 19, 19, 41],
+})
+
+export const subMenuLinkInactiveShop = mq(subMenuLink, {
+  color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7'],
+  ':hover': {
+    color: '#C1C1C1',
+  },
+  marginRight: [8, 19, 19, 41],
+})
+
 // --> MENU SHOP ITEM & LINK
 export const shopWrap = mq({
   paddingTop: ['25px', '25px', '25px', '25px', '0'],
@@ -129,12 +142,11 @@ export const cartShowBtn = mq({
   borderRadius: 50,
   border: 'none',
   outline: 'none',
-  width: [12, 12, 25],
-  height: [12, 12, 25],
-  marginLeft: [8, 19, 19, 41],
+  width: [12, 12, 22],
+  height: [12, 12, 22],
   fontSize: [8, 8, 20],
-  lineHeight: 1,
-  padding: 1,
+  lineHeight: 0,
+  padding: 2,
 })
 
 export const cartShowBtnHidden = mq(cartShowBtn, {
@@ -144,18 +156,16 @@ export const cartShowBtnHidden = mq(cartShowBtn, {
 export const cartWrapper = mq({
   display: 'block',
   position: 'absolute',
-  paddingLeft: 29,
-  paddingRight: 29,
   top: 0,
   right: 0,
   width: ['100%', '100%', '462px', '462px', '462px', 462],
-  transform: 'translateX(0%)',
   height: '100%',
-  transition: 'all 0.5s',
+  transition: 'all 0.7s',
   backgroundColor: 'white',
   zIndex: 100,
 })
 
 export const cartWrapperHidden = mq(cartWrapper, {
-  transform: 'translateX(100%)',
+  width: '0px!important',
+  right: '-100%',
 })

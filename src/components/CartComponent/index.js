@@ -138,34 +138,45 @@ class Cart extends React.Component {
         {/* #######################################   BOTTOM PART   ##################################### */}
 
         {showElements === false ? (
-          <div className={css(styles.subtotalWrapper)}>
-            <table style={{ width: '100%' }}>
-              <tbody>
-                <tr>
-                  <td
-                    style={{
-                      textAlign: 'left',
-                    }}
-                  >
-                    Subtotal
-                    <br /> <br /> <br />
-                    Shipping & taxes calculated at checkout <br />
-                  </td>
-                  <td style={{ textAlign: 'right', verticalAlign: 'initial' }}>
-                    {this.state.counter * this.state.price}
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div
+            style={{
+              position: 'absolute',
+              width: '100%',
+              bottom: 0,
+              paddingRight: 58,
+            }}
+          >
+            <div className={css(styles.subtotalWrapper)}>
+              <table style={{ width: '100%' }}>
+                <tbody>
+                  <tr>
+                    <td
+                      style={{
+                        textAlign: 'left',
+                      }}
+                    >
+                      Subtotal
+                      <br /> <br /> <br />
+                      Shipping & taxes calculated at checkout <br />
+                    </td>
+                    <td
+                      style={{ textAlign: 'right', verticalAlign: 'initial' }}
+                    >
+                      {this.state.counter * this.state.price}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
 
-            <button
-              className={css(styles.checkOutBtn)}
-              onClick={() => navigate('/checkout/')}
-              role="link"
-              tabIndex="0"
-            >
-              CHECKOUT
-            </button>
+              <button
+                className={css(styles.checkOutBtn)}
+                onClick={() => navigate('/checkout/')}
+                role="link"
+                tabIndex="0"
+              >
+                CHECKOUT
+              </button>
+            </div>
           </div>
         ) : null}
       </div>

@@ -261,8 +261,8 @@ class Menu extends Component {
                 onClick={() => navigate('/shop/')}
                 className={
                   this.isShopCurrentPath()
-                    ? css(styles.subMenuLinkActive)
-                    : css(styles.subMenuLinkInactive)
+                    ? css(styles.subMenuLinkActiveShop)
+                    : css(styles.subMenuLinkInactiveShop)
                 }
               >
                 shop

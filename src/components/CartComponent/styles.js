@@ -12,6 +12,8 @@ export const cartWrapper = mq({
   position: 'relative',
   width: '100%',
   height: '100%',
+  paddingLeft: 29,
+  paddingRight: 29,
 })
 
 // ****************************** WRAPPER TO RENDER ON CHECK OUT PAGE
@@ -39,7 +41,7 @@ export const imageWrap = mq({
 
 export const subtotalWrapper = mq({
   width: '100%',
-  position: 'absolute',
+  position: 'relative',
   bottom: 0,
   right: 0,
   borderTop: '2px solid black',
