@@ -90,6 +90,9 @@ export const subMenuLinkActive = mq(subMenuLink, {
 
 export const subMenuLinkInactive = mq(subMenuLink, {
   color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7'],
+  ':hover': {
+    color: '#C1C1C1',
+  },
 })
 
 // --> MENU SHOP ITEM & LINK
@@ -131,6 +134,7 @@ export const cartShowBtn = mq({
   marginLeft: [8, 19, 19, 41],
   fontSize: [8, 8, 20],
   lineHeight: 1,
+  padding: 1,
 })
 
 export const cartShowBtnHidden = mq(cartShowBtn, {

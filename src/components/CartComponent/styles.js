@@ -28,7 +28,7 @@ export const cartHeader = mq({
   position: 'relative',
   width: '100%',
   borderBottom: '2px solid black',
-  fontSize: '20px',
+  fontSize: ['14px', '14px', '20px', '20px', '20px'],
 })
 
 export const imageWrap = mq({
@@ -92,10 +92,13 @@ export const hideBtn = mq({
   marginTop: 5,
   border: 'none',
   outline: 'none',
-  width: 19.5,
-  height: 19.5,
+  width: [10, 10, 19.5, 19.5],
+  height: [10, 10, 19.5, 19.5],
   backgroundColor: 'transparent',
   backgroundImage: `url(${crossImg})`,
+  backgroundPosition: 'center!important',
+  backgroundRepeat: 'no-repeat!important',
+  backgroundSize: 'cover!important',
 })
 
 export const checkOutBtn = mq({
