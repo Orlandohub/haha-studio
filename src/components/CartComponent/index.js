@@ -74,7 +74,7 @@ class Cart extends React.Component {
                     </p>
                   </td>
                   <td>
-                    <p style={{ textAlign: 'right' }}>
+                    <p style={{ textAlign: 'right', margin: 0 }}>
                       <button
                         className={css(styles.hideBtn)}
                         onClick={this.hideCart}

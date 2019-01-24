@@ -236,6 +236,7 @@ export const inputWrapper = mq({
   float: 'right',
   outline: 'none',
   border: 'none',
+  borderRadius: '0px!important',
   borderBottom: '1.5px solid black',
 })
 
@@ -251,6 +252,7 @@ export const halfWidthFormsInputs = mq(halfWidthForms, {
   width: ['62%', '70%', '70%', '40%', '50%', '32%', '50%'],
   outline: 'none',
   border: 'none',
+  borderRadius: '0px!important',
   borderBottom: '1.5px solid black',
 })
 
@@ -271,7 +273,6 @@ export const halfWidthDateCenter = mq(halfWidthDate, {
 
 export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
   width: ['62%', '40%', '40%', '40%', '50%', '32%', '50%'],
-
   WebkitAppearance: 'none',
   MozAppearance: 'none',
   appearance: 'none',
