@@ -1,18 +1,21 @@
 ---
 templateKey: project-page
-title: Alias
+title: Alia
 is_selected: true
-project_assistant: Studio Dejawo
-photo_credits: HAHA Studio and Charlie Drevstam
-producer: HAHA Studio
+project_assistant: Studio Dejawu
+photo_credits: HAHA studio & Charlie Drevstam
+producer: HAHA studio
 year: '2017'
-date: 2016-12-17T15:04:10.000Z
+date: 2017-11-01T00:58:00.000Z
 image_gallery:
-  - image: /assets/uploads/d_portrait_image.jpg
+  - image: /assets/uploads/project_alia_cover_01.jpg
     is_cover: true
-  - image: /assets/uploads/d_homepage_image_01.jpg
+  - image: /assets/uploads/project_alia_02.jpg
+  - image: /assets/uploads/project_alia_03.jpg
+  - image: /assets/uploads/project_alia_04.jpg
+  - image: /assets/uploads/project_alia_05.jpg
 ---
-Alia, Latin for “Change”, is a candle holder that does exactly that. Made from a single repeating branch, Alia is all about creating free compositions. One branch works alone, but stacking more is just so much more impressive.
+Alia, Latin for “Change” , is a candle holder that does exactly that. Made from a single repeating branch, Alia is all about creating free compositions. One branch works alone, but stacking more is just so much more impressive. 
 
 <br>
 
