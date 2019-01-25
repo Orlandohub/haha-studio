@@ -6,11 +6,12 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const pageWrapper = mq({
   userSelect: 'none',
+  position: 'relative',
   width: '100%',
   display: 'block',
   paddingTop: ['43px', '43px', '43px', '48px', '48px'],
-  paddingLeft: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
-  paddingRight: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
+  //paddingLeft: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
+  //paddingRight: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
 })
 
 export const brand = mq({
@@ -77,9 +78,6 @@ export const cartWrapper = mq({
   fontSize: [14, 14, 14, 22, 22],
   color: 'black',
   overflowY: 'auto',
-  '& > ::-webkit-scrollbar': {
-    display: 'none!important',
-  },
 })
 
 export const orderStyles = mq({

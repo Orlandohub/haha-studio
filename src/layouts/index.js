@@ -24,7 +24,7 @@ injectGlobal`
   html, body, #___gatsby, div[role=group] {
     font-family: "Ginto Normal Regular";
     height: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden;    
   }
   img {
     max-width: 100%;
