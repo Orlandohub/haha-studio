@@ -130,7 +130,7 @@ class Menu extends Component {
     const { data } = this.props
 
     return (
-      <div className={css(styles.menuContainer)}>
+      <div id="Menu" className={css(styles.menuContainer)}>
         <div className={css(styles.brand)}>
           <div className={css(styles.logoWrap)}>
             <Link

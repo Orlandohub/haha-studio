@@ -38,8 +38,7 @@ export const ProjectsTemplate = ({
             <Carousel images={galleryImages} />
           </div>
         </div>
-        <div className={css(styles.projectTitle)}>
-        </div>
+        <div className={css(styles.projectTitle)} />
         <div className={css(styles.textWrapper)}>
           <p className={css(styles.styledParagraph)}>
             Year: {year}
@@ -81,7 +80,6 @@ ProjectsTemplate.propTypes = {
   cmsImageGallery: PropTypes.object,
   helmet: PropTypes.object,
 }
-
 
 const Project = ({ data, pageContext, location }) => {
   const { markdownRemark: post } = data
