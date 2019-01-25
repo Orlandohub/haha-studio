@@ -14,7 +14,6 @@ export const cartWrapper = mq({
   height: '100%',
   paddingLeft: 29,
   paddingRight: 29,
-  overflow: 'hidden',
 })
 
 // ****************************** WRAPPER TO RENDER ON CHECK OUT PAGE

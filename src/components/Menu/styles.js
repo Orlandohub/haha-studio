@@ -158,7 +158,7 @@ export const cartWrapper = mq({
   position: 'absolute',
   top: 0,
   right: 0,
-  maxWidth: ['100%', '100%', '462px', '462px', '462px', 462],
+  width: ['100%', '100%', '462px', '462px', '462px', 462],
   height: '100%',
   transition: 'all 0.7s',
   backgroundColor: 'white',
@@ -167,6 +167,7 @@ export const cartWrapper = mq({
 })
 
 export const cartWrapperHidden = mq(cartWrapper, {
-  maxWidth: '0px!important',
-  //right: '-100%',
+  width: '0px!important',
+  right: '-300%',
+  transitionDelay: '0.3s',
 })
