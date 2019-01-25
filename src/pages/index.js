@@ -45,9 +45,9 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    fileName: file(relativePath: { eq: "logo_large.png" }) {
+    fileName: file(relativePath: { eq: "00_D_logo_landing_page.png" }) {
       childImageSharp {
-        fluid(maxWidth: 1060) {
+        fluid(maxWidth: 2120) {
           ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
