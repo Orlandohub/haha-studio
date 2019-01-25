@@ -61,7 +61,7 @@ export const shopWrapRight = mq(shopWrap, {
   display: ['none', 'none', 'none', 'none', 'none', 'block'],
   width: '100%',
   lineHeight: 1.38,
-  paddingBottom: [89, 89, 89, 89, 132, 132],
+  paddingBottom: [89, 89, 89, 89, 133, 133],
 })
 
 export const cartWrapper = mq({
@@ -77,7 +77,7 @@ export const cartWrapper = mq({
   width: ['100%', '100%', '100%', '100%', '100%', '35%'],
   fontSize: [14, 14, 14, 22, 22],
   color: 'black',
-  //overflowY: 'auto',
+  overflowY: 'auto',
 })
 
 export const orderStyles = mq({
