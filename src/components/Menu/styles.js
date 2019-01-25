@@ -163,6 +163,7 @@ export const cartWrapper = mq({
   transition: 'all 0.7s',
   backgroundColor: 'white',
   zIndex: 100,
+  overflow: 'hidden',
 })
 
 export const cartWrapperHidden = mq(cartWrapper, {
