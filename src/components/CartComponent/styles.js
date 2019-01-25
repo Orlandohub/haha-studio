@@ -8,12 +8,14 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const cartWrapper = mq({
   fontSize: ['14px', '14px', '14px', '18px', '18px', '18px'],
-  display: 'block',
+  display: 'flex',
+  flexFlow: 'column',
   position: 'relative',
   width: '100%',
-  height: '100%',
+  minHeight: '100%',
   paddingLeft: 29,
   paddingRight: 29,
+  overflowY: 'auto',
 })
 
 // ****************************** WRAPPER TO RENDER ON CHECK OUT PAGE

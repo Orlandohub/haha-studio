@@ -90,93 +90,85 @@ class Cart extends React.Component {
         {/* *********************** HEADER END ************************* */}
 
         {counterValue > 0 ? (
-          <table className={css(styles.tableStyles)}>
-            <tbody>
-              <tr>
-                {showElements && (
-                  <td className={css(styles.rowStyles)}>
-                    <img
-                      className={css(styles.imageWrap)}
-                      src={prImgDesk}
-                      alt="product image"
-                    />
-                  </td>
-                )}
-                <td className={css(styles.rowStyles)}>{this.state.name}</td>
-                <td className={css(styles.rowStylesRight)}>
-                  {counterValue < 2 ? (
-                    <button
-                      className={css(styles.cardBtn)}
-                      onClick={this.substract}
-                    >
-                      &times;
-                    </button>
-                  ) : (
-                    <button
-                      className={css(styles.cardBtn)}
-                      onClick={this.substract}
-                    >
-                      -
-                    </button>
+          <div style={{ marginBottom: 'auto' }}>
+            {' '}
+            <table className={css(styles.tableStyles)}>
+              <tbody>
+                <tr>
+                  {showElements && (
+                    <td className={css(styles.rowStyles)}>
+                      <img
+                        className={css(styles.imageWrap)}
+                        src={prImgDesk}
+                        alt="product image"
+                      />
+                    </td>
                   )}
-                  <span className={css(styles.numWrap)}>
-                    {this.state.counter}
-                  </span>
-                  <button className={css(styles.cardBtn)} onClick={this.add}>
-                    +
-                  </button>
-                </td>
+                  <td className={css(styles.rowStyles)}>{this.state.name}</td>
+                  <td className={css(styles.rowStylesRight)}>
+                    {counterValue < 2 ? (
+                      <button
+                        className={css(styles.cardBtn)}
+                        onClick={this.substract}
+                      >
+                        &times;
+                      </button>
+                    ) : (
+                      <button
+                        className={css(styles.cardBtn)}
+                        onClick={this.substract}
+                      >
+                        -
+                      </button>
+                    )}
+                    <span className={css(styles.numWrap)}>
+                      {this.state.counter}
+                    </span>
+                    <button className={css(styles.cardBtn)} onClick={this.add}>
+                      +
+                    </button>
+                  </td>
 
-                <td className={css(styles.rowStylesRight)}>
-                  {this.state.counter * this.state.price} &#8364;
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  <td className={css(styles.rowStylesRight)}>
+                    {this.state.counter * this.state.price} &#8364;
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         ) : null}
 
         {/* #######################################   BOTTOM PART   ##################################### */}
 
         {showElements === false ? (
-          <div
-            style={{
-              position: 'absolute',
-              width: '100%',
-              bottom: 0,
-              paddingRight: 58,
-            }}
-          >
-            <div className={css(styles.subtotalWrapper)}>
-              <table style={{ width: '100%' }}>
-                <tbody>
-                  <tr>
-                    <td
-                      style={{
-                        textAlign: 'left',
-                      }}
-                    >
-                      Subtotal
-                      <br /> <br /> <br />
-                      Shipping & taxes calculated at checkout <br />
-                    </td>
-                    <td
-                      style={{ textAlign: 'right', verticalAlign: 'initial' }}
-                    >
-                      {this.state.counter * this.state.price}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+          <div className={css(styles.subtotalWrapper)}>
+            <table style={{ width: '100%' }}>
+              <tbody>
+                <tr>
+                  <td
+                    style={{
+                      textAlign: 'left',
+                    }}
+                  >
+                    Subtotal
+                    <br /> <br /> <br />
+                    Shipping & taxes calculated at checkout <br />
+                  </td>
+                  <td style={{ textAlign: 'right', verticalAlign: 'initial' }}>
+                    {this.state.counter * this.state.price}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 
-              <button
-                className={css(styles.checkOutBtn)}
-                onClick={() => navigate('/checkout/')}
-                role="link"
-                tabIndex="0"
-              >
-                CHECKOUT
-              </button>
-            </div>
+            <button
+              className={css(styles.checkOutBtn)}
+              onClick={() => navigate('/checkout/')}
+              role="link"
+              tabIndex="0"
+            >
+              CHECKOUT
+            </button>
           </div>
         ) : null}
       </div>
