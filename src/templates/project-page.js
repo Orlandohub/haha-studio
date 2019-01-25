@@ -54,12 +54,14 @@ export const ProjectsTemplate = ({
             <PostContent content={content} />
           </div>
         </div>
-        <NavFooter
-          linkLeft={`${pageContext.prev}`}
-          linkRight={`${pageContext.next}`}
-          linkText="/selected/"
-          text="view all"
-        />
+        <div className={css(styles.footerWrap)}>
+          <NavFooter
+            linkLeft={`${pageContext.prev}`}
+            linkRight={`${pageContext.next}`}
+            linkText="/selected/"
+            text="view all"
+          />
+        </div>
       </div>
     </Layout>
   )
