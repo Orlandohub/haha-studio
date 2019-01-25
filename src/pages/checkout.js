@@ -24,7 +24,7 @@ const year = date.getFullYear()
 
 const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
   return (
-    <Layout>
+    <Layout hideMenu={true}>
       {' '}
       <div className={css(styles.pageWrapper)}>
         <div className={css(styles.cartWrapper)}>

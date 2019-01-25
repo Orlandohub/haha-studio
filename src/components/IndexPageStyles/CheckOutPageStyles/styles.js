@@ -6,7 +6,7 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const pageWrapper = mq({
   userSelect: 'none',
-  position: 'relative',
+  //position: 'relative',
   width: '100%',
   display: 'block',
   paddingTop: ['43px', '43px', '43px', '48px', '48px'],
@@ -77,7 +77,7 @@ export const cartWrapper = mq({
   width: ['100%', '100%', '100%', '100%', '100%', '35%'],
   fontSize: [14, 14, 14, 22, 22],
   color: 'black',
-  overflowY: 'auto',
+  //overflowY: 'auto',
 })
 
 export const orderStyles = mq({
