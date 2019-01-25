@@ -167,5 +167,5 @@ export const cartWrapper = mq({
 
 export const cartWrapperHidden = mq(cartWrapper, {
   width: '0px!important',
-  right: '-100%',
+  //right: '-100%',
 })
