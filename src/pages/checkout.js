@@ -35,6 +35,12 @@ const CheckOut = ({ data, values, errors, touched, isSubmitting, typed }) => {
         </div>
 
         <Cart showElements={true} />
+        <Cart showElements={true} />
+        <Cart showElements={true} />
+        <Cart showElements={true} />
+        <Cart showElements={true} />
+        <Cart showElements={true} />
+        <Cart showElements={true} />
 
         {/* #############################    DISCOUNT SUBMISSION     #############################*/}
 
