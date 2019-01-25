@@ -4,44 +4,42 @@ import { css } from 'emotion'
 import footerArrow from '../../images/03_D_footer_arrow_project_page.png'
 import * as styles from './styles'
 import Link from 'gatsby-link'
+import { genericHashLink } from 'react-router-hash-link'
+
+const MyHashLink = props => genericHashLink(props, Link)
 
 const NavFooter = props => {
-  const {
-    linkLeft,
-    linkRight,
-    linkText,
-    text
-  } = props
+  const { linkLeft, linkRight, linkText, text } = props
   return (
     <div className={css(styles.footerWrapper)}>
       <span className={css(styles.spanLeft)}>
-        <Link to={linkLeft} className={css(styles.linkStyle)}>
+        <MyHashLink to={`${linkLeft}#Menu`} className={css(styles.linkStyle)}>
           <img
             className={css(styles.arrowLeft)}
             src={footerArrow}
             alt="arrow left"
           />
-        </Link>
+        </MyHashLink>
       </span>
 
       <span className={css(styles.spanCenter)}>
         {' '}
         <p className={css(styles.paragraph)}>
-          <Link to={linkText} className={css(styles.linkText)}>
+          <MyHashLink to={`${linkText}#Menu`} className={css(styles.linkText)}>
             {text}
-          </Link>
+          </MyHashLink>
         </p>
       </span>
 
       <span className={css(styles.spanRight)}>
         {' '}
-        <Link to={linkRight} className={css(styles.linkStyle)}>
+        <MyHashLink to={`${linkRight}#Menu`} className={css(styles.linkStyle)}>
           <img
             className={css(styles.arrowRight)}
             src={footerArrow}
             alt="arrowr right"
           />
-        </Link>
+        </MyHashLink>
       </span>
     </div>
   )

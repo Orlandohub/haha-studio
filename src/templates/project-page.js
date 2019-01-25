@@ -38,8 +38,7 @@ export const ProjectsTemplate = ({
             <Carousel images={galleryImages} />
           </div>
         </div>
-        <div className={css(styles.projectTitle)}>
-        </div>
+        <div className={css(styles.projectTitle)} />
         <div className={css(styles.textWrapper)}>
           <p className={css(styles.styledParagraph)}>
             Year: {year}
@@ -55,12 +54,14 @@ export const ProjectsTemplate = ({
             <PostContent content={content} />
           </div>
         </div>
-        <NavFooter
-          linkLeft={`${pageContext.prev}`}
-          linkRight={`${pageContext.next}`}
-          linkText="/selected/"
-          text="view all"
-        />
+        <div className={css(styles.footerWrap)}>
+          <NavFooter
+            linkLeft={`${pageContext.prev}`}
+            linkRight={`${pageContext.next}`}
+            linkText="/selected/"
+            text="view all"
+          />
+        </div>
       </div>
     </Layout>
   )
@@ -81,7 +82,6 @@ ProjectsTemplate.propTypes = {
   cmsImageGallery: PropTypes.object,
   helmet: PropTypes.object,
 }
-
 
 const Project = ({ data, pageContext, location }) => {
   const { markdownRemark: post } = data

@@ -90,49 +90,52 @@ class Cart extends React.Component {
         {/* *********************** HEADER END ************************* */}
 
         {counterValue > 0 ? (
-          <table className={css(styles.tableStyles)}>
-            <tbody>
-              <tr>
-                {showElements && (
-                  <td className={css(styles.rowStyles)}>
-                    <img
-                      className={css(styles.imageWrap)}
-                      src={prImgDesk}
-                      alt="product image"
-                    />
-                  </td>
-                )}
-                <td className={css(styles.rowStyles)}>{this.state.name}</td>
-                <td className={css(styles.rowStylesRight)}>
-                  {counterValue < 2 ? (
-                    <button
-                      className={css(styles.cardBtn)}
-                      onClick={this.substract}
-                    >
-                      &times;
-                    </button>
-                  ) : (
-                    <button
-                      className={css(styles.cardBtn)}
-                      onClick={this.substract}
-                    >
-                      -
-                    </button>
+          <div style={{ marginBottom: 'auto' }}>
+            {' '}
+            <table className={css(styles.tableStyles)}>
+              <tbody>
+                <tr>
+                  {showElements && (
+                    <td className={css(styles.rowStyles)}>
+                      <img
+                        className={css(styles.imageWrap)}
+                        src={prImgDesk}
+                        alt="product image"
+                      />
+                    </td>
                   )}
-                  <span className={css(styles.numWrap)}>
-                    {this.state.counter}
-                  </span>
-                  <button className={css(styles.cardBtn)} onClick={this.add}>
-                    +
-                  </button>
-                </td>
+                  <td className={css(styles.rowStyles)}>{this.state.name}</td>
+                  <td className={css(styles.rowStylesRight)}>
+                    {counterValue < 2 ? (
+                      <button
+                        className={css(styles.cardBtn)}
+                        onClick={this.substract}
+                      >
+                        &times;
+                      </button>
+                    ) : (
+                      <button
+                        className={css(styles.cardBtn)}
+                        onClick={this.substract}
+                      >
+                        -
+                      </button>
+                    )}
+                    <span className={css(styles.numWrap)}>
+                      {this.state.counter}
+                    </span>
+                    <button className={css(styles.cardBtn)} onClick={this.add}>
+                      +
+                    </button>
+                  </td>
 
-                <td className={css(styles.rowStylesRight)}>
-                  {this.state.counter * this.state.price} &#8364;
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  <td className={css(styles.rowStylesRight)}>
+                    {this.state.counter * this.state.price} &#8364;
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         ) : null}
 
         {/* #######################################   BOTTOM PART   ##################################### */}

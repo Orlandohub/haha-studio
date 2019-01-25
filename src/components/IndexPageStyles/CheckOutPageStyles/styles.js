@@ -6,11 +6,12 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const pageWrapper = mq({
   userSelect: 'none',
+  //position: 'relative',
   width: '100%',
   display: 'block',
   paddingTop: ['43px', '43px', '43px', '48px', '48px'],
-  paddingLeft: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
-  paddingRight: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
+  //paddingLeft: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
+  //paddingRight: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
 })
 
 export const brand = mq({
@@ -60,21 +61,23 @@ export const shopWrapRight = mq(shopWrap, {
   display: ['none', 'none', 'none', 'none', 'none', 'block'],
   width: '100%',
   lineHeight: 1.38,
-  paddingBottom: [89, 89, 89, 89, 132, 132],
+  paddingBottom: [89, 89, 89, 89, 133, 133],
 })
 
 export const cartWrapper = mq({
+  minHeight: '100%',
   position: [
     'relative',
     'relative',
     'relative',
     'relative',
     'relative',
-    'fixed',
+    'absolute',
   ],
   width: ['100%', '100%', '100%', '100%', '100%', '35%'],
   fontSize: [14, 14, 14, 22, 22],
   color: 'black',
+  overflowY: 'auto',
 })
 
 export const orderStyles = mq({

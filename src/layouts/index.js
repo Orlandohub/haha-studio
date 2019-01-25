@@ -24,7 +24,7 @@ injectGlobal`
   html, body, #___gatsby, div[role=group] {
     font-family: "Ginto Normal Regular";
     height: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden;    
   }
   img {
     max-width: 100%;
@@ -69,7 +69,7 @@ injectGlobal`
   }
 `
 
-const Layout = ({ children, location }) => (
+const Layout = ({ children, location, hideMenu }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -113,7 +113,8 @@ const Layout = ({ children, location }) => (
           />
           <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
         </Helmet>
-        <Menu location={location} data={data} />
+        {!hideMenu && <Menu location={location} data={data} />}
+
         <div className={css(styles.pageWrapper)}>
           <PageTransition>{children}</PageTransition>
         </div>
