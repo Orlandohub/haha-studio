@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import { navigate } from 'gatsby'
 import * as styles from './styles'
-import prImgDesk from '../../images/D_product_thumbnail_checkout_page.jpg'
 
 class Cart extends React.Component {
   constructor() {
@@ -96,6 +95,7 @@ class Cart extends React.Component {
     const { showElements } = this.props
     let counterValue = this.state.counter
     const { items } = this.state
+    console.log('items', items);
     return (
       <div
         className={

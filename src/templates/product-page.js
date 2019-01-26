@@ -8,56 +8,80 @@ import Content, { HTMLContent } from '../components/Content'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/ShopProductPageStyles/styles'
 
-export const ProductPageTemplate = ({
-  content,
-  contentComponent,
-  pageContext,
-  location,
-  title,
-  price,
-  imageGallery,
-  productId,
-  slug,
-  thumbnail,
-}) => {
-  const PageContent = contentComponent || Content
+class ProductPageTemplate extends React.Component {
+  constructor(props) {
+    super(props)
 
-  return (
-    <Layout location={location}>
-      <div className={css(styles.shopProductWrapper)}>
-        <div className={css(styles.leftTitleColumn)}>{title}</div>
-        <div className={css(styles.mainBodyWrapper)}>
-          <Carousel images={imageGallery} isProduct={true} />
-          <div className={css(styles.productDescriptionWrapper)}>
-            <PageContent className="content" content={content} />
-            <br />
-            <br />
-            {price} €
+    const { color_name } = props.imageGallery[0]
+  
+    this.state = {
+      color_name
+    }
+
+    this.updateColor = this.updateColor.bind(this)
+  }
+
+  updateColor(color_name) {
+    this.setState({
+      color_name
+    })
+  }
+  
+  render() {
+    const {
+      content,
+      contentComponent,
+      pageContext,
+      location,
+      title,
+      price,
+      imageGallery,
+      productId,
+      slug,
+      thumbnail,
+    } = this.props
+
+    const { color_name } = this.state
+
+    const PageContent = contentComponent || Content
+
+    return (
+      <Layout location={location}>
+        <div className={css(styles.shopProductWrapper)}>
+          <div className={css(styles.leftTitleColumn)}>{title}</div>
+          <div className={css(styles.mainBodyWrapper)}>
+            <Carousel updateColor={this.updateColor} images={imageGallery} isProduct={true} />
+            <div className={css(styles.productDescriptionWrapper)}>
+              <PageContent className="content" content={content} />
+              <br />
+              <br />
+              {price} €
+            </div>
+            <button
+              className={`${css(styles.cardButton)} snipcart-add-item`}
+              data-item-id={productId}
+              data-item-name={`${title} ${color_name && `- ${color_name}`}`}
+              data-item-price={price}
+              data-item-url={slug}
+              data-item-image={thumbnail}>
+                   ADD TO CART
+            </button>
+            <a href="#" className="snipcart-checkout">Click here to checkout</a>
+            <div className="snipcart-summary">
+                Number of items: <span className="snipcart-total-items"></span>
+                Total price: <span className="snipcart-total-price"></span>
+            </div>
+            <NavFooter
+              linkText="/shop/"
+              text="shop"
+              linkLeft={pageContext.prev}
+              linkRight={pageContext.next}
+            />
           </div>
-          <button
-            className={`${css(styles.cardButton)} snipcart-add-item`}
-            data-item-id={productId}
-            data-item-name={title}
-            data-item-price={price}
-            data-item-url={slug}
-            data-item-image={thumbnail}>
-                 ADD TO CART
-          </button>
-          <a href="#" className="snipcart-checkout">Click here to checkout</a>
-          <div className="snipcart-summary">
-              Number of items: <span className="snipcart-total-items"></span>
-              Total price: <span className="snipcart-total-price"></span>
-          </div>
-          <NavFooter
-            linkText="/shop/"
-            text="shop"
-            linkLeft={pageContext.prev}
-            linkRight={pageContext.next}
-          />
         </div>
-      </div>
-    </Layout>
-  )
+      </Layout>
+    )
+  }
 }
 
 ProductPageTemplate.propTypes = {
