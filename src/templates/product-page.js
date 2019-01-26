@@ -1,5 +1,5 @@
 import React from 'react'
-import { upperCase } from 'lodash'
+import { capitalize, map } from 'lodash'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import Carousel from '../components/Carousel'
@@ -58,15 +58,22 @@ class ProductPageTemplate extends React.Component {
               <br />
               {price} €
             </div>
-            <button
-              className={`${css(styles.cardButton)} snipcart-add-item`}
-              data-item-id={productId}
-              data-item-name={`${title} ${color_name && `- ${upperCase(color_name)}`}`}
-              data-item-price={price}
-              data-item-url={slug}
-              data-item-image={thumbnail}>
-                   ADD TO CART
-            </button>
+            {
+              map(imageGallery, media => {
+                return (
+                  <button
+                    style={{ display: media.color_name === color_name ? 'inline-block' : 'none' }}
+                    className={`${css(styles.cardButton)} snipcart-add-item`}
+                    data-item-id={`${productId} ${color_name && `- ${capitalize(color_name)}`}`}
+                    data-item-name={`${title} ${color_name && `- ${capitalize(color_name)}`}`}
+                    data-item-price={price}
+                    data-item-url={slug}
+                    data-item-image={thumbnail}>
+                         ADD TO CART
+                  </button>
+                )
+              })
+            }
             <a href="#" className="snipcart-checkout">Click here to checkout</a>
             <div className="snipcart-summary">
                 Number of items: <span className="snipcart-total-items"></span>

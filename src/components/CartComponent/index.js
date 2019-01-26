@@ -15,6 +15,7 @@ class Cart extends React.Component {
       activeClass: css(styles.cartWrapper),
       counter: 1,
       items: [],
+      total: 0,
     }
 
     this.hideCart = this.hideCart.bind(this)
@@ -71,8 +72,18 @@ class Cart extends React.Component {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       refreshItems()
 
-      document.addEventListener('snipcart.ready', function() {
+      const cart = window.Snipcart.api.cart.get()
+      this.setState({
+        total: cart && cart.total
+      })
+
+      document.addEventListener('snipcart.ready', () => {
         refreshItems()
+
+        const carts = window.Snipcart.api.cart.get()
+        this.setState({
+          total: carts && carts.total
+        })
       })
 
       window.Snipcart.subscribe('item.added', function () {
@@ -93,9 +104,7 @@ class Cart extends React.Component {
 
   render() {
     const { showElements } = this.props
-    let counterValue = this.state.counter
-    const { items } = this.state
-    console.log('items', items);
+    const { items, total } = this.state
     return (
       <div
         className={
@@ -187,7 +196,7 @@ class Cart extends React.Component {
                     }
 
                     <td className={css(styles.rowStylesRight)}>
-                      {this.state.counter * this.state.price} &#8364;
+                      {item.quantity * item.price} &#8364;
                     </td>
                   </tr>
                 )
@@ -213,7 +222,7 @@ class Cart extends React.Component {
                     Shipping & taxes calculated at checkout <br />
                   </td>
                   <td style={{ textAlign: 'right', verticalAlign: 'initial' }}>
-                    {this.state.counter * this.state.price}
+                    {total} &#8364;
                   </td>
                 </tr>
               </tbody>

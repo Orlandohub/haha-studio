@@ -87,7 +87,9 @@ class Carousel extends React.Component {
         this.setState({
           photoIndex: i
         })
-        updateColor(images[i].color_name)
+        if (isProduct) {
+          updateColor(images[i].color_name)
+        }
       }
     }
     return (
