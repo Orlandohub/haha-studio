@@ -1,4 +1,5 @@
 import React from 'react'
+import { upperCase } from 'lodash'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import Carousel from '../components/Carousel'
@@ -60,7 +61,7 @@ class ProductPageTemplate extends React.Component {
             <button
               className={`${css(styles.cardButton)} snipcart-add-item`}
               data-item-id={productId}
-              data-item-name={`${title} ${color_name && `- ${color_name}`}`}
+              data-item-name={`${title} ${color_name && `- ${upperCase(color_name)}`}`}
               data-item-price={price}
               data-item-url={slug}
               data-item-image={thumbnail}>
