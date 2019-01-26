@@ -1,9 +1,9 @@
 import React from 'react'
+import { map } from 'lodash'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import { navigate } from 'gatsby'
 import * as styles from './styles'
-import prImgDesk from '../../images/D_product_thumbnail_checkout_page.jpg'
 
 class Cart extends React.Component {
   constructor() {
@@ -14,31 +14,88 @@ class Cart extends React.Component {
       price: 333,
       activeClass: css(styles.cartWrapper),
       counter: 1,
+      items: [],
+      total: 0,
     }
 
     this.hideCart = this.hideCart.bind(this)
     this.add = this.add.bind(this)
     this.substract = this.substract.bind(this)
+    this.refreshItems = this.refreshItems.bind(this)
   }
 
-  add() {
-    this.setState(prevState => {
-      return { counter: prevState.counter + 1 }
+  add(id, quantity) {
+    const refreshItems = this.refreshItems
+    window.Snipcart.api.items.update(id, {
+      quantity: quantity + 1,
+    }).then(() => {
+      refreshItems()
     })
   }
 
-  substract() {
-    this.setState(prevState => {
-      return { counter: prevState.counter - 1 }
-    })
+  substract(id, quantity) {
+    const refreshItems = this.refreshItems
+    const hideCart = this.hideCart
+
+    quantity === 1 ?
+      window.Snipcart.api.items.remove(id)
+        .then(() => {
+          refreshItems()
+          window.Snipcart.api.items.count() === 0 ? hideCart() : null
+        })
+      :
+      window.Snipcart.api.items.update(id, {
+        quantity: quantity - 1,
+      }).then(() => {
+        refreshItems()
+      })
   }
 
   hideCart() {
     this.props.hideCart()
   }
+  refreshItems() {
+    const { setItemsCount } = this.props
+
+    if (typeof setItemsCount !== 'undefined') {
+      setItemsCount()
+    }
+    this.setState({
+      items: window.Snipcart.api.items.all()
+    })
+  }
 
   componentDidMount() {
     window.addEventListener('onmousedown', this.hideCart)
+    const refreshItems = this.refreshItems
+
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      refreshItems()
+
+      const cart = window.Snipcart.api.cart.get()
+      this.setState({
+        total: cart && cart.total
+      })
+
+      document.addEventListener('snipcart.ready', () => {
+        refreshItems()
+
+        const carts = window.Snipcart.api.cart.get()
+        this.setState({
+          total: carts && carts.total
+        })
+      })
+
+      window.Snipcart.subscribe('item.added', function () {
+        refreshItems()
+      })
+      window.Snipcart.subscribe('item.removed', function () {
+        refreshItems()
+      })
+      window.Snipcart.subscribe('item.updated', function () {
+        refreshItems()
+      })
+    }
   }
 
   componentWillUnmount() {
@@ -46,8 +103,8 @@ class Cart extends React.Component {
   }
 
   render() {
-    const showElements = this.props.showElements
-    let counterValue = this.state.counter
+    const { showElements } = this.props
+    const { items, total } = this.state
     return (
       <div
         className={
@@ -89,54 +146,64 @@ class Cart extends React.Component {
 
         {/* *********************** HEADER END ************************* */}
 
-        {counterValue > 0 ? (
-          <div style={{ marginBottom: 'auto' }}>
-            {' '}
-            <table className={css(styles.tableStyles)}>
-              <tbody>
-                <tr>
-                  {showElements && (
-                    <td className={css(styles.rowStyles)}>
-                      <img
-                        className={css(styles.imageWrap)}
-                        src={prImgDesk}
-                        alt="product image"
-                      />
-                    </td>
-                  )}
-                  <td className={css(styles.rowStyles)}>{this.state.name}</td>
-                  <td className={css(styles.rowStylesRight)}>
-                    {counterValue < 2 ? (
-                      <button
-                        className={css(styles.cardBtn)}
-                        onClick={this.substract}
-                      >
-                        &times;
-                      </button>
-                    ) : (
-                      <button
-                        className={css(styles.cardBtn)}
-                        onClick={this.substract}
-                      >
-                        -
-                      </button>
+        <table className={css(styles.tableStyles)}>
+          <tbody>
+            {
+              map(items, item => {
+                return (
+                  <tr key={item.id}>
+                    {showElements && (
+                      <td className={css(styles.rowStyles)}>
+                        <img
+                          className={css(styles.imageWrap)}
+                          src={item.image}
+                          alt={item.name}
+                        />
+                      </td>
                     )}
-                    <span className={css(styles.numWrap)}>
-                      {this.state.counter}
-                    </span>
-                    <button className={css(styles.cardBtn)} onClick={this.add}>
-                      +
-                    </button>
-                  </td>
+                    <td className={css(styles.rowStyles)}>{item.name}</td>
+                    {
+                      showElements ?
+                        <td className={css(styles.rowStylesRight)}>
+                          <span>
+                            &times;{item.quantity}
+                          </span>
+                        </td>
+                        :
+                        <td className={css(styles.rowStylesRight)}>
+                          {item.quantity === 1 ? (
+                            <button
+                              className={css(styles.cardBtn)}
+                              onClick={() => this.substract(item.id, item.quantity)}
+                            >
+                              &times;
+                            </button>
+                          ) : (
+                            <button
+                              className={css(styles.cardBtn)}
+                              onClick={() => this.substract(item.id, item.quantity)}
+                            >
+                              -
+                            </button>
+                          )}
+                          <span className={css(styles.numWrap)}>
+                            {item.quantity}
+                          </span>
+                          <button className={css(styles.cardBtn)} onClick={() => this.add(item.id, item.quantity)}>
+                            +
+                          </button>
+                        </td>
+                    }
 
-                  <td className={css(styles.rowStylesRight)}>
-                    {this.state.counter * this.state.price} &#8364;
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        ) : null}
+                    <td className={css(styles.rowStylesRight)}>
+                      {item.quantity * item.price} &#8364;
+                    </td>
+                  </tr>
+                )
+              })
+            }
+          </tbody>
+        </table>
 
         {/* #######################################   BOTTOM PART   ##################################### */}
 
@@ -155,7 +222,7 @@ class Cart extends React.Component {
                     Shipping & taxes calculated at checkout <br />
                   </td>
                   <td style={{ textAlign: 'right', verticalAlign: 'initial' }}>
-                    {this.state.counter * this.state.price}
+                    {total} &#8364;
                   </td>
                 </tr>
               </tbody>
@@ -177,6 +244,8 @@ class Cart extends React.Component {
 }
 Cart.propTypes = {
   showElements: PropTypes.bool.isRequired,
+  hideCart: PropTypes.func.isRequired,
+  setItemsCount: PropTypes.func
 }
 
 export default Cart

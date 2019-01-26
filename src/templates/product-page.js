@@ -1,4 +1,5 @@
 import React from 'react'
+import { capitalize, map } from 'lodash'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import Carousel from '../components/Carousel'
@@ -8,47 +9,80 @@ import Content, { HTMLContent } from '../components/Content'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/ShopProductPageStyles/styles'
 
-export const ProductPageTemplate = ({
-  content,
-  contentComponent,
-  pageContext,
-  location,
-  title,
-  price,
-  imageGallery,
-}) => {
-  const PageContent = contentComponent || Content
+class ProductPageTemplate extends React.Component {
+  constructor(props) {
+    super(props)
 
-  return (
-    <Layout location={location}>
-      <div className={css(styles.shopProductWrapper)}>
-        <div className={css(styles.leftTitleColumn)}>{title}</div>
-        <div className={css(styles.mainBodyWrapper)}>
-          <Carousel images={imageGallery} isProduct={true} />
-          <div className={css(styles.productDescriptionWrapper)}>
-            <PageContent className="content" content={content} />
-            <br />
-            <br />
-            {price} €
+    const { color_name } = props.imageGallery[0]
+  
+    this.state = {
+      color_name
+    }
+
+    this.updateColor = this.updateColor.bind(this)
+  }
+
+  updateColor(color_name) {
+    this.setState({
+      color_name
+    })
+  }
+  
+  render() {
+    const {
+      content,
+      contentComponent,
+      pageContext,
+      location,
+      title,
+      price,
+      imageGallery,
+      productId,
+      slug,
+      thumbnail,
+    } = this.props
+
+    const { color_name } = this.state
+
+    const PageContent = contentComponent || Content
+
+    return (
+      <Layout location={location}>
+        <div className={css(styles.shopProductWrapper)}>
+          <div className={css(styles.leftTitleColumn)}>{title}</div>
+          <div className={css(styles.mainBodyWrapper)}>
+            <Carousel updateColor={this.updateColor} images={imageGallery} isProduct={true} />
+            <div className={css(styles.productDescriptionWrapper)}>
+              <PageContent className="content" content={content} />
+              <br />
+              <br />
+              {price} €
+            </div>
+            <button
+              className={`${css(styles.cardButton)} snipcart-add-item`}
+              data-item-id={`${productId}`}
+              data-item-name={`${title}`}
+              data-item-price={price}
+              data-item-url={slug}
+              data-item-image={thumbnail}>
+                   ADD TO CART
+            </button>
+            <a href="#" className="snipcart-checkout">Click here to checkout</a>
+            <div className="snipcart-summary">
+                Number of items: <span className="snipcart-total-items"></span>
+                Total price: <span className="snipcart-total-price"></span>
+            </div>
+            <NavFooter
+              linkText="/shop/"
+              text="shop"
+              linkLeft={pageContext.prev}
+              linkRight={pageContext.next}
+            />
           </div>
-          <button
-            className={`${css(styles.cardButton)} snipcart-add-item`}
-            data-item-id="39efb6a9-56d3-5353-b4bb-32217515ea38"
-            data-item-name={title}
-            data-item-price={price}
-            data-item-url="/products/liberty-lamp-small/">
-                 ADD TO CART
-          </button>
-          <NavFooter
-            linkText="/shop/"
-            text="shop"
-            linkLeft={pageContext.prev}
-            linkRight={pageContext.next}
-          />
         </div>
-      </div>
-    </Layout>
-  )
+      </Layout>
+    )
+  }
 }
 
 ProductPageTemplate.propTypes = {
@@ -59,20 +93,25 @@ ProductPageTemplate.propTypes = {
   title: PropTypes.string,
   price: PropTypes.string,
   imageGallery: PropTypes.array,
+  productId: PropTypes.string,
+  slug: PropTypes.string,
+  thumbnail: PropTypes.string,
 }
 
 const ProductPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
-
   return (
     <ProductPageTemplate
       contentComponent={HTMLContent}
       content={post.html}
+      productId={post.id}
       pageContext={pageContext}
       location={location}
       title={post.frontmatter.title}
       price={post.frontmatter.price}
+      slug={post.fields.slug}
       imageGallery={post.frontmatter.image_gallery}
+      thumbnail={post.frontmatter.cover_image.childImageSharp.fixed.src}
     />
   )
 }
@@ -90,10 +129,21 @@ export default ProductPage
 export const productPageQuery = graphql`
   query ProductPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
+      id
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         price
+        cover_image {
+          childImageSharp {
+            fixed(width: 95, height: 120) {
+              src
+            }
+          }
+        }
         image_gallery {
           image {
             childImageSharp {
