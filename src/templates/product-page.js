@@ -58,22 +58,15 @@ class ProductPageTemplate extends React.Component {
               <br />
               {price} €
             </div>
-            {
-              map(imageGallery, media => {
-                return (
-                  <button
-                    style={{ display: media.color_name === color_name ? 'inline-block' : 'none' }}
-                    className={`${css(styles.cardButton)} snipcart-add-item`}
-                    data-item-id={`${productId} ${color_name && `- ${capitalize(color_name)}`}`}
-                    data-item-name={`${title} ${color_name && `- ${capitalize(color_name)}`}`}
-                    data-item-price={price}
-                    data-item-url={slug}
-                    data-item-image={thumbnail}>
-                         ADD TO CART
-                  </button>
-                )
-              })
-            }
+            <button
+              className={`${css(styles.cardButton)} snipcart-add-item`}
+              data-item-id={`${productId}`}
+              data-item-name={`${title}`}
+              data-item-price={price}
+              data-item-url={slug}
+              data-item-image={thumbnail}>
+                   ADD TO CART
+            </button>
             <a href="#" className="snipcart-checkout">Click here to checkout</a>
             <div className="snipcart-summary">
                 Number of items: <span className="snipcart-total-items"></span>

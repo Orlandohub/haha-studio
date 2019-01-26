@@ -69,9 +69,7 @@ injectGlobal`
     display: none;
   }
 
-  .snip-layout {
-    visibility: hidden;
-  }
+
 `
 
 const Layout = ({ children, location, hideMenu }) => (
