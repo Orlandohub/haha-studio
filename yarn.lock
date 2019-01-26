@@ -8883,6 +8883,11 @@ lockfile@^1.0.4:
   dependencies:
     signal-exit "^3.0.2"
 
+lodash-addons@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/lodash-addons/-/lodash-addons-2.0.1.tgz#c1bbd64dec5e091e717ae695a2c1b01865800eb3"
+  integrity sha512-fE0jBqbiDSJDWX1pAFRsCQwpicsP64RbKMVt15xtD1aa8vcpI1NMt2rh9f5G6CAkbitYeTRrjZqOSvci8RHYrg==
+
 lodash-es@^4.17.11:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.11.tgz#145ab4a7ac5c5e52a3531fb4f310255a152b4be0"
