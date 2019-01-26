@@ -1,16 +1,16 @@
 ---
 templateKey: product-page
-title: 'Liberty Lamp, Black'
+title: Liberty Lamp
 is_active: true
 date: 2019-01-10T12:45:54.119Z
 price: '75'
 cover_image: /assets/uploads/d_homepage_image_01.jpg
 image_gallery:
-  - color_hex: ''
-    color_name: ''
+  - color_hex: '#000'
+    color_name: Black
     image: /assets/uploads/screenshot-2018-12-06-at-15.08.31.png
   - color_hex: '#FF275D'
-    color_name: red
+    color_name: Red
     image: /assets/uploads/d_homepage_image_01.jpg
 ---
 Plated steel 
