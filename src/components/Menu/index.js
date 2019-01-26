@@ -6,7 +6,7 @@ import Link from 'gatsby-link'
 import { navigate } from 'gatsby'
 import * as styles from './styles'
 import MenuDropdownLink from '../MenuDropdownLink'
-
+import Cart from '../CartComponent/index'
 import Img from 'gatsby-image'
 
 class Menu extends Component {
@@ -23,11 +23,26 @@ class Menu extends Component {
     this.isActiveMenu = this.isActiveMenu.bind(this)
     this.isActiveSubMenu = this.isActiveSubMenu.bind(this)
     this.isShopCurrentPath = this.isShopCurrentPath.bind(this)
+    this.hideCart = this.hideCart.bind(this)
+    this.showCart = this.showCart.bind(this)
 
     this.state = {
       activeMenu: null,
       activeSubMenu: null,
+      activeClass: css(styles.cartWrapperHidden),
     }
+  }
+
+  hideCart() {
+    this.setState({
+      activeClass: css(styles.cartWrapperHidden),
+    })
+  }
+
+  showCart() {
+    this.setState({
+      activeClass: css(styles.cartWrapper),
+    })
   }
 
   setActiveMenu() {
@@ -113,8 +128,9 @@ class Menu extends Component {
 
   render() {
     const { data } = this.props
+
     return (
-      <div className={css(styles.menuContainer)}>
+      <div id="Menu" className={css(styles.menuContainer)}>
         <div className={css(styles.brand)}>
           <div className={css(styles.logoWrap)}>
             <Link
@@ -245,14 +261,24 @@ class Menu extends Component {
                 onClick={() => navigate('/shop/')}
                 className={
                   this.isShopCurrentPath()
-                    ? css(styles.subMenuLinkActive)
-                    : css(styles.subMenuLinkInactive)
+                    ? css(styles.subMenuLinkActiveShop)
+                    : css(styles.subMenuLinkInactiveShop)
                 }
               >
                 shop
               </span>
+
+              <button
+                className={css(styles.cartShowBtn)}
+                onClick={this.showCart}
+              >
+                1
+              </button>
             </li>
           </ul>
+        </div>
+        <div className={this.state.activeClass}>
+          <Cart showElements={false} hideCart={this.hideCart} />
         </div>
       </div>
     )

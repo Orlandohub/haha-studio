@@ -26,7 +26,7 @@ const Shop = ({ location, data }) => {
         <div className={css(styles.shopRightColumn)}>
           {map(edges, edge => {
             return (
-              <div className={css(styles.shopImage)}>
+              <div key={edge.node.id} className={css(styles.shopImage)}>
                 <Link to={edge.node.fields.slug}>
                   <Img
                     fluid={

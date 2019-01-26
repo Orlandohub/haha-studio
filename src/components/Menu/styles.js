@@ -6,7 +6,7 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 // MENU CONTAIMER
 export const menuContainer = mq({
-  overflow: 'auto',
+  overflowX: 'hidden!important',
   width: '100%',
   display: 'block',
   transition: 'top 0.5 ease-in',
@@ -24,7 +24,7 @@ export const menuContainer = mq({
 // --> MENU LOGO
 export const brand = mq({
   float: 'left',
-  paddingLeft: 2,
+  paddingLeft: 1,
   minWidth: [
     '100%!important',
     '100%!important',
@@ -81,7 +81,7 @@ export const subMenuLink = mq({
   lineHeight: 1,
   cursor: 'pointer',
   fontSize: ['1em', '1em', '2em', '2em'],
-  color: ['#CACAC8', '#CACAC8', '#CACAC8', '#000000', '#000000'],
+  color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#000000', '#000000'],
 })
 
 export const subMenuLinkActive = mq(subMenuLink, {
@@ -89,7 +89,23 @@ export const subMenuLinkActive = mq(subMenuLink, {
 })
 
 export const subMenuLinkInactive = mq(subMenuLink, {
-  color: ['#CACAC8', '#CACAC8', '#CACAC8', '#CACAC8', '#CACAC8'],
+  color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7'],
+  ':hover': {
+    color: '#C1C1C1',
+  },
+})
+
+export const subMenuLinkActiveShop = mq(subMenuLink, {
+  color: ['#000000', '#000000', '#000000', '#000000', '#000000'],
+  marginRight: [8, 19, 19, 41],
+})
+
+export const subMenuLinkInactiveShop = mq(subMenuLink, {
+  color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7', '#D9D9D7'],
+  ':hover': {
+    color: '#C1C1C1',
+  },
+  marginRight: [8, 19, 19, 41],
 })
 
 // --> MENU SHOP ITEM & LINK
@@ -98,6 +114,7 @@ export const shopWrap = mq({
   position: 'relative',
   float: 'right!important',
   width: ['10%', '10%', '10%', '10%'],
+  whiteSpace: 'nowrap',
 })
 
 export const subMenuColShop = {
@@ -110,8 +127,47 @@ export const subMenuColShop = {
 }
 
 export const subMenuItemShop = mq(subMenuItem, {
-  paddingRight: 15,
+  paddingRight: 0,
   textAlign: 'right',
 })
 
 export const subMenuLinkShop = mq(subMenuLink)
+
+// **********************  CART SHOW BUTTON AND CART WRAPPERS
+
+export const cartShowBtn = mq({
+  textAlign: 'center',
+  backgroundColor: '#0A00FF',
+  color: 'white',
+  borderRadius: 50,
+  border: 'none',
+  outline: 'none',
+  width: [12, 12, 22],
+  height: [12, 12, 22],
+  fontSize: [8, 8, 20],
+  lineHeight: 0,
+  padding: 2,
+})
+
+export const cartShowBtnHidden = mq(cartShowBtn, {
+  visibility: 'hidden',
+})
+
+export const cartWrapper = mq({
+  display: 'block',
+  position: 'absolute',
+  top: 0,
+  right: 0,
+  width: ['100%', '100%', '462px', '462px', '462px', 462],
+  height: '100%',
+  transition: 'all 0.7s',
+  backgroundColor: 'white',
+  zIndex: 100,
+  overflowX: 'hidden',
+})
+
+export const cartWrapperHidden = mq(cartWrapper, {
+  width: '0px!important',
+  right: '-300%',
+  transitionDelay: '0.3s',
+})

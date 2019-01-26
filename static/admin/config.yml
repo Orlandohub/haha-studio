@@ -18,7 +18,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "product-page"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Is Active", name: "is_active", widget: "boolean", required: false}
+      - {label: "Is Active", name: "is_active", widget: "boolean", default: false}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: Price, name: price, widget: string}
       - {label: "Body", name: "body", widget: "markdown"}
@@ -38,7 +38,7 @@ collections:
     fields:
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "project-page"}
       - {label: "Title", name: "title", widget: "string"}
-      - {label: "Is Selected", name: "is_selected", widget: "boolean", required: false}
+      - {label: "Is Selected", name: "is_selected", widget: "boolean", default: false}
       - {label: "Project Assistant", name: "project_assistant", widget: "string"}
       - {label: "Photo Credits", name: "photo_credits", widget: "string"}
       - {label: "Producer", name: "producer", widget: "string"}
@@ -60,7 +60,12 @@ collections:
       - {label: Template Key, name: templateKey, widget: hidden, default: press-page}
       - {label: Title, name: title, widget: string}
       - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: Cover, name: cover, widget: image}
+      - label: "Cover"
+        name: "cover"
+        widget: "image"
+        media_library:
+          config:
+            multiple: true
       - {label: Counter Cover, name: counter_cover, widget: image}
       - {label: Content Image Left, name: content_image_left, widget: image}
       - {label: Content Image Right, name: content_image_right, widget: image}

@@ -19,7 +19,6 @@ export const projectTitle = mq({
     'block!important',
     'inline-block!important',
   ],
-  // float: 'left!important',
   lineHeight: 1,
   marginTop: 0,
   fontSize: ['1em', '1em', '2em', '2em'],
@@ -36,7 +35,6 @@ export const projectTitleSliderWrap = mq({
 export const imageWrapper = mq({
   paddingRight: [0, 0, 0, 0, 191],
   width: ['100%', '100%', '100%', '100%', '75%'],
-  // float: 'left!important',
   display: [
     'block!important',
     'block!important',

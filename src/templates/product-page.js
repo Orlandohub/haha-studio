@@ -36,7 +36,14 @@ export const ProductPageTemplate = ({
             <br />
             {price} €
           </div>
-          <button className={css(styles.cardButton)}>ADD TO CART</button>
+          <button
+            className={`${css(styles.cardButton)} snipcart-add-item`}
+            data-item-id="39efb6a9-56d3-5353-b4bb-32217515ea38"
+            data-item-name={title}
+            data-item-price={price}
+            data-item-url="/products/liberty-lamp-small/">
+                 ADD TO CART
+          </button>
           <NavFooter
             linkText="/shop/"
             text="shop"
@@ -50,7 +57,7 @@ export const ProductPageTemplate = ({
 }
 
 ProductPageTemplate.propTypes = {
-  content: PropTypes.object,
+  content: PropTypes.string,
   contentComponent: PropTypes.func,
   pageContext: PropTypes.object,
   location: PropTypes.object,

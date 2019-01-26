@@ -6,7 +6,7 @@ import * as styles from './styles'
 const ShopNavigation = () => (
   <div className={css(styles.ShopNavigationWrapper)}>
     <span className={css(styles.navFooter)}>
-      <a href="mailto:press@hahastudio.se" className={css(styles.linkStyles)}>
+      <a href="mailto:shop@hahastudio.se" className={css(styles.linkStyles)}>
         support
       </a>
     </span>

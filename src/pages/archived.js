@@ -34,7 +34,7 @@ export default Archived
 export const query = graphql`
   query {
     projectsList: allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
+      sort: { order: ASC, fields: [frontmatter___date] }
       filter: {
         frontmatter: {
           templateKey: { eq: "project-page" }
