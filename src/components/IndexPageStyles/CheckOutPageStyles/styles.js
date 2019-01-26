@@ -65,19 +65,19 @@ export const shopWrapRight = mq(shopWrap, {
 })
 
 export const cartWrapper = mq({
-  minHeight: '100%',
+  height: '100%',
   position: [
     'relative',
     'relative',
     'relative',
     'relative',
     'relative',
-    'absolute',
+    'fixed',
   ],
   width: ['100%', '100%', '100%', '100%', '100%', '35%'],
   fontSize: [14, 14, 14, 22, 22],
   color: 'black',
-  overflowY: 'auto',
+  overflow: 'hidden!important',
 })
 
 export const orderStyles = mq({
