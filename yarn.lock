@@ -6126,17 +6126,17 @@ gatsby-link@^2.0.4, gatsby-link@^2.0.7:
     "@types/reach__router" "^1.0.0"
     prop-types "^15.6.1"
 
-gatsby-plugin-emotion@^2.0.5:
-  version "2.0.7"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-2.0.7.tgz#c89a1e3eef8ae4654d3dee8bd89875f651c6743c"
-  integrity sha512-UTw2cltGH5e9vWvU4XskXrvRgrFiFOTUzFG6yrPwQiNoLM0FFVvvz2/mwD3waugbxBqSxb5wLoimZECOC2KNtw==
+gatsby-plugin-emotion@2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-2.0.5.tgz#e44d0ee58fc07bb49889a28ca51e0cb4690aeeb4"
+  integrity sha512-+qqX1Hs8R/9n9zBvbz2tanql1Y34hGq23DnnJZ096UIhXrtXc/et9/J+FF9+zhX/kBAWYNE+IvzzcpURyFTv8g==
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-manifest@^2.0.5:
-  version "2.0.11"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.11.tgz#5a92e1b57556e4996982253e760d8c43d53428d2"
-  integrity sha512-51pzxhAj9LF+qDWpotO5adqWmMPZMtPZTv1n0ygs7i9bgJrpoi/hkNQ+a2roHZSG8EqPB4NJeDyCxnj3jC4EaQ==
+gatsby-plugin-manifest@2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.7.tgz#3b74503d368c5b830c2dbf745c7073fe0f4aa737"
+  integrity sha512-vVSyGv5vU6jyARbI54DIVWVh+zkd23ItGb040iuS5uQS96gvz3UB7n3B5z4HBt/xV084eMoT7tuSOGncahoVbQ==
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
@@ -12127,14 +12127,14 @@ react-scroll-sync@^0.6.0:
   resolved "https://registry.yarnpkg.com/react-scroll-sync/-/react-scroll-sync-0.6.0.tgz#c87eba2cdd55ae35874277d74b034419d73df59a"
   integrity sha512-Frc7pNPIEQY6rUAUwm1wW0an57Xau6X1Sag+Ra2FJT+oDBEBdh4cahrE3oGwtYHPcyWMt74q7vRKLw73cPy6aw==
 
-react-scrolltop-button@^0.1.5:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/react-scrolltop-button/-/react-scrolltop-button-0.1.5.tgz#d1a8dc5b0f6afbb74141b42d412a419416478894"
-  integrity sha512-dtY6uy+hJCH8Subw77pJ/9sXNn+2f786siI33MI7JynDiXHCM2txZXormSfzhjozxTQzHrA94f4EsEe0GBdknA==
+react-scrolltop-button@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/react-scrolltop-button/-/react-scrolltop-button-0.1.6.tgz#9c23db2ee74e59c3941970b320f24ddc73894fb7"
+  integrity sha512-WaGj/ubCBqgcRvJDi9Mklxie8rD+TdAJdavp2AhlHCz34MMkuxLNSO23XqXNG7Mihkkpyk2S1Sb96wsnNP6JqQ==
   dependencies:
-    prop-types "^15.6.1"
+    prop-types "^15.6.2"
     react-icons "^2.2.7"
-    styled-components "^3.2.5"
+    styled-components "^3.4.10"
 
 react-select@^2.1.1:
   version "2.1.2"
@@ -14123,7 +14123,7 @@ style-to-object@^0.2.1:
   dependencies:
     css "2.2.4"
 
-styled-components@^3.2.5:
+styled-components@^3.2.5, styled-components@^3.4.10:
   version "3.4.10"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-3.4.10.tgz#9a654c50ea2b516c36ade57ddcfa296bf85c96e1"
   integrity sha512-TA8ip8LoILgmSAFd3r326pKtXytUUGu5YWuqZcOQVwVVwB6XqUMn4MHW2IuYJ/HAD81jLrdQed8YWfLSG1LX4Q==

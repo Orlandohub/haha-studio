@@ -11,7 +11,7 @@ const TermsAndLicenses = ({ location }) => (
     <div className={css(styles.termsLicensesWrapper)}>
       <StyledScrollTop
         text=""
-        distance={1500}
+        distance={500}
         breakpoint={1024}
         speed={500}
         target={0}
