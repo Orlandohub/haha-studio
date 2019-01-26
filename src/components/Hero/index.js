@@ -86,7 +86,6 @@ class Hero extends React.Component {
 
 Hero.propTypes = {
   data: PropTypes.object.isRequired,
-  enableScroll: PropTypes.func.isRequired,
 }
 
 export default Hero

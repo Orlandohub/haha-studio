@@ -5,11 +5,13 @@ const breakpoints = [411, 576, 768, 1024, 1200, 1500]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const pageWrapper = mq({
+  userSelect: 'none',
+  //position: 'relative',
   width: '100%',
   display: 'block',
   paddingTop: ['43px', '43px', '43px', '48px', '48px'],
-  paddingLeft: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
-  paddingRight: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
+  //paddingLeft: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
+  //paddingRight: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
 })
 
 export const brand = mq({
@@ -59,21 +61,23 @@ export const shopWrapRight = mq(shopWrap, {
   display: ['none', 'none', 'none', 'none', 'none', 'block'],
   width: '100%',
   lineHeight: 1.38,
-  paddingBottom: [89, 89, 89, 89, 132, 132],
+  paddingBottom: [89, 89, 89, 89, 133, 133],
 })
 
 export const cartWrapper = mq({
+  minHeight: '100%',
   position: [
     'relative',
     'relative',
     'relative',
     'relative',
     'relative',
-    'fixed',
+    'absolute',
   ],
   width: ['100%', '100%', '100%', '100%', '100%', '35%'],
   fontSize: [14, 14, 14, 22, 22],
   color: 'black',
+  overflowY: 'auto',
 })
 
 export const orderStyles = mq({
@@ -236,6 +240,7 @@ export const inputWrapper = mq({
   float: 'right',
   outline: 'none',
   border: 'none',
+  borderRadius: '0px!important',
   borderBottom: '1.5px solid black',
 })
 
@@ -251,6 +256,7 @@ export const halfWidthFormsInputs = mq(halfWidthForms, {
   width: ['62%', '70%', '70%', '40%', '50%', '32%', '50%'],
   outline: 'none',
   border: 'none',
+  borderRadius: '0px!important',
   borderBottom: '1.5px solid black',
 })
 
@@ -271,7 +277,6 @@ export const halfWidthDateCenter = mq(halfWidthDate, {
 
 export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
   width: ['62%', '40%', '40%', '40%', '50%', '32%', '50%'],
-
   WebkitAppearance: 'none',
   MozAppearance: 'none',
   appearance: 'none',
@@ -322,10 +327,10 @@ export const purchaseBtn = mq({
 
 export const checkBox = mq({
   paddingTop: [44, 44, 44, 40, 40, 40],
-  paddingBottom: [38, 38, 38, 38, 73, 73],
   paddingLeft: 20,
   fontWeight: 'normal',
   position: 'relative',
+  userSelect: 'none',
 })
 
 export const customCheckBox = mq({
@@ -353,7 +358,7 @@ export const errorStyles = mq({
   left: '50%',
 })
 
-// ****************************  BBOTTOM LINK DECORATION
+// ****************************  BOTTOM LINK DECORATION
 
 export const bottomLinkDecoration = mq({
   textDecoration: 'none!important',
@@ -363,4 +368,22 @@ export const bottomLinkDecoration = mq({
     '#D9D9D7!important',
     '#7B7C81!important',
   ],
+})
+
+export const deliveryForm = mq({
+  maxHeight: '1000px',
+  transition: 'max-height 1s linear',
+  overflow: 'hidden',
+})
+
+export const deliveryFormHidden = mq(deliveryForm, {
+  maxHeight: '0px',
+})
+
+export const cardInfoWrap = mq({
+  paddingTop: [38, 38, 38, 38, 73, 73],
+})
+
+export const paddingWrap = mq({
+  height: [38, 38, 38, 38, 73, 73],
 })

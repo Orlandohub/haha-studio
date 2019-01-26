@@ -63,7 +63,7 @@ class Carousel extends React.Component {
                   <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex' }}> {dots} </ul>
                 </div>
                 :
-                <ul style={{ paddingLeft: 0, height: 40, paddingTop: 60, display: 'flex' }}> {dots} </ul>
+                <ul className="slick-dots" style={{ bottom: '-15px', listStyle: 'none', paddingLeft: 0, height: 40, paddingTop: 60, display: 'flex' }}> {dots} </ul>
             }
           </React.Fragment>
         )},
@@ -79,13 +79,7 @@ class Carousel extends React.Component {
                 <ColoredBox backgroundColor={images[i].color_hex} />
               </div>
               :
-              <div
-                style={{
-                  flex: 'flex-grow',
-                  height: 3,
-                }}
-              >
-              </div>
+              <div></div>
           }
         </div>
       ),

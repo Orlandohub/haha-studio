@@ -13,9 +13,8 @@ export const findUsParagraph = mq({
 })
 export const findUsRightColumn = mq({
   width: '100%',
-  float: 'left',
-  marginLeft: [0, 0, 0, 0, '51%'],
-  paddingLeft: [0, 0, 0, 0, '15px'],
+  paddingLeft: [0, 0, 0, 0, '51%'],
+  marginLeft: [0, 0, 0, 0, '15px'],
   marginBottom: [60, 60, 60, 60, 217],
 })
 

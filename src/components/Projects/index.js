@@ -5,10 +5,14 @@ import { css } from 'emotion'
 import { styles, StyledScrollTop } from './styles'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
+import { genericHashLink } from 'react-router-hash-link'
+
+const MyHashLink = props => genericHashLink(props, Link)
 
 const Projects = projectsList => {
   const { projects } = projectsList
   const { edges } = projects
+
   return (
     <div className={css(styles.projectWrapper)}>
       <StyledScrollTop
@@ -27,16 +31,16 @@ const Projects = projectsList => {
         return (
           <React.Fragment key={id}>
             <div className={css(styles.projectTitle)}>
-              <Link to={slug}>
+              <MyHashLink to={`${slug}#Menu`}>
                 <p>
                   {title}, {year}
                 </p>
-              </Link>
+              </MyHashLink>
             </div>
             <div className={css(styles.imageWrapper)}>
-              <Link to={slug}>
+              <MyHashLink to={`${slug}#Menu`}>
                 <Img fluid={image_gallery[0].image.childImageSharp.fluid} />
-              </Link>
+              </MyHashLink>
             </div>
           </React.Fragment>
         )

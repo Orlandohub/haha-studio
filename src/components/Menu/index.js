@@ -160,7 +160,7 @@ class Menu extends Component {
     const { data } = this.props
 
     return (
-      <div className={css(styles.menuContainer)}>
+      <div id="Menu" className={css(styles.menuContainer)}>
         <div className={css(styles.brand)}>
           <div className={css(styles.logoWrap)}>
             <Link
@@ -291,8 +291,8 @@ class Menu extends Component {
                 onClick={() => navigate('/shop/')}
                 className={
                   this.isShopCurrentPath()
-                    ? css(styles.subMenuLinkActive)
-                    : css(styles.subMenuLinkInactive)
+                    ? css(styles.subMenuLinkActiveShop)
+                    : css(styles.subMenuLinkInactiveShop)
                 }
               >
                 shop

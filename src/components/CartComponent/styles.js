@@ -8,10 +8,14 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const cartWrapper = mq({
   fontSize: ['14px', '14px', '14px', '18px', '18px', '18px'],
-  display: 'block',
+  display: 'flex',
+  flexFlow: 'column',
   position: 'relative',
   width: '100%',
-  height: '100%',
+  minHeight: '100%',
+  paddingLeft: 29,
+  paddingRight: 29,
+  overflowY: 'auto',
 })
 
 // ****************************** WRAPPER TO RENDER ON CHECK OUT PAGE
@@ -28,7 +32,7 @@ export const cartHeader = mq({
   position: 'relative',
   width: '100%',
   borderBottom: '2px solid black',
-  fontSize: '20px',
+  fontSize: ['14px', '14px', '20px', '20px', '20px'],
 })
 
 export const imageWrap = mq({
@@ -39,7 +43,7 @@ export const imageWrap = mq({
 
 export const subtotalWrapper = mq({
   width: '100%',
-  position: 'absolute',
+  position: 'relative',
   bottom: 0,
   right: 0,
   borderTop: '2px solid black',
@@ -92,10 +96,13 @@ export const hideBtn = mq({
   marginTop: 5,
   border: 'none',
   outline: 'none',
-  width: 19.5,
-  height: 19.5,
+  width: [10, 10, 19.5, 19.5],
+  height: [10, 10, 19.5, 19.5],
   backgroundColor: 'transparent',
   backgroundImage: `url(${crossImg})`,
+  backgroundPosition: 'center!important',
+  backgroundRepeat: 'no-repeat!important',
+  backgroundSize: 'cover!important',
 })
 
 export const checkOutBtn = mq({
