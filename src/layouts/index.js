@@ -39,6 +39,7 @@ injectGlobal`
     margin-right: 0;
   }
   .slick-dots li div {
+    height: 2px;
     background-color: #D9D9D7;
   }
   .slick-dots li div:hover {
