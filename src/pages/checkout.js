@@ -1,5 +1,7 @@
 import React from 'react'
+import { OverlayTrigger, Tooltip, Modal } from 'react-bootstrap'
 import PropTypes from 'prop-types'
+import { isEmpty } from 'lodash'
 import Layout from '../layouts'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
@@ -10,6 +12,7 @@ import { withFormik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import Cart from '../components/CartComponent/index'
 import MaskedInput from 'react-text-mask'
+import Loader from 'react-loader-spinner'
 
 /*
 -ms-overflow-style: none;
@@ -22,66 +25,174 @@ import MaskedInput from 'react-text-mask'
 const date = new Date()
 const year = date.getFullYear()
 
-function connect() {
-  if (typeof window !== 'undefined') {
-    window.Snipcart.api.modal.show()
-    window.jQuery('.js-next').click()
+const tooltip = (
+  <Tooltip id="tooltip">
+    Outside EU? Please contact us for tax refund!
+  </Tooltip>
+)
 
-    window.jQuery('#snip-name').val('Yujin haha')
-    window.jQuery('#snip-address1').val('Tellusborgsvägen')
-    window.jQuery('#snip-city').val('Stockholm')
-    window.jQuery('#snip-country').val('Canada')
-    window.jQuery('#snip-country option').filter(function() {
-      return window.jQuery(this).text() === 'Sweden' 
-    }).prop('selected', true)
-    window.jQuery('#snip-postalCode').val('126 28')
-    window.jQuery('#snip-email').val('orlando.goncalves@gmail.com')
-    window.jQuery('#snip-phone').val('2134234234')
-
-    window.jQuery('#snipcart-next').click()
-    window.jQuery('#snip-type').val('visa')
-    window.jQuery('#snip-ownerName').val('Glenn Quagmire')
-    window.jQuery('#snip-number').val('4242424242424242')
-    window.jQuery('#snip-cvc').val('345')
-    window.jQuery('#snip-expirationMonth').val('5')
-    window.jQuery('#snip-expirationYear').val('2022')
-
-    setTimeout(function(){ window.jQuery('#snipcart-paymentmethod-pay').click() }, 1000)
-    setTimeout(function(){ window.jQuery('.js-submit').click() }, 1000)
-  }
-}
 
 class CheckOut extends React.Component  {
   constructor(props) {
     super(props)
   
     this.state = {
-      total: 0
+      total: 0,
+      subTotal: 0,
+      discount: 0,
+      shipping: 10,
+      processingPayment: false,
+      values: {},
+    }
+
+    this.connect = this.connect.bind(this)
+  }
+
+  connect(values, isValid) {
+    if (!isValid) {
+      return
+    }
+
+    if (typeof window !== 'undefined') {
+      window.Snipcart.api.modal.show()
     }
   }
   componentDidMount() {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      window.Snipcart.subscribe('order.completed', function (data) {
+        console.log('COMPLETED', data)
+      })
+
       const cart = window.Snipcart.api.cart.get()
       this.setState({
+        subTotal: cart && cart.itemsTotal,
         total: cart && cart.total
       })
+
+      const discounts = window.Snipcart.api.discounts.all()
+
+      if (!isEmpty(discounts)) {
+        this.setState({
+          discount: discounts[0].amountSaved
+        })
+      }
 
       document.addEventListener('snipcart.ready', () => {
         const carts = window.Snipcart.api.cart.get()
         this.setState({
+          subTotal: carts && carts.itemsTotal,
           total: carts && carts.total
         })
+
+        const discountss = window.Snipcart.api.discounts.all()
+
+        if (!isEmpty(discountss)) {
+          this.setState({
+            discount: discountss[0].amountSaved
+          })
+        }
+      })
+
+      window.Snipcart.subscribe('page.changed', (page) => {
+        const { values } = this.state
+        console.log('page', page);
+        if (page === 'cart-content') {
+          window.jQuery('.js-next').click()
+        }
+
+        if (page === 'billing-address') {
+          // Billing address
+          this.state.values.shiptoanotheradress ?
+            window.jQuery('#snip-shippingSameAsBilling').prop('checked', false) :
+            window.jQuery('#snip-shippingSameAsBilling').prop('checked', true)
+
+          window.jQuery('#snip-name').val('Yujin haha')
+          window.jQuery('#snip-address1').val('Tellusborgsvägen')
+          window.jQuery('#snip-city').val('Stockholm')
+          window.jQuery('#snip-country option').filter(() => {
+            return window.jQuery(this).text() === 'Sweden' 
+          }).prop('selected', true)
+          window.jQuery('#snip-postalCode').val('126 28')
+          window.jQuery('#snip-email').val('orlando.goncalves@gmail.com')
+          window.jQuery('#snip-phone').val(this.state.values.phoneNumber)
+          setTimeout(function(){
+            window.jQuery('#snipcart-next').click()
+          }, 1000)
+        }
+
+        if (page === 'shipping-address') {
+          if (values.shiptoanotheradress) {
+            window.jQuery('#snip-name').val(`${values.deliveryFirstName} ${values.deliveryLastName}`)
+            window.jQuery('#snip-address1').val(values.deliveryAdressLine1)
+            window.jQuery('#snip-city').val(values.deliveryCity)
+            window.jQuery('#snip-country').val(values.deliveryCountry)
+            window.jQuery('#snip-country option').filter(function() {
+              return window.jQuery(this).text() === values.deliveryCountry
+            }).prop('selected', true)
+            window.jQuery('#snip-postalCode').val(values.deliveryZipCode)
+            window.jQuery('#snip-phone').val(values.phoneNumber)
+            window.jQuery('#snipcart-next').click()
+          }
+        }
+
+        if (page === 'shipping-method') {
+          window.jQuery('#snipcart-next').click()
+        }
+
+        if (page === 'payment-method') {
+          //  Card Details
+          window.jQuery('#snip-type').val('visa')
+          window.jQuery('#snip-ownerName').val('Glenn Quagmire')
+          window.jQuery('#snip-number').val('4242424242424242')
+          window.jQuery('#snip-cvc').val('345')
+          window.jQuery('#snip-expirationMonth').val('5')
+          window.jQuery('#snip-expirationYear').val('2022')
+
+          window.jQuery('#snipcart-paymentmethod-pay').click()
+        }
+
+        if (page === 'order-confirm') {
+          window.jQuery('.js-submit').click()
+        }
       })
     }
   }
 
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (this.props.values !== prevProps.values) {
+      this.setState({values: this.props.values})
+    }
+  }
+
   render() {
-    const { data, values, errors, touched, isSubmitting } = this.props
+    const { data, values, errors, touched, isSubmitting, isValid } = this.props
     let { typed } = this.props
 
     return (
       <Layout hideMenu={true}>
         {' '}
+        <Modal bsSize="small" show={this.state.processingPayment} onHide={
+          () => {
+            this.setState({
+              processingPayment: false,
+            })
+          }
+        }>
+          <Modal.Body>
+            <p className={css(styles.paymentModalTitle)}>Processing Payment</p>
+            <br/>
+            <div className={css(styles.paymentModalLoader)}>
+              <Loader 
+                type="Grid"
+                color="#000"
+                height="50" 
+                width="50"
+              /> 
+            </div> 
+            <br/>
+          </Modal.Body>
+        </Modal>
         <div className={css(styles.pageWrapper)}>
           <div className={css(styles.cartWrapper)}>
             <div className={css(styles.brand)}>
@@ -108,8 +219,18 @@ class CheckOut extends React.Component  {
             <div className={css(styles.promoWrapper)}>
               <form
                 onSubmit={event => {
-                  alert('A code was submitted: ' + typed)
                   event.preventDefault()
+                  window.Snipcart.api.discounts.applyDiscountCode(typed)
+                    .then((appliedCode) => {
+                      const cart = window.Snipcart.api.cart.get()
+                      this.setState({
+                        total: cart && cart.total,
+                        discount: appliedCode.amountSaved
+                      })
+                    })
+                    .fail(() => {
+                      alert("Something went wrong when adding the discount code, are you sure it's a valid code?");
+                    })
                 }}
               >
                 <table style={{ width: '100%' }}>
@@ -150,20 +271,34 @@ class CheckOut extends React.Component  {
                 <tr>
                   <td className={css(styles.sumRowTop)}>Subtotal</td>
                   <td className={css(styles.sumRowTopRight)}>
-                    {this.state.total} &#8364;
+                    {this.state.total + this.state.discount} &#8364;
                   </td>
                 </tr>
                 <tr>
                   <td className={css(styles.middleRows)}>Shipping</td>
-                  <td className={css(styles.middleRowsRight)}>## &#8364;</td>
+                  <td className={css(styles.middleRowsRight)}>{this.state.shipping} &#8364;</td>
+                </tr>
+                {
+                  this.state.discount > 0 ?
+                    <tr>
+                      <td className={css(styles.middleRows)}>Discount</td>
+                      <td className={css(styles.middleRowsRight)}>
+                        - {this.state.discount} &#8364;
+                      </td>
+                    </tr> :
+                    null
+                }
+                <tr>
+                  <td className={css(styles.middleRows)}>Total</td>
+                  <td className={css(styles.middleRowsRight)}>{this.state.total + this.state.shipping} &#8364;</td>
                 </tr>
                 <tr>
-                  <td className={css(styles.middleRows)}>Tax included 25% </td>
-                  <td className={css(styles.middleRowsRight)}>## &#8364;</td>
-                </tr>
-                <tr>
-                  <td className={css(styles.sumRowBottom)}>Total</td>
-                  <td className={css(styles.sumRowBottomRight)}>## &#8364;</td>
+                  <td className={css(styles.sumRowBottom)}>
+                    <OverlayTrigger placement="right" overlay={tooltip}>
+                      <span>Tax included 25% </span>
+                    </OverlayTrigger>
+                  </td>
+                  <td className={css(styles.middleRowsRight.sumRowBottomRight)}></td>
                 </tr>
               </tbody>
             </table>
@@ -579,10 +714,11 @@ class CheckOut extends React.Component  {
                   className={css(styles.purchaseBtn)}
                   type="submit"
                   disabled={isSubmitting}
+                  onClick={() => this.connect(values, isValid)}
                 >
                   COMPLETE PURCHASE
                 </button>
-                <button type="button" onClick={connect}>CONNECT</button>
+                <button type="button" onClick={() => this.setState({processingPayment: true})}>CONNECT</button>
                 <p className={css(styles.paragraphBottom)}>
                   By completing your purchase you accept to the{' '}
                   <Link
@@ -721,15 +857,8 @@ const FormikCheckOut = withFormik({
   // ************************** HANDLE SUBMIT AND VALIDATION
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-    console.log('handle submit values', values);
     setTimeout(() => {
-      console.log('values are ' + values)
-      // errors example below
-      if (values.email === 'andrew@test.io') {
-        setErrors({ email: 'That email is already taken' })
-      } else {
-        resetForm()
-      }
+      // resetForm()
       setSubmitting(false)
     }, 2000)
   },

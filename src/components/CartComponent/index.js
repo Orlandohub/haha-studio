@@ -86,14 +86,26 @@ class Cart extends React.Component {
         })
       })
 
-      window.Snipcart.subscribe('item.added', function () {
+      window.Snipcart.subscribe('item.added', () => {
         refreshItems()
+        const cart_d = window.Snipcart.api.cart.get()
+        this.setState({
+          total: cart_d && cart_d.total
+        })
       })
-      window.Snipcart.subscribe('item.removed', function () {
+      window.Snipcart.subscribe('item.removed', () => {
         refreshItems()
+        const cart_b = window.Snipcart.api.cart.get()
+        this.setState({
+          total: cart_b && cart_b.total
+        })
       })
-      window.Snipcart.subscribe('item.updated', function () {
+      window.Snipcart.subscribe('item.updated', () => {
         refreshItems()
+        const cart_c = window.Snipcart.api.cart.get()
+        this.setState({
+          total: cart_c && cart_c.total
+        })
       })
     }
   }
@@ -146,7 +158,7 @@ class Cart extends React.Component {
 
         {/* *********************** HEADER END ************************* */}
 
-        <table className={css(styles.tableStyles)}>
+        <table className={`${css(styles.tableStyles)} ${showElements ? css(styles.checkoutTableStyles) : null}`}>
           <tbody>
             {
               map(items, item => {
