@@ -73,6 +73,12 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: 'gatsby-plugin-snipcart',
+      options: {
+        apiKey: 'YWFlODEyNzctZWIxNy00ZjBiLTliY2ItYzg1ZmM2MWMyNmM1NjM2ODMxNTM0MjQwMDE1NzI5'
+      }
+    },
     'gatsby-v2-plugin-page-transitions',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',

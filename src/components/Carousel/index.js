@@ -42,7 +42,7 @@ class Carousel extends React.Component {
   }
   render() {
     const { photoIndex, isOpen, hoverColor } = this.state
-    const { images, isProduct } = this.props
+    const { images, isProduct, updateColor } = this.props
     const { color_name, color_hex } = images[photoIndex]
     const settings = {
       dots: true,
@@ -87,6 +87,9 @@ class Carousel extends React.Component {
         this.setState({
           photoIndex: i
         })
+        if (isProduct) {
+          updateColor(images[i].color_name)
+        }
       }
     }
     return (
@@ -130,4 +133,5 @@ export default Carousel
 Carousel.proptypes = {
   images: PropTypes.array.isRequired,
   isProduct: PropTypes.bool,
+  updateColor: PropTypes.func,
 }

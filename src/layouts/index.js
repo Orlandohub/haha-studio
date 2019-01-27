@@ -68,6 +68,8 @@ injectGlobal`
   .ril-toolbar.ril__toolbar {
     display: none;
   }
+
+
 `
 
 const Layout = ({ children, location, hideMenu }) => (

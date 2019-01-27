@@ -25,11 +25,13 @@ class Menu extends Component {
     this.isShopCurrentPath = this.isShopCurrentPath.bind(this)
     this.hideCart = this.hideCart.bind(this)
     this.showCart = this.showCart.bind(this)
+    this.setItemsCount = this.setItemsCount.bind(this)
 
     this.state = {
       activeMenu: null,
       activeSubMenu: null,
       activeClass: css(styles.cartWrapperHidden),
+      itemCounter: 0,
     }
   }
 
@@ -122,8 +124,36 @@ class Menu extends Component {
     return 'shop' === this.state.activeMenu
   }
 
+  setItemsCount() {
+    this.setState({itemCounter: window.Snipcart.api.items.count()})
+  }
+
   componentDidMount() {
     this.setActiveMenu()
+    const setItemsCount = this.setItemsCount
+
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      setItemsCount()
+
+      window.Snipcart.subscribe('page.changed', function (page) {
+        console.log('page', page)
+        // clearInterval(paymentDetailsButton)
+      })
+
+      document.addEventListener('snipcart.ready', function() {
+        setItemsCount()
+      })
+
+      window.Snipcart.subscribe('item.added', function () {
+        setItemsCount()
+      })
+      window.Snipcart.subscribe('item.removed', function () {
+        setItemsCount()
+      })
+      window.Snipcart.subscribe('item.updated', function () {
+        setItemsCount()
+      })
+    }
   }
 
   render() {
@@ -155,8 +185,8 @@ class Menu extends Component {
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
                     : this.isActiveMenu('projects')
-                    ? css(styles.subMenuLinkActive)
-                    : css(styles.subMenuLink)
+                      ? css(styles.subMenuLinkActive)
+                      : css(styles.subMenuLink)
                 }
               >
                 projects
@@ -192,8 +222,8 @@ class Menu extends Component {
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
                     : this.isActiveMenu('studio')
-                    ? css(styles.subMenuLinkActive)
-                    : css(styles.subMenuLink)
+                      ? css(styles.subMenuLinkActive)
+                      : css(styles.subMenuLink)
                 }
               >
                 studio
@@ -228,8 +258,8 @@ class Menu extends Component {
                   this.isShopCurrentPath()
                     ? css(styles.subMenuLinkInactive)
                     : this.isActiveMenu('contact')
-                    ? css(styles.subMenuLinkActive)
-                    : css(styles.subMenuLink)
+                      ? css(styles.subMenuLinkActive)
+                      : css(styles.subMenuLink)
                 }
               >
                 contact
@@ -267,18 +297,20 @@ class Menu extends Component {
               >
                 shop
               </span>
-
-              <button
-                className={css(styles.cartShowBtn)}
-                onClick={this.showCart}
-              >
-                1
-              </button>
+              {
+                this.state.itemCounter > 0 ?
+                  <button
+                    className={css(styles.cartShowBtn)}
+                    onClick={this.showCart}
+                  >
+                    {this.state.itemCounter}
+                  </button> : null
+              }
             </li>
           </ul>
         </div>
         <div className={this.state.activeClass}>
-          <Cart showElements={false} hideCart={this.hideCart} />
+          <Cart setItemsCount={this.setItemsCount} showElements={false} hideCart={this.hideCart} />
         </div>
       </div>
     )
