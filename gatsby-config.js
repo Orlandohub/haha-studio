@@ -14,12 +14,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'haha-studio',
-        short_name: 'haha',
+        name: 'HAHA-studio',
+        short_name: 'HAHA',
         start_url: '/',
         background_color: '#FFFFFF',
         theme_color: '#FFFFFF',
         display: 'minimal-ui',
+        icon: `src/images/haha.jpeg`,
       },
     },
     {
@@ -76,8 +77,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-snipcart',
       options: {
-        apiKey: 'YWFlODEyNzctZWIxNy00ZjBiLTliY2ItYzg1ZmM2MWMyNmM1NjM2ODMxNTM0MjQwMDE1NzI5'
-      }
+        apiKey:
+          'YWFlODEyNzctZWIxNy00ZjBiLTliY2ItYzg1ZmM2MWMyNmM1NjM2ODMxNTM0MjQwMDE1NzI5',
+      },
     },
     'gatsby-v2-plugin-page-transitions',
     'gatsby-plugin-react-helmet',

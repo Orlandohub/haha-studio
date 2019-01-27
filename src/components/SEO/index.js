@@ -1,6 +1,8 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
+//const currentPath = window.location
+
 function SEO(props) {
   return (
     <Helmet
@@ -15,7 +17,7 @@ function SEO(props) {
         },
         {
           property: 'og:url',
-          content: location,
+          content: this.location,
         },
 
         {

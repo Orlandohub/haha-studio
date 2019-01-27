@@ -47,11 +47,14 @@ export const backToHomeBtn = mq({
     transform: 'translateY(3px)',
   },
 })
+export const tableStyles = mq({
+  width: '100%',
+  verticalAlign: 'initial',
+})
 
 export const thanksSummaryTable = mq(tableStyles, {
   borderTop: '2px solid black',
   marginTop: [40, 40, 40, 40, 124.5],
-  width: '100%',
   marginBottom: [60, 60, 60, 122],
 })
 
@@ -68,10 +71,7 @@ export const imageWrap = mq({
 })
 
 //  ******************* PRODUCT TABLE STYLES
-export const tableStyles = mq({
-  width: '100%',
-  verticalAlign: 'initial',
-})
+
 export const rowStyles = mq({
   width: '25%',
   verticalAlign: 'initial',
