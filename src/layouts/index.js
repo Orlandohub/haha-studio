@@ -21,7 +21,7 @@ injectGlobal`
   }
   html, body, #___gatsby, div[role=group] {
     font-family: "Ginto Normal Regular";
-    height: 100%;
+    height: auto;
     overflow-x: hidden;    
   }
   img {

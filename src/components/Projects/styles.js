@@ -1,8 +1,4 @@
-import ScrollTop from 'react-scrolltop-button'
 import facepaint from 'facepaint'
-import styled from 'react-emotion'
-import arrowToTop from '../../images/arrow_go_top.png'
-import arrowBlackGoTop from '../../images/02_D_arrow_black_go_to_top.png'
 const breakpoints = [576, 768, 1024, 1200]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
@@ -44,47 +40,3 @@ export const styles = {
     color: 'black',
   }),
 }
-export const StyledScrollTop = styled(ScrollTop)`
-  position: fixed !important;
-  right: 4% !important;
-  display: block !important;
-  bottom: 5% !important;
-  width: 14px !important;
-  height: 21px !important;
-  padding: 15px !important;
-  border: none !important;
-  background-image: url(${arrowToTop}) !important;
-  background-position: center !important;
-  background-color: transparent !important;
-  background-repeat: no-repeat !important;
-  cursor: pointer !important;
-  outline: none !important;
-  transition: all 0s !important;
-
-  &:focus {
-    outline: none !important;
-  }
-
-  &:hover {
-    background-image: url(${arrowBlackGoTop}) !important;
-    background-position: center !important;
-    background-color: transparent !important;
-    background-repeat: no-repeat !important;
-    outline: none !important;
-  }
-  &:before {
-    content: 'top' !important;
-    position: relative !important;
-    top: -50px !important;
-    right: 14px !important;
-    font-size: 20px !important;
-    color: #cacac8 !important;
-  }
-  &:hover:before {
-    font-size: 20px !important;
-    color: black !important;
-  }
-  @media (max-width: 1024px) {
-    display: none !important;
-  }
-`

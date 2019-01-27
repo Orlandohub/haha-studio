@@ -47,7 +47,7 @@ const TextPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
   return (
     <Layout location={location}>
-      <SEO title={title} description={content} />
+      <SEO title={post.frontmatter.title} description={post.html} />
       <TextPageTemplate
         contentComponent={HTMLContent}
         content={post.html}

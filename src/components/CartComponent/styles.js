@@ -56,6 +56,13 @@ export const tableStyles = mq({
   width: '100%',
   verticalAlign: 'initial',
 })
+
+export const checkoutTableStyles = mq({
+  display: ['table', 'table', 'table', 'table', 'table', 'block'],
+  height: '100px',
+  overflowY: 'scroll',
+})
+
 export const rowStyles = mq({
   width: '25%',
   textAlign: 'left',
