@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import Helmet from 'react-helmet'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/AboutStyles/styles'
-
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 
@@ -31,16 +29,13 @@ const AboutPage = ({ data, location }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout location={location}>
-      <Helmet>
-        <title>{'About HAHA Studio'}</title>
-        <meta
-          name="description"
-          content={
-            'You listen up here iss a story about a little guys that lives in a HAHA world...'
-          }
-        />
-      </Helmet>
+    <Layout
+      location={location}
+      title={'About HAHA Studio'}
+      description={
+        'You listen up here iss a story about a little guys that lives in a HAHA world...'
+      }
+    >
       <AboutPageTemplate contentComponent={HTMLContent} content={post.html} />
     </Layout>
   )

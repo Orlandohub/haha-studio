@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import Helmet from 'react-helmet'
 import { map } from 'lodash'
 import * as styles from '../components/IndexPageStyles/ExplorationStyles/styles'
 import { css } from 'emotion'
@@ -12,14 +11,11 @@ const Exploration = ({ data, location }) => {
   const { edges } = data.explorationList
 
   return (
-    <Layout location={location}>
-      <Helmet>
-        <title>{'Explore HAHA Studio'}</title>
-        <meta
-          name="description"
-          content={'HAHA Studio exploration articles and stories'}
-        />
-      </Helmet>
+    <Layout
+      location={location}
+      title={'Explore HAHA Studio'}
+      description={'HAHA Studio exploration articles and stories'}
+    >
       <div className={css(styles.explorationWrapper)}>
         <div className={css(styles.explorationRightColumn)}>
           {map(edges, edge => {

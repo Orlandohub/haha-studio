@@ -19,7 +19,13 @@ const ExplorationPage = ({ data, location }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout location={location}>
+    <Layout
+      location={location}
+      title={'Explore with HAHA Studio'}
+      description={
+        'Proposing playful products and experience is important for a designer. However, when starting HAHA, this was not quite the first message we wanted to share, or maybe not the only one. In fact, we are quite skeptical about the notion of “playfulness” as it is today widely used by cynical marketing agents, gaming groups or uninspired creators as a catch-all and empty motto. If we need to recognize the essence of our human character as Homo Ludens, we believe that’s it is not in the 4 corners of our computer screen, neither in the false user-friendly formulas, or the illusionary work/play society models that are offered to us today.'
+      }
+    >
       <ExplorationPageTemplate
         contentComponent={HTMLContent}
         content={post.html}

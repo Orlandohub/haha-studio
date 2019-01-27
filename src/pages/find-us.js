@@ -1,19 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import { Helmet } from 'react-helmet'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/FindUsStyles/styles'
 
 const FindUs = ({ location }) => (
-  <Layout location={location}>
-    <Helmet>
-      <title>HAHA Studio contacts</title>
-      <meta
-        name="description"
-        content="HAHA Staff, HAHA contacts, HAHA social media"
-      />
-    </Helmet>
+  <Layout
+    location={location}
+    title={'HAHA Studio contacts'}
+    description={
+      'HAHA Staff, HAHA contacts, HAHA social media, We are here, come and find us, Pipersgatan 14, 112 24 Stockholm, Sweden, Yujin Chiang, Arash Eskafi'
+    }
+  >
     <div className={css(styles.findUsWrapper)}>
       <div className={css(styles.findUsRightColumn)}>
         <p className={css(styles.findUsParagraph)}>

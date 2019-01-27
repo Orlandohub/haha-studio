@@ -1,7 +1,6 @@
 import React from 'react'
 import { map } from 'lodash'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import Layout from '../layouts'
 import { css } from 'emotion'
 import { genericHashLink } from 'react-router-hash-link'
@@ -16,14 +15,11 @@ const MyHashLink = props => genericHashLink(props, Link)
 const Press = ({ location, data }) => {
   const { edges } = data.pressList
   return (
-    <Layout location={location}>
-      <Helmet>
-        <title>{'Press about HAHA Studio'}</title>
-        <meta
-          name="description"
-          content={'Find out what the world press has to say about HAHA studio'}
-        />
-      </Helmet>
+    <Layout
+      location={location}
+      title={'Press about HAHA Studio'}
+      description={'Find out what the world press has to say about HAHA studio'}
+    >
       <div className={css(styles.pressWrapper)}>
         <div className={css(styles.pressRightColumn)}>
           <div className={css(styles.pressText)}>

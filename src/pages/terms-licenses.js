@@ -1,21 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import Helmet from 'react-helmet'
 import { css } from 'react-emotion'
 import * as styles from '../components/IndexPageStyles/TermsAndLicensesStyles/styles'
 import ShopNavigation from '../components/ShopNavigation/index'
 import { StyledScrollTop } from '../components/Projects/styles'
 
 const TermsAndLicenses = ({ location }) => (
-  <Layout location={location}>
-    <Helmet>
-      <title>{'HAHA Studio Terms and Licenses'}</title>
-      <meta
-        name="description"
-        content={'HAHA Studio terms, licenses, conditions'}
-      />
-    </Helmet>
+  <Layout
+    location={location}
+    title={'HAHA Studio Terms and Licenses'}
+    description={'HAHA Studio terms, licenses, conditions'}
+  >
     <div className={css(styles.termsLicensesWrapper)}>
       <StyledScrollTop
         text=""

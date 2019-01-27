@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 import Carousel from '../components/Carousel'
@@ -25,11 +24,7 @@ export const ProjectsTemplate = ({
 }) => {
   const PostContent = contentComponent || Content
   return (
-    <Layout location={location}>
-      <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={content} />
-      </Helmet>
+    <Layout location={location} title={title} description={content}>
       <div className={css(styles.projectWrapper)}>
         <div className={css(styles.projectTitleSliderWrap)}>
           <div className={css(styles.projectTitle)}>

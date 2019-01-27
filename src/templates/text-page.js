@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import Helmet from 'react-helmet'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/IndividualTextStyles/styles'
 import NavFooter from '../components/NavigationFooter'
@@ -46,11 +45,7 @@ TextPageTemplate.propTypes = {
 const TextPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
   return (
-    <Layout location={location}>
-      <Helmet>
-        <title>{`${post.frontmatter.title}`}</title>
-        <meta name="description" content={`${post.html}`} />
-      </Helmet>
+    <Layout location={location} title={title} description={content}>
       <TextPageTemplate
         contentComponent={HTMLContent}
         content={post.html}

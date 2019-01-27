@@ -1,21 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { css } from 'emotion'
 import Layout from '../layouts'
 import * as styles from '../components/IndexPageStyles/RetailersStyles/styles'
 
 const Retailers = ({ location }) => (
-  <Layout location={location}>
-    <Helmet>
-      <title>{'HAHA Studio retailers'}</title>
-      <meta
-        name="description"
-        content={
-          'HAHA Studio distribuitors, retailers, where you can buy our products'
-        }
-      />
-    </Helmet>
+  <Layout
+    location={location}
+    title={'HAHA Studio retailers'}
+    description={
+      'HAHA Studio distribuitors, retailers, where you can buy our products'
+    }
+  >
     <div className={css(styles.retailersWrapper)}>
       <div className={css(styles.leftFloatingEmptySpace)} />
 

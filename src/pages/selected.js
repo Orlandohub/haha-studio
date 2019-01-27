@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import Helmet from 'react-helmet'
 import Projects from '../components/Projects'
 import { graphql } from 'gatsby'
 
@@ -10,14 +9,11 @@ class Selected extends React.Component {
     const { location, data } = this.props
     const { projectsList } = data
     return (
-      <Layout location={location}>
-        <Helmet>
-          <title>{'HAHA Studio selected '}</title>
-          <meta
-            name="description"
-            content={'HAHA Studio current best products and projects'}
-          />
-        </Helmet>
+      <Layout
+        location={location}
+        title={'HAHA Studio selected'}
+        description={'HAHA Studio current best products and projects'}
+      >
         <Projects projects={projectsList} />
       </Layout>
     )

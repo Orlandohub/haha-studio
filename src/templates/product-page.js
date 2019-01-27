@@ -3,7 +3,6 @@ import { capitalize, map } from 'lodash'
 import { slugify } from 'lodash-addons'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import Helmet from 'react-helmet'
 import Carousel from '../components/Carousel'
 import { graphql } from 'gatsby'
 import NavFooter from '../components/NavigationFooter'
@@ -49,11 +48,14 @@ class ProductPageTemplate extends React.Component {
     const PageContent = contentComponent || Content
 
     return (
-      <Layout location={location}>
-        <Helmet>
-          <title>{title}</title>
-          <meta name="description" content={content} />
-        </Helmet>
+      <Layout
+        location={location}
+        title={title}
+        description={title}
+        thumbnail={thumbnail}
+        url={thumbnail}
+        pathname={slug}
+      >
         <div className={css(styles.shopProductWrapper)}>
           <div className={css(styles.leftTitleColumn)}>{title}</div>
           <div className={css(styles.mainBodyWrapper)}>
@@ -71,6 +73,7 @@ class ProductPageTemplate extends React.Component {
             {map(imageGallery, media => {
               return (
                 <button
+                  key={media.color_name}
                   style={{
                     display:
                       media.color_name === color_name ? 'inline-block' : 'none',

@@ -62,6 +62,10 @@ function SEO(props) {
 
         { name: 'twitter:creator', content: '@HAHAStudio' },
         { property: 'og:site_name', content: 'HAHA Studio' },
+        {
+          name: 'keywords',
+          content: 'design, design studio, stockholm, e-commerce',
+        },
       ]}
     >
       <html lang="en" />

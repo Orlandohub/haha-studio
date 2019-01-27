@@ -1,20 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Layout from '../layouts'
-import Helmet from 'react-helmet'
 import { css } from 'react-emotion'
 import * as styles from '../components/IndexPageStyles/ShippingPageStyles/styles'
 import ShopNavigation from '../components/ShopNavigation/index'
 
 const Shipping = ({ location }) => (
-  <Layout location={location}>
-    <Helmet>
-      <title>{'HAHA Studio shipping'}</title>
-      <meta
-        name="description"
-        content={'HAHA Studio shipping prices and informations'}
-      />
-    </Helmet>
+  <Layout
+    location={location}
+    title={'HAHA Studio shipping'}
+    description={'HAHA Studio shipping prices and informations'}
+  >
     <div className={css(styles.shippingWrapper)}>
       <div className={css(styles.shippingTitle)}>Shipping</div>
       <div className={css(styles.shippingTextWrapper)}>

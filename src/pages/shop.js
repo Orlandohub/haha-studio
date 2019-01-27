@@ -1,7 +1,6 @@
 import React from 'react'
 import { map } from 'lodash'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import Layout from '../layouts'
 import Link from 'gatsby-link'
 import { css } from 'react-emotion'
@@ -14,14 +13,11 @@ const Shop = ({ location, data }) => {
   const { projectsList: posts } = data
   const { edges } = posts
   return (
-    <Layout location={location}>
-      <Helmet>
-        <title>{'HAHA Studio Shop'}</title>
-        <meta
-          name="description"
-          content={'HAHA Studio shop, buy our exclusive products! Now!'}
-        />
-      </Helmet>
+    <Layout
+      location={location}
+      title={'HAHA Studio Shop'}
+      description={'HAHA Studio shop! buy our exclusive products! Now!'}
+    >
       <div className={css(styles.shopWrapper)}>
         <div className={css(styles.shopRightColumn)}>
           {map(edges, edge => {
