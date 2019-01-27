@@ -135,17 +135,13 @@ class Menu extends Component {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       setItemsCount()
 
-      window.Snipcart.subscribe('page.changed', function (page) {
-        console.log('page', page)
-        // clearInterval(paymentDetailsButton)
-      })
-
       document.addEventListener('snipcart.ready', function() {
         setItemsCount()
       })
 
-      window.Snipcart.subscribe('item.added', function () {
+      window.Snipcart.subscribe('item.added', () => {
         setItemsCount()
+        this.showCart()
       })
       window.Snipcart.subscribe('item.removed', function () {
         setItemsCount()

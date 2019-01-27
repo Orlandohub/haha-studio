@@ -220,6 +220,10 @@ export const middleRowsRight = mq({
 
 export const sumRowBottom = mq({
   paddingBottom: [10, 10, 10, 35, 35],
+  cursor: 'help',
+  '& span': {
+    borderBottom: '1px dashed #000',
+  }
 })
 
 export const sumRowBottomRight = mq(sumRowBottom, {
