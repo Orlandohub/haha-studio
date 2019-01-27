@@ -35,7 +35,7 @@ class Hero extends React.Component {
     this.props.showContent()
   }
   render() {
-    const { data, location } = this.props
+    const { data } = this.props
     const { logoLoaderIsVisible, slide } = this.state
     return (
       <div data-cy="hero">
