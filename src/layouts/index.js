@@ -9,6 +9,7 @@ import { styles } from './styles'
 import SEO from '../components/SEO/index'
 import '../assets/bootstrap/css/bootstrap.min.css'
 import { injectGlobal } from 'emotion'
+import Helmet from 'react-helmet'
 
 injectGlobal`
   @font-face {
@@ -77,6 +78,7 @@ const Layout = ({ children, location, hideMenu }) => (
         site {
           siteMetadata {
             title
+            siteUrl
           }
         }
         logoImage: file(relativePath: { eq: "logo_large.png" }) {
@@ -102,8 +104,8 @@ const Layout = ({ children, location, hideMenu }) => (
           description={
             'HAHA studio is the Stockholm based design practice. Hailing from different cultures— Scandinavia and East Asia. HAHA works hand in hand with craftspeople in Sweden and Taiwan. The practice designs lighting fixtures, accessories, limited editions, and undertakes regular collaborations in interior architecture.'
           }
+          location={location}
           thumbnail={data.fileName.childImageSharp.fluid.src}
-          url={data.fileName.childImageSharp.fluid.src}
         />
 
         {!hideMenu && <Menu location={location} data={data} />}

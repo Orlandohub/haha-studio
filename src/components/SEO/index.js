@@ -1,8 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 
-//console.log('this locations is' + location + ' path is ' + location.pathname)
-function SEO(props, { location }) {
+function SEO(props) {
   return (
     <Helmet
       title={props.title}
@@ -16,16 +15,16 @@ function SEO(props, { location }) {
         },
         {
           property: 'og:url',
-          content: location,
+          content: 'http://www.hahastudio.se' + location,
         },
 
         {
           property: 'og:image',
-          content: props.thumbnail && props.thumbnail,
+          content: props.thumbnail,
         },
         {
           property: 'og:image:secure_url',
-          content: props.thumbnail && props.thumbnail,
+          content: props.thumbnail,
         },
 
         {
@@ -56,7 +55,7 @@ function SEO(props, { location }) {
         },
         {
           name: 'twitter:image',
-          content: props.thumbnail && props.thumbnail,
+          content: props.thumbnail,
         },
         { property: 'og:type', content: 'website' },
         { name: 'robots', content: 'index, follow' },
