@@ -43,7 +43,6 @@ class Hero extends React.Component {
           description={'HAHA Studio introduction'}
           thumbnail={data.fileName.childImageSharp.fluid}
           url={data.fileName.childImageSharp.fluid.src}
-          pathname={this.location}
         />
         <div
           className={
