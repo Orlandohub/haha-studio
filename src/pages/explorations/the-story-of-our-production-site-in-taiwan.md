@@ -1,7 +1,7 @@
 ---
 templateKey: exploration-page
-title: The story of our production site in Taiwan
-date: 2019-01-14T09:41:48.114Z
-image: /assets/uploads/d_portrait_image.jpg
+title: Our secret workshop in Enkoping
+date: 2019-01-20T09:00:00.000Z
+image: /assets/uploads/exploration_01.jpg
 ---
-Proposing playful products and experience is important for a designer. However, when starting HAHA, this was not quite the first message we wanted to share, or maybe not the only one. In fact, we are quite skeptical about the notion of “playfulness” as it is today widely used by cynical marketing agents, gaming groups or uninspired creators as a catch-all and empty motto. If we need to recognize the essence of our human character as Homo Ludens, we believe that’s it is not in the 4 corners of our computer screen, neither in the false user-friendly formulas, or the illusionary work/play society models that are offered to us today.
+As we have mentioned in our previous story, we are enthusiasts of working side by side with craftspeople. Their knowledge and experience are priceless. One of our frequent collaborators is Sven-Eric Söderström from Enköping, Stockholm. Svenne (as we call him) has been working in the steel production craftspeople for his whole life (he is now 67). He pretty much masters everything from cutting, welding, bending – even in his sleep. While smoking on his cigars and drinking pitch black coffee, he has been a remarkable advisor and loyal friend of HAHA.
