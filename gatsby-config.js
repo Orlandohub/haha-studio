@@ -20,7 +20,7 @@ module.exports = {
         background_color: '#FFFFFF',
         theme_color: '#FFFFFF',
         display: 'minimal-ui',
-        icon: `src/images/haha.jpeg`,
+        icon: `src/images/HAHA.png`,
       },
     },
     {

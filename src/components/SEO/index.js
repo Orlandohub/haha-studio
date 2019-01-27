@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 
 //const currentPath = window.location
-
+console.log('this locations is' + location + ' path is ' + location.pathname)
 function SEO(props) {
   return (
     <Helmet
@@ -17,7 +17,7 @@ function SEO(props) {
         },
         {
           property: 'og:url',
-          content: this.location,
+          content: location,
         },
 
         {
