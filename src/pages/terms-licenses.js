@@ -4,19 +4,12 @@ import Layout from '../layouts'
 import { css } from 'react-emotion'
 import * as styles from '../components/IndexPageStyles/TermsAndLicensesStyles/styles'
 import ShopNavigation from '../components/ShopNavigation/index'
-import { StyledScrollTop } from '../components/Projects/styles'
+import ScrollTop from '../components/ScrollToTop/index'
 
 const TermsAndLicenses = ({ location }) => (
   <Layout location={location}>
     <div className={css(styles.termsLicensesWrapper)}>
-      <StyledScrollTop
-        text=""
-        distance={1500}
-        breakpoint={1024}
-        speed={500}
-        target={0}
-        icon={null}
-      />
+      <ScrollTop />
       <div className={css(styles.termsLicensesTitle)}>
         Terms/Licenses
         <br />
