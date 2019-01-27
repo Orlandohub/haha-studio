@@ -2,10 +2,11 @@ import React from 'react'
 import { map } from 'lodash'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
-import { styles, StyledScrollTop } from './styles'
+import { styles } from './styles'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
 import { genericHashLink } from 'react-router-hash-link'
+import ScrollTop from '../ScrollToTop/index'
 
 const MyHashLink = props => genericHashLink(props, Link)
 
@@ -15,14 +16,7 @@ const Projects = projectsList => {
 
   return (
     <div className={css(styles.projectWrapper)}>
-      <StyledScrollTop
-        text=""
-        distance={1500}
-        breakpoint={1024}
-        speed={500}
-        target={0}
-        icon={null}
-      />
+      <ScrollTop />
       {map(edges, project => {
         const { id } = project && project.node
         const { title, year, image_gallery } =
