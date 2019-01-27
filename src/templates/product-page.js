@@ -73,7 +73,6 @@ class ProductPageTemplate extends React.Component {
             {map(imageGallery, media => {
               return (
                 <button
-                  key={media.color_name}
                   style={{
                     display:
                       media.color_name === color_name ? 'inline-block' : 'none',
@@ -185,3 +184,4 @@ export const productPageQuery = graphql`
     }
   }
 `
+// key={media.color_name}
