@@ -1,5 +1,5 @@
 import facepaint from 'facepaint'
-import crossImg from '../../images/04_D_big_cross_cart_menu.png'
+import crossImg from '../../images/D_cart_cross_small.png'
 
 const breakpoints = [414, 576, 768, 1024, 1200, 1366, 1720]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
