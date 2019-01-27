@@ -1,6 +1,6 @@
 ---
 templateKey: press-page
-title: Schöner_Whonen
+title: Schoner_Whonen
 date: 2019-01-19T11:00:00.000Z
 cover: /assets/uploads/d_press_cover_sch_wh.jpg
 counter_cover: /assets/uploads/d_press_counter_cover_sch_wh.jpg

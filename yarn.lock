@@ -6215,6 +6215,11 @@ gatsby-plugin-sharp@^2.0.12:
     sharp "^0.21.0"
     svgo "^0.7.2"
 
+gatsby-plugin-snipcart@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-snipcart/-/gatsby-plugin-snipcart-1.0.6.tgz#21460b958980e7f7b335874522ae07187dd1840f"
+  integrity sha512-CrefXosRZA/j0oF940VUkKGWAEUpurBE6iA6HrD3Z+6cBHT/dXY9EkViIvxsbfU1wyJPnyB5pDTZtCaqGbKRog==
+
 gatsby-react-router-scroll@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.2.tgz#d8046ce2f3bfa52ef6ec55804007d976b0bb6bef"
@@ -8877,6 +8882,11 @@ lockfile@^1.0.4:
   integrity sha512-cvbTwETRfsFh4nHsL1eGWapU1XFi5Ot9E85sWAwia7Y7EgB7vfqcZhTKZ+l7hCGxSPoushMv5GKhT5PdLv03WA==
   dependencies:
     signal-exit "^3.0.2"
+
+lodash-addons@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/lodash-addons/-/lodash-addons-2.0.1.tgz#c1bbd64dec5e091e717ae695a2c1b01865800eb3"
+  integrity sha512-fE0jBqbiDSJDWX1pAFRsCQwpicsP64RbKMVt15xtD1aa8vcpI1NMt2rh9f5G6CAkbitYeTRrjZqOSvci8RHYrg==
 
 lodash-es@^4.17.11:
   version "4.17.11"
