@@ -7,11 +7,8 @@ import PageTransition from 'gatsby-v2-plugin-page-transitions'
 import { css } from 'emotion'
 import { styles } from './styles'
 import SEO from '../components/SEO/index'
-
 import '../assets/bootstrap/css/bootstrap.min.css'
-
 import { injectGlobal } from 'emotion'
-import { props } from 'bluebird'
 
 injectGlobal`
   @font-face {
