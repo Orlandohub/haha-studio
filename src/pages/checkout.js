@@ -1,5 +1,5 @@
 import React from 'react'
-import { OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { OverlayTrigger, Tooltip, Modal } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { isEmpty } from 'lodash'
 import Layout from '../layouts'
@@ -12,6 +12,7 @@ import { withFormik, Form, Field } from 'formik'
 import * as Yup from 'yup'
 import Cart from '../components/CartComponent/index'
 import MaskedInput from 'react-text-mask'
+import Loader from 'react-loader-spinner'
 
 /*
 -ms-overflow-style: none;
@@ -40,6 +41,7 @@ class CheckOut extends React.Component  {
       subTotal: 0,
       discount: 0,
       shipping: 10,
+      processingPayment: false,
       values: {},
     }
 
@@ -57,6 +59,10 @@ class CheckOut extends React.Component  {
   }
   componentDidMount() {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      window.Snipcart.subscribe('order.completed', function (data) {
+        console.log('COMPLETED', data)
+      })
+
       const cart = window.Snipcart.api.cart.get()
       this.setState({
         subTotal: cart && cart.itemsTotal,
@@ -89,6 +95,7 @@ class CheckOut extends React.Component  {
 
       window.Snipcart.subscribe('page.changed', (page) => {
         const { values } = this.state
+        console.log('page', page);
         if (page === 'cart-content') {
           window.jQuery('.js-next').click()
         }
@@ -165,6 +172,27 @@ class CheckOut extends React.Component  {
     return (
       <Layout hideMenu={true}>
         {' '}
+        <Modal bsSize="small" show={this.state.processingPayment} onHide={
+          () => {
+            this.setState({
+              processingPayment: false,
+            })
+          }
+        }>
+          <Modal.Body>
+            <p className={css(styles.paymentModalTitle)}>Processing Payment</p>
+            <br/>
+            <div className={css(styles.paymentModalLoader)}>
+              <Loader 
+                type="Grid"
+                color="#000"
+                height="50" 
+                width="50"
+              /> 
+            </div> 
+            <br/>
+          </Modal.Body>
+        </Modal>
         <div className={css(styles.pageWrapper)}>
           <div className={css(styles.cartWrapper)}>
             <div className={css(styles.brand)}>
@@ -200,7 +228,7 @@ class CheckOut extends React.Component  {
                         discount: appliedCode.amountSaved
                       })
                     })
-                    .fail((error) => {
+                    .fail(() => {
                       alert("Something went wrong when adding the discount code, are you sure it's a valid code?");
                     })
                 }}
@@ -690,7 +718,7 @@ class CheckOut extends React.Component  {
                 >
                   COMPLETE PURCHASE
                 </button>
-                <button type="button" onClick={() => this.connect(values, isValid)}>CONNECT</button>
+                <button type="button" onClick={() => this.setState({processingPayment: true})}>CONNECT</button>
                 <p className={css(styles.paragraphBottom)}>
                   By completing your purchase you accept to the{' '}
                   <Link

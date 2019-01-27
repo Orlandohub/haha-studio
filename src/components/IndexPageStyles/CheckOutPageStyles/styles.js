@@ -209,6 +209,15 @@ export const sumRowTopRight = mq(sumRowTop, {
   textAlign: 'right',
 })
 
+export const paymentModalTitle = mq({
+  textAlign: 'center',
+  fontSize: '22px',
+})
+
+export const paymentModalLoader = mq({
+  textAlign: 'center',
+})
+
 export const middleRows = mq({
   paddingBottom: 5,
 })
@@ -294,6 +303,7 @@ export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
     '17px 10px',
     '17px 10px',
   ],
+  backgroundColor: '#fff',
 })
 
 export const halfWidthFormsCVC = mq(halfWidthDate, {
