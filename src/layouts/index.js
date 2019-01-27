@@ -9,7 +9,6 @@ import { styles } from './styles'
 import SEO from '../components/SEO/index'
 import '../assets/bootstrap/css/bootstrap.min.css'
 import { injectGlobal } from 'emotion'
-import Helmet from 'react-helmet'
 
 injectGlobal`
   @font-face {
@@ -78,7 +77,6 @@ const Layout = ({ children, location, hideMenu }) => (
         site {
           siteMetadata {
             title
-            siteUrl
           }
         }
         logoImage: file(relativePath: { eq: "logo_large.png" }) {

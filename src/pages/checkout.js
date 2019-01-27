@@ -13,6 +13,7 @@ import * as Yup from 'yup'
 import Cart from '../components/CartComponent/index'
 import MaskedInput from 'react-text-mask'
 import Loader from 'react-loader-spinner'
+import { navigate } from 'gatsby'
 
 const date = new Date()
 const year = date.getFullYear()
@@ -48,14 +49,34 @@ class CheckOut extends React.Component {
   }
   componentDidMount() {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-      window.Snipcart.subscribe('order.completed', function(data) {
-        console.log('COMPLETED', data)
+      window.Snipcart.subscribe('order.completed', order => {
+        console.log('items', order)
+        window.jQuery.ajax({
+          url:
+            'https://app.snipcart.com/api/orders/21017e18-6113-4847-8f9e-2643b65673b0',
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader(
+              'Authorization',
+              'Bearer YWFlODEyNzctZWIxNy00ZjBiLTliY2ItYzg1ZmM2MWMyNmM1NjM2ODMxNTM0MjQwMDE1NzI5'
+            )
+            xhr.setRequestHeader('Accept', 'application/json')
+          },
+          success: function(data) {
+            console.log('data', data)
+            //process the JSON data etc
+          },
+          error: function(e) {
+            console.log('error', e)
+          },
+        })
+        // navigate('/thank-you/', { state: { items }})
       })
 
       const cart = window.Snipcart.api.cart.get()
       this.setState({
         subTotal: cart && cart.itemsTotal,
         total: cart && cart.total,
+        cart,
       })
 
       const discounts = window.Snipcart.api.discounts.all()
@@ -71,6 +92,7 @@ class CheckOut extends React.Component {
         this.setState({
           subTotal: carts && carts.itemsTotal,
           total: carts && carts.total,
+          cart: carts,
         })
 
         const discountss = window.Snipcart.api.discounts.all()
@@ -255,7 +277,9 @@ class CheckOut extends React.Component {
                           type="submit"
                           value=""
                           className={css(styles.submitBtn)}
-                        />
+                        >
+                          &rarr;
+                        </button>
                       </td>
                     </tr>
                   </tbody>

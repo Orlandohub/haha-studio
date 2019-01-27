@@ -15,7 +15,7 @@ function SEO(props) {
         },
         {
           property: 'og:url',
-          content: 'http://www.hahastudio.se' + location,
+          content: location,
         },
 
         {

@@ -1,7 +1,7 @@
 ---
 templateKey: product-page
 title: Rainbow Lamp
-is_active: true
+is_active: false
 date: 2019-01-10T09:40:24.813Z
 price: '459'
 cover_image: /assets/uploads/screenshot-2018-12-06-at-15.08.31.png

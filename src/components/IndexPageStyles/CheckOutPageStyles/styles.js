@@ -1,5 +1,4 @@
-import entercodearrow from '../../../images/06_M_arrow_entercode_checkout_page.png'
-import selectArrow from '../../../images/06_D_down_arrow_checkout_page.png'
+import selectArrow from '../../../images/dropdown_arrow.svg'
 import facepaint from 'facepaint'
 const breakpoints = [411, 576, 768, 1024, 1200, 1500]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
@@ -141,14 +140,14 @@ export const arrowWrap = mq({
 })
 
 export const submitBtn = mq({
-  width: '10px',
+  // width: '10px',
   height: '15px',
   backgroundColor: 'transparent',
   outline: 'none',
   border: 'none',
-  backgroundImage: `url(${entercodearrow})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'bottom',
+  // backgroundImage: `url(${entercodearrow})`,
+  // backgroundRepeat: 'no-repeat',
+  // backgroundPosition: 'bottom',
 })
 
 export const promoLabelStyles = mq({
@@ -297,13 +296,23 @@ export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
   backgroundPosition: '100% 80%',
   backgroundRepeat: 'no-repeat',
   backgroundSize: [
-    '8px 4.6px',
-    '8px 4.6px',
-    '8px 4.6px',
-    '17px 10px',
-    '17px 10px',
+    '19px 10px',
+    // '8px 4.6px',
+    // '8px 4.6px',
+    // '17px 10px',
+    // '17px 10px',
   ],
   backgroundColor: '#fff',
+  position: 'relative',
+  '&:before': {
+    content: '&darr;',
+    width: '10px',
+    height: '10px',
+    position: 'absolute',
+    backgroundColor: 'red',
+    top: 0,
+    left: 0,
+  }
 })
 
 export const halfWidthFormsCVC = mq(halfWidthDate, {

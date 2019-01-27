@@ -14,11 +14,7 @@ const NavFooter = props => {
     <div className={css(styles.footerWrapper)}>
       <span className={css(styles.spanLeft)}>
         <MyHashLink to={`${linkLeft}#Menu`} className={css(styles.linkStyle)}>
-          <img
-            className={css(styles.arrowLeft)}
-            src={footerArrow}
-            alt="arrow left"
-          />
+          <span className={css(styles.arrowRight)} style={{color: '#000'}}>&larr;</span>
         </MyHashLink>
       </span>
 
@@ -34,11 +30,7 @@ const NavFooter = props => {
       <span className={css(styles.spanRight)}>
         {' '}
         <MyHashLink to={`${linkRight}#Menu`} className={css(styles.linkStyle)}>
-          <img
-            className={css(styles.arrowRight)}
-            src={footerArrow}
-            alt="arrowr right"
-          />
+          <span className={css(styles.arrowLeft)} style={{color: '#000'}}>&larr;</span>
         </MyHashLink>
       </span>
     </div>
