@@ -72,8 +72,9 @@ class ScrollTop extends Component {
   }
 
   checkForScrollToTop() {
-    let Yoffset = window.pageYOffset
-    Yoffset > 1500
+    let Yoffset = 1500
+    document.body.scrollTop > Yoffset ||
+    document.documentElement.scrollTop > Yoffset
       ? this.setState({
           showScrollToTop: true,
         })
