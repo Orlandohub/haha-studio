@@ -30,6 +30,7 @@ const Press = ({ location, data }) => {
               </a>
               <br />
               <br />{' '}
+            {/* 
               <a href="/press/" className={css(styles.pressLink)}>
                 Download high-resolution images and media kits
               </a>
@@ -40,6 +41,7 @@ const Press = ({ location, data }) => {
               </a>
               <br />
               <br />{' '}
+              */}
               <a href="/press/" className={css(styles.pressLink)}>
                 Download press releases
               </a>

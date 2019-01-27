@@ -15,16 +15,16 @@ const FindUs = ({ location }) => (
             <br /> 112 24 Stockholm
             <br /> Sweden
             <br />
+            <br /> Arash Eskafi
+            <br /> Designer / Founder
+            <br /> arash@hahastudio.se
+            <br /> T +46 769 41 80 80
+            <br />
             <br /> Yujin Chiang
             <br />
             Designer / Founder
             <br /> yujin@hahastudio.se
             <br /> T +46 707 68 66 02
-            <br />
-            <br /> Arash Eskafi
-            <br /> Designer / Founder
-            <br /> arash@hahastudio.se
-            <br /> T +46 769 41 80 80
             <br />
             <br />
             <a
