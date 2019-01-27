@@ -11,14 +11,6 @@ import * as Yup from 'yup'
 import Cart from '../components/CartComponent/index'
 import MaskedInput from 'react-text-mask'
 
-/*
--ms-overflow-style: none;
-    scrollbar-width: none;
-    ::-webkit-scrollbar { 
-      display: none; 
-  }
-*/
-
 const date = new Date()
 const year = date.getFullYear()
 
@@ -31,9 +23,12 @@ function connect() {
     window.jQuery('#snip-address1').val('Tellusborgsvägen')
     window.jQuery('#snip-city').val('Stockholm')
     window.jQuery('#snip-country').val('Canada')
-    window.jQuery('#snip-country option').filter(function() {
-      return window.jQuery(this).text() === 'Sweden' 
-    }).prop('selected', true)
+    window
+      .jQuery('#snip-country option')
+      .filter(function() {
+        return window.jQuery(this).text() === 'Sweden'
+      })
+      .prop('selected', true)
     window.jQuery('#snip-postalCode').val('126 28')
     window.jQuery('#snip-email').val('orlando.goncalves@gmail.com')
     window.jQuery('#snip-phone').val('2134234234')
@@ -46,30 +41,34 @@ function connect() {
     window.jQuery('#snip-expirationMonth').val('5')
     window.jQuery('#snip-expirationYear').val('2022')
 
-    setTimeout(function(){ window.jQuery('#snipcart-paymentmethod-pay').click() }, 1000)
-    setTimeout(function(){ window.jQuery('.js-submit').click() }, 1000)
+    setTimeout(function() {
+      window.jQuery('#snipcart-paymentmethod-pay').click()
+    }, 1000)
+    setTimeout(function() {
+      window.jQuery('.js-submit').click()
+    }, 1000)
   }
 }
 
-class CheckOut extends React.Component  {
+class CheckOut extends React.Component {
   constructor(props) {
     super(props)
-  
+
     this.state = {
-      total: 0
+      total: 0,
     }
   }
   componentDidMount() {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       const cart = window.Snipcart.api.cart.get()
       this.setState({
-        total: cart && cart.total
+        total: cart && cart.total,
       })
 
       document.addEventListener('snipcart.ready', () => {
         const carts = window.Snipcart.api.cart.get()
         this.setState({
-          total: carts && carts.total
+          total: carts && carts.total,
         })
       })
     }
@@ -207,7 +206,9 @@ class CheckOut extends React.Component  {
                   className={css(styles.inputWrapper)}
                 />
                 {touched.lastName && errors.lastName && (
-                  <div className={css(styles.errorStyles)}>{errors.lastName}</div>
+                  <div className={css(styles.errorStyles)}>
+                    {errors.lastName}
+                  </div>
                 )}
               </label>
               <label className={css(styles.formLabels)}>
@@ -308,7 +309,9 @@ class CheckOut extends React.Component  {
                   className={css(styles.halfWidthFormsInputs)}
                 />
                 {touched.zipCode && errors.zipCode && (
-                  <div className={css(styles.errorStyles)}>{errors.zipCode}</div>
+                  <div className={css(styles.errorStyles)}>
+                    {errors.zipCode}
+                  </div>
                 )}
               </label>
               <label className={css(styles.formLabels)}>
@@ -319,7 +322,9 @@ class CheckOut extends React.Component  {
                   className={css(styles.inputWrapper)}
                 />
                 {touched.country && errors.country && (
-                  <div className={css(styles.errorStyles)}>{errors.country}</div>
+                  <div className={css(styles.errorStyles)}>
+                    {errors.country}
+                  </div>
                 )}
               </label>
 
@@ -335,7 +340,9 @@ class CheckOut extends React.Component  {
                 />
                 <div className={css(styles.customCheckBox)}>
                   {values.shiptoanotheradress ? (
-                    <p style={{ lineHeight: 0.7, fontSize: '22px' }}>&#10004;</p>
+                    <p style={{ lineHeight: 0.7, fontSize: '22px' }}>
+                      &#10004;
+                    </p>
                   ) : null}
                 </div>
                 Ship to another adress?
@@ -387,11 +394,12 @@ class CheckOut extends React.Component  {
                     name="deliveryAdressLine1"
                     className={css(styles.inputWrapper)}
                   />
-                  {touched.deliveryAdressLine1 && errors.deliveryAdressLine1 && (
-                    <div className={css(styles.errorStyles)}>
-                      {errors.deliveryAdressLine1}
-                    </div>
-                  )}
+                  {touched.deliveryAdressLine1 &&
+                    errors.deliveryAdressLine1 && (
+                      <div className={css(styles.errorStyles)}>
+                        {errors.deliveryAdressLine1}
+                      </div>
+                    )}
                 </label>
                 <label className={css(styles.formLabels)}>
                   Address line 2
@@ -400,11 +408,12 @@ class CheckOut extends React.Component  {
                     name="deliveryAdressLine2"
                     className={css(styles.inputWrapper)}
                   />
-                  {touched.deliveryAdressLine2 && errors.deliveryAdressLine2 && (
-                    <div className={css(styles.errorStyles)}>
-                      {errors.deliveryAdressLine2}
-                    </div>
-                  )}
+                  {touched.deliveryAdressLine2 &&
+                    errors.deliveryAdressLine2 && (
+                      <div className={css(styles.errorStyles)}>
+                        {errors.deliveryAdressLine2}
+                      </div>
+                    )}
                 </label>
                 <label className={css(styles.halfWidthFormsCenter)}>
                   City
@@ -582,7 +591,9 @@ class CheckOut extends React.Component  {
                 >
                   COMPLETE PURCHASE
                 </button>
-                <button type="button" onClick={connect}>CONNECT</button>
+                <button type="button" onClick={connect}>
+                  CONNECT
+                </button>
                 <p className={css(styles.paragraphBottom)}>
                   By completing your purchase you accept to the{' '}
                   <Link
@@ -721,7 +732,7 @@ const FormikCheckOut = withFormik({
   // ************************** HANDLE SUBMIT AND VALIDATION
 
   handleSubmit(values, { resetForm, setErrors, setSubmitting }) {
-    console.log('handle submit values', values);
+    console.log('handle submit values', values)
     setTimeout(() => {
       console.log('values are ' + values)
       // errors example below

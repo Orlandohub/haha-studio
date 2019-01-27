@@ -3,15 +3,16 @@ import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/FindUsStyles/styles'
+import SEO from '../components/SEO'
 
 const FindUs = ({ location }) => (
-  <Layout
-    location={location}
-    title={'HAHA Studio contacts'}
-    description={
-      'HAHA Staff, HAHA contacts, HAHA social media, We are here, come and find us, Pipersgatan 14, 112 24 Stockholm, Sweden, Yujin Chiang, Arash Eskafi'
-    }
-  >
+  <Layout location={location}>
+    <SEO
+      title={'HAHA Studio contacts'}
+      description={
+        'HAHA Staff, HAHA contacts, HAHA social media, We are here, come and find us, Pipersgatan 14, 112 24 Stockholm, Sweden, Yujin Chiang, Arash Eskafi'
+      }
+    />
     <div className={css(styles.findUsWrapper)}>
       <div className={css(styles.findUsRightColumn)}>
         <p className={css(styles.findUsParagraph)}>

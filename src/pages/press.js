@@ -9,17 +9,20 @@ import * as styles from '../components/IndexPageStyles/PressStyles/styles'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Media from 'react-media'
+import SEO from '../components/SEO'
 
 const MyHashLink = props => genericHashLink(props, Link)
 
 const Press = ({ location, data }) => {
   const { edges } = data.pressList
   return (
-    <Layout
-      location={location}
-      title={'Press about HAHA Studio'}
-      description={'Find out what the world press has to say about HAHA studio'}
-    >
+    <Layout location={location}>
+      <SEO
+        title={'Press about HAHA Studio'}
+        description={
+          'Find out what the world press has to say about HAHA studio'
+        }
+      />
       <div className={css(styles.pressWrapper)}>
         <div className={css(styles.pressRightColumn)}>
           <div className={css(styles.pressText)}>

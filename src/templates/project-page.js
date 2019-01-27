@@ -7,6 +7,7 @@ import Layout from '../layouts'
 import { css } from 'emotion'
 import NavFooter from '../components/NavigationFooter'
 import * as styles from '../components/IndexPageStyles/ProjectStyles/styles'
+import SEO from '../components/SEO/index'
 
 export const ProjectsTemplate = ({
   location,
@@ -24,7 +25,9 @@ export const ProjectsTemplate = ({
 }) => {
   const PostContent = contentComponent || Content
   return (
-    <Layout location={location} title={title} description={content}>
+    <Layout location={location}>
+      <SEO title={title} description={content} />
+
       <div className={css(styles.projectWrapper)}>
         <div className={css(styles.projectTitleSliderWrap)}>
           <div className={css(styles.projectTitle)}>

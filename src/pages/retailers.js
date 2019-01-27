@@ -3,15 +3,16 @@ import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import Layout from '../layouts'
 import * as styles from '../components/IndexPageStyles/RetailersStyles/styles'
+import SEO from '../components/SEO'
 
 const Retailers = ({ location }) => (
-  <Layout
-    location={location}
-    title={'HAHA Studio retailers'}
-    description={
-      'HAHA Studio distribuitors, retailers, where you can buy our products'
-    }
-  >
+  <Layout location={location}>
+    <SEO
+      title={'HAHA Studio retailers'}
+      description={
+        'HAHA Studio distribuitors, retailers, where you can buy our products'
+      }
+    />
     <div className={css(styles.retailersWrapper)}>
       <div className={css(styles.leftFloatingEmptySpace)} />
 

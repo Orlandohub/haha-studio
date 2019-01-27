@@ -5,6 +5,7 @@ import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/AboutStyles/styles'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
+import SEO from '../components/SEO'
 
 export const AboutPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content
@@ -29,13 +30,13 @@ const AboutPage = ({ data, location }) => {
   const { markdownRemark: post } = data
 
   return (
-    <Layout
-      location={location}
-      title={'About HAHA Studio'}
-      description={
-        'You listen up here iss a story about a little guys that lives in a HAHA world...'
-      }
-    >
+    <Layout location={location}>
+      <SEO
+        title={'About HAHA Studio'}
+        description={
+          'You listen up here iss a story about a little guys that lives in a HAHA world...'
+        }
+      />
       <AboutPageTemplate contentComponent={HTMLContent} content={post.html} />
     </Layout>
   )

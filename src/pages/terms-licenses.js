@@ -5,13 +5,14 @@ import { css } from 'react-emotion'
 import * as styles from '../components/IndexPageStyles/TermsAndLicensesStyles/styles'
 import ShopNavigation from '../components/ShopNavigation/index'
 import { StyledScrollTop } from '../components/Projects/styles'
+import SEO from '../components/SEO'
 
 const TermsAndLicenses = ({ location }) => (
-  <Layout
-    location={location}
-    title={'HAHA Studio Terms and Licenses'}
-    description={'HAHA Studio terms, licenses, conditions'}
-  >
+  <Layout location={location}>
+    <SEO
+      title={'HAHA Studio Terms and Licenses'}
+      description={'HAHA Studio terms, licenses, conditions'}
+    />
     <div className={css(styles.termsLicensesWrapper)}>
       <StyledScrollTop
         text=""

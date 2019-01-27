@@ -3,17 +3,18 @@ import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import Projects from '../components/Projects'
 import { graphql } from 'gatsby'
+import SEO from '../components/SEO/index'
 
 class Selected extends React.Component {
   render() {
     const { location, data } = this.props
     const { projectsList } = data
     return (
-      <Layout
-        location={location}
-        title={'HAHA Studio selected'}
-        description={'HAHA Studio current best products and projects'}
-      >
+      <Layout location={location}>
+        <SEO
+          title={'HAHA Studio selected'}
+          description={'HAHA Studio current best products and projects'}
+        />
         <Projects projects={projectsList} />
       </Layout>
     )

@@ -6,6 +6,7 @@ import * as styles from '../components/IndexPageStyles/IndividualTextStyles/styl
 import NavFooter from '../components/NavigationFooter'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
+import SEO from '../components/SEO/index'
 
 export const TextPageTemplate = ({
   content,
@@ -45,7 +46,8 @@ TextPageTemplate.propTypes = {
 const TextPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
   return (
-    <Layout location={location} title={title} description={content}>
+    <Layout location={location}>
+      <SEO title={title} description={content} />
       <TextPageTemplate
         contentComponent={HTMLContent}
         content={post.html}

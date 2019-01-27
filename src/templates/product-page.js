@@ -9,6 +9,7 @@ import NavFooter from '../components/NavigationFooter'
 import Content, { HTMLContent } from '../components/Content'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/ShopProductPageStyles/styles'
+import SEO from '../components/SEO/index'
 
 class ProductPageTemplate extends React.Component {
   constructor(props) {
@@ -48,14 +49,13 @@ class ProductPageTemplate extends React.Component {
     const PageContent = contentComponent || Content
 
     return (
-      <Layout
-        location={location}
-        title={title}
-        description={title}
-        thumbnail={thumbnail}
-        url={thumbnail}
-        pathname={slug}
-      >
+      <Layout location={location}>
+        <SEO
+          title={title}
+          description={title}
+          thumbnail={thumbnail}
+          url={thumbnail}
+        />
         <div className={css(styles.shopProductWrapper)}>
           <div className={css(styles.leftTitleColumn)}>{title}</div>
           <div className={css(styles.mainBodyWrapper)}>

@@ -104,7 +104,6 @@ const Layout = ({ children, location, hideMenu }) => (
           }
           thumbnail={data.fileName.childImageSharp.fluid.src}
           url={data.fileName.childImageSharp.fluid.src}
-          pathname={props.pathname}
         />
 
         {!hideMenu && <Menu location={location} data={data} />}

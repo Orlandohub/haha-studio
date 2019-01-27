@@ -6,16 +6,17 @@ import * as styles from '../components/IndexPageStyles/ExplorationStyles/styles'
 import { css } from 'emotion'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import SEO from '../components/SEO'
 
 const Exploration = ({ data, location }) => {
   const { edges } = data.explorationList
 
   return (
-    <Layout
-      location={location}
-      title={'Explore HAHA Studio'}
-      description={'HAHA Studio exploration articles and stories'}
-    >
+    <Layout location={location}>
+      <SEO
+        title={'Explore HAHA Studio'}
+        description={'HAHA Studio exploration articles and stories'}
+      />
       <div className={css(styles.explorationWrapper)}>
         <div className={css(styles.explorationRightColumn)}>
           {map(edges, edge => {
