@@ -63,7 +63,6 @@ class ProductPageTemplate extends React.Component {
               map(imageGallery, media => {
                 return (
                   <button
-                    style={{ display: media.color_name === color_name ? 'inline-block' : 'none' }}
                     className={`${css(styles.cardButton)} snipcart-add-item`}
                     data-item-id={`${slugify(title)}${media.color_name && `-${capitalize(media.color_name)}`}`}
                     data-item-name={`${title} ${media.color_name && `- ${capitalize(media.color_name)}`}`}
