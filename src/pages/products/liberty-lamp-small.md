@@ -1,7 +1,7 @@
 ---
 templateKey: product-page
 title: Liberty Lamp
-is_active: true
+is_active: false
 date: 2019-01-10T12:45:54.119Z
 price: '75'
 cover_image: /assets/uploads/d_homepage_image_01.jpg
