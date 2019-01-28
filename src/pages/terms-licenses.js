@@ -12,6 +12,7 @@ const TermsAndLicenses = ({ location }) => (
     <SEO
       title={'HAHA Studio Terms and Licenses'}
       description={'HAHA Studio terms, licenses, conditions'}
+      location={location}
     />
     <ScrollTop />
     <div className={css(styles.termsLicensesWrapper)}>

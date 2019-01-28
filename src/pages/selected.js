@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import Projects from '../components/Projects'
 import { graphql } from 'gatsby'
+import ScrollTop from '../components/ScrollToTop/index'
 import SEO from '../components/SEO/index'
 
 class Selected extends React.Component {
@@ -14,7 +15,9 @@ class Selected extends React.Component {
         <SEO
           title={'HAHA Studio selected'}
           description={'HAHA Studio current best products and projects'}
+          location={location}
         />
+        <ScrollTop />
         <Projects projects={projectsList} />
       </Layout>
     )

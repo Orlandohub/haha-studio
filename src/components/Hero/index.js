@@ -41,8 +41,7 @@ class Hero extends React.Component {
         <SEO
           title={'HAHA Studio Presents'}
           description={'HAHA Studio introduction'}
-          thumbnail={data.fileName.childImageSharp.fluid}
-          url={data.fileName.childImageSharp.fluid.src}
+          thumbnail={data.fileName.childImageSharp.fluid.src}
         />
         <div
           className={

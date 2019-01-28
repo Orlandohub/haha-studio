@@ -6,6 +6,7 @@ import * as styles from '../components/IndexPageStyles/PressExpandedStyles/style
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import NavFooter from '../components/NavigationFooter'
+import SEO from '../components/SEO/index'
 
 export const PressPageTemplate = ({ post, pageContext }) => {
   return (
@@ -41,6 +42,16 @@ export const PressPageTemplate = ({ post, pageContext }) => {
         {/* Bottom part */}
 
         <div className={css(styles.pressExpandedGrid)} id="image">
+          <SEO
+            title={'What press has to say about HAHA Studio'}
+            description={
+              "The studio's work has been presented by Vitra, FRACAS Gallery, Raumplan, Biennale Interieur and Stockholm Furniture Fair.  In 2018 HAHA received the prestigious work grant from the Swedish Arts Committee to further the definition of Scandinavian design. They have also showcased their work internationally in Brussels, Denmark, London, Milan, New York, and Shanghai. "
+            }
+            location={location}
+            thumbnail={
+              post.frontmatter.content_image_left.childImageSharp.fluid.src
+            }
+          />
           <div className={css(styles.pressExpandedImage)}>
             <Img
               fluid={post.frontmatter.content_image_left.childImageSharp.fluid}

@@ -26,7 +26,12 @@ export const ProjectsTemplate = ({
   const PostContent = contentComponent || Content
   return (
     <Layout location={location}>
-      <SEO title={title} description={content} />
+      <SEO
+        title={title}
+        description={content}
+        location={location}
+        thumbnail={galleryImages[0].image.childImageSharp.fluid.src}
+      />
 
       <div className={css(styles.projectWrapper)}>
         <div className={css(styles.projectTitleSliderWrap)}>

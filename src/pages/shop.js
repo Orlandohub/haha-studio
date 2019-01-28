@@ -17,7 +17,8 @@ const Shop = ({ location, data }) => {
     <Layout location={location}>
       <SEO>
         title={'HAHA Studio Shop'}
-        description={'HAHA Studio shop! buy our exclusive products! Now!'}{' '}
+        description={'HAHA Studio shop! buy our exclusive products! Now!'}
+        location={location}
       </SEO>
       <div className={css(styles.shopWrapper)}>
         <div className={css(styles.shopRightColumn)}>

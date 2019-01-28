@@ -11,6 +11,7 @@ const Shipping = ({ location }) => (
     <SEO
       title={'HAHA Studio shipping'}
       description={'HAHA Studio shipping prices and informations'}
+      location={location}
     />
     <div className={css(styles.shippingWrapper)}>
       <div className={css(styles.shippingTitle)}>Shipping</div>
