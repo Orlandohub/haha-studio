@@ -155,7 +155,7 @@ export const cartShowBtnHidden = mq(cartShowBtn, {
 
 export const cartWrapper = mq({
   display: 'block',
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
   right: 0,
   width: ['100%', '100%', '462px', '462px', '462px', 462],

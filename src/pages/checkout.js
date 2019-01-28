@@ -83,6 +83,7 @@ class CheckOut extends React.Component  {
   }
 
   connect() {
+    this.setState({processingPayment: true})
     if (typeof window !== 'undefined') {
       window.Snipcart.api.modal.show()
     }
@@ -787,7 +788,6 @@ class CheckOut extends React.Component  {
                 >
                   COMPLETE PURCHASE
                 </button>
-                <button type="button" onClick={() => this.setState({processingPayment: true})}>CONNECT</button>
                 <p className={css(styles.paragraphBottom)}>
                   By completing your purchase you accept to the{' '}
                   <Link
