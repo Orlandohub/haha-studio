@@ -69,6 +69,9 @@ injectGlobal`
     display: none;
   }
 
+  .snip-layout {
+    visibility: hidden;
+  }
 
 `
 

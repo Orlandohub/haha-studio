@@ -1,7 +1,7 @@
 import React from 'react'
-import { OverlayTrigger, Tooltip, Modal } from 'react-bootstrap'
+import { OverlayTrigger, Tooltip, Modal, Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import { isEmpty } from 'lodash'
+import { isEmpty, lowerCase } from 'lodash'
 import Layout from '../layouts'
 import { css } from 'emotion'
 import Link from 'gatsby-link'
@@ -41,19 +41,49 @@ class CheckOut extends React.Component  {
       total: 0,
       subTotal: 0,
       discount: 0,
-      shipping: 10,
+      shipping: 0,
       processingPayment: false,
+      shippingAgreement: false,
+      shippingAgreementModal: false,
       values: {},
     }
 
     this.connect = this.connect.bind(this)
+    this.extraCost = this.extraCost.bind(this)
+    this.shippingCosts = this.shippingCosts.bind(this)
   }
 
-  connect(values, isValid) {
+  extraCost(country) {
+    let extraCost = false
+    if (lowerCase(country) !== 'sweden') {
+      extraCost = true
+    }
+    return extraCost
+  }
+
+  shippingCosts(values, isValid) {
     if (!isValid) {
       return
     }
 
+    let shippingCost = false
+    if (values.shiptoanotheradress) {
+      shippingCost = this.extraCost(values.deliveryCountry)
+    } else {
+      shippingCost = this.extraCost(values.country)
+    }
+
+    if (shippingCost) {
+      this.setState({
+        shippingAgreementModal: true
+      })
+    } else {
+      this.connect()
+    }
+  }
+
+  connect() {
+    this.setState({processingPayment: true})
     if (typeof window !== 'undefined') {
       window.Snipcart.api.modal.show()
     }
@@ -62,19 +92,7 @@ class CheckOut extends React.Component  {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       window.Snipcart.subscribe('order.completed', (order) => {
         console.log('items', order)
-        window.jQuery.ajax({
-          url: 'https://app.snipcart.com/api/orders/21017e18-6113-4847-8f9e-2643b65673b0',
-          beforeSend: function(xhr) {
-            xhr.setRequestHeader("Authorization", "Bearer YWFlODEyNzctZWIxNy00ZjBiLTliY2ItYzg1ZmM2MWMyNmM1NjM2ODMxNTM0MjQwMDE1NzI5")
-            xhr.setRequestHeader("Accept", "application/json")
-          }, success: function(data){
-            console.log('data', data)
-              //process the JSON data etc
-          }, error: function(e) {
-            console.log('error', e);
-          }
-        })
-        // navigate('/thank-you/', { state: { items }})
+
       })
 
       const cart = window.Snipcart.api.cart.get()
@@ -111,7 +129,6 @@ class CheckOut extends React.Component  {
 
       window.Snipcart.subscribe('page.changed', (page) => {
         const { values } = this.state
-        console.log('page', page);
         if (page === 'cart-content') {
           window.jQuery('.js-next').click()
         }
@@ -122,15 +139,16 @@ class CheckOut extends React.Component  {
             window.jQuery('#snip-shippingSameAsBilling').prop('checked', false) :
             window.jQuery('#snip-shippingSameAsBilling').prop('checked', true)
 
-          window.jQuery('#snip-name').val('Yujin haha')
-          window.jQuery('#snip-address1').val('Tellusborgsvägen')
-          window.jQuery('#snip-city').val('Stockholm')
+          window.jQuery('#snip-name').val(`${values.firstName} ${values.lastName}`)
+          window.jQuery('#snip-address1').val(values.adressLine1)
+          window.jQuery('#snip-address2').val(values.adressLine2)
+          window.jQuery('#snip-city').val(values.city)
           window.jQuery('#snip-country option').filter(() => {
-            return window.jQuery(this).text() === 'Sweden' 
+            return window.jQuery(this).text() === values.country
           }).prop('selected', true)
-          window.jQuery('#snip-postalCode').val('126 28')
-          window.jQuery('#snip-email').val('orlando.goncalves@gmail.com')
-          window.jQuery('#snip-phone').val(this.state.values.phoneNumber)
+          window.jQuery('#snip-postalCode').val(values.zipCode)
+          window.jQuery('#snip-email').val(values.email)
+          window.jQuery('#snip-phone').val(values.phoneNumber)
           setTimeout(function(){
             window.jQuery('#snipcart-next').click()
           }, 1000)
@@ -188,6 +206,30 @@ class CheckOut extends React.Component  {
     return (
       <Layout hideMenu={true}>
         {' '}
+        <Modal bsSize="small" show={this.state.shippingAgreementModal} onHide={
+          () => {
+            this.setState({
+              shippingAgreementModal: false,
+            })
+          }
+        }>
+          <Modal.Header closeButton>
+            <Modal.Title>Shipping Costs: 10€</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <br/>
+            <p className={css(styles.paymentModalTitle)}>Total: {this.state.total + 10}€</p>
+            <br/>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button bsStyle="info" onClick={() => {
+              this.setState({
+                shippingAgreementModal: false,
+              })
+              this.connect()
+            }}>Continue</Button>
+          </Modal.Footer>
+        </Modal>
         <Modal bsSize="small" show={this.state.processingPayment} onHide={
           () => {
             this.setState({
@@ -286,29 +328,27 @@ class CheckOut extends React.Component  {
 
             <table className={css(styles.summaryTable)}>
               <tbody>
-                <tr>
-                  <td className={css(styles.sumRowTop)}>Subtotal</td>
-                  <td className={css(styles.sumRowTopRight)}>
-                    {this.state.total + this.state.discount} &#8364;
-                  </td>
-                </tr>
-                <tr>
-                  <td className={css(styles.middleRows)}>Shipping</td>
-                  <td className={css(styles.middleRowsRight)}>{this.state.shipping} &#8364;</td>
-                </tr>
                 {
                   this.state.discount > 0 ?
-                    <tr>
-                      <td className={css(styles.middleRows)}>Discount</td>
-                      <td className={css(styles.middleRowsRight)}>
-                        - {this.state.discount} &#8364;
-                      </td>
-                    </tr> :
+                    <React.Fragment>
+                      <tr>
+                        <td className={css(styles.sumRowTop)}>Subtotal</td>
+                        <td className={css(styles.sumRowTopRight)}>
+                          {this.state.total + this.state.discount} &#8364;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className={css(styles.middleRows)}>Discount</td>
+                        <td className={css(styles.middleRowsRight)}>
+                          - {this.state.discount} &#8364;
+                        </td>
+                      </tr>
+                    </React.Fragment> :
                     null
                 }
                 <tr>
                   <td className={css(styles.middleRows)}>Total</td>
-                  <td className={css(styles.middleRowsRight)}>{this.state.total + this.state.shipping} &#8364;</td>
+                  <td className={css(styles.middleRowsRight)}>{this.state.total} &#8364;</td>
                 </tr>
                 <tr>
                   <td className={css(styles.sumRowBottom)}>
@@ -732,11 +772,10 @@ class CheckOut extends React.Component  {
                   className={css(styles.purchaseBtn)}
                   type="submit"
                   disabled={isSubmitting}
-                  onClick={() => this.connect(values, isValid)}
+                  onClick={() => this.shippingCosts(values, isValid)}
                 >
                   COMPLETE PURCHASE
                 </button>
-                <button type="button" onClick={() => this.setState({processingPayment: true})}>CONNECT</button>
                 <p className={css(styles.paragraphBottom)}>
                   By completing your purchase you accept to the{' '}
                   <Link
