@@ -92,19 +92,7 @@ class CheckOut extends React.Component  {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       window.Snipcart.subscribe('order.completed', (order) => {
         console.log('items', order)
-        // window.jQuery.ajax({
-        //   url: 'https://app.snipcart.com/api/orders/21017e18-6113-4847-8f9e-2643b65673b0',
-        //   beforeSend: function(xhr) {
-        //     xhr.setRequestHeader("Authorization", "Bearer YWFlODEyNzctZWIxNy00ZjBiLTliY2ItYzg1ZmM2MWMyNmM1NjM2ODMxNTM0MjQwMDE1NzI5")
-        //     xhr.setRequestHeader("Accept", "application/json")
-        //   }, success: function(data){
-        //     console.log('data', data)
-        //       //process the JSON data etc
-        //   }, error: function(e) {
-        //     console.log('error', e);
-        //   }
-        // })
-        // navigate('/thank-you/', { state: { items }})
+
       })
 
       const cart = window.Snipcart.api.cart.get()

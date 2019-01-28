@@ -28,7 +28,7 @@ const FindUs = ({ location }) => (
             <br />
             <br />
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/hahadesignstudio/"
               className={css(styles.findUsLink)}
               target="blank"
             >
@@ -36,7 +36,7 @@ const FindUs = ({ location }) => (
             </a>
             <br />
             <a
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/hahadesignstudio/"
               className={css(styles.findUsLink)}
               target="blank"
             >
@@ -44,7 +44,7 @@ const FindUs = ({ location }) => (
             </a>
             <br />
             <a
-              href="https://www.linkedin.com/"
+              href="https://www.linkedin.com/company/haha-design-company/"
               className={css(styles.findUsLink)}
               target="blank"
             >
@@ -53,8 +53,8 @@ const FindUs = ({ location }) => (
             <br />
             <br /> Credits
             <br />
-            Website by <u>Anna Heck</u>
-            <br /> Programming by <u>Orlando Goncalves</u>
+            Website Design by <u>Anna Heck</u>
+            <br /> Web Development by <br/> <u>Orlando Goncalves</u> & <u>Illya Lesyuk</u>
             <br/>
             <br /> HAHA studio all rights reserved
           </p>

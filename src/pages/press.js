@@ -42,7 +42,7 @@ const Press = ({ location, data }) => {
               <br />
               <br />{' '}
               */}
-              <a href="/press/" className={css(styles.pressLink)}>
+              <a target="_blank" href="https://drive.google.com/file/d/1ZI6Rpf95qgQTjlGYAPjXgWwEnP5NVmXZ/view" className={css(styles.pressLink)}>
                 Download press releases
               </a>
               <br />
