@@ -19,6 +19,9 @@ export const linkStyles = mq({
   fontSize: ['1em', '1em', '2em', '2em'],
   textDecoration: 'none!important',
   color: '#D9D9D7!important',
+  ':hover': {
+    color: '#C1C1C1!important',
+  },
   paddingLeft: [0, 0, 0, 0, 17],
 })
 
