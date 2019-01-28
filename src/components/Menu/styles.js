@@ -139,9 +139,13 @@ export const cartShowBtn = mq({
   textAlign: 'center',
   backgroundColor: '#0A00FF',
   color: 'white',
-  borderRadius: 10,
+  fontSize: [8, 8, 18],
+  width: [12, 12, 25],
+  height: [12, 12, 25],
+  borderRadius: 50,
   border: 'none',
   outline: 'none',
+  padding: 1,
 })
 
 export const cartShowBtnHidden = mq(cartShowBtn, {
