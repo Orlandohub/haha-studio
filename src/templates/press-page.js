@@ -8,7 +8,7 @@ import Img from 'gatsby-image'
 import NavFooter from '../components/NavigationFooter'
 import SEO from '../components/SEO/index'
 
-export const PressPageTemplate = ({ post, pageContext }) => {
+export const PressPageTemplate = ({ post, pageContext, location }) => {
   return (
     <div className={css(styles.pressExpandedWrapper)}>
       <div className={css(styles.pressExpandedRightColumn)}>
