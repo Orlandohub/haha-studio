@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
 import Carousel from '../components/Carousel'
@@ -8,6 +7,7 @@ import Layout from '../layouts'
 import { css } from 'emotion'
 import NavFooter from '../components/NavigationFooter'
 import * as styles from '../components/IndexPageStyles/ProjectStyles/styles'
+import SEO from '../components/SEO/index'
 
 export const ProjectsTemplate = ({
   location,
@@ -21,12 +21,18 @@ export const ProjectsTemplate = ({
   year,
   galleryImages,
   cmsImageGallery,
-  helmet,
   pageContext,
 }) => {
   const PostContent = contentComponent || Content
   return (
     <Layout location={location}>
+      <SEO
+        title={title}
+        description={content}
+        //location={location}
+        thumbnail={galleryImages[0].image.childImageSharp.fluid.src}
+      />
+
       <div className={css(styles.projectWrapper)}>
         <div className={css(styles.projectTitleSliderWrap)}>
           <div className={css(styles.projectTitle)}>
@@ -89,15 +95,6 @@ const Project = ({ data, pageContext, location }) => {
     <ProjectsTemplate
       content={post.html}
       contentComponent={HTMLContent}
-      helmet={
-        <Helmet titleTemplate="%s | Project">
-          <title>{`${post.frontmatter.title}`}</title>
-          <meta
-            name="description"
-            content={`${post.frontmatter.description}`}
-          />
-        </Helmet>
-      }
       location={location}
       pageContext={pageContext}
       title={post.frontmatter.title}

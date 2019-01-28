@@ -8,12 +8,18 @@ import * as styles from '../components/IndexPageStyles/ShopPageStyles/styles'
 import ShopNavigation from '../components/ShopNavigation/index'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
+import SEO from '../components/SEO/index'
 
 const Shop = ({ location, data }) => {
   const { projectsList: posts } = data
   const { edges } = posts
   return (
     <Layout location={location}>
+      <SEO
+        title={'HAHA Studio Shop'}
+        description={'HAHA Studio shop! buy our exclusive products! Now!'}
+        //location={location}
+      />
       <div className={css(styles.shopWrapper)}>
         <div className={css(styles.shopRightColumn)}>
           {map(edges, edge => {

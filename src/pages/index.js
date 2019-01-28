@@ -24,14 +24,14 @@ class IndexPage extends React.Component {
     const { data, location } = this.props
     const { projectsList } = data
     return (
-      <div>
+      <React.Fragment>
         <Hero data={data} showContent={this.showContent} />
         {this.state.content && (
           <Layout location={location}>
             <Projects projects={projectsList} />
           </Layout>
         )}
-      </div>
+      </React.Fragment>
     )
   }
 }

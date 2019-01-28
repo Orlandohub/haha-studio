@@ -6,8 +6,14 @@ import * as styles from '../components/IndexPageStyles/IndividualTextStyles/styl
 import NavFooter from '../components/NavigationFooter'
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
+import SEO from '../components/SEO/index'
 
-export const TextPageTemplate = ({ content, contentComponent, title, pageContext }) => {
+export const TextPageTemplate = ({
+  content,
+  contentComponent,
+  title,
+  pageContext,
+}) => {
   const PageContent = contentComponent || Content
   return (
     <div className={css(styles.textWrapper)}>
@@ -41,6 +47,7 @@ const TextPage = ({ data, location, pageContext }) => {
   const { markdownRemark: post } = data
   return (
     <Layout location={location}>
+      <SEO title={post.frontmatter.title} description={post.html} />
       <TextPageTemplate
         contentComponent={HTMLContent}
         content={post.html}

@@ -1,15 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import Menu from '../components/Menu'
 import fonts from '../fonts'
 import { StaticQuery, graphql } from 'gatsby'
 import PageTransition from 'gatsby-v2-plugin-page-transitions'
 import { css } from 'emotion'
 import { styles } from './styles'
-
+import SEO from '../components/SEO/index'
 import '../assets/bootstrap/css/bootstrap.min.css'
-
 import { injectGlobal } from 'emotion'
 
 injectGlobal`
@@ -91,34 +89,26 @@ const Layout = ({ children, location, hideMenu }) => (
             }
           }
         }
+        fileName: file(relativePath: { eq: "hero_image.jpg" }) {
+          childImageSharp {
+            fluid(maxWidth: 1060) {
+              ...GatsbyImageSharpFluid_withWebp_noBase64
+            }
+          }
+        }
       }
     `}
     render={data => (
       <>
-        <Helmet
+        <SEO
           title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'HAHA Studio' },
-            {
-              name: 'keywords',
-              content: 'design, design studio, stockholm, gatsby, react',
-            },
-          ]}
-        >
-          <html lang="en" />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            charset="UTF-8"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
-          />
-          <link
-            rel="stylesheet"
-            type="text/css"
-            href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
-          />
-          <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
-        </Helmet>
+          description={
+            'HAHA studio is the Stockholm based design practice. Hailing from different cultures— Scandinavia and East Asia. HAHA works hand in hand with craftspeople in Sweden and Taiwan. The practice designs lighting fixtures, accessories, limited editions, and undertakes regular collaborations in interior architecture.'
+          }
+          location={location}
+          thumbnail={data.fileName.childImageSharp.fluid.src}
+        />
+
         {!hideMenu && <Menu location={location} data={data} />}
 
         <div className={css(styles.pageWrapper)}>

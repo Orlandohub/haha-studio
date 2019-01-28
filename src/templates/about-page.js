@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import Layout from '../layouts'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/AboutStyles/styles'
-
 import { graphql } from 'gatsby'
 import Content, { HTMLContent } from '../components/Content'
+import SEO from '../components/SEO'
 
 export const AboutPageTemplate = ({ content, contentComponent }) => {
   const PageContent = contentComponent || Content
@@ -31,6 +31,13 @@ const AboutPage = ({ data, location }) => {
 
   return (
     <Layout location={location}>
+      <SEO
+        title={'About HAHA Studio'}
+        description={
+          'You listen up here iss a story about a little guys that lives in a HAHA world...'
+        }
+        //location={location}
+      />
       <AboutPageTemplate contentComponent={HTMLContent} content={post.html} />
     </Layout>
   )

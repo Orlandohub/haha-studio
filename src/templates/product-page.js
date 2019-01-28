@@ -9,15 +9,16 @@ import NavFooter from '../components/NavigationFooter'
 import Content, { HTMLContent } from '../components/Content'
 import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/ShopProductPageStyles/styles'
+import SEO from '../components/SEO/index'
 
 class ProductPageTemplate extends React.Component {
   constructor(props) {
     super(props)
 
     const { color_name } = props.imageGallery[0]
-  
+
     this.state = {
-      color_name
+      color_name,
     }
 
     this.updateColor = this.updateColor.bind(this)
@@ -25,10 +26,10 @@ class ProductPageTemplate extends React.Component {
 
   updateColor(color_name) {
     this.setState({
-      color_name
+      color_name,
     })
   }
-  
+
   render() {
     const {
       content,
@@ -49,36 +50,53 @@ class ProductPageTemplate extends React.Component {
 
     return (
       <Layout location={location}>
+        <SEO
+          title={title}
+          description={content}
+          //location={location}
+          thumbnail={imageGallery[0].image.childImageSharp.fluid.src}
+        />
         <div className={css(styles.shopProductWrapper)}>
           <div className={css(styles.leftTitleColumn)}>{title}</div>
           <div className={css(styles.mainBodyWrapper)}>
-            <Carousel updateColor={this.updateColor} images={imageGallery} isProduct={true} />
+            <Carousel
+              updateColor={this.updateColor}
+              images={imageGallery}
+              isProduct={true}
+            />
             <div className={css(styles.productDescriptionWrapper)}>
               <PageContent className="content" content={content} />
               <br />
               <br />
               {price} €
             </div>
-            {
-              map(imageGallery, media => {
-                return (
-                  <button
-                    style={{ display: media.color_name === color_name ? 'inline-block' : 'none' }}
-                    className={`${css(styles.cardButton)} snipcart-add-item`}
-                    data-item-id={`${slugify(title)}${media.color_name && `-${capitalize(media.color_name)}`}`}
-                    data-item-name={`${title} ${media.color_name && `- ${capitalize(media.color_name)}`}`}
-                    data-item-price={price}
-                    data-item-url={slug}
-                    data-item-image={thumbnail}>
-                         ADD TO CART
-                  </button>
-                )
-              })
-            }
-            <a href="#" className="snipcart-checkout">Click here to checkout</a>
+            {map(imageGallery, media => {
+              return (
+                <button
+                  key={media.color_name}
+                  style={{
+                    display:
+                      media.color_name === color_name ? 'inline-block' : 'none',
+                  }}
+                  className={`${css(styles.cardButton)} snipcart-add-item`}
+                  data-item-id={`${slugify(title)}${media.color_name &&
+                    `-${capitalize(media.color_name)}`}`}
+                  data-item-name={`${title} ${media.color_name &&
+                    `- ${capitalize(media.color_name)}`}`}
+                  data-item-price={price}
+                  data-item-url={slug}
+                  data-item-image={thumbnail}
+                >
+                  ADD TO CART
+                </button>
+              )
+            })}
+            <a href="#" className="snipcart-checkout">
+              Click here to checkout
+            </a>
             <div className="snipcart-summary">
-                Number of items: <span className="snipcart-total-items"></span>
-                Total price: <span className="snipcart-total-price"></span>
+              Number of items: <span className="snipcart-total-items" />
+              Total price: <span className="snipcart-total-price" />
             </div>
             <NavFooter
               linkText="/shop/"

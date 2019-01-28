@@ -19,7 +19,6 @@ export const projectTitle = mq({
     'block!important',
     'inline-block!important',
   ],
-  // float: 'left!important',
   lineHeight: 1,
   marginTop: 0,
   fontSize: ['1em', '1em', '2em', '2em'],

@@ -15,28 +15,17 @@ import MaskedInput from 'react-text-mask'
 import Loader from 'react-loader-spinner'
 import { navigate } from 'gatsby'
 
-/*
--ms-overflow-style: none;
-    scrollbar-width: none;
-    ::-webkit-scrollbar { 
-      display: none; 
-  }
-*/
-
 const date = new Date()
 const year = date.getFullYear()
 
 const tooltip = (
-  <Tooltip id="tooltip">
-    Outside EU? Please contact us for tax refund!
-  </Tooltip>
+  <Tooltip id="tooltip">Outside EU? Please contact us for tax refund!</Tooltip>
 )
 
-
-class CheckOut extends React.Component  {
+class CheckOut extends React.Component {
   constructor(props) {
     super(props)
-  
+
     this.state = {
       total: 0,
       subTotal: 0,
@@ -75,7 +64,7 @@ class CheckOut extends React.Component  {
 
     if (shippingCost) {
       this.setState({
-        shippingAgreementModal: true
+        shippingAgreementModal: true,
       })
     } else {
       this.connect()
@@ -83,16 +72,15 @@ class CheckOut extends React.Component  {
   }
 
   connect() {
-    this.setState({processingPayment: true})
+    this.setState({ processingPayment: true })
     if (typeof window !== 'undefined') {
       window.Snipcart.api.modal.show()
     }
   }
   componentDidMount() {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
-      window.Snipcart.subscribe('order.completed', (order) => {
+      window.Snipcart.subscribe('order.completed', order => {
         console.log('items', order)
-
       })
 
       const cart = window.Snipcart.api.cart.get()
@@ -106,7 +94,7 @@ class CheckOut extends React.Component  {
 
       if (!isEmpty(discounts)) {
         this.setState({
-          discount: discounts[0].amountSaved
+          discount: discounts[0].amountSaved,
         })
       }
 
@@ -122,12 +110,12 @@ class CheckOut extends React.Component  {
 
         if (!isEmpty(discountss)) {
           this.setState({
-            discount: discountss[0].amountSaved
+            discount: discountss[0].amountSaved,
           })
         }
       })
 
-      window.Snipcart.subscribe('page.changed', (page) => {
+      window.Snipcart.subscribe('page.changed', page => {
         const { values } = this.state
         if (page === 'cart-content') {
           window.jQuery('.js-next').click()
@@ -135,34 +123,46 @@ class CheckOut extends React.Component  {
 
         if (page === 'billing-address') {
           // Billing address
-          this.state.values.shiptoanotheradress ?
-            window.jQuery('#snip-shippingSameAsBilling').prop('checked', false) :
-            window.jQuery('#snip-shippingSameAsBilling').prop('checked', true)
+          this.state.values.shiptoanotheradress
+            ? window
+                .jQuery('#snip-shippingSameAsBilling')
+                .prop('checked', false)
+            : window.jQuery('#snip-shippingSameAsBilling').prop('checked', true)
 
-          window.jQuery('#snip-name').val(`${values.firstName} ${values.lastName}`)
+          window
+            .jQuery('#snip-name')
+            .val(`${values.firstName} ${values.lastName}`)
           window.jQuery('#snip-address1').val(values.adressLine1)
           window.jQuery('#snip-address2').val(values.adressLine2)
           window.jQuery('#snip-city').val(values.city)
-          window.jQuery('#snip-country option').filter(() => {
-            return window.jQuery(this).text() === values.country
-          }).prop('selected', true)
+          window
+            .jQuery('#snip-country option')
+            .filter(() => {
+              return window.jQuery(this).text() === values.country
+            })
+            .prop('selected', true)
           window.jQuery('#snip-postalCode').val(values.zipCode)
           window.jQuery('#snip-email').val(values.email)
           window.jQuery('#snip-phone').val(values.phoneNumber)
-          setTimeout(function(){
+          setTimeout(function() {
             window.jQuery('#snipcart-next').click()
           }, 1000)
         }
 
         if (page === 'shipping-address') {
           if (values.shiptoanotheradress) {
-            window.jQuery('#snip-name').val(`${values.deliveryFirstName} ${values.deliveryLastName}`)
+            window
+              .jQuery('#snip-name')
+              .val(`${values.deliveryFirstName} ${values.deliveryLastName}`)
             window.jQuery('#snip-address1').val(values.deliveryAdressLine1)
             window.jQuery('#snip-city').val(values.deliveryCity)
             window.jQuery('#snip-country').val(values.deliveryCountry)
-            window.jQuery('#snip-country option').filter(function() {
-              return window.jQuery(this).text() === values.deliveryCountry
-            }).prop('selected', true)
+            window
+              .jQuery('#snip-country option')
+              .filter(function() {
+                return window.jQuery(this).text() === values.deliveryCountry
+              })
+              .prop('selected', true)
             window.jQuery('#snip-postalCode').val(values.deliveryZipCode)
             window.jQuery('#snip-phone').val(values.phoneNumber)
             window.jQuery('#snipcart-next').click()
@@ -195,7 +195,7 @@ class CheckOut extends React.Component  {
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
     if (this.props.values !== prevProps.values) {
-      this.setState({values: this.props.values})
+      this.setState({ values: this.props.values })
     }
   }
 
@@ -206,49 +206,55 @@ class CheckOut extends React.Component  {
     return (
       <Layout hideMenu={true}>
         {' '}
-        <Modal bsSize="small" show={this.state.shippingAgreementModal} onHide={
-          () => {
+        <Modal
+          bsSize="small"
+          show={this.state.shippingAgreementModal}
+          onHide={() => {
             this.setState({
               shippingAgreementModal: false,
             })
-          }
-        }>
+          }}
+        >
           <Modal.Header closeButton>
             <Modal.Title>Shipping Costs: 10€</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <br/>
-            <p className={css(styles.paymentModalTitle)}>Total: {this.state.total + 10}€</p>
-            <br/>
+            <br />
+            <p className={css(styles.paymentModalTitle)}>
+              Total: {this.state.total + 10}€
+            </p>
+            <br />
           </Modal.Body>
           <Modal.Footer>
-            <Button bsStyle="info" onClick={() => {
-              this.setState({
-                shippingAgreementModal: false,
-              })
-              this.connect()
-            }}>Continue</Button>
+            <Button
+              bsStyle="info"
+              onClick={() => {
+                this.setState({
+                  shippingAgreementModal: false,
+                })
+                this.connect()
+              }}
+            >
+              Continue
+            </Button>
           </Modal.Footer>
         </Modal>
-        <Modal bsSize="small" show={this.state.processingPayment} onHide={
-          () => {
+        <Modal
+          bsSize="small"
+          show={this.state.processingPayment}
+          onHide={() => {
             this.setState({
               processingPayment: false,
             })
-          }
-        }>
+          }}
+        >
           <Modal.Body>
             <p className={css(styles.paymentModalTitle)}>Processing Payment</p>
-            <br/>
+            <br />
             <div className={css(styles.paymentModalLoader)}>
-              <Loader 
-                type="Grid"
-                color="#000"
-                height="50" 
-                width="50"
-              /> 
-            </div> 
-            <br/>
+              <Loader type="Grid" color="#000" height="50" width="50" />
+            </div>
+            <br />
           </Modal.Body>
         </Modal>
         <div className={css(styles.pageWrapper)}>
@@ -278,16 +284,19 @@ class CheckOut extends React.Component  {
               <form
                 onSubmit={event => {
                   event.preventDefault()
-                  window.Snipcart.api.discounts.applyDiscountCode(typed)
-                    .then((appliedCode) => {
+                  window.Snipcart.api.discounts
+                    .applyDiscountCode(typed)
+                    .then(appliedCode => {
                       const cart = window.Snipcart.api.cart.get()
                       this.setState({
                         total: cart && cart.total,
-                        discount: appliedCode.amountSaved
+                        discount: appliedCode.amountSaved,
                       })
                     })
                     .fail(() => {
-                      alert("Something went wrong when adding the discount code, are you sure it's a valid code?");
+                      alert(
+                        "Something went wrong when adding the discount code, are you sure it's a valid code?"
+                      )
                     })
                 }}
               >
@@ -315,7 +324,7 @@ class CheckOut extends React.Component  {
                           value=""
                           className={css(styles.submitBtn)}
                         >
-                        &rarr;
+                          &rarr;
                         </button>
                       </td>
                     </tr>
@@ -328,27 +337,27 @@ class CheckOut extends React.Component  {
 
             <table className={css(styles.summaryTable)}>
               <tbody>
-                {
-                  this.state.discount > 0 ?
-                    <React.Fragment>
-                      <tr>
-                        <td className={css(styles.sumRowTop)}>Subtotal</td>
-                        <td className={css(styles.sumRowTopRight)}>
-                          {this.state.total + this.state.discount} &#8364;
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className={css(styles.middleRows)}>Discount</td>
-                        <td className={css(styles.middleRowsRight)}>
-                          - {this.state.discount} &#8364;
-                        </td>
-                      </tr>
-                    </React.Fragment> :
-                    null
-                }
+                {this.state.discount > 0 ? (
+                  <React.Fragment>
+                    <tr>
+                      <td className={css(styles.sumRowTop)}>Subtotal</td>
+                      <td className={css(styles.sumRowTopRight)}>
+                        {this.state.total + this.state.discount} &#8364;
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className={css(styles.middleRows)}>Discount</td>
+                      <td className={css(styles.middleRowsRight)}>
+                        - {this.state.discount} &#8364;
+                      </td>
+                    </tr>
+                  </React.Fragment>
+                ) : null}
                 <tr>
                   <td className={css(styles.middleRows)}>Total</td>
-                  <td className={css(styles.middleRowsRight)}>{this.state.total} &#8364;</td>
+                  <td className={css(styles.middleRowsRight)}>
+                    {this.state.total} &#8364;
+                  </td>
                 </tr>
                 <tr>
                   <td className={css(styles.sumRowBottom)}>
@@ -356,7 +365,9 @@ class CheckOut extends React.Component  {
                       <span>Tax included 25% </span>
                     </OverlayTrigger>
                   </td>
-                  <td className={css(styles.middleRowsRight.sumRowBottomRight)}></td>
+                  <td
+                    className={css(styles.middleRowsRight.sumRowBottomRight)}
+                  />
                 </tr>
               </tbody>
             </table>
@@ -400,7 +411,9 @@ class CheckOut extends React.Component  {
                   className={css(styles.inputWrapper)}
                 />
                 {touched.lastName && errors.lastName && (
-                  <div className={css(styles.errorStyles)}>{errors.lastName}</div>
+                  <div className={css(styles.errorStyles)}>
+                    {errors.lastName}
+                  </div>
                 )}
               </label>
               <label className={css(styles.formLabels)}>
@@ -501,7 +514,9 @@ class CheckOut extends React.Component  {
                   className={css(styles.halfWidthFormsInputs)}
                 />
                 {touched.zipCode && errors.zipCode && (
-                  <div className={css(styles.errorStyles)}>{errors.zipCode}</div>
+                  <div className={css(styles.errorStyles)}>
+                    {errors.zipCode}
+                  </div>
                 )}
               </label>
               <label className={css(styles.formLabels)}>
@@ -512,7 +527,9 @@ class CheckOut extends React.Component  {
                   className={css(styles.inputWrapper)}
                 />
                 {touched.country && errors.country && (
-                  <div className={css(styles.errorStyles)}>{errors.country}</div>
+                  <div className={css(styles.errorStyles)}>
+                    {errors.country}
+                  </div>
                 )}
               </label>
 
@@ -528,7 +545,9 @@ class CheckOut extends React.Component  {
                 />
                 <div className={css(styles.customCheckBox)}>
                   {values.shiptoanotheradress ? (
-                    <p style={{ lineHeight: 0.7, fontSize: '22px' }}>&#10004;</p>
+                    <p style={{ lineHeight: 0.7, fontSize: '22px' }}>
+                      &#10004;
+                    </p>
                   ) : null}
                 </div>
                 Ship to another adress?
@@ -580,11 +599,12 @@ class CheckOut extends React.Component  {
                     name="deliveryAdressLine1"
                     className={css(styles.inputWrapper)}
                   />
-                  {touched.deliveryAdressLine1 && errors.deliveryAdressLine1 && (
-                    <div className={css(styles.errorStyles)}>
-                      {errors.deliveryAdressLine1}
-                    </div>
-                  )}
+                  {touched.deliveryAdressLine1 &&
+                    errors.deliveryAdressLine1 && (
+                      <div className={css(styles.errorStyles)}>
+                        {errors.deliveryAdressLine1}
+                      </div>
+                    )}
                 </label>
                 <label className={css(styles.formLabels)}>
                   Address line 2
@@ -593,11 +613,12 @@ class CheckOut extends React.Component  {
                     name="deliveryAdressLine2"
                     className={css(styles.inputWrapper)}
                   />
-                  {touched.deliveryAdressLine2 && errors.deliveryAdressLine2 && (
-                    <div className={css(styles.errorStyles)}>
-                      {errors.deliveryAdressLine2}
-                    </div>
-                  )}
+                  {touched.deliveryAdressLine2 &&
+                    errors.deliveryAdressLine2 && (
+                      <div className={css(styles.errorStyles)}>
+                        {errors.deliveryAdressLine2}
+                      </div>
+                    )}
                 </label>
                 <label className={css(styles.halfWidthFormsCenter)}>
                   City

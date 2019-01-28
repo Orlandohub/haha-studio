@@ -4,12 +4,18 @@ import Layout from '../layouts'
 import { css } from 'react-emotion'
 import * as styles from '../components/IndexPageStyles/TermsAndLicensesStyles/styles'
 import ShopNavigation from '../components/ShopNavigation/index'
+import SEO from '../components/SEO'
 import ScrollTop from '../components/ScrollToTop/index'
 
 const TermsAndLicenses = ({ location }) => (
   <Layout location={location}>
+    <SEO
+      title={'HAHA Studio Terms and Licenses'}
+      description={'HAHA Studio terms, licenses, conditions'}
+      //location={location}
+    />
+    <ScrollTop />
     <div className={css(styles.termsLicensesWrapper)}>
-      <ScrollTop />
       <div className={css(styles.termsLicensesTitle)}>
         Terms/Licenses
         <br />

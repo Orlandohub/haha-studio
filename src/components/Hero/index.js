@@ -5,6 +5,7 @@ import arrowDownHero from '../../images/arrowDownHero.png'
 import { styles } from './styles'
 import { Grid, Row, Col } from 'react-bootstrap'
 import Img from 'gatsby-image'
+import SEO from '../SEO/index'
 
 class Hero extends React.Component {
   constructor(props) {
@@ -37,6 +38,11 @@ class Hero extends React.Component {
     const { logoLoaderIsVisible, slide } = this.state
     return (
       <div data-cy="hero">
+        <SEO
+          title={'HAHA Studio'}
+          description={'HAHA Studio Welcome Page'}
+          thumbnail={data.fileName.childImageSharp.fluid.src}
+        />
         <div
           className={
             slide ? css(styles.HideHero) : css(styles.HeroImageWrapper)

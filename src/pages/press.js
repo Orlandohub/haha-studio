@@ -9,6 +9,7 @@ import * as styles from '../components/IndexPageStyles/PressStyles/styles'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import Media from 'react-media'
+import SEO from '../components/SEO'
 
 const MyHashLink = props => genericHashLink(props, Link)
 
@@ -16,6 +17,13 @@ const Press = ({ location, data }) => {
   const { edges } = data.pressList
   return (
     <Layout location={location}>
+      <SEO
+        title={'Press about HAHA Studio'}
+        description={
+          'Find out what the world press has to say about HAHA studio'
+        }
+        //location={location}
+      />
       <div className={css(styles.pressWrapper)}>
         <div className={css(styles.pressRightColumn)}>
           <div className={css(styles.pressText)}>
@@ -51,30 +59,37 @@ const Press = ({ location, data }) => {
           </div>
 
           {/*      BOTTOM IMAGE GRID PART        */}
-          <div className={css(styles.horizontalLine)}>
-          </div>
+          <div className={css(styles.horizontalLine)} />
           <div className={css(styles.pressGrid)}>
-            {
-              map(edges, (edge, key) => {
-                return (
-                  <div key={key} className={css(styles.pressImage)}>
-                    <MyHashLink to={`${edge.node.fields.slug}#image`}>
-                      <div className='pressThumbnailWrap'>
-                        <Img className='pressThumbnailCover' fluid={edge.node.frontmatter.cover.childImageSharp.fluid} />
-                        <Media query="(min-width: 1024px)">
-                          {matches =>
-                            matches ?
-                              <Img className='pressThumbnailCounterCover' fluid={edge.node.frontmatter.counter_cover.childImageSharp.fluid} />
-                              :
-                              null
-                          }
-                        </Media>
-                      </div>
-                    </MyHashLink>
-                  </div>
-                )
-              })
-            }
+            {map(edges, (edge, key) => {
+              return (
+                <div key={key} className={css(styles.pressImage)}>
+                  <MyHashLink to={`${edge.node.fields.slug}#image`}>
+                    <div className="pressThumbnailWrap">
+                      <Img
+                        className="pressThumbnailCover"
+                        fluid={
+                          edge.node.frontmatter.cover.childImageSharp.fluid
+                        }
+                      />
+                      <Media query="(min-width: 1024px)">
+                        {matches =>
+                          matches ? (
+                            <Img
+                              className="pressThumbnailCounterCover"
+                              fluid={
+                                edge.node.frontmatter.counter_cover
+                                  .childImageSharp.fluid
+                              }
+                            />
+                          ) : null
+                        }
+                      </Media>
+                    </div>
+                  </MyHashLink>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
