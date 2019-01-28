@@ -23,10 +23,10 @@ const Press = ({ location, data }) => {
               For press inquiries
               <br />{' '}
               <a
-                href="mailto:press@hahastudio.se"
+                href="mailto:info@hahastudio.se"
                 className={css(styles.mailTo)}
               >
-                press@hahastudio.se
+                info@hahastudio.se
               </a>
               <br />
               <br />{' '}
