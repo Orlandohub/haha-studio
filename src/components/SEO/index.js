@@ -15,7 +15,7 @@ function SEO(props) {
         },
         {
           property: 'og:url',
-          content: location,
+          content: props.location,
         },
 
         {
