@@ -12,14 +12,11 @@ const NavFooter = props => {
   const { linkLeft, linkRight, linkText, text } = props
   return (
     <div className={css(styles.footerWrapper)}>
-      <span className={css(styles.spanLeft)}>
-        <MyHashLink to={`${linkLeft}#Menu`} className={css(styles.linkStyle)}>
-          <span className={css(styles.arrowRight)} style={{color: '#000'}}>&larr;</span>
-        </MyHashLink>
-      </span>
+      <MyHashLink to={`${linkLeft}#Menu`}>
+        <img src={footerArrow} alt="prev" className={css(styles.arrowLeft)} />
+      </MyHashLink>
 
       <span className={css(styles.spanCenter)}>
-        {' '}
         <p className={css(styles.paragraph)}>
           <MyHashLink to={`${linkText}#Menu`} className={css(styles.linkText)}>
             {text}
@@ -27,12 +24,9 @@ const NavFooter = props => {
         </p>
       </span>
 
-      <span className={css(styles.spanRight)}>
-        {' '}
-        <MyHashLink to={`${linkRight}#Menu`} className={css(styles.linkStyle)}>
-          <span className={css(styles.arrowLeft)} style={{color: '#000'}}>&larr;</span>
-        </MyHashLink>
-      </span>
+      <MyHashLink to={`${linkRight}#Menu`}>
+        <img src={footerArrow} alt="next" className={css(styles.arrowRight)} />
+      </MyHashLink>
     </div>
   )
 }

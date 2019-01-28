@@ -139,9 +139,14 @@ export const cartShowBtn = mq({
   textAlign: 'center',
   backgroundColor: '#0A00FF',
   color: 'white',
-  borderRadius: 10,
+  borderRadius: 50,
   border: 'none',
   outline: 'none',
+  width: [12, 12, 22],
+  height: [12, 12, 22],
+  fontSize: [8, 8, 14],
+  lineHeight: 0,
+  padding: 2,
 })
 
 export const cartShowBtnHidden = mq(cartShowBtn, {
@@ -150,7 +155,7 @@ export const cartShowBtnHidden = mq(cartShowBtn, {
 
 export const cartWrapper = mq({
   display: 'block',
-  position: 'absolute',
+  position: 'fixed',
   top: 0,
   right: 0,
   width: ['100%', '100%', '462px', '462px', '462px', 462],

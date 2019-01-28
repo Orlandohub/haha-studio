@@ -280,6 +280,7 @@ class Menu extends Component {
             ) : null}
           </ul>
         </div>
+        {/*
         <div className={css(styles.shopWrap)}>
           <ul className={css(styles.subMenuColShop)}>
             <li className={css(styles.subMenuItemShop)}>
@@ -305,6 +306,7 @@ class Menu extends Component {
             </li>
           </ul>
         </div>
+        */}
         <div className={this.state.activeClass}>
           <Cart setItemsCount={this.setItemsCount} showElements={false} hideCart={this.hideCart} />
         </div>
