@@ -29,7 +29,7 @@ export const ProjectsTemplate = ({
       <SEO
         title={title}
         description={content}
-        location={location}
+        //location={location}
         thumbnail={galleryImages[0].image.childImageSharp.fluid.src}
       />
 

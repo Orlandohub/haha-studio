@@ -16,6 +16,7 @@ const Exploration = ({ data, location }) => {
       <SEO
         title={'Explore HAHA Studio'}
         description={'HAHA Studio exploration articles and stories'}
+        //location={location}
       />
       <div className={css(styles.explorationWrapper)}>
         <div className={css(styles.explorationRightColumn)}>

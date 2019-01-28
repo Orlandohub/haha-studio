@@ -12,6 +12,7 @@ const FindUs = ({ location }) => (
       description={
         'HAHA Staff, HAHA contacts, HAHA social media, We are here, come and find us, Pipersgatan 14, 112 24 Stockholm, Sweden, Yujin Chiang, Arash Eskafi'
       }
+      //location={location}
     />
     <div className={css(styles.findUsWrapper)}>
       <div className={css(styles.findUsRightColumn)}>

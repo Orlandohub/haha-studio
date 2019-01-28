@@ -11,7 +11,7 @@ const Shipping = ({ location }) => (
     <SEO
       title={'HAHA Studio shipping'}
       description={'HAHA Studio shipping prices and informations'}
-      location={location}
+      //location={location}
     />
     <div className={css(styles.shippingWrapper)}>
       <div className={css(styles.shippingTitle)}>Shipping</div>
@@ -25,6 +25,7 @@ const Shipping = ({ location }) => (
 
       <div className={css(styles.shippingTitle)}>Shipping fee</div>
       <div className={css(styles.shippingTextWrapper)}>
+        {'                                                '}
         <table className={css(styles.tableStyles)}>
           <tr>
             <td className={css(styles.rowStyles)}>{null}</td>
@@ -56,6 +57,8 @@ const Shipping = ({ location }) => (
             <td>&#8364;8.00</td>
           </tr>
         </table>
+
+        {'                                                '}
         <p className={css(styles.disclaimerStyles)}>
           * Here will be a line to state that the shipping fee could be vary due
           to the certain circumstances. Terms here has to be well thought, so to

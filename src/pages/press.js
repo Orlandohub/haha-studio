@@ -22,6 +22,7 @@ const Press = ({ location, data }) => {
         description={
           'Find out what the world press has to say about HAHA studio'
         }
+        //location={location}
       />
       <div className={css(styles.pressWrapper)}>
         <div className={css(styles.pressRightColumn)}>

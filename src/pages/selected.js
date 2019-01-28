@@ -15,7 +15,7 @@ class Selected extends React.Component {
         <SEO
           title={'HAHA Studio selected'}
           description={'HAHA Studio current best products and projects'}
-          location={location}
+          //location={location}
         />
         <ScrollTop />
         <Projects projects={projectsList} />

@@ -53,7 +53,7 @@ class ProductPageTemplate extends React.Component {
         <SEO
           title={title}
           description={content}
-          location={location}
+          //location={location}
           thumbnail={imageGallery[0].image.childImageSharp.fluid.src}
         />
         <div className={css(styles.shopProductWrapper)}>

@@ -36,6 +36,7 @@ const AboutPage = ({ data, location }) => {
         description={
           'You listen up here iss a story about a little guys that lives in a HAHA world...'
         }
+        //location={location}
       />
       <AboutPageTemplate contentComponent={HTMLContent} content={post.html} />
     </Layout>

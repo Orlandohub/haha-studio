@@ -39,8 +39,8 @@ class Hero extends React.Component {
     return (
       <div data-cy="hero">
         <SEO
-          title={'HAHA Studio Presents'}
-          description={'HAHA Studio introduction'}
+          title={'HAHA Studio'}
+          description={'HAHA Studio Welcome Page'}
           thumbnail={data.fileName.childImageSharp.fluid.src}
         />
         <div

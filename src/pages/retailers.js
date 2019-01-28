@@ -12,6 +12,7 @@ const Retailers = ({ location }) => (
       description={
         'HAHA Studio distribuitors, retailers, where you can buy our products'
       }
+      //location={location}
     />
     <div className={css(styles.retailersWrapper)}>
       <div className={css(styles.leftFloatingEmptySpace)} />

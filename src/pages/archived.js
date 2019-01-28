@@ -14,7 +14,7 @@ class Archived extends React.Component {
         <SEO
           title={'HAHA Studio archives'}
           description={'HAHA Studio, all of products and projects'}
-          location={location}
+          // location={location}
         />
         <Projects projects={projectsList} />
       </Layout>

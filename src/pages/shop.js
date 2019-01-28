@@ -15,11 +15,11 @@ const Shop = ({ location, data }) => {
   const { edges } = posts
   return (
     <Layout location={location}>
-      <SEO>
+      <SEO
         title={'HAHA Studio Shop'}
         description={'HAHA Studio shop! buy our exclusive products! Now!'}
-        location={location}
-      </SEO>
+        //location={location}
+      />
       <div className={css(styles.shopWrapper)}>
         <div className={css(styles.shopRightColumn)}>
           {map(edges, edge => {
