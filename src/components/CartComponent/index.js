@@ -160,67 +160,63 @@ class Cart extends React.Component {
 
         {/* *********************** HEADER END ************************* */}
 
-        <table
+        <div
           className={`${css(styles.tableStyles)} ${
             showElements ? css(styles.checkoutTableStyles) : null
           }`}
         >
-          <tbody>
-            {map(items, item => {
-              return (
-                <tr key={item.id}>
-                  {showElements && (
-                    <td className={css(styles.rowStyles)}>
-                      <img
-                        className={css(styles.imageWrap)}
-                        src={item.image}
-                        alt={item.name}
-                      />
-                    </td>
-                  )}
-                  <td className={css(styles.rowStyles)}>{item.name}</td>
-                  {showElements ? (
-                    <td className={css(styles.rowStylesRight)}>
-                      <span>&times;{item.quantity}</span>
-                    </td>
-                  ) : (
-                    <td className={css(styles.rowStylesRight)}>
-                      {item.quantity === 1 ? (
-                        <button
-                          className={css(styles.cardBtn)}
-                          onClick={() => this.substract(item.id, item.quantity)}
-                        >
-                          &times;
-                        </button>
-                      ) : (
-                        <button
-                          className={css(styles.cardBtn)}
-                          onClick={() => this.substract(item.id, item.quantity)}
-                        >
-                          -
-                        </button>
-                      )}
-                      <span className={css(styles.numWrap)}>
-                        {item.quantity}
-                      </span>
+          {map(items, item => {
+            return (
+              <div key={item.id} className={css(styles.flexRows)}>
+                {showElements && (
+                  <span className={css(styles.imageContainer)}>
+                    <img
+                      className={css(styles.imageWrap)}
+                      src={item.image}
+                      alt={item.name}
+                    />
+                  </span>
+                )}
+                <span style={{ width: '40%' }}>{item.name}</span>
+                {showElements ? (
+                  <span className={css(styles.rowStyles)}>
+                    &times;{item.quantity}
+                  </span>
+                ) : (
+                  <span className={css(styles.rowStylesRight)}>
+                    {item.quantity === 1 ? (
                       <button
                         className={css(styles.cardBtn)}
-                        onClick={() => this.add(item.id, item.quantity)}
+                        onClick={() => this.substract(item.id, item.quantity)}
                       >
-                        +
+                        &times;
                       </button>
-                    </td>
-                  )}
+                    ) : (
+                      <button
+                        className={css(styles.cardBtn)}
+                        onClick={() => this.substract(item.id, item.quantity)}
+                      >
+                        -
+                      </button>
+                    )}
+                    <span className={css(styles.numWrap)}>{item.quantity}</span>
+                    <button
+                      className={css(styles.cardBtn)}
+                      onClick={() => this.add(item.id, item.quantity)}
+                    >
+                      +
+                    </button>
+                  </span>
+                )}
 
-                  <td className={css(styles.rowStylesRight)}>
-                    {item.quantity * item.price} &#8364;
-                  </td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </table>
-
+                <span className={css(styles.rowStylesRight)}>
+                  {item.quantity * item.price} &#8364;
+                </span>
+              </div>
+            )
+          })}
+        </div>
+        <div style={{ marginTop: 'auto' }} />
         {/* #######################################   BOTTOM PART   ##################################### */}
 
         {showElements === false ? (

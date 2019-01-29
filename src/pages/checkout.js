@@ -275,8 +275,9 @@ class CheckOut extends React.Component {
             <div className={css(styles.headerStyles)}>
               <p>Order summary</p>
             </div>
-
-            <Cart showElements={true} />
+            <div style={{ overflowY: 'auto' }}>
+              <Cart showElements={true} />
+            </div>
 
             {/* #############################    DISCOUNT SUBMISSION     #############################*/}
 

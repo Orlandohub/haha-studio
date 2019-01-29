@@ -65,7 +65,12 @@ export const shopWrapRight = mq(shopWrap, {
 })
 
 export const cartWrapper = mq({
-  height: '100%',
+  maxHeight: '100%',
+  //***** */
+  display: 'flex',
+  flexDirection: 'column',
+  //justifyContent: 'space-between',
+  /****** */
   position: [
     'relative',
     'relative',
@@ -123,7 +128,7 @@ export const cardBtn = mq({
 // **************** DISCOUNT CODE WRAPPER, SUBMIT BUTTON AND PLACEHOLDER STYLING
 
 export const promoWrapper = mq({
-  paddingTop: [120, 120, 120, 74, 74],
+  paddingTop: [80, 80, 80, 45, 45],
   fontSize: [14, 14, 14, 18, 18],
   borderBottom: '1.5px solid black',
 })
