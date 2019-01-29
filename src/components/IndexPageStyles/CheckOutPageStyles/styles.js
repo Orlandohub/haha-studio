@@ -1,4 +1,5 @@
 import selectArrow from '../../../images/dropdown_arrow.svg'
+import entercodearrow from '../../../images/code-arrow.png'
 import facepaint from 'facepaint'
 const breakpoints = [411, 576, 768, 1024, 1200, 1500]
 const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
@@ -14,7 +15,7 @@ export const pageWrapper = mq({
 })
 
 export const brand = mq({
-  paddingBottom: [89, 89, 89, 89, 139, 139],
+  paddingBottom: [89, 89, 89, 89, 68, 68],
   display: 'block',
   position: 'relative',
   float: 'left',
@@ -60,7 +61,7 @@ export const shopWrapRight = mq(shopWrap, {
   display: ['none', 'none', 'none', 'none', 'none', 'block'],
   width: '100%',
   lineHeight: 1.38,
-  paddingBottom: [89, 89, 89, 89, 133, 133],
+  paddingBottom: [89, 89, 89, 89, 62, 62],
 })
 
 export const cartWrapper = mq({
@@ -140,14 +141,16 @@ export const arrowWrap = mq({
 })
 
 export const submitBtn = mq({
-  // width: '10px',
-  height: '15px',
+  width: '23px',
+  height: '10px',
+  padding: 0,
   backgroundColor: 'transparent',
   outline: 'none',
   border: 'none',
-  // backgroundImage: `url(${entercodearrow})`,
-  // backgroundRepeat: 'no-repeat',
-  // backgroundPosition: 'bottom',
+  backgroundImage: `url(${entercodearrow})`,
+  backgroundRepeat: 'no-repeat',
+  backgroundPosition: 'contain',
+  backgroundSize: 'cover',
 })
 
 export const promoLabelStyles = mq({
@@ -196,12 +199,13 @@ export const paragraphBottom = mq(paragraph, {
 // *******************  PRODUCT INFO TABLE STYLING
 
 export const summaryTable = mq(tableStyles, {
+  marginTop: 30,
   borderBottom: '2px solid black',
   marginBottom: [60, 60, 60, 60, 134, 134],
 })
 
 export const sumRowTop = mq({
-  paddingTop: [40, 40, 40, 32, 32],
+  //paddingTop: [40, 40, 40, 30, 30],
   paddingBottom: 5,
 })
 export const sumRowTopRight = mq(sumRowTop, {
@@ -227,11 +231,11 @@ export const middleRowsRight = mq({
 })
 
 export const sumRowBottom = mq({
-  paddingBottom: [10, 10, 10, 35, 35],
+  paddingBottom: [10, 10, 10, 42, 42],
   cursor: 'help',
   '& span': {
     borderBottom: '1px dashed #000',
-  }
+  },
 })
 
 export const sumRowBottomRight = mq(sumRowBottom, {
@@ -287,6 +291,10 @@ export const halfWidthDateCenter = mq(halfWidthDate, {
   textAlign: ['left', 'center', 'center'],
 })
 
+export const halfWidthDateCardType = mq(halfWidthDate, {
+  float: 'left',
+})
+
 export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
   width: ['62%', '40%', '40%', '40%', '50%', '32%', '50%'],
   WebkitAppearance: 'none',
@@ -312,7 +320,7 @@ export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
     backgroundColor: 'red',
     top: 0,
     left: 0,
-  }
+  },
 })
 
 export const halfWidthFormsCVC = mq(halfWidthDate, {
@@ -404,9 +412,9 @@ export const deliveryFormHidden = mq(deliveryForm, {
 })
 
 export const cardInfoWrap = mq({
-  paddingTop: [38, 38, 38, 38, 73, 73],
+  paddingTop: [38, 38, 38, 38, 50, 50],
 })
 
 export const paddingWrap = mq({
-  height: [38, 38, 38, 38, 73, 73],
+  height: [38, 38, 38, 38, 50, 50],
 })

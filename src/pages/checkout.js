@@ -204,7 +204,7 @@ class CheckOut extends React.Component {
     let { typed } = this.props
 
     return (
-      <Layout hideMenu={true}>
+      <Layout hideMenu={true} location={location}>
         {' '}
         <Modal
           bsSize="small"
@@ -323,9 +323,7 @@ class CheckOut extends React.Component {
                           type="submit"
                           value=""
                           className={css(styles.submitBtn)}
-                        >
-                          &rarr;
-                        </button>
+                        />
                       </td>
                     </tr>
                   </tbody>
@@ -664,7 +662,24 @@ class CheckOut extends React.Component {
               {/*#######################       END            ##################*/}
 
               <div className={css(styles.cardInfoWrap)}>
-                <p>Card details</p>
+                <label className={css(styles.halfWidthDateCardType)}>
+                  Card type
+                  <Field
+                    component="select"
+                    name="cardType"
+                    className={css(styles.halfWidthDateInputs)}
+                  >
+                    <option value="Visa">Visa</option>
+                    <option value="Master">Master</option>
+                    <option value="AmEx">AmEx</option>
+                    <option value="Discover">Discover</option>
+                    <option value="Citibank">Citibank</option>
+                  </Field>
+                </label>
+
+                <span style={{ float: 'left', width: '100%' }}>
+                  <p style={{ margin: 0 }}>Card details</p>
+                </span>
 
                 <label className={css(styles.formLabels)}>
                   Card number
@@ -839,6 +854,7 @@ const FormikCheckOut = withFormik({
     deliveryZipCode,
     deliveryCountry,
     shiptoanotheradress,
+    cardType,
     cardNumber,
     nameOnCard,
     expiryYear,
@@ -863,6 +879,7 @@ const FormikCheckOut = withFormik({
       deliveryZipCode: deliveryZipCode || '',
       deliveryCountry: deliveryCountry || '',
       shiptoanotheradress: shiptoanotheradress || false,
+      cardType: cardType || 'Visa',
       cardNumber: cardNumber || '',
       nameOnCard: nameOnCard || '',
       expiryYear: expiryYear || '2019',

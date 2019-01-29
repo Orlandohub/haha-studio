@@ -26,29 +26,31 @@ class Cart extends React.Component {
 
   add(id, quantity) {
     const refreshItems = this.refreshItems
-    window.Snipcart.api.items.update(id, {
-      quantity: quantity + 1,
-    }).then(() => {
-      refreshItems()
-    })
+    window.Snipcart.api.items
+      .update(id, {
+        quantity: quantity + 1,
+      })
+      .then(() => {
+        refreshItems()
+      })
   }
 
   substract(id, quantity) {
     const refreshItems = this.refreshItems
     const hideCart = this.hideCart
 
-    quantity === 1 ?
-      window.Snipcart.api.items.remove(id)
-        .then(() => {
+    quantity === 1
+      ? window.Snipcart.api.items.remove(id).then(() => {
           refreshItems()
           window.Snipcart.api.items.count() === 0 ? hideCart() : null
         })
-      :
-      window.Snipcart.api.items.update(id, {
-        quantity: quantity - 1,
-      }).then(() => {
-        refreshItems()
-      })
+      : window.Snipcart.api.items
+          .update(id, {
+            quantity: quantity - 1,
+          })
+          .then(() => {
+            refreshItems()
+          })
   }
 
   hideCart() {
@@ -61,7 +63,7 @@ class Cart extends React.Component {
       setItemsCount()
     }
     this.setState({
-      items: window.Snipcart.api.items.all()
+      items: window.Snipcart.api.items.all(),
     })
   }
 
@@ -74,7 +76,7 @@ class Cart extends React.Component {
 
       const cart = window.Snipcart.api.cart.get()
       this.setState({
-        total: cart && cart.total
+        total: cart && cart.total,
       })
 
       document.addEventListener('snipcart.ready', () => {
@@ -82,7 +84,7 @@ class Cart extends React.Component {
 
         const carts = window.Snipcart.api.cart.get()
         this.setState({
-          total: carts && carts.total
+          total: carts && carts.total,
         })
       })
 
@@ -90,21 +92,21 @@ class Cart extends React.Component {
         refreshItems()
         const cart_d = window.Snipcart.api.cart.get()
         this.setState({
-          total: cart_d && cart_d.total
+          total: cart_d && cart_d.total,
         })
       })
       window.Snipcart.subscribe('item.removed', () => {
         refreshItems()
         const cart_b = window.Snipcart.api.cart.get()
         this.setState({
-          total: cart_b && cart_b.total
+          total: cart_b && cart_b.total,
         })
       })
       window.Snipcart.subscribe('item.updated', () => {
         refreshItems()
         const cart_c = window.Snipcart.api.cart.get()
         this.setState({
-          total: cart_c && cart_c.total
+          total: cart_c && cart_c.total,
         })
       })
     }
@@ -158,62 +160,64 @@ class Cart extends React.Component {
 
         {/* *********************** HEADER END ************************* */}
 
-        <table className={`${css(styles.tableStyles)} ${showElements ? css(styles.checkoutTableStyles) : null}`}>
+        <table
+          className={`${css(styles.tableStyles)} ${
+            showElements ? css(styles.checkoutTableStyles) : null
+          }`}
+        >
           <tbody>
-            {
-              map(items, item => {
-                return (
-                  <tr key={item.id}>
-                    {showElements && (
-                      <td className={css(styles.rowStyles)}>
-                        <img
-                          className={css(styles.imageWrap)}
-                          src={item.image}
-                          alt={item.name}
-                        />
-                      </td>
-                    )}
-                    <td className={css(styles.rowStyles)}>{item.name}</td>
-                    {
-                      showElements ?
-                        <td className={css(styles.rowStylesRight)}>
-                          <span>
-                            &times;{item.quantity}
-                          </span>
-                        </td>
-                        :
-                        <td className={css(styles.rowStylesRight)}>
-                          {item.quantity === 1 ? (
-                            <button
-                              className={css(styles.cardBtn)}
-                              onClick={() => this.substract(item.id, item.quantity)}
-                            >
-                              &times;
-                            </button>
-                          ) : (
-                            <button
-                              className={css(styles.cardBtn)}
-                              onClick={() => this.substract(item.id, item.quantity)}
-                            >
-                              -
-                            </button>
-                          )}
-                          <span className={css(styles.numWrap)}>
-                            {item.quantity}
-                          </span>
-                          <button className={css(styles.cardBtn)} onClick={() => this.add(item.id, item.quantity)}>
-                            +
-                          </button>
-                        </td>
-                    }
-
-                    <td className={css(styles.rowStylesRight)}>
-                      {item.quantity * item.price} &#8364;
+            {map(items, item => {
+              return (
+                <tr key={item.id}>
+                  {showElements && (
+                    <td className={css(styles.rowStyles)}>
+                      <img
+                        className={css(styles.imageWrap)}
+                        src={item.image}
+                        alt={item.name}
+                      />
                     </td>
-                  </tr>
-                )
-              })
-            }
+                  )}
+                  <td className={css(styles.rowStyles)}>{item.name}</td>
+                  {showElements ? (
+                    <td className={css(styles.rowStylesRight)}>
+                      <span>&times;{item.quantity}</span>
+                    </td>
+                  ) : (
+                    <td className={css(styles.rowStylesRight)}>
+                      {item.quantity === 1 ? (
+                        <button
+                          className={css(styles.cardBtn)}
+                          onClick={() => this.substract(item.id, item.quantity)}
+                        >
+                          &times;
+                        </button>
+                      ) : (
+                        <button
+                          className={css(styles.cardBtn)}
+                          onClick={() => this.substract(item.id, item.quantity)}
+                        >
+                          -
+                        </button>
+                      )}
+                      <span className={css(styles.numWrap)}>
+                        {item.quantity}
+                      </span>
+                      <button
+                        className={css(styles.cardBtn)}
+                        onClick={() => this.add(item.id, item.quantity)}
+                      >
+                        +
+                      </button>
+                    </td>
+                  )}
+
+                  <td className={css(styles.rowStylesRight)}>
+                    {item.quantity * item.price} &#8364;
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
 
@@ -256,8 +260,8 @@ class Cart extends React.Component {
 }
 Cart.propTypes = {
   showElements: PropTypes.bool.isRequired,
-  hideCart: PropTypes.func.isRequired,
-  setItemsCount: PropTypes.func
+  //hideCart: PropTypes.func.isRequired,
+  setItemsCount: PropTypes.func,
 }
 
 export default Cart
