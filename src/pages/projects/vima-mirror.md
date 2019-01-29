@@ -10,7 +10,7 @@ date: 2016-02-06T20:36:00.000Z
 image_gallery:
   - image: /assets/uploads/project_vima_mirror_01_cover.jpg
     is_cover: true
-  - image: /assets/uploads/project_vima_mirror_02_cover.jpg
+  - image: /assets/uploads/project_vima_mirror_02.jpg
 ---
 Fragile and utilitarian, the Vima Mirror is a balance of steel and glass. Hang the essentials on it in a hallway, room, or bathroom.
 
