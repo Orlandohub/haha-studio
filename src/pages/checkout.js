@@ -204,7 +204,7 @@ class CheckOut extends React.Component {
     let { typed } = this.props
 
     return (
-      <Layout hideMenu={true} location={location}>
+      <Layout hideMenu={true}>
         {' '}
         <Modal
           bsSize="small"

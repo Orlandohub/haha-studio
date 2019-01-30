@@ -8,7 +8,7 @@ import prImgDesk from '../images/D_product_thumbnail_checkout_page.jpg'
 
 const ThankYouNote = () => {
   return (
-    <Layout hideMenu={true} location={location}>
+    <Layout hideMenu={true}>
       <div className={css(styles.thankYouWrapper)}>
         <div className={css(styles.clientName)}>Hey {'<First name>'},</div>
         <div className={css(styles.thankYouText)}>
