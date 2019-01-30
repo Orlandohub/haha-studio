@@ -221,7 +221,7 @@ class CheckOut extends React.Component {
           <Modal.Body>
             <br />
             <p className={css(styles.paymentModalTitle)}>
-              Total: {this.state.total + 10}€
+              Total: {this.state.total + 10} €
             </p>
             <br />
           </Modal.Body>
@@ -275,8 +275,9 @@ class CheckOut extends React.Component {
             <div className={css(styles.headerStyles)}>
               <p>Order summary</p>
             </div>
-
-            <Cart showElements={true} />
+            <div style={{ overflowY: 'auto' }}>
+              <Cart showElements={true} />
+            </div>
 
             {/* #############################    DISCOUNT SUBMISSION     #############################*/}
 
@@ -323,9 +324,7 @@ class CheckOut extends React.Component {
                           type="submit"
                           value=""
                           className={css(styles.submitBtn)}
-                        >
-                          &rarr;
-                        </button>
+                        />
                       </td>
                     </tr>
                   </tbody>
@@ -342,13 +341,13 @@ class CheckOut extends React.Component {
                     <tr>
                       <td className={css(styles.sumRowTop)}>Subtotal</td>
                       <td className={css(styles.sumRowTopRight)}>
-                        {this.state.total + this.state.discount} &#8364;
+                        {this.state.total + this.state.discount} €
                       </td>
                     </tr>
                     <tr>
                       <td className={css(styles.middleRows)}>Discount</td>
                       <td className={css(styles.middleRowsRight)}>
-                        - {this.state.discount} &#8364;
+                        - {this.state.discount} €
                       </td>
                     </tr>
                   </React.Fragment>
@@ -356,7 +355,7 @@ class CheckOut extends React.Component {
                 <tr>
                   <td className={css(styles.middleRows)}>Total</td>
                   <td className={css(styles.middleRowsRight)}>
-                    {this.state.total} &#8364;
+                    {this.state.total} €
                   </td>
                 </tr>
                 <tr>
@@ -664,7 +663,24 @@ class CheckOut extends React.Component {
               {/*#######################       END            ##################*/}
 
               <div className={css(styles.cardInfoWrap)}>
-                <p>Card details</p>
+                <label className={css(styles.halfWidthDateCardType)}>
+                  Card type
+                  <Field
+                    component="select"
+                    name="cardType"
+                    className={css(styles.halfWidthDateInputs)}
+                  >
+                    <option value="Visa">Visa</option>
+                    <option value="Master">Master</option>
+                    <option value="AmEx">AmEx</option>
+                    <option value="Discover">Discover</option>
+                    <option value="Citibank">Citibank</option>
+                  </Field>
+                </label>
+
+                <span style={{ float: 'left', width: '100%' }}>
+                  <p style={{ margin: 0 }}>Card details</p>
+                </span>
 
                 <label className={css(styles.formLabels)}>
                   Card number
@@ -839,6 +855,7 @@ const FormikCheckOut = withFormik({
     deliveryZipCode,
     deliveryCountry,
     shiptoanotheradress,
+    cardType,
     cardNumber,
     nameOnCard,
     expiryYear,
@@ -863,6 +880,7 @@ const FormikCheckOut = withFormik({
       deliveryZipCode: deliveryZipCode || '',
       deliveryCountry: deliveryCountry || '',
       shiptoanotheradress: shiptoanotheradress || false,
+      cardType: cardType || 'Visa',
       cardNumber: cardNumber || '',
       nameOnCard: nameOnCard || '',
       expiryYear: expiryYear || '2019',

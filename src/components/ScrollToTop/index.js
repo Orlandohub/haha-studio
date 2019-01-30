@@ -12,6 +12,8 @@ const Btn = css({
 })
 
 class ScrollTop extends Component {
+  _isMounted = false
+
   constructor(props) {
     super(props)
 
@@ -26,24 +28,30 @@ class ScrollTop extends Component {
   }
 
   componentDidMount() {
-    this.checkForScrollToTop()
-    window.addEventListener('scroll', this.handleScroll)
+    this._isMounted = true
+    if (this._isMounted) {
+      this.checkForScrollToTop()
+      window.addEventListener('scroll', this.handleScroll)
+    }
   }
 
   componentWillUnmount() {
+    this._isMounted = false
     window.addEventListener('scroll', this.handleScroll)
   }
 
   checkForScrollToTop() {
-    let Yoffset = 1500
-    document.body.scrollTop > Yoffset ||
-    document.documentElement.scrollTop > Yoffset
-      ? this.setState({
-          showScrollToTop: true,
-        })
-      : this.setState({
-          showScrollToTop: false,
-        })
+    if (this._isMounted) {
+      let Yoffset = 1500
+      document.body.scrollTop > Yoffset ||
+      document.documentElement.scrollTop > Yoffset
+        ? this.setState({
+            showScrollToTop: true,
+          })
+        : this.setState({
+            showScrollToTop: false,
+          })
+    }
   }
 
   handleScroll() {
