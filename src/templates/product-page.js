@@ -56,7 +56,7 @@ class ProductPageTemplate extends React.Component {
           //location={location}
           thumbnail={imageGallery[0].image.childImageSharp.fluid.src}
         />
-        <div className={css(styles.shopProductWrapper)}>
+        <div id="product" className={css(styles.shopProductWrapper)}>
           <div className={css(styles.leftTitleColumn)}>{title}</div>
           <div className={css(styles.mainBodyWrapper)}>
             <Carousel
@@ -101,8 +101,8 @@ class ProductPageTemplate extends React.Component {
             <NavFooter
               linkText="/shop/"
               text="shop"
-              linkLeft={pageContext.prev}
-              linkRight={pageContext.next}
+              linkLeft={`${pageContext.prev}#product`}
+              linkRight={`${pageContext.next}#product`}
             />
           </div>
         </div>

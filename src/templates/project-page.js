@@ -33,7 +33,7 @@ export const ProjectsTemplate = ({
         thumbnail={galleryImages[0].image.childImageSharp.fluid.src}
       />
 
-      <div className={css(styles.projectWrapper)}>
+      <div id="project" className={css(styles.projectWrapper)}>
         <div className={css(styles.projectTitleSliderWrap)}>
           <div className={css(styles.projectTitle)}>
             <p className={css(styles.styledParagraph)}>
@@ -62,8 +62,8 @@ export const ProjectsTemplate = ({
         </div>
         <div className={css(styles.footerWrap)}>
           <NavFooter
-            linkLeft={`${pageContext.prev}`}
-            linkRight={`${pageContext.next}`}
+            linkLeft={`${pageContext.prev}#project`}
+            linkRight={`${pageContext.next}#project`}
             linkText="/selected/"
             text="view all"
           />

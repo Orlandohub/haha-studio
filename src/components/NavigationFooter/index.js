@@ -12,19 +12,19 @@ const NavFooter = props => {
   const { linkLeft, linkRight, linkText, text } = props
   return (
     <div className={css(styles.footerWrapper)}>
-      <MyHashLink to={`${linkLeft}#Menu`}>
+      <MyHashLink to={linkLeft}>
         <img src={footerArrow} alt="prev" className={css(styles.arrowLeft)} />
       </MyHashLink>
 
       <span className={css(styles.spanCenter)}>
         <p className={css(styles.paragraph)}>
-          <MyHashLink to={`${linkText}#Menu`} className={css(styles.linkText)}>
+          <MyHashLink to={linkText} className={css(styles.linkText)}>
             {text}
           </MyHashLink>
         </p>
       </span>
 
-      <MyHashLink to={`${linkRight}#Menu`}>
+      <MyHashLink to={linkRight}>
         <img src={footerArrow} alt="next" className={css(styles.arrowRight)} />
       </MyHashLink>
     </div>

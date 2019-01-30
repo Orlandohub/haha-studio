@@ -4,6 +4,7 @@ import Hero from '../components/Hero'
 import Layout from '../layouts'
 import Projects from '../components/Projects'
 import { graphql } from 'gatsby'
+import ScrollTop from '../components/ScrollToTop/index'
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ class IndexPage extends React.Component {
         <Hero data={data} showContent={this.showContent} />
         {this.state.content && (
           <Layout location={location}>
+            <ScrollTop />
             <Projects projects={projectsList} />
           </Layout>
         )}

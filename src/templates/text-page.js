@@ -19,15 +19,15 @@ export const TextPageTemplate = ({
     <div className={css(styles.textWrapper)}>
       <div className={css(styles.textRightColumn)}>
         {/*########################*/}
-        <div className={css(styles.textText)}>
+        <div id="text" className={css(styles.textText)}>
           <h2 className={css(styles.textHeader)}>{title}</h2>
           <div className={css(styles.textParagraph)}>
             <PageContent className="content" content={content} />
           </div>
         </div>
         <NavFooter
-          linkLeft={pageContext.prev}
-          linkRight={pageContext.next}
+          linkLeft={`${pageContext.prev}#text`}
+          linkRight={`${pageContext.next}#text`}
           linkText="/texts/"
           text="back"
         />
