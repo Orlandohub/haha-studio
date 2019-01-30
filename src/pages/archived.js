@@ -4,6 +4,7 @@ import Layout from '../layouts'
 import Projects from '../components/Projects'
 import { graphql } from 'gatsby'
 import SEO from '../components/SEO/index'
+import ScrollTop from '../components/ScrollToTop/index'
 
 class Archived extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class Archived extends React.Component {
           description={'HAHA Studio, all of products and projects'}
           // location={location}
         />
+        <ScrollTop />
         <Projects projects={projectsList} />
       </Layout>
     )
