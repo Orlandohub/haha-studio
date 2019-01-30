@@ -1,28 +1,24 @@
 ---
 templateKey: project-page
 title: Spin Lamp
-is_selected: false
-project_assistant: Studio Dejawu
-photo_credits: ' HAHA studio & Charlie Drevstam '
+is_selected: true
+project_assistant: Fany Song
+photo_credits: ' HAHA studio'
 producer: HAHA studio
 year: '2017'
-date: 2018-12-17T11:11:25.515Z
+date: 2018-04-08T10:11:25.515Z
 image_gallery:
-  - image: /assets/uploads/d_homepage_image_01.jpg
+  - image: /assets/uploads/project_spin_lamp_01_cover.jpg
     is_cover: true
-  - image: /assets/uploads/d_portrait_image.jpg
+  - image: /assets/uploads/project_spin_lamp_02.jpg
 ---
-Alia, Latin for “Change”, is a candle holder that does exactly that. Made from a single repeating branch, Alia is all about creating free compositions. One branch works alone, but stacking more is just so much more impressive.
+A chubby, satin orbit of spin-pressed aluminum nearly consumes the socket and bulb. For its compact size, the Spin Lamp emits a diffuse light creating ambience without the need for a cumbersome shade.
 
-<br>
+<br/>
 
-Sold in units of 1 or 3.
+Install as pendant or wall. For home, retail, public, and hospitality spaces.
 
-<br>
-<br>
+<br/>
 
-Alia is available for purchase at our [retailers](https://google.com), and in our [shop](https://google.com).
 
-<br>
-
-Download
+Spin Lamp will be available from August 2019, email us if you are interested in pre-ordering the lamp.
