@@ -24,4 +24,4 @@ Sold in units of 1 or 3.
 <br>
 <br>
 
-Alia is available for purchase at our [retailers](/retailers/), and in our [shop](/shop/).
+Alia is available for purchase at our [retailers](/retailers/).

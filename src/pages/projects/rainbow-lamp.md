@@ -2,19 +2,16 @@
 templateKey: project-page
 title: Rainbow Lamp
 is_selected: true
-project_assistant: Arash Eskafi
+project_assistant: Antonia Strük
 photo_credits: HAHA studio
 producer: HAHA studio
-year: '2018'
-date: 2019-01-16T19:51:00.000Z
+year: '2017'
+date: 2017-02-10T19:51:00.000Z
 image_gallery:
-  - image: /assets/uploads/liberty_lamp_silver_01.png
-  - image: /assets/uploads/d_homepage_image_01.jpg
-    is_cover: true
+  - image: /assets/uploads/project_vima_mirror_02_cover.jpg
 ---
-Wanted to take a second and thank you for your business. There is nothing more rewarding than seeing an order from a (new)repeat customer, and we can't express how grateful we are every time.
+There is a story behind Rainbow: its shape was not designed, it was found. Each part existed for a different purpose before they were united in Rainbow. The aluminum elbow is a standard part for the commercial vehicle industry. The light itself is a standard LED bulb.
 
 <br/>
-<br/>
 
-If there is anything else we can do for you, please do not be shy.
+Fit for ceiling or desk.
