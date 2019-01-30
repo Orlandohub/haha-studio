@@ -16,22 +16,27 @@ export const PressPageTemplate = ({ post, pageContext, location }) => {
           <p className={css(styles.pressExpandedParagraph)}>
             For press inquiries
             <br />{' '}
-            <a href="mailto:press@hahastudio.se" className={css(styles.mailTo)}>
-              press@hahastudio.se
+            <a
+              href="mailto:info@hahastudio.se"
+              className={css(styles.mailTo)}
+            >
+              info@hahastudio.se
             </a>
             <br />
             <br />{' '}
-            <a href="/press/" className={css(styles.pressExpandedLink)}>
-              Download high-resolution images and media kits
-            </a>
-            <br />
-            <br />
-            <a href="/press/" className={css(styles.pressExpandedLink)}>
-              Download studio profile
-            </a>
-            <br />
-            <br />{' '}
-            <a href="/press/" className={css(styles.pressExpandedLink)}>
+            {/* 
+              <a href="/press/" className={css(styles.pressLink)}>
+                Download high-resolution images and media kits
+              </a>
+              <br />
+              <br />
+              <a href="/press/" className={css(styles.pressLink)}>
+                Download studio profile
+              </a>
+              <br />
+              <br />{' '}
+              */}
+            <a target="_blank" href="https://drive.google.com/file/d/1ZI6Rpf95qgQTjlGYAPjXgWwEnP5NVmXZ/view" className={css(styles.pressExpandedLink)}>
               Download press releases
             </a>
             <br />

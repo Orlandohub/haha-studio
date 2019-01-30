@@ -5,6 +5,16 @@ import { css } from 'emotion'
 import * as styles from '../components/IndexPageStyles/FindUsStyles/styles'
 import SEO from '../components/SEO'
 
+const mediaLink = css({
+  color: '#000',
+  '&:hover': {
+    color: '#000',
+  },
+  '&:active': {
+    color: '#000',
+  }
+})
+
 const FindUs = ({ location }) => (
   <Layout location={location}>
     <SEO
@@ -61,8 +71,8 @@ const FindUs = ({ location }) => (
           <br /> Credits
           <br />
           Website Design by <u>Anna Heck</u>
-          <br /> Web Development by <br /> <u>Orlando Goncalves</u> &{' '}
-          <u>Illya Lesyuk</u>
+          <br /> Web Development by <br /> <u><a target="_black" className={css(mediaLink)} href="https://github.com/Orlandohub">Orlando Goncalves</a></u> &{' '}
+          <u><a target="_black" className={css(mediaLink)} href="https://github.com/Alphascythian">Illya Lesyuk</a></u>
           <br />
           <br /> HAHA studio all rights reserved
         </p>
