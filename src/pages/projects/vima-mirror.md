@@ -14,6 +14,10 @@ image_gallery:
 ---
 Fragile and utilitarian, the Vima Mirror is a balance of steel and glass. Hang the essentials on it in a hallway, room, or bathroom.
 
-<br>
+<br/>
 
 We were looking for a synthesis of Marcel Breuer’s rational forms and Victor Papanek’s rational thought. At these crossroads the Vima series was formed. Pick it up and toss it around. Made from the kind of tubing found abundantly in cities, that is the feeling Vima embodies. It’s a range of domestic furniture bent, cut, and welded from 36 mm diameter steel tubing. The recurring rugged handle in every piece demands our use.
+
+
+<br/>
+Build out your space with these urban domestic pieces.
