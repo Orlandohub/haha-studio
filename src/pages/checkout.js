@@ -221,7 +221,7 @@ class CheckOut extends React.Component {
           <Modal.Body>
             <br />
             <p className={css(styles.paymentModalTitle)}>
-              Total: {this.state.total + 10}€
+              Total: {this.state.total + 10} €
             </p>
             <br />
           </Modal.Body>
@@ -341,13 +341,13 @@ class CheckOut extends React.Component {
                     <tr>
                       <td className={css(styles.sumRowTop)}>Subtotal</td>
                       <td className={css(styles.sumRowTopRight)}>
-                        {this.state.total + this.state.discount} &#8364;
+                        {this.state.total + this.state.discount} €
                       </td>
                     </tr>
                     <tr>
                       <td className={css(styles.middleRows)}>Discount</td>
                       <td className={css(styles.middleRowsRight)}>
-                        - {this.state.discount} &#8364;
+                        - {this.state.discount} €
                       </td>
                     </tr>
                   </React.Fragment>
@@ -355,7 +355,7 @@ class CheckOut extends React.Component {
                 <tr>
                   <td className={css(styles.middleRows)}>Total</td>
                   <td className={css(styles.middleRowsRight)}>
-                    {this.state.total} &#8364;
+                    {this.state.total} €
                   </td>
                 </tr>
                 <tr>

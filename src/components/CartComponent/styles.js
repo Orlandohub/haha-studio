@@ -72,9 +72,6 @@ export const flexRows = mq({
 
 export const checkoutTableStyles = mq({
   display: ['table', 'table', 'table', 'table', 'table', 'block'],
-  //height: '100px',
-  //height: 150,
-  //maxHeight: 300,
   overflowY: 'auto',
 })
 

@@ -6,12 +6,9 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 export const pageWrapper = mq({
   userSelect: 'none',
-  //position: 'relative',
   width: '100%',
   display: 'block',
   paddingTop: ['43px', '43px', '43px', '48px', '48px'],
-  //paddingLeft: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
-  //paddingRight: ['32px', '32px', '80px', '135px', '160px', '160px', '160px'],
 })
 
 export const brand = mq({
@@ -66,11 +63,8 @@ export const shopWrapRight = mq(shopWrap, {
 
 export const cartWrapper = mq({
   maxHeight: '100%',
-  //***** */
   display: 'flex',
   flexDirection: 'column',
-  //justifyContent: 'space-between',
-  /****** */
   position: [
     'relative',
     'relative',
@@ -210,7 +204,6 @@ export const summaryTable = mq(tableStyles, {
 })
 
 export const sumRowTop = mq({
-  //paddingTop: [40, 40, 40, 30, 30],
   paddingBottom: 5,
 })
 export const sumRowTopRight = mq(sumRowTop, {

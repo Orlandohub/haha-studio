@@ -27,35 +27,37 @@ const Shipping = ({ location }) => (
       <div className={css(styles.shippingTextWrapper)}>
         {'                                                '}
         <table className={css(styles.tableStyles)}>
-          <tr>
-            <td className={css(styles.rowStyles)}>{null}</td>
-            <td className={css(styles.rowStyles)}>Europe</td>
-            <td className={css(styles.rowStyles)}>
-              North
-              <br />
-              America
-            </td>
-            <td className={css(styles.rowStyles)}>Asia</td>
-            <td className={css(styles.rowStyles)}>
-              Rest of
-              <br />
-              World
-            </td>
-          </tr>
-          <tr>
-            <td className={css(styles.bottomRowStyles)}>Accessory</td>
-            <td className={css(styles.bottomRowStyles)}>&#8364;3.00</td>
-            <td className={css(styles.bottomRowStyles)}>&#8364;3.00</td>
-            <td className={css(styles.bottomRowStyles)}>&#8364;3.00</td>
-            <td className={css(styles.bottomRowStyles)}>&#8364;3.00</td>
-          </tr>
-          <tr>
-            <td>Lighting</td>
-            <td>&#8364;8.00</td>
-            <td>&#8364;8.00</td>
-            <td>&#8364;8.00</td>
-            <td>&#8364;8.00</td>
-          </tr>
+          <tbody>
+            <tr>
+              <td className={css(styles.rowStyles)}>{null}</td>
+              <td className={css(styles.rowStyles)}>Europe</td>
+              <td className={css(styles.rowStyles)}>
+                North
+                <br />
+                America
+              </td>
+              <td className={css(styles.rowStyles)}>Asia</td>
+              <td className={css(styles.rowStyles)}>
+                Rest of
+                <br />
+                World
+              </td>
+            </tr>
+            <tr>
+              <td className={css(styles.bottomRowStyles)}>Accessory</td>
+              <td className={css(styles.bottomRowStyles)}>€3.00</td>
+              <td className={css(styles.bottomRowStyles)}>€3.00</td>
+              <td className={css(styles.bottomRowStyles)}>€3.00</td>
+              <td className={css(styles.bottomRowStyles)}>€3.00</td>
+            </tr>
+            <tr>
+              <td>Lighting</td>
+              <td>€8.00</td>
+              <td>€8.00</td>
+              <td>€8.00</td>
+              <td>€8.00</td>
+            </tr>
+          </tbody>
         </table>
 
         {'                                                '}
