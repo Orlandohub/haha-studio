@@ -13,6 +13,7 @@ import SEO from '../components/SEO'
 
 const MyHashLink = props => genericHashLink(props, Link)
 
+
 const Press = ({ location, data }) => {
   const { edges } = data.pressList
   return (
