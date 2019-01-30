@@ -36,7 +36,11 @@ export const cartHeader = mq({
 })
 
 export const imageWrap = mq({
-  width: ['40px', '40px', '40px', '95px', '95px'],
+  width: ['40px', '40px', '40px', '65px', '65px'],
+})
+
+export const imageContainer = mq({
+  width: ['110px', '110px', '110px', '165px', '165px'],
 })
 
 // ********************  SUBTOTAL WRAPPER AND TABLE
@@ -54,20 +58,26 @@ export const subtotalWrapper = mq({
 
 export const tableStyles = mq({
   width: '100%',
-  verticalAlign: 'initial',
+  paddingTop: [40, 40, 40, 40, 25, 25],
+})
+
+export const flexRows = mq({
+  width: '100%',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'baseline',
+  paddingBottom: [40, 40, 40, 40, 29, 29],
 })
 
 export const checkoutTableStyles = mq({
   display: ['table', 'table', 'table', 'table', 'table', 'block'],
-  height: '100px',
-  overflowY: 'scroll',
+  overflowY: 'auto',
 })
 
 export const rowStyles = mq({
-  width: '25%',
-  textAlign: 'left',
-  verticalAlign: 'initial',
-  paddingTop: [40, 40, 40, 40, 29, 29],
+  minWidth: '25%',
+  textAlign: 'center',
 })
 
 export const rowStylesRight = mq(rowStyles, {

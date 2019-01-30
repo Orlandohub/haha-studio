@@ -26,10 +26,10 @@ const SEO = props => (
             property: 'og:title',
             content: props.title,
           },
-          {
+          /* {
             property: 'og:url',
             content: props.location,
-          },
+          },*/
 
           {
             property: 'og:image',
