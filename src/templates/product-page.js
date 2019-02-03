@@ -91,13 +91,6 @@ class ProductPageTemplate extends React.Component {
                 </button>
               )
             })}
-            <a href="#" className="snipcart-checkout">
-              Click here to checkout
-            </a>
-            <div className="snipcart-summary">
-              Number of items: <span className="snipcart-total-items" />
-              Total price: <span className="snipcart-total-price" />
-            </div>
             <NavFooter
               linkText="/shop/"
               text="shop"
