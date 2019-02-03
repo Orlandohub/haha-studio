@@ -310,15 +310,24 @@ export const halfWidthDateInputs = mq(halfWidthFormsInputs, {
   ],
   backgroundColor: '#fff',
   position: 'relative',
-  '&:before': {
-    content: '&darr;',
-    width: '10px',
-    height: '10px',
-    position: 'absolute',
-    backgroundColor: 'red',
-    top: 0,
-    left: 0,
-  },
+})
+
+export const fullWidthSelect = mq(inputWrapper, {
+  WebkitAppearance: 'none',
+  MozAppearance: 'none',
+  appearance: 'none',
+  backgroundImage: `url(${selectArrow})`,
+  backgroundPosition: '100% 80%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: [
+    '19px 10px',
+    // '8px 4.6px',
+    // '8px 4.6px',
+    // '17px 10px',
+    // '17px 10px',
+  ],
+  backgroundColor: '#fff',
+  position: 'relative',
 })
 
 export const halfWidthFormsCVC = mq(halfWidthDate, {

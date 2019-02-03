@@ -1,5 +1,5 @@
 import React from 'react'
-import { map } from 'lodash'
+import { map, filter } from 'lodash'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
 import { navigate } from 'gatsby'
@@ -10,12 +10,8 @@ class Cart extends React.Component {
     super()
 
     this.state = {
-      name: 'Alia, Pack A',
-      price: 333,
       activeClass: css(styles.cartWrapper),
-      counter: 1,
       items: [],
-      total: 0,
     }
 
     this.hideCart = this.hideCart.bind(this)
@@ -74,40 +70,18 @@ class Cart extends React.Component {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       refreshItems()
 
-      const cart = window.Snipcart.api.cart.get()
-      this.setState({
-        total: cart && cart.total,
-      })
-
       document.addEventListener('snipcart.ready', () => {
         refreshItems()
-
-        const carts = window.Snipcart.api.cart.get()
-        this.setState({
-          total: carts && carts.total,
-        })
       })
 
       window.Snipcart.subscribe('item.added', () => {
         refreshItems()
-        const cart_d = window.Snipcart.api.cart.get()
-        this.setState({
-          total: cart_d && cart_d.total,
-        })
       })
       window.Snipcart.subscribe('item.removed', () => {
         refreshItems()
-        const cart_b = window.Snipcart.api.cart.get()
-        this.setState({
-          total: cart_b && cart_b.total,
-        })
       })
       window.Snipcart.subscribe('item.updated', () => {
         refreshItems()
-        const cart_c = window.Snipcart.api.cart.get()
-        this.setState({
-          total: cart_c && cart_c.total,
-        })
       })
     }
   }
@@ -117,8 +91,12 @@ class Cart extends React.Component {
   }
 
   render() {
+    let finalPrice = 0
     const { showElements } = this.props
-    const { items, total } = this.state
+    const { items } = this.state
+    filter(items, item => {
+      finalPrice = finalPrice + item.totalPrice
+    })
     return (
       <div
         className={
@@ -234,7 +212,7 @@ class Cart extends React.Component {
                     Shipping & taxes calculated at checkout <br />
                   </td>
                   <td style={{ textAlign: 'right', verticalAlign: 'initial' }}>
-                    {total} &#8364;
+                    {finalPrice} &#8364;
                   </td>
                 </tr>
               </tbody>
@@ -256,7 +234,7 @@ class Cart extends React.Component {
 }
 Cart.propTypes = {
   showElements: PropTypes.bool.isRequired,
-  //hideCart: PropTypes.func.isRequired,
+  hideCart: PropTypes.func,
   setItemsCount: PropTypes.func,
 }
 

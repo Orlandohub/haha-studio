@@ -2,7 +2,6 @@ var request = require('request')
 
 export function handler(event, context, callback) {
   const { token } = event.queryStringParameters
-  // const token = '485acab8-b26e-4218-8f5a-5b0b60c08574'
 
   if (!token) {
     callback('No token')
@@ -23,8 +22,6 @@ export function handler(event, context, callback) {
 
   request(options, function (error, response, body){
     const { statusCode } = response
-    console.log('statusCode', statusCode)
-    console.log('error', error);
     if (error || statusCode !== 200) {
       callback('Wrong token or wrong credentials', {
         statusCode: 401
