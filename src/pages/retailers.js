@@ -62,9 +62,29 @@ const Retailers = ({ location }) => (
               <br />
               <br className={css(styles.noBr)} />
               <br className={css(styles.noBr)} />
+              <br />
               <h2 className={css(styles.retailersHeader)}>Pamono</h2>
               Webshop
               <br /> www.pamono.com
+              <br />
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Länna Möbler</h2>
+              Gamla Nynäsvägen 606
+              <br />
+              Skogås, Sweden
+              <br />
+              www.lannamobler.se
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Deco Studio</h2>
+              Knäppingsborgsgatan 7
+              <br />
+              Norrköping, Sweden
+              <br />
+              www.decostudio.se
               <br />
             </div>
           </div>
@@ -114,6 +134,24 @@ const Retailers = ({ location }) => (
               Sweden
               <br />
               www.designonline.se
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Lidéns Möbler</h2>
+              Västra Långgatan 2
+              <br />
+              Säter, Sweden
+              <br />
+              www.lidensmobler.se
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Lilla Byrån</h2>
+              Horsekullevägen 34
+              <br />
+              Onsala, Sweden
+              <br />
+              www.lillabyran.com
               <br />
             </div>
           </div>
