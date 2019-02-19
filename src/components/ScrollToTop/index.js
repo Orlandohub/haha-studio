@@ -6,6 +6,7 @@ const Btn = css({
   position: 'fixed',
   right: 50,
   bottom: '5%',
+  outline: 'none!important',
   '@media (max-width: 1024px)': {
     display: 'none',
   },
@@ -16,21 +17,22 @@ const Btn = css({
 
 const inBtn = css({
   border: 'none',
-  outline: 'none',
+  outline: 'none!important',
   color: '#D9D9D7',
   '&:hover': {
     backgroundColor: 'transparent',
-  }
+  },
 })
 
 const label = css({
   position: 'absolute',
   left: 16,
   bottom: 35,
+  outline: 'none!important',
   cursor: 'pointer',
   '@media (max-width: 1024px)': {
     display: 'none',
-  }
+  },
 })
 
 class ScrollTop extends Component {
@@ -127,8 +129,10 @@ class ScrollTop extends Component {
       this.state.showScrollToTop && (
         <React.Fragment>
           <div className={css(Btn)}>
-            <div style={{ postion: 'relative', color: '#D9D9D7'}}>
-              <span onClick={this.scrollUp} className={css(label)}>top</span>
+            <div style={{ postion: 'relative', color: '#D9D9D7' }}>
+              <span onClick={this.scrollUp} className={css(label)}>
+                top
+              </span>
               <Button
                 bsSize="large"
                 onClick={this.scrollUp}
@@ -143,5 +147,4 @@ class ScrollTop extends Component {
     )
   }
 }
-//fff
 export default ScrollTop
