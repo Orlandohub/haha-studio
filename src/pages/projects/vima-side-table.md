@@ -3,10 +3,10 @@ templateKey: project-page
 title: Vima Side Table
 is_selected: false
 project_assistant: Sven-Eric Söderström
-photo_credits: Stephanie Wiegner
+photo_credits: ' Anna Heck & Stephanie Wiegner'
 producer: HAHA studio
 year: '2016'
-date: 2016-02-07T18:58:29.530Z
+date: 2016-02-07T09:30:00.000Z
 image_gallery:
   - image: /assets/uploads/project_vima_table_01_cover.jpg
     is_cover: true
