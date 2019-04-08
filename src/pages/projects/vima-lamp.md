@@ -6,7 +6,7 @@ project_assistant: Sven-Eric Söderström
 photo_credits: Anna Heck & Stephanie Wiegner
 producer: HAHA studio
 year: '2016'
-date: 2017-02-08T09:30:00.000Z
+date: 2016-02-08T09:30:00.000Z
 image_gallery:
   - image: /assets/uploads/project_vima_lamp_02.jpg
     is_cover: true
