@@ -3,10 +3,10 @@ templateKey: project-page
 title: Spin Lamp
 is_selected: true
 project_assistant: Fany Song
-photo_credits: ' HAHA studio'
+photo_credits: ' HAHA studio & Anna Heck'
 producer: HAHA studio
 year: '2017'
-date: 2018-04-08T10:11:25.515Z
+date: 2018-02-07T09:30:00.000Z
 image_gallery:
   - image: /assets/uploads/project_spin_lamp_01_cover.jpg
     is_cover: true
