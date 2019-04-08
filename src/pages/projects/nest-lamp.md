@@ -6,7 +6,7 @@ project_assistant: Sven-Eric Söderström
 photo_credits: HAHA studio
 producer: HAHA studio
 year: '2017'
-date: 2017-02-09T20:18:59.765Z
+date: 2016-02-10T09:30:00.000Z
 image_gallery:
   - image: /assets/uploads/project_nest_lamp_01_cover.jpg
     is_cover: true
