@@ -23,50 +23,6 @@ const Shipping = ({ location }) => (
         shipping@hahastudio.se
       </div>
 
-      <div className={css(styles.shippingTitle)}>Shipping fee</div>
-      <div className={css(styles.shippingTextWrapper)}>
-        {'                                                '}
-        <table className={css(styles.tableStyles)}>
-          <tbody>
-            <tr>
-              <td className={css(styles.rowStyles)}>{null}</td>
-              <td className={css(styles.rowStyles)}>Europe</td>
-              <td className={css(styles.rowStyles)}>
-                North
-                <br />
-                America
-              </td>
-              <td className={css(styles.rowStyles)}>Asia</td>
-              <td className={css(styles.rowStyles)}>
-                Rest of
-                <br />
-                World
-              </td>
-            </tr>
-            <tr>
-              <td className={css(styles.bottomRowStyles)}>Accessory</td>
-              <td className={css(styles.bottomRowStyles)}>€3.00</td>
-              <td className={css(styles.bottomRowStyles)}>€3.00</td>
-              <td className={css(styles.bottomRowStyles)}>€3.00</td>
-              <td className={css(styles.bottomRowStyles)}>€3.00</td>
-            </tr>
-            <tr>
-              <td>Lighting</td>
-              <td>€8.00</td>
-              <td>€8.00</td>
-              <td>€8.00</td>
-              <td>€8.00</td>
-            </tr>
-          </tbody>
-        </table>
-
-        {'                                                '}
-        <p className={css(styles.disclaimerStyles)}>
-          * Here will be a line to state that the shipping fee could be vary due
-          to the certain circumstances. Terms here has to be well thought, so to
-          protect ourselves.
-        </p>
-      </div>
       <ShopNavigation />
     </div>
   </Layout>
