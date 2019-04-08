@@ -39,15 +39,6 @@ const Retailers = ({ location }) => (
               <br />
               <br className={css(styles.noBr)} />
               <br className={css(styles.noBr)} />
-              <h2 className={css(styles.retailersHeader)}>Grått</h2>
-              Baggensgatan 12
-              <br />
-              Kalmar, Sweden
-              <br />
-              www.gratt.se
-              <br />
-              <br className={css(styles.noBr)} />
-              <br className={css(styles.noBr)} />
               <h2 className={css(styles.retailersHeader)}>Om.design</h2>
               Lejonsgatan 4C
               <br /> Kalix, Sweden
@@ -62,11 +53,6 @@ const Retailers = ({ location }) => (
               <br />
               <br className={css(styles.noBr)} />
               <br className={css(styles.noBr)} />
-              <br />
-              <h2 className={css(styles.retailersHeader)}>Pamono</h2>
-              Webshop
-              <br /> www.pamono.com
-              <br />
               <br />
               <br className={css(styles.noBr)} />
               <br className={css(styles.noBr)} />
@@ -85,6 +71,15 @@ const Retailers = ({ location }) => (
               Norrköping, Sweden
               <br />
               www.decostudio.se
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Moderna Museet</h2>
+              Exercisplan 4
+              <br />
+              Stockholm, Sweden
+              <br />
+              webshop.modernamuseet.se
               <br />
             </div>
           </div>
@@ -116,15 +111,6 @@ const Retailers = ({ location }) => (
               Ronneby, Sweden
               <br />
               www.mimou.se
-              <br />
-              <br className={css(styles.noBr)} />
-              <br className={css(styles.noBr)} />
-              <h2 className={css(styles.retailersHeader)}>The Home Company</h2>
-              Parkgatan 3
-              <br />
-              Karlskrona, Sweden
-              <br />
-              www.homecompany.se
               <br />
               <br className={css(styles.noBr)} />
               <br className={css(styles.noBr)} />

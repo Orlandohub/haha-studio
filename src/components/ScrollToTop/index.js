@@ -16,6 +16,7 @@ const Btn = css({
 })
 
 const inBtn = css({
+  padding: '10px 16px 10px 21px',
   border: 'none',
   outline: 'none!important',
   color: '#D9D9D7',
@@ -138,7 +139,7 @@ class ScrollTop extends Component {
                 onClick={this.scrollUp}
                 className={css(inBtn)}
               >
-                <Glyphicon glyph="arrow-up" />
+                &#8593;
               </Button>
             </div>
           </div>

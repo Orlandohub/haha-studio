@@ -16,7 +16,7 @@ export const styles = {
     float: 'left',
     marginTop: 0,
     lineHeight: 1.5,
-    fontSize: '2em',
+    fontSize: '1.75em',
     color: 'black',
     textDecoration: 'none',
     '& a': {
@@ -36,7 +36,7 @@ export const styles = {
     marginTop: 15,
     marginBottom: [0, 0, 0, 26],
 
-    fontSize: '2em',
+    fontSize: '1.75em',
     color: 'black',
   }),
 }

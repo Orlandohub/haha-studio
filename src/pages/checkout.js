@@ -316,7 +316,8 @@ class CheckOut extends React.Component {
                           type="submit"
                           value=""
                           className={css(styles.submitBtn)}
-                        />
+                        >&#8594;
+                        </button>
                       </td>
                     </tr>
                   </tbody>
@@ -664,7 +665,7 @@ class CheckOut extends React.Component {
                   <Field
                     component="select"
                     name="cardType"
-                    className={css(styles.halfWidthDateInputs)}
+                    className={css(styles.halfWidthCardInputs)}
                   >
                     <option value="visa">Visa</option>
                     <option value="mastercard">Mastercard</option>

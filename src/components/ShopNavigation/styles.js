@@ -16,7 +16,7 @@ export const navFooter = mq({
 })
 
 export const linkStyles = mq({
-  fontSize: ['1em', '1em', '2em', '2em'],
+  fontSize: ['1em', '1em', '1.75em', '1.75em'],
   textDecoration: 'none!important',
   color: '#D9D9D7!important',
   ':hover': {

@@ -127,7 +127,7 @@ class Cart extends React.Component {
                       <button
                         className={css(styles.hideBtn)}
                         onClick={this.hideCart}
-                      />
+                      >&#215;</button>
                     </p>
                   </td>
                 </tr>

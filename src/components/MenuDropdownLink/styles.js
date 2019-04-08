@@ -13,7 +13,7 @@ export const subMenuDropdownItem = mq({
 })
 
 export const subMenuDropdownLink = mq({
-  fontSize: ['1em', '1em', '2em'],
+  fontSize: ['1em', '1em', '1.75em'],
   color: '#D9D9D7',
   ':hover,:focus': {
     color: '#C1C1C1',

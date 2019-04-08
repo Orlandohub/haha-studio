@@ -141,15 +141,15 @@ export const arrowWrap = mq({
 
 export const submitBtn = mq({
   width: '23px',
-  height: '10px',
+  height: '25px',
   padding: 0,
   backgroundColor: 'transparent',
   outline: 'none',
   border: 'none',
-  backgroundImage: `url(${entercodearrow})`,
-  backgroundRepeat: 'no-repeat',
-  backgroundPosition: 'contain',
-  backgroundSize: 'cover',
+  // backgroundImage: `url(${entercodearrow})`,
+  // backgroundRepeat: 'no-repeat',
+  // backgroundPosition: 'contain',
+  // backgroundSize: 'cover',
 })
 
 export const promoLabelStyles = mq({
@@ -289,8 +289,35 @@ export const halfWidthDateCenter = mq(halfWidthDate, {
   textAlign: ['left', 'center', 'center'],
 })
 
-export const halfWidthDateCardType = mq(halfWidthDate, {
+export const halfWidthDateCardType = mq({
+  paddingTop: 5,
+  width: ['100%', '70%', '70%'],
+  fontWeight: 'normal',
   float: 'left',
+})
+
+export const halfWidthCardInputs = mq(halfWidthForms, {
+  outline: 'none',
+  border: 'none',
+  borderRadius: '0px!important',
+  borderBottom: '1.5px solid black',
+
+  width: ['62%', '40%', '40%', '40%', '51.5%', '51.5%', '50%'],
+  WebkitAppearance: 'none',
+  MozAppearance: 'none',
+  appearance: 'none',
+  backgroundImage: `url(${selectArrow})`,
+  backgroundPosition: '100% 80%',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: [
+    '19px 10px',
+    // '8px 4.6px',
+    // '8px 4.6px',
+    // '17px 10px',
+    // '17px 10px',
+  ],
+  backgroundColor: '#fff',
+  position: 'relative',
 })
 
 export const halfWidthDateInputs = mq(halfWidthFormsInputs, {

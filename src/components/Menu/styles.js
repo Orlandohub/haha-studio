@@ -14,8 +14,8 @@ export const menuContainer = mq({
   borderWidth: '0!important',
   marginBottom: '0!important',
   minHeight: '20px!important',
-  paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
-  paddingRight: ['32px', '32px', '80px', '135px', '160px'],
+  paddingLeft: ['32px', '32px', '80px', '135px', '130px'],
+  paddingRight: ['32px', '32px', '80px', '135px', '130px'],
   paddingTop: '37px',
 })
 
@@ -80,7 +80,7 @@ export const subMenuItem = mq({
 export const subMenuLink = mq({
   lineHeight: 1,
   cursor: 'pointer',
-  fontSize: ['1em', '1em', '2em', '2em'],
+  fontSize: ['1em', '1em', '1.75em', '1.75em'],
   color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#000000', '#000000'],
 })
 

@@ -12,34 +12,38 @@ export const footerWrapper = mq({
   fontSize: [
     '14px!important',
     '14px!important',
-    '29px!important',
-    '29px!important',
-    '29px!important',
+    '24.5px!important',
+    '24.5px!important',
+    '24.5px!important',
   ],
   borderTop: ['1.5px solid black', '2px solid black'],
 })
 
-export const arrowRight = mq({
-  height: [
-    '8px!important',
-    '8px!important',
-    '18px!important',
-    '18px!important',
-    '18px!important',
-  ],
-  width: [
-    '23px!important',
-    '23px!important',
-    '53px!important',
-    '53px!important',
-    '53px!important',
-  ],
-  verticalAlign: 'baseline',
+export const arrows = mq({
+  color: '#000',
+  '&:hover': {
+    textDecoration: 'none',
+  }
+  // height: [
+  //   '8px!important',
+  //   '8px!important',
+  //   '18px!important',
+  //   '18px!important',
+  //   '18px!important',
+  // ],
+  // width: [
+  //   '23px!important',
+  //   '23px!important',
+  //   '53px!important',
+  //   '53px!important',
+  //   '53px!important',
+  // ],
+  // verticalAlign: 'baseline',
 })
 
-export const arrowLeft = mq(arrowRight, {
-  transform: 'scaleX(-1)!important',
-})
+// export const arrowLeft = mq(arrowRight, {
+//   transform: 'scaleX(-1)!important',
+// })
 
 export const linkText = mq({
   textDecoration: 'none!important',

@@ -8,7 +8,7 @@ export const styles = {
     width: '100%',
     height: 'auto',
     display: 'block',
-    paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
-    paddingRight: ['32px', '32px', '80px', '135px', '160px'],
+    paddingLeft: ['32px', '32px', '80px', '135px', '130px'],
+    paddingRight: ['32px', '32px', '80px', '135px', '130px'],
   }),
 }

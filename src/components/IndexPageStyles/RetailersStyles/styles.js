@@ -20,11 +20,11 @@ export const leftFloatingEmptySpace = mq({
 })
 export const retailersParagraph = mq({
   margin: '0px!important',
-  fontSize: [10, 10, 22, 22, 22],
+  fontSize: [10, 10, 20, 20, 20],
 })
 
 export const retailersHeader = mq({
-  fontSize: [14, 14, 29, 29, 29],
+  fontSize: [14, 14, 24.5, 24.5, 24.5],
 })
 
 export const retailersRightColumn = mq({

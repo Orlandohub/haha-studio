@@ -5,7 +5,7 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 export const shopProductWrapper = mq({
   width: '100%',
   paddingTop: [60, 60, 60, 60, 132],
-  fontSize: ['1em', '1em', '2em', '2em'],
+  fontSize: ['1em', '1em', '1.75em', '1.75em'],
 })
 
 export const leftTitleColumn = mq({

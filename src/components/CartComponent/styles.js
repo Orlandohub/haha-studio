@@ -110,16 +110,21 @@ export const cardBtn = mq({
 })
 
 export const hideBtn = mq({
-  marginTop: 5,
+  marginBottom: 5,
   border: 'none',
   outline: 'none',
-  width: [10, 10, 19.5, 19.5],
-  height: [10, 10, 19.5, 19.5],
+  fontSize: '40px',
+  padding: 0,
+  postion: 'relative',
+  right: '-1px',
+  // paddingRight: '-1px',
+  // width: [10, 10, 19.5, 19.5],
+  // height: [10, 10, 19.5, 19.5],
   backgroundColor: 'transparent',
-  backgroundImage: `url(${crossImg})`,
-  backgroundPosition: 'center!important',
-  backgroundRepeat: 'no-repeat!important',
-  backgroundSize: 'cover!important',
+  // backgroundImage: `url(${crossImg})`,
+  // backgroundPosition: 'center!important',
+  // backgroundRepeat: 'no-repeat!important',
+  // backgroundSize: 'cover!important',
 })
 
 export const checkOutBtn = mq({
