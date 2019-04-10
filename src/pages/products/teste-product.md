@@ -1,13 +1,13 @@
 ---
 templateKey: product-page
-title: Teste Product
+title: Alia Pack_C
 is_active: true
-date: 2019-01-27T17:55:04.998Z
-price: '80'
+date: 2019-04-03T08:30:00.000Z
+price: '99'
 cover_image: /assets/uploads/d_press_content_right_hospitality.jpg
 image_gallery:
   - color_hex: '#000'
     color_name: Black
     image: /assets/uploads/d_press_content_right_ednl.jpg
 ---
-Teste
+Chrome plated zinc alloy
