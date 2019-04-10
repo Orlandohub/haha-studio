@@ -11,3 +11,5 @@ image_gallery:
     image: /assets/uploads/d_press_content_right_ednl.jpg
 ---
 Chrome plated zinc alloy
+
+1.6 kg
