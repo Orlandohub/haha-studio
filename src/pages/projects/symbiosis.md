@@ -13,6 +13,7 @@ image_gallery:
   - image: /assets/uploads/project_symbiosis_02.png
   - image: /assets/uploads/project_symbiosis_03.png
   - image: /assets/uploads/project_symbiosis_04.png
+  - image: /assets/uploads/project_symbiosis_05.png
 ---
 Our friends, Lambert & Fils, asked us to design an exhibition for their Mile light collection.
 
