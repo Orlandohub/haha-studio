@@ -291,7 +291,7 @@ export const halfWidthDateCenter = mq(halfWidthDate, {
 
 export const halfWidthDateCardType = mq({
   paddingTop: 5,
-  width: ['100%', '70%', '70%'],
+  width: ['100%', '70%', '70%', '70%', '70%', '70%', '50%'],
   fontWeight: 'normal',
   float: 'left',
 })
