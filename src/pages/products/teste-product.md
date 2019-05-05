@@ -6,7 +6,9 @@ date: 2019-04-03T08:30:00.000Z
 price: '99'
 cover_image: /assets/uploads/d_shop_thumbnail_alia_c.png
 image_gallery:
-  - image: /assets/uploads/d_shop_product_image_alia_c.png
+  - color_hex: '#CCC'
+    color_name: Grey
+    image: /assets/uploads/d_shop_product_image_alia_c.png
 ---
 Chrome plated zinc alloy
 
