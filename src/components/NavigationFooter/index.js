@@ -12,7 +12,7 @@ const NavFooter = props => {
   const { linkLeft, linkRight, linkText, text } = props
   return (
     <div className={css(styles.footerWrapper)}>
-      <MyHashLink to={linkLeft}>
+      <MyHashLink className={css(styles.arrows)} to={linkLeft}>
         <span className={css(styles.arrows)}>&#8592;</span>
       </MyHashLink>
 

@@ -19,7 +19,7 @@ const ColoredBox = styled.div`
     width: 36px;
     height: 36px;
   }
-  ${props => ({ backgroundColor: props.backgroundColor })};
+  ${props => ({ backgroundColor: props.backgroundColor })}
 `
 
 class Carousel extends React.Component {
