@@ -6,7 +6,7 @@ project_assistant: Anna Heck & Oliver Edgren
 photo_credits: HAHA studio & Anna Heck
 producer: HAHA studio
 year: '2017'
-date: 2018-02-04T09:30:00.000Z
+date: 2018-02-04T08:30:00.000Z
 image_gallery:
   - image: /assets/uploads/project_rainbow_lamp_01_cover.jpg
     is_cover: true
