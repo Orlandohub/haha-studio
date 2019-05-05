@@ -4,6 +4,11 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 function createPagesWithNavigation(pages, createPage) {
+  console.log('##############################');
+  _.forEach(pages, edge => {
+    console.log('pages.node.fields', edge.node.fields);
+    console.log('pages.node.frontmatter', edge.node.frontmatter);
+  })
   _.forEach(pages, (edge, index) => {
     const id = edge.node.id
     const next = index === 0
@@ -43,6 +48,7 @@ exports.createPages = ({ actions, graphql }) => {
             }
             frontmatter {
               templateKey
+              date
             }
           }
         }
