@@ -6,14 +6,14 @@ project_assistant: Josefin Nilsson
 photo_credits: Arseni Khamzin
 producer: HAHA studio
 year: '2018'
-date: 2018-03-03T21:14:07.071Z
+date: 2018-02-06T09:30:00.000Z
 image_gallery:
-  - image: /assets/uploads/project_symbiosis_01_cover.jpg
+  - image: /assets/uploads/project_symbiosis_01_cover.png
     is_cover: true
-  - image: /assets/uploads/project_symbiosis_02.jpg
-  - image: /assets/uploads/project_symbiosis_03.jpg
-  - image: /assets/uploads/project_symbiosis_04.jpg
-  - image: /assets/uploads/project_symbiosis_05.jpg
+  - image: /assets/uploads/project_symbiosis_02.png
+  - image: /assets/uploads/project_symbiosis_03.png
+  - image: /assets/uploads/project_symbiosis_04.png
+  - image: /assets/uploads/project_symbiosis_05.png
 ---
 Our friends, Lambert & Fils, asked us to design an exhibition for their Mile light collection.
 

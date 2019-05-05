@@ -6,7 +6,7 @@ project_assistant: Sven-Eric Söderström
 photo_credits: HAHA studio
 producer: HAHA studio
 year: '2017'
-date: 2017-02-08T20:07:28.939Z
+date: 2016-02-09T09:30:00.000Z
 image_gallery:
   - image: /assets/uploads/project_biggie_01_cover.jpg
     is_cover: true

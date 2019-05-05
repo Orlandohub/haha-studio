@@ -1,20 +1,17 @@
 ---
 templateKey: product-page
-title: Liberty Lamp
-is_active: false
-date: 2019-01-10T12:45:54.119Z
-price: '75'
-cover_image: /assets/uploads/d_homepage_image_01.jpg
+title: Alia Pack_A
+is_active: true
+date: 2019-04-01T08:30:00.000Z
+price: '49'
+cover_image: /assets/uploads/d_shop_thumbnail_alia_a.png
 image_gallery:
-  - color_hex: '#000'
-    color_name: Black
-    image: /assets/uploads/screenshot-2018-12-06-at-15.08.31.png
-  - color_hex: '#FF275D'
-    color_name: Red
-    image: /assets/uploads/d_homepage_image_01.jpg
+  - color_hex: '#CCC'
+    color_name: Grey
+    image: /assets/uploads/d_shop_product_image_alia_a.png
 ---
-Plated steel 
+Chrome plated zinc alloy
 
-1 kg 
+0.5 kg 
 
-216 x 102 x 102 mm (H/W/D)
+66 x 85 x 30 mm (H/W/D)

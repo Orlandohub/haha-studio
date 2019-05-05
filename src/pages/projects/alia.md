@@ -6,7 +6,7 @@ project_assistant: Studio Dejawu
 photo_credits: HAHA studio & Charlie Drevstam
 producer: HAHA studio
 year: '2017'
-date: 2017-11-01T00:58:00.000Z
+date: 2018-02-05T09:30:00.000Z
 image_gallery:
   - image: /assets/uploads/project_alia_cover_01.jpg
     is_cover: true

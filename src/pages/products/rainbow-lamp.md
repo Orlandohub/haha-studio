@@ -1,20 +1,17 @@
 ---
 templateKey: product-page
-title: Rainbow Lamp
-is_active: false
-date: 2019-01-10T09:40:24.813Z
-price: '459'
-cover_image: /assets/uploads/screenshot-2018-12-06-at-15.08.31.png
+title: Alia Pack_B
+is_active: true
+date: 2019-04-02T08:30:00.000Z
+price: '69'
+cover_image: /assets/uploads/d_shop_thumbnail_alia_b.png
 image_gallery:
-  - color_hex: '#4286f4'
-    color_name: Navy
-    image: /assets/uploads/d_homepage_image_01.jpg
-  - color_hex: '#73797a'
+  - color_hex: '#CCC'
     color_name: Grey
-    image: /assets/uploads/d_portrait_image.jpg
+    image: /assets/uploads/d_shop_product_image_alia_b.png
 ---
-Sand blasted aluminum
+Chrome plated zinc alloy
 
-1.2 kg
+1.2 kg 
 
-270 x 355 x 125 mm (H/W/D)
+76 x 115 x 90 mm (H/W/D)

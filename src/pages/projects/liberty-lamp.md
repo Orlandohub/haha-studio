@@ -3,10 +3,10 @@ templateKey: project-page
 title: Liberty Lamp
 is_selected: true
 project_assistant: Kalice Lin
-photo_credits: HAHA studio
+photo_credits: HAHA studio & Anna Heck
 producer: HAHA studio
 year: '2018'
-date: 2018-07-04T20:03:25.141Z
+date: 2018-02-08T09:30:00.000Z
 image_gallery:
   - image: /assets/uploads/project_liberty_lamp_01_cover.jpg
     is_cover: true

@@ -6,7 +6,7 @@ project_assistant: Sven-Eric Söderström
 photo_credits: Stephanie Wiegner
 producer: HAHA studio
 year: '2016'
-date: 2016-02-06T20:36:00.000Z
+date: 2016-02-06T09:30:00.000Z
 image_gallery:
   - image: /assets/uploads/project_vima_mirror_01_cover.jpg
     is_cover: true
