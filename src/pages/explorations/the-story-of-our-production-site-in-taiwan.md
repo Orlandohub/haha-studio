@@ -8,4 +8,6 @@ As we have mentioned in our previous story, we are enthusiasts of working side b
 
 <br/>
 
+<br/>
+
 Svenne (as we call him) has been working in the steel production business for his whole life (he is now 67). He pretty much masters everything from cutting, welding, bending – even in his sleep. While smoking on his cigars and drinking pitch black coffee, he has been a remarkable advisor and loyal friend of HAHA.
