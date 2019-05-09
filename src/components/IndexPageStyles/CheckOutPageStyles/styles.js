@@ -302,7 +302,7 @@ export const halfWidthCardInputs = mq(halfWidthForms, {
   borderRadius: '0px!important',
   borderBottom: '1.5px solid black',
 
-  width: ['62%', '40%', '40%', '40%', '51.5%', '51.5%', '50%'],
+  width: ['62%', '40%', '40%', '40%', '51.5%', '51.5%', '51.5%'],
   WebkitAppearance: 'none',
   MozAppearance: 'none',
   appearance: 'none',
