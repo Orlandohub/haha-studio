@@ -285,6 +285,18 @@ export const halfWidthDate = mq({
   fontWeight: 'normal',
 })
 
+export const dialogTermsAndConditions = {
+  width: '966px'
+}
+
+export const modalPadding = {
+  padding: '55px 66px'
+}
+
+export const modalHeaderPadding = {
+  padding: '15px 66px'
+}
+
 export const halfWidthDateCenter = mq(halfWidthDate, {
   textAlign: ['left', 'center', 'center'],
 })
@@ -427,6 +439,14 @@ export const errorStyles = mq({
 
 export const bottomLinkDecoration = mq({
   textDecoration: 'none!important',
+  background: 'none!important',
+  // color:'inherit',
+  border:'none',
+  // padding:'0!important',
+  font: 'inherit',
+  /*border is optional*/
+  // borderBottom:'1px solid #444', 
+  cursor: 'pointer',
   color: [
     '#D9D9D7!important',
     '#D9D9D7!important',

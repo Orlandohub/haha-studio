@@ -34,6 +34,7 @@ class CheckOut extends React.Component {
       processingPayment: false,
       shippingAgreement: false,
       shippingAgreementModal: false,
+      show: false,
       values: {},
     }
 
@@ -41,6 +42,15 @@ class CheckOut extends React.Component {
     this.extraCost = this.extraCost.bind(this)
     this.shippingCosts = this.shippingCosts.bind(this)
   }
+
+
+  handleShow = () => {
+    this.setState({ show: true })
+  };
+
+  handleHide = () => {
+    this.setState({ show: false })
+  };
 
   extraCost(country) {
     console.log('country', country);
@@ -806,17 +816,72 @@ class CheckOut extends React.Component {
                 </button>
                 <p className={css(styles.paragraphBottom)}>
                   By completing your purchase you accept to the{' '}
-                  <Link
-                    to="/terms-licenses/"
-                    className={css(styles.bottomLinkDecoration)}
-                  >
+                  <span className={css(styles.bottomLinkDecoration)} variant="link" onClick={this.handleShow}>
                     <u>terms and conditions</u>
-                  </Link>
+                  </span>
                 </p>
               </div>
             </Form>
           </div>
         </div>{' '}
+        <Modal
+          show={this.state.show}
+          onHide={this.handleHide}
+          dialogClassName={css(styles.dialogTermsAndConditions)}
+          aria-labelledby="example-custom-modal-styling-title"
+        >
+          <Modal.Header className={css(styles.modalHeaderPadding)} closeButton>
+            <Modal.Title id="example-custom-modal-styling-title">
+              Terms and Conditions of HAHA studio
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className={css(styles.modalPadding)}>
+            <p>
+               The following Terms and Conditions shall apply exclusively to any and all contracts, agreements and interactions between HAAH AB/Mr Arash Eskafi, Yu-Ching Chiang, Pipersgatan 14, 11224 Stockholm, Sweden (“HAHA studio”) and the customer (“Customer”), including through the website www.hahastudio.se (“Website”). Any additional or inconsistent terms used by the Customer shall not be binding upon HAHA studio, unless HAHA studio gives its express agreement in writing.
+            </p>
+            <p>
+              § 1 Offers and Service
+            </p>
+            <p>
+              Any offer, quotation or price information by HAHA studio regarding the products, services, and any other items accessed from or via this Website or otherwise through the internet (“Own Content”) is without obligation and subject to change without notice unless an offer has been designated as binding. HAHA studio expressly reserves itself the right to change, amend, cancel or close down parts or the entire Own Content and the Website definitively or from time to time. HAHA studio makes no warranties, express or implied, that its services will be uninterrupted, error-free or free of viruses or other harmful components, unless respective faults were caused by HAHA studio by act of gross negligence or intent.
+            </p>
+            <p>
+              § 2 Contract
+            </p>
+            <p>
+              By entering and using the Website, the Costumer accepts the Terms and Conditions and expressly adheres to the following: A contract for digital goods is made effective between the costumer and HAHA studio by placing an order. When placing an order for physical goods, the order shall be deemed to be accepted by HAHA studio either upon subsequent (e-mail) acceptance of the order or by dispatching the product.
+            </p>
+            <p>
+              § 3 Right to Withdrawal
+            </p>
+            <p>
+              Physical Goods<br/> The following rights of withdrawal apply to Customers only who act as a consumer, predominantly not for business purposes. 
+            </p>
+            <p>
+              (1) Right of withdrawal<br/> The Customer has the right to withdraw from the contract with HAHA studio within 14 days with a given reason. The withdrawal period will expire after 14 days from the day on which the Customers acquires, or a third party other than the carrier and indicated by the Customer acquires, physical possession of the goods. To exercise the right of withdrawal, the Customer must inform HAHA studio, Pipersgatan 14, 11224 Stockholm, of the decision to withdraw from the contract by an unequivocal statement (e.g. a letter sent by post, fax or e-mail). To meet the withdrawal deadline, it is sufficient for the Customer to send the communication concerning the exercise of the right of withdrawal before the withdrawal period has expired.
+            </p>
+            <p>
+              Effects of withdrawal
+            </p>
+            <p>
+              If the Customer withdraws from this contract, HAHA studio shall reimburse to the Customer all payments received from the Customer, including the costs of delivery (with the exception of the supplementary costs resulting from the Customer’s choice of a type of delivery other than the least expensive type of standard delivery offered by HAHA studio), without undue delay and in any event not later than 14 days from the day on which HAHA studio is informed about the Customer’s decision to withdraw from the contract. HAHA studio will carry out such reimbursement using the same means of payment as the Customer used for the initial transaction, unless the Customer has expressly agreed otherwise; in any event, the Customer will not incur any fees as a result of such reimbursement. HAHA studio may withhold reimbursement until HAHA studio has received the goods back or the Customer has supplied evidence of having sent back the goods, whichever is the earliest.
+            </p>
+            <p>
+              The Customer shall send back the goods or hand them over to HAHA studio, without undue delay and in any event not later than 14 days from the day on which the Customer communicates its withdrawal from the contract to HAHA studio. The deadline is met if The Customer sends back the goods before the period of 14 days has expired. The Customer will have to bear the direct cost of returning the goods. The Customer is only liable for any diminished value of the goods resulting from the handling other than what is necessary to establish the nature, characteristics and functioning of the goods. (2) Personalized/Customized products are excluded from the right to withdrawal.
+            </p>
+            <p>
+              § 4 Third Party Content
+            </p>
+            <p>
+              HAHA studio shall not be liable for content in guest books, discussion forums and chats which are provided by third parties (“Third Party Content”). Any of such Third Party Content does not necessarily represent the opinions, beliefs, or positions of HAHA studio. Please notify HAHA studio to info[at]hahastudio.se of any illegal or offensive Third Party Content.
+            </p>
+            <p>
+              § 5 Privacy Policy/Data Protection
+            </p>
+            <p>HAHA studio may save and process any data relating to the Customer, to the extent necessary for the purpose of the execution and implementation of the contracts and as long as HAHA studio is required to keep such data in accordance with applicable law. HAHA studio shall not make available any personal data of the Customer to other third parties without the express consent of the Customer, except to the extent that a disclosure is required under applicable law.</p>
+            <p>Copyright © 2016-2019 HAHA studio (hahastudio.se)<br/> All Rights Reserved.</p>
+          </Modal.Body>
+        </Modal>
       </Layout>
     )
   }
