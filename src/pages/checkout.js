@@ -36,6 +36,9 @@ class CheckOut extends React.Component {
       shippingAgreementModal: false,
       show: false,
       values: {},
+      raiseError: false,
+      error: null,
+      errorAddressed: false
     }
 
     this.connect = this.connect.bind(this)
@@ -177,14 +180,25 @@ class CheckOut extends React.Component {
 
         if (page === 'payment-method') {
           //  Card Details
-          window.jQuery('#snip-type').val('visa')
-          window.jQuery('#snip-ownerName').val('Glenn Quagmire')
-          window.jQuery('#snip-number').val('4242424242424242')
-          window.jQuery('#snip-cvc').val('345')
-          window.jQuery('#snip-expirationMonth').val('5')
-          window.jQuery('#snip-expirationYear').val('2022')
+          window.jQuery('#snip-type').val(lowerCase(values.cardType))
+          window.jQuery('#snip-ownerName').val(values.nameOnCard)
+          window.jQuery('#snip-number').val(values.cardNumber.replace(/ /g, ''))
+          window.jQuery('#snip-cvc').val(values.CVC)
+          window.jQuery('#snip-expirationMonth').val(values.expiryMonth)
+          window.jQuery('#snip-expirationYear').val(values.expiryYear)
 
-          window.jQuery('#snipcart-paymentmethod-pay').click()
+          
+          if (window.jQuery('.snip-flash__item--error').length && this.state.errorAddressed === false) {
+            this.setState({
+              raiseError: true,
+              error: window.jQuery('.snip-flash__item--error').html(),
+              processingPayment: false,
+              errorAddressed: true
+            })
+          } else {
+            window.jQuery('#snipcart-paymentmethod-pay').click()
+            this.setState({ errorAddressed: false })
+          }
         }
 
         if (page === 'order-confirm') {
@@ -258,6 +272,36 @@ class CheckOut extends React.Component {
             </div>
             <br />
           </Modal.Body>
+        </Modal>
+        <Modal
+          bsSize="small"
+          show={this.state.raiseError}
+          onHide={() => {
+            this.setState({
+              raiseError: false,
+            })
+          }}
+        >
+          <Modal.Body>
+            <p className={css(styles.paymentModalTitle)}>Payment Error</p>
+            <br />
+            <div className={css(styles.paymentModalLoader)}>
+              {this.state.error}
+            </div>
+            <br />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button
+              bsStyle="info"
+              onClick={() => {
+                this.setState({
+                  raiseError: false,
+                })
+              }}
+            >
+              Got it!
+            </Button>
+          </Modal.Footer>
         </Modal>
         <div className={css(styles.pageWrapper)}>
           <div className={css(styles.cartWrapper)}>
@@ -746,7 +790,6 @@ class CheckOut extends React.Component {
                     name="expiryYear"
                     className={css(styles.halfWidthDateInputs)}
                   >
-                    <option value={year}>{year}</option>
                     <option value={year + 1}>{year + 1}</option>
                     <option value={year + 2}>{year + 2}</option>
                     <option value={year + 3}>{year + 3}</option>
@@ -758,6 +801,7 @@ class CheckOut extends React.Component {
                     <option value={year + 9}>{year + 9}</option>
                     <option value={year + 10}>{year + 10}</option>
                     <option value={year + 11}>{year + 11}</option>
+                    <option value={year + 12}>{year + 12}</option>
                   </Field>
                 </label>
                 <label className={css(styles.halfWidthDate)}>
@@ -939,8 +983,8 @@ const FormikCheckOut = withFormik({
       cardType: cardType || 'Visa',
       cardNumber: cardNumber || '',
       nameOnCard: nameOnCard || '',
-      expiryYear: expiryYear || '2019',
-      expiryMonth: expiryMonth || '01',
+      expiryYear: expiryYear || '2021',
+      expiryMonth: expiryMonth || '1',
       CVC: CVC || '',
     }
   },
