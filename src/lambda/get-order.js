@@ -14,7 +14,7 @@ export function handler(event, context, callback) {
       'Accept': 'application/json'
     },
     auth: {
-      'user': 'ST_MjUxOTkxZjgtOGVhNy00ZWUxLWFiYzQtYjI2YWM1NmNjYjU3NjM2ODQ3NDk1OTE5NjMyODc2'
+      'user': 'S_MjFkODkxMzAtOGRiMy00ODU3LTk2MjEtNGY1ZDllZmFkNmNlNjM2OTQxNDI1NDc3NjY5NDIw'
     },
     method: 'GET',
     json: true,
