@@ -23,7 +23,7 @@ class ThankYouNote extends React.Component {
     const { attempts } = this.state
     const { location } = this.props
     const { token } = location && location.state && location.state.order
-    fetch(`https://staging--eloquent-lalande-8cc180.netlify.com/.netlify/functions/get-order?token=${token}`)
+    fetch(`/.netlify/functions/get-order?token=${token}`)
       .then(response => {
         return response.json()
       })
