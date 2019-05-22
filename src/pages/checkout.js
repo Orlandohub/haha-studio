@@ -95,6 +95,7 @@ class CheckOut extends React.Component {
   componentDidMount() {
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
       window.Snipcart.subscribe('order.completed', order => {
+        console.log('order at checkout', order)
         setTimeout(navigate('/thank-you-note/', { state: { order: order }}), 2000)
       })
 

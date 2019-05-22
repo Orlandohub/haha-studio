@@ -23,7 +23,7 @@ export function handler(event, context, callback) {
   request(options, function (error, response, body){
     const { statusCode } = response
     if (error || statusCode !== 200) {
-      callback('Wrong token or wrong credentials', {
+      callback(`Wrong token or wrong credentials ${token}`, {
         statusCode: 401
       })
       return
