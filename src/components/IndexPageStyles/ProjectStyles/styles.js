@@ -21,7 +21,7 @@ export const projectTitle = mq({
   ],
   lineHeight: 1,
   marginTop: 0,
-  fontSize: ['1em', '1em', '2em', '2em'],
+  fontSize: ['1em', '1em', '1.75em', '1.75em'],
   color: 'black!important',
   paddingRight: 10,
   paddingBottom: 26,
@@ -53,7 +53,7 @@ export const textWrapper = mq(imageWrapper, {
   paddingTop: [40, 40, 40, 40, 106],
   marginTop: 0,
   paddingBottom: [60, 60, 60, 60, 212],
-  fontSize: ['1em', '1em', '2em', '2em'],
+  fontSize: ['1em', '1em', '1.75em', '1.75em'],
 })
 
 export const Link = mq({

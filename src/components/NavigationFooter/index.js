@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { css } from 'emotion'
-import footerArrow from '../../images/03_D_footer_arrow_project_page.png'
+// import footerArrow from '../../images/03_D_footer_arrow_project_page.png'
 import * as styles from './styles'
 import Link from 'gatsby-link'
 import { genericHashLink } from 'react-router-hash-link'
@@ -12,8 +12,8 @@ const NavFooter = props => {
   const { linkLeft, linkRight, linkText, text } = props
   return (
     <div className={css(styles.footerWrapper)}>
-      <MyHashLink to={linkLeft}>
-        <img src={footerArrow} alt="prev" className={css(styles.arrowLeft)} />
+      <MyHashLink className={css(styles.arrows)} to={linkLeft}>
+        <span className={css(styles.arrows)}>&#8592;</span>
       </MyHashLink>
 
       <span className={css(styles.spanCenter)}>
@@ -24,8 +24,8 @@ const NavFooter = props => {
         </p>
       </span>
 
-      <MyHashLink to={linkRight}>
-        <img src={footerArrow} alt="next" className={css(styles.arrowRight)} />
+      <MyHashLink className={css(styles.arrows)} to={linkRight}>
+        <span className={css(styles.arrows)}>&#8594;</span>
       </MyHashLink>
     </div>
   )

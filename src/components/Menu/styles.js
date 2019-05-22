@@ -14,8 +14,8 @@ export const menuContainer = mq({
   borderWidth: '0!important',
   marginBottom: '0!important',
   minHeight: '20px!important',
-  paddingLeft: ['32px', '32px', '80px', '135px', '160px'],
-  paddingRight: ['32px', '32px', '80px', '135px', '160px'],
+  paddingLeft: ['32px', '32px', '80px', '135px', '130px'],
+  paddingRight: ['32px', '32px', '80px', '135px', '130px'],
   paddingTop: '37px',
 })
 
@@ -36,7 +36,7 @@ export const brand = mq({
 
 export const logoWrap = mq({
   marginLeft: 0,
-  paddingTop: '13px!important',
+  paddingTop: '10px!important',
   paddingBottom: '0!important',
   paddingRight: '0!important',
   width: ['81.5px', '81.5px', '168.64px'],
@@ -80,7 +80,7 @@ export const subMenuItem = mq({
 export const subMenuLink = mq({
   lineHeight: 1,
   cursor: 'pointer',
-  fontSize: ['1em', '1em', '2em', '2em'],
+  fontSize: ['1em', '1em', '1.75em', '1.75em'],
   color: ['#D9D9D7', '#D9D9D7', '#D9D9D7', '#000000', '#000000'],
 })
 

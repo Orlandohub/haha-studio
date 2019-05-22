@@ -39,15 +39,6 @@ const Retailers = ({ location }) => (
               <br />
               <br className={css(styles.noBr)} />
               <br className={css(styles.noBr)} />
-              <h2 className={css(styles.retailersHeader)}>Grått</h2>
-              Baggensgatan 12
-              <br />
-              Kalmar, Sweden
-              <br />
-              www.gratt.se
-              <br />
-              <br className={css(styles.noBr)} />
-              <br className={css(styles.noBr)} />
               <h2 className={css(styles.retailersHeader)}>Om.design</h2>
               Lejonsgatan 4C
               <br /> Kalix, Sweden
@@ -62,9 +53,33 @@ const Retailers = ({ location }) => (
               <br />
               <br className={css(styles.noBr)} />
               <br className={css(styles.noBr)} />
-              <h2 className={css(styles.retailersHeader)}>Pamono</h2>
-              Webshop
-              <br /> www.pamono.com
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Länna Möbler</h2>
+              Gamla Nynäsvägen 606
+              <br />
+              Skogås, Sweden
+              <br />
+              www.lannamobler.se
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Deco Studio</h2>
+              Knäppingsborgsgatan 7
+              <br />
+              Norrköping, Sweden
+              <br />
+              www.decostudio.se
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Moderna Museet</h2>
+              Exercisplan 4
+              <br />
+              Stockholm, Sweden
+              <br />
+              webshop.modernamuseet.se
               <br />
             </div>
           </div>
@@ -99,21 +114,30 @@ const Retailers = ({ location }) => (
               <br />
               <br className={css(styles.noBr)} />
               <br className={css(styles.noBr)} />
-              <h2 className={css(styles.retailersHeader)}>The Home Company</h2>
-              Parkgatan 3
-              <br />
-              Karlskrona, Sweden
-              <br />
-              www.homecompany.se
-              <br />
-              <br className={css(styles.noBr)} />
-              <br className={css(styles.noBr)} />
               <h2 className={css(styles.retailersHeader)}>Designonline</h2>
               Webshop
               <br />
               Sweden
               <br />
               www.designonline.se
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Lidéns Möbler</h2>
+              Västra Långgatan 2
+              <br />
+              Säter, Sweden
+              <br />
+              www.lidensmobler.se
+              <br />
+              <br className={css(styles.noBr)} />
+              <br className={css(styles.noBr)} />
+              <h2 className={css(styles.retailersHeader)}>Lilla Byrån</h2>
+              Horsekullevägen 34
+              <br />
+              Onsala, Sweden
+              <br />
+              www.lillabyran.com
               <br />
             </div>
           </div>

@@ -17,7 +17,7 @@ export const shopRightColumn = mq({
 })
 
 export const shopText = mq({
-  fontSize: [14, 14, 29, 29, 29],
+  fontSize: [14, 14, 24.5, 24.5, 24.5],
   paddingBottom: [20, 20, 20, 20, 53],
   paddingTop: [20, 20, 20, 20, 53],
 })

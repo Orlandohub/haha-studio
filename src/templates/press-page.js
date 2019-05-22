@@ -36,7 +36,7 @@ export const PressPageTemplate = ({ post, pageContext, location }) => {
               <br />
               <br />{' '}
               */}
-            <a target="_blank" href="https://drive.google.com/file/d/1ZI6Rpf95qgQTjlGYAPjXgWwEnP5NVmXZ/view" className={css(styles.pressExpandedLink)}>
+            <a target="_blank" rel="noopener noreferrer" href="https://drive.google.com/file/d/1ZI6Rpf95qgQTjlGYAPjXgWwEnP5NVmXZ/view" className={css(styles.pressExpandedLink)}>
               Download press releases
             </a>
             <br />

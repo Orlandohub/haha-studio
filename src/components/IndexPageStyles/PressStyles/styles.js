@@ -9,7 +9,7 @@ export const pressWrapper = mq({
 
 export const pressParagraph = mq({
   margin: '0px!important',
-  fontSize: [14, 14, 29, 29, 29],
+  fontSize: [14, 14, 24.5, 24.5, 24.5],
 })
 export const pressRightColumn = mq({
   width: '100%',

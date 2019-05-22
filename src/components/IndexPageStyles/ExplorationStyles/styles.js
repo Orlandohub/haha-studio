@@ -8,7 +8,7 @@ export const explorationWrapper = mq({
 })
 
 export const explorationText = mq({
-  fontSize: ['14px', '14px', '22px', '22px', '22px'],
+  fontSize: ['14px', '14px', '20px', '20px', '20px'],
   width: '100%',
   paddingBottom: [41, 41, 41, 41, 54],
   borderBottom: ['1.5px solid #D9D9D7', '2px solid #D9D9D7'],
@@ -34,7 +34,7 @@ export const explorationHeaderWrapper = mq({
 })
 
 export const explorationHeader = mq(explorationParagraph, {
-  fontSize: [14, 14, 22, 22, 22],
+  fontSize: [14, 14, 20, 20, 20],
 })
 
 export const explorationRightColumn = mq({

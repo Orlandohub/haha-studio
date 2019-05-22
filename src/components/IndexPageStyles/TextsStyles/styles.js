@@ -7,7 +7,7 @@ export const textWrapper = mq({
   paddingTop: [15, 15, 15, 15, 22],
 })
 export const textText = mq({
-  fontSize: ['14px', '14px', '22px', '22px', '22px'],
+  fontSize: ['14px', '14px', '20px', '20px', '20px'],
   width: '100%',
   paddingBottom: [54, 54, 54, 54, 29],
   borderBottom: ['1.5px solid #D9D9D7', '2px solid #D9D9D7'],
@@ -25,7 +25,7 @@ export const textParagraph = mq({
 })
 
 export const textHeader = mq(textParagraph, {
-  fontSize: [14, 14, 29, 29, 29],
+  fontSize: [14, 14, 24.5, 24.5, 24.5],
   paddingBottom: ['22px', '22px', '22px', '22px', '29px'],
 })
 export const textRightColumn = mq({

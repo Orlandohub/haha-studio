@@ -37,8 +37,8 @@ const Exploration = ({ data, location }) => {
                       {edge.node.frontmatter.title}{' '}
                     </h2>
                   </div>
-                  <p className={css(styles.explorationParagraph)}>
-                    {edge.node.internal.content}
+                  <p dangerouslySetInnerHTML={{ __html: edge.node.internal.content }} className={css(styles.explorationParagraph)}>
+                   
                   </p>
                 </div>
               </React.Fragment>

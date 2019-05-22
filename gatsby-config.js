@@ -1,8 +1,20 @@
 const path = require('path')
+var proxy = require('http-proxy-middleware')
 
 module.exports = {
   siteMetadata: {
     title: 'HAHA Studio',
+  },
+  developMiddleware: app => {
+    app.use(
+      '/.netlify/functions/',
+      proxy({
+        target: 'http://localhost:9000',
+        pathRewrite: {
+          '/.netlify/functions/': '',
+        },
+      })
+    )
   },
   plugins: [
     {
@@ -78,7 +90,7 @@ module.exports = {
       resolve: 'gatsby-plugin-snipcart',
       options: {
         apiKey:
-          'YWFlODEyNzctZWIxNy00ZjBiLTliY2ItYzg1ZmM2MWMyNmM1NjM2ODMxNTM0MjQwMDE1NzI5',
+          'ZDEyMGIwMDQtZmU5Ni00ZDYwLTkzYzgtNTYwZWUzMzVkYjQyNjM2ODMxNTM0MjQwMDE1NzI5',
       },
     },
     'gatsby-v2-plugin-page-transitions',
