@@ -2,13 +2,13 @@
 templateKey: product-page
 title: Alia Pack_C
 is_active: true
-date: 2019-04-03T08:30:00.000Z
+date: 2019-04-01T08:30:00.000Z
 price: '99'
-cover_image: /assets/uploads/d_shop_thumbnail_alia_c.png
+cover_image: /assets/uploads/d_product_thumbnail_alia_pack_c.jpg
 image_gallery:
-  - color_hex: '#CCC'
-    color_name: Grey
-    image: /assets/uploads/d_shop_product_image_alia_c.png
+  - color_hex: '#D8D8D8'
+    color_name: Silver
+    image: /assets/uploads/d_product_image_alia_pack_c.jpg
 ---
 Chrome plated zinc alloy
 
