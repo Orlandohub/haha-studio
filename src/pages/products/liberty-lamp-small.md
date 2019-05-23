@@ -2,7 +2,7 @@
 templateKey: product-page
 title: Alia Pack_A
 is_active: true
-date: 2019-04-03T08:30:00.000Z
+date: 2019-04-03T08:29:00.000Z
 price: '49'
 cover_image: /assets/uploads/d_product_thumbnail_alia_pack_a.jpg
 image_gallery:
