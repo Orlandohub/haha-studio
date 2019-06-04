@@ -23,7 +23,6 @@ class ThankYouNote extends React.Component {
     const { attempts } = this.state
     const { location } = this.props
     const { token } = location && location.state && location.state.order
-    console.log('token at thank you', token)
     fetch(`/.netlify/functions/get-order?token=${token}`)
       .then(response => {
         return response.json()
