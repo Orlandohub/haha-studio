@@ -19,15 +19,6 @@ const ShopNavigation = () => (
         shipping
       </Link>
     </span>
-    <span className={css(styles.navFooter)}>
-      <Link
-        to={'/terms-licenses/'}
-        className={css(styles.linkStyles)}
-        activeClassName={css(styles.activeLink)}
-      >
-        terms/licenses
-      </Link>
-    </span>
   </div>
 )
 

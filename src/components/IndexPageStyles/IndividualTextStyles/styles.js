@@ -6,7 +6,7 @@ export const textWrapper = mq({
   paddingTop: [15, 15, 15, 15, 22],
 })
 export const textText = mq({
-  fontSize: ['14px', '14px', '22px', '22px', '22px'],
+  fontSize: ['14px', '14px', '20px', '20px', '20px'],
   width: '100%',
   marginBottom: [60, 60, 60, 60, 164],
 })
