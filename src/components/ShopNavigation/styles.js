@@ -11,8 +11,8 @@ export const ShopNavigationWrapper = mq({
 
 export const navFooter = mq({
   float: 'left',
-  textAlign: 'center',
-  width: '50%',
+  textAlign: 'left',
+  width: '33.3%',
 })
 
 export const linkStyles = mq({
