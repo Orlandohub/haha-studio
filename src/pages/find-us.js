@@ -37,6 +37,12 @@ const FindUs = ({ location }) => (
           <br /> arash@hahastudio.se
           <br /> T +46 769 41 80 80
           <br />
+          <br /> Thomas Torninger
+          <br />
+          Business / Founder
+          <br /> thomas@hahastudio.se
+          <br /> T +46 730 665 394 
+          <br />
           <br />
           <a
             href="https://www.instagram.com/hahadesignstudio/"
